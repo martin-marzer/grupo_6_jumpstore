@@ -1,7 +1,9 @@
 /* cuerpo del  html */
+
 * {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Arimo', sans-serif;
 }
@@ -12,6 +14,7 @@ img {
     vertical-align: middle;
     border: 0;
 }
+
 a {
     margin: 0;
     padding: 0;
@@ -22,35 +25,57 @@ a {
     color: white;
     transition: 0s all !important;
 }
-a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
+
+a,
+button,
+input[type="submit"],
+input[type="button"],
+.btn,
+a:before,
+a:after {
     cursor: pointer;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
 
-
 /* PRUEBAS */
 
+
 /* cosas para usar */
+
 .container {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
+
 .centrado {
-    text-align :center;
+    text-align: center;
 }
+
 .sombreado {
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 
 /* header */
+
 .main-header {
     padding: 40px 0;
     background-color: black;
@@ -61,10 +86,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin-right: -15px;
     margin-left: -15px;
 }
+
 #jumpstore-header-flex {
     display: flex;
 }
-#jumpstore-menu-mobile button, #jumpstore-cart button, #jumpstore-user button  {
+
+#jumpstore-menu-mobile button,
+#jumpstore-cart button,
+#jumpstore-user button {
     background-color: black;
     border: none;
     font-size: 5vw;
@@ -74,13 +103,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: flex;
     align-items: center;
 }
-#jumpstore-header-flex, #jumpstore-header-flex #jumpstore-logo, #jumpstore-header-flex #jumpstore-search{
+
+#jumpstore-header-flex,
+#jumpstore-header-flex #jumpstore-logo,
+#jumpstore-header-flex #jumpstore-search {
     width: 100%;
 }
+
 #jumpstore-search {
     display: flex;
     align-items: center;
 }
+
 #jumpstore-search .fulltext-search-box {
     width: 100%;
     height: 4vw;
@@ -93,7 +127,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border: black;
     outline: none;
 }
-#jumpstore-search  button.btn-buscar {
+
+#jumpstore-search button.btn-buscar {
     position: relative;
     right: 0px;
     background-repeat: no-repeat;
@@ -106,7 +141,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     outline: none;
 }
 
-#jumpstore-menu-mobile, #jumpstore-right-menu {
+#jumpstore-menu-mobile,
+#jumpstore-right-menu {
     width: 20%;
 }
 
@@ -122,7 +158,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border: black;
     outline: none;
 }
-#jumpstore-search-mobile  button.btn-buscar {
+
+#jumpstore-search-mobile button.btn-buscar {
     position: relative;
     right: 0px;
     background-repeat: no-repeat;
@@ -136,24 +173,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 
-
- /* nav */
-
+/* nav */
 
 #jumpstore-navbar {
     border-bottom: 1px solid black;
 }
-#jumpstore-navbar ul{
+
+#jumpstore-navbar ul {
     justify-content: space-evenly;
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-#jumpstore-navbar li{
+
+#jumpstore-navbar li {
     margin: 15px;
 }
-#jumpstore-navbar a{
+
+#jumpstore-navbar a {
     font-size: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -163,32 +201,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 
-
 /* footer */
-
-
 
 .footer {
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
 }
-.black-area{
+
+.black-area {
     background-color: black;
 }
-.grey-area{
+
+.grey-area {
     background-color: #353232;
 }
+
 .footer-col {
     position: relative;
 }
+
 .footer-title {
     font-weight: bold;
     color: white;
     text-transform: uppercase;
     font-size: 16px;
 }
+
 .footer-col ul {
     margin: 0px;
     padding: 0px;
@@ -201,6 +240,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin: 8px 0px 8px 0px;
     color: #bfbfbf;
 }
+
 .panel li a {
     font-size: 14px;
     letter-spacing: 0.05em;
@@ -215,12 +255,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     letter-spacing: 0.01em;
     align-items: center;
     margin: 0px;
-
     list-style: none;
 }
-#footer-copyright ul, #footer-copyright ul a {
+
+#footer-copyright ul,
+#footer-copyright ul a {
     color: #999999;
 }
+
 #footer-copyright ul li {
     margin: 5px 0px 5px 0px;
 }
@@ -229,6 +271,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     margin: 0px 5px 0px 5px !important;
 }
 
+
 /* mediaqueries */
 
 @media (max-width: 767px) {
@@ -236,7 +279,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-header-flex {
         align-items: center;
     }
-    #jumpstore-menu-mobile, #jumpstore-search-mobile, #jumpstore-right-menu {
+    #jumpstore-menu-mobile,
+    #jumpstore-search-mobile,
+    #jumpstore-right-menu {
         display: flex;
     }
     #jumpstore-search-mobile {
@@ -244,24 +289,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         margin: auto;
         margin-top: 20px;
     }
-    #jumpstore-menu-mobile, #jumpstore-logo, #jumpstore-right-menu {
+    #jumpstore-menu-mobile,
+    #jumpstore-logo,
+    #jumpstore-right-menu {
         justify-content: center !important;
         align-items: center;
     }
-    #jumpstore-search, #jumpstore-nav {
+    #jumpstore-search,
+    #jumpstore-nav {
         display: none !important;
     }
     #jumpstore-user button {
         display: none;
     }
-
     /* nav */
     #jumpstore-navbar {
         display: none;
     }
-
     /* footer */
-   .footer {
+    .footer {
         flex-direction: column;
         margin-bottom: 0px;
     }
@@ -298,58 +344,63 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         display: none;
     }
 }
+
 @media (max-width: 768px) {
     .container {
         width: 100% ! important;
     }
-
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .container {
         width: 750px;
     }
     /* header */
-    #jumpstore-header-flex #jumpstore-menu-mobile, #jumpstore-header-flex #jumpstore-logo, #jumpstore-header-flex #jumpstore-search, #jumpstore-header-flex #jumpstore-right.menu {
+    #jumpstore-header-flex #jumpstore-menu-mobile,
+    #jumpstore-header-flex #jumpstore-logo,
+    #jumpstore-header-flex #jumpstore-search,
+    #jumpstore-header-flex #jumpstore-right.menu {
         width: 100%;
     }
     #jumpstore-header-flex {
         position: relative;
     }
-
     #jumpstore-right-menu {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-
     }
-    
-    #jumpstore-cart button, #jumpstore-user button{
+    #jumpstore-cart button,
+    #jumpstore-user button {
         font-size: 30px;
     }
     #jumpstore-header-flex #jumpstore-logo {
         width: 1200px;
     }
-    #jumpstore-search .fulltext-search-box, #jumpstore-search button.btn-buscar  {
+    #jumpstore-search .fulltext-search-box,
+    #jumpstore-search button.btn-buscar {
         height: 30px;
-
     }
-    #jumpstore-search, #jumpstore-right-menu, #jumpstore-logo {
+    #jumpstore-search,
+    #jumpstore-right-menu,
+    #jumpstore-logo {
         display: flex;
     }
-    #jumpstore-search-mobile, #jumpstore-menu-mobile {
+    #jumpstore-search-mobile,
+    #jumpstore-menu-mobile {
         display: none;
     }
-    #jumpstore-search{
+    #jumpstore-search {
         margin: 0 5% 0 10%;
     }
     /* footer */
-    .footer .jumpstore-arrow, .footer hr  { 
+    .footer .jumpstore-arrow,
+    .footer hr {
         display: none;
     }
 }
 
-@media (min-width: 992px){
+@media (min-width: 992px) {
     .container {
         width: 970px;
     }
@@ -357,16 +408,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .main-header {
         padding: 40px 20px;
     }
-    
-    #jumpstore-search{
+    #jumpstore-search {
         margin: 0 3% 0 21%;
     }
 }
-@media (min-width: 1200px){
+
+@media (min-width: 1200px) {
     .container {
         width: 1170px;
     }
-    #jumpstore-search{
+    #jumpstore-search {
         margin: 0 5% 0 41%;
     }
 }
