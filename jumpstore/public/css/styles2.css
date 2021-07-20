@@ -349,6 +349,9 @@ section {
     .container {
         width: 100% ! important;
     }
+    #jumpstore-navbar {
+        border: none;
+    }
 }
 
 @media (min-width: 768px) {

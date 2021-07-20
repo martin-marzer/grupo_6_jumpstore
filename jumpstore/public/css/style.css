@@ -15,6 +15,7 @@ main {
     overflow: hidden;
     margin: auto;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    height: 36vw;
 }
 
 ul,
@@ -27,7 +28,7 @@ li {
 .slider ul {
     display: flex;
     padding: 0;
-    height: 450px;
+    height: 100%;
     width: 400%;
     animation: cambio 30s infinite alternate linear;
     ;
@@ -270,8 +271,48 @@ h1:hover {
     padding-top: 100px;
 }
 
-@media screen and (min-width: 480px) {}
+@media (max-width: 767px) {
+    .slider {
+        height: 50vw;
+        box-shadow: none;
+    }
+    .conteiner-marcas {
+        padding: 0;
+    }
+    ul.slider-logos li {
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #Jordan {
+        display: none;
+    }
+    .wrapper {
+        width: 100%;
+        position: relative;
+        margin: 0;
+    }
+    h1:hover {
+        letter-spacing: 2px;
+    }
+    .container-hot {
+        padding-top: 0;
+        width: 100%;
+    }
+    .image {
+        display: none;
+        width: 90%;
+    }
+    .esta-no-desaparece {
+        display: block;
+    }
+}
 
-@media screen and (min-width: 767px) {}
+@media (max-width: 768px) {}
 
-@media screen and (min-width: 950px) {}
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
