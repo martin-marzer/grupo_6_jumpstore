@@ -11,17 +11,14 @@ main {
 }
 
 .fondo-slider {
-    background-color: rgba(22, 20, 20, 0.932);
     display: flex;
 }
 
 .container-lista {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 80px;
-    margin-bottom: 80px
 }
 
 .slider {
@@ -68,8 +65,10 @@ ul.slider li:target {
 }
 
 .menu {
-    text-align: center;
-    margin: 20px;
+    position: absolute;
+    top: 340px;
+    left: 500px;
+    background: transparent;
 }
 
 .menu li {
@@ -99,9 +98,7 @@ ul.menu li a:target {
     padding: 50px 0;
     text-align: center;
     line-height: 100px;
-    background: rgb(212 212 212);
     margin-bottom: 70px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .conteiner-marcas {
@@ -128,7 +125,6 @@ ul.slider-logos li img {
     max-height: 100px;
     vertical-align: middle;
     border-radius: 3%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
 #jordan-logo {
