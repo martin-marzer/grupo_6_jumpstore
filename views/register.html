@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/images/jumpstore icono.jpg" sizes="32x32" />
+
+    <title>Register</title>
+</head>
+<body>
+    <header class="main-header">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div id="jumpstore-header">
+
+                    <div id="jumpstore-header-flex">
+
+                        <div id="jumpstore-menu-mobile">
+                            <button onclick="myFunction()" class="btn-menu" style="color: white;">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+
+                        <div id="jumpstore-logo">
+                            <a href="/">
+                                <img src="/images/jumpstore logo.png" alt="logo desktop" class="logo">
+                            </a>
+                        </div>
+
+                        <div id="jumpstore-search">
+                            <input class="fulltext-search-box" type="text">
+                            <button  type="submit" class="btn-buscar">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div id="jumpstore-right-menu"> 
+                            <div id="jumpstore-user">
+                                <button>
+                                    <a href="/register"><i class="far fa-user"></i></a>
+                                </button>
+                            </div>
+
+                            <div id="jumpstore-cart">
+                                <button>
+                                    <a href="/"><i class="fas fa-shopping-cart"></i></a>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="jumpstore-search-mobile">
+                        <input class="fulltext-search-box" type="text">
+                        <button  type="submit" class="btn-buscar">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+    <nav id="jumpstore-navbar">
+        <div class="container">
+            <div class="row">
+                <ul>
+                    <li><a href="/">Inicio</li></a>
+                    <li><a href="/">Productos</li></a>
+                    <li><a href="/">Ofertas</li></a>
+                    <li><a href="/">Novedades</li></a>
+                    <li><a href="/">Favoritos</li></a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <form class="formulario">
+            <div class="field name">
+                <input type="text" placeholder="Nombre y apellido">
+            </div>
+            <div class="field username">
+                <input type="text" placeholder="Nombre de usuario">
+            </div>
+            <div class="field date">
+                <label for="date" class="field">Fecha de nacimiento</label>
+                <input type="date" min="1920-01-01" max="2020-12-31" name="date">
+            </div>
+            <div class="field home">
+                <input type="text" placeholder="Domicilio">
+            </div>
+            <div class="field perfilUsuario">
+                <label for="date" class="field">Perfil de usuario</label>
+                <div class="radio">
+                    <input type="radio" name="usuario" checked>
+                    <label for="usuario">Comprador</label>
+                    <input type="radio" name="usuario">
+                    <label for="usuario">Vendedor</label>
+                </div>
+            </div>
+            <div class="field interes">
+                <label for="date" class="field">Intereses</label>
+                <div class="checkbox">
+                    <input type="checkbox" name="interes">
+                    <label for="interes">Electro</label> <br>
+                    <input type="checkbox" name="interes">
+                    <label for="interes">Vida sana</label> <br>
+                    <input type="checkbox" name="interes">
+                    <label for="interes">Moda</label> <br>
+                    <input type="checkbox" name="interes">
+                    <label for="interes">Hogar</label> <br>
+                </div>
+            </div>
+            <div class="field picture">
+                <label for="picture" class="field">Seleccionar imagen de perfil:</label>
+                <input type="file" accept=".jpg" name="picture" style="max-width: 100%;">
+            </div>
+            <div class="field psw">
+                <input type="password" placeholder="Contraseña">
+            </div>
+            <div class="field psw-confirm">
+                <input type="password" placeholder="Confirma Contraseña">
+            </div>
+            <div class="field cancelar">
+                <button type="reset"> Borrar datos</button>
+            </div>
+            <div class="field registrar">
+                <button type="button">
+                    <a href="/" style="text-decoration: none; color: inherit;">Registrarse</a>
+                </button>
+            </div>
+          </form>
+    </main>
+    <footer id="jumpstore-footer">
+
+        <div class="black-area">
+
+            <div class="container">
+
+                <div class="footer">
+                    <div class="footer-col">
+                        <div class="footer-title">Jumpstore</div>
+                        <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                        <ul class="panel">
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/">Productos</a></li>
+                            <li><a href="/">Ofertas</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-title">Información</div>
+                        <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                        <ul class="panel">
+                            <li><a href="/">Términos y condiciones</a></li>
+                            <li><a href="/">Quienes somos</a></li>
+                            <li><a href="/">Formas de pago</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-title">Redes</div>
+                        <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                        <ul class="panel">
+                            <li><a href="/">Instagram</a></li>
+                            <li><a href="/">Twitter</a></li>
+                            <li><a href="/">Facebook</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grey-area">
+            <div class="container">
+                <div id="footer-copyright">
+                    <ul>
+                        <li>Copyright © 2021 Jumpstore. All rights reserved.</li>
+                        <li class="footer-separator">|</li>
+                        <li><a href="/">Términos y Condiciones</a></li>
+                        <li class="footer-separator">|</li>
+                        <li><a href="/">Políticas de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer> 
+<script src="/js/script.js"></script>
+</body>
+</html>
