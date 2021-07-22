@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Arimo', sans-serif;
+    font-family: system-ui;
 }
 
 img {
@@ -169,7 +169,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #jumpstore-navbar li {
     background-color: white;
     transition: background-color 1s;
-    padding: 10px 30px;
+    
 }
 #jumpstore-navbar li:hover {
     background-color: turquoise;
@@ -359,6 +359,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search{
         margin: 0 5% 0 10%;
     }
+    /* nav */
+    #jumpstore-navbar li{
+        padding: 10px 25px;
+    }
     /* footer */
     .footer .jumpstore-arrow, .footer hr  { 
         display: none;
@@ -377,6 +381,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search{
         margin: 0 3% 0 21%;
     }
+        /* nav */
+    #jumpstore-navbar li{
+        padding: 10px 45px;
+    }
 }
 @media (min-width: 1200px){
     .container {
@@ -385,7 +393,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search{
         margin: 0 5% 0 41%;
     }
-    #jumpstore-navbar li {
-        padding: 15px 60px;
+         /* nav */
+    #jumpstore-navbar li{
+        padding: 20px 65px;
     }
 }
