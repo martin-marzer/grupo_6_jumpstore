@@ -134,6 +134,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     height: 7vw;
     outline: none;
 }
+#jumpstore-header i:hover {
+    color: white;
+    transition: color 1s;
+}
+#jumpstore-header i:hover {
+    color:turquoise
+}
 
 
 
@@ -142,16 +149,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 #jumpstore-navbar {
     border-bottom: 1px solid black;
+    
 }
 #jumpstore-navbar ul{
-    justify-content: space-evenly;
+    justify-content: center;
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-#jumpstore-navbar li{
-    margin: 15px;
 }
 #jumpstore-navbar a{
     font-size: 20px;
@@ -161,7 +166,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: flex;
     text-transform: uppercase;
 }
-
+#jumpstore-navbar li {
+    background-color: white;
+    transition: background-color 1s;
+    padding: 10px 30px;
+}
+#jumpstore-navbar li:hover {
+    background-color: turquoise;
+}
 
 
 
@@ -372,5 +384,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     #jumpstore-search{
         margin: 0 5% 0 41%;
+    }
+    #jumpstore-navbar li {
+        padding: 15px 60px;
     }
 }
