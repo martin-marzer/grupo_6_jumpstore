@@ -191,7 +191,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     width: 70%;
     padding-top: 1%;
 }
-
+#jumpstore-logo-mobile ul {
+    list-style: none;
+    padding-left: 0px;
+}
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -317,9 +320,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     transition: 0.4s;
 }
 .black-area-mobile .panel {
-    padding-left: 10px;
-    display: none;
+    padding-left: 18px;
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 0.2s ease-out;
   }
 /* mediaqueries */
 

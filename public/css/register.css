@@ -10,7 +10,7 @@ form {
 form .field input[type=text], form .field input[type=date], form .field input[type=password], form .field button, form .field input[type=email] {
     width: 60%;
     height: 45px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #a2a2a2;
     padding-left: 10px;
     border-radius: 10px;
 }
@@ -43,7 +43,7 @@ form .field button {
 
 .txt-content {
     font-size: 15px;
-    font-weight: lighter;
+    font-weight: 400;
 
 }
 
