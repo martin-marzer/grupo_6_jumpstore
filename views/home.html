@@ -13,243 +13,296 @@
     <link rel='stylesheet' href='/css/home.css'>
     <link rel="icon" type="image/png" href="/images/logo/jumpstore icono.jpg" sizes="32x32" />
 </head>
+<body>
+    <header class="main-header">
 
-<header class="main-header">
+        <div class="container">
 
-    <div class="container">
+            <div class="row">
 
-        <div class="row">
+                <div id="jumpstore-header">
 
-            <div id="jumpstore-header">
+                    <div id="jumpstore-header-flex">
 
-                <div id="jumpstore-header-flex">
-
-                    <div id="jumpstore-menu-mobile">
-                        <button>
-                                <a href="/"><i class="fas fa-bars"></i></a>
+                        <div id="jumpstore-menu-mobile">
+                            <button onclick="openNav()" class="btn-menu" style="color: white;">
+                                <i class="fas fa-bars"></i>
                             </button>
-                    </div>
+                        </div>
 
-                    <div id="jumpstore-logo">
-                        <a href="/">
-                            <img src="/images/logo/jumpstore logo.png" alt="logo desktop" class="logo">
-                        </a>
-                    </div>
+                        <div id="jumpstore-logo">
+                            <a href="/">
+                                <img src="/images/logo/jumpstore logo.png" alt="logo desktop" class="logo">
+                            </a>
+                        </div>
 
-                    <div id="jumpstore-search">
-                        <input class="fulltext-search-box" type="text" placeholder="¿Qué estas buscando?">
-                        <button type="submit" class="btn-buscar">
+                        <div id="jumpstore-search">
+                            <input class="fulltext-search-box" type="text">
+                            <button  type="submit" class="btn-buscar">
                                 <i class="fas fa-search"></i>
                             </button>
-                    </div>
-                    <div id="jumpstore-right-menu">
-                        <div id="jumpstore-user">
-                            <button>
+                        </div>
+                        <div id="jumpstore-right-menu"> 
+                            <div id="jumpstore-user">
+                                <button>
                                     <a href="/register"><i class="far fa-user"></i></a>
                                 </button>
-                        </div>
+                            </div>
 
-                        <div id="jumpstore-cart">
-                            <button>
+                            <div id="jumpstore-cart">
+                                <button>
                                     <a href="/"><i class="fas fa-shopping-cart"></i></a>
                                 </button>
+                            </div>
                         </div>
+                        
+                    </div>
+                    <div id="jumpstore-search-mobile">
+                        <input class="fulltext-search-box" type="text">
+                        <button  type="submit" class="btn-buscar">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
 
                 </div>
-                <div id="jumpstore-search-mobile">
-                    <input class="fulltext-search-box" type="text">
-                    <button type="submit" class="btn-buscar">
-                            <i class="fas fa-search"></i>
-                        </button>
-                </div>
 
             </div>
 
         </div>
-
-    </div>
-</header>
-
-<nav id="jumpstore-navbar">
-    <div class="container">
-        <div class="row">
-            <ul>
-                <li><a href="/">Inicio</li></a>
-                <li><a href="/product/detail">Productos</li></a>
-                        <li><a href="/">Ofertas</li></a>
-                            <li><a href="/">Novedades</li></a>
-                                <li><a href="/">Favoritos</li></a>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<main>
-
-    <div class="slider">
-
-        <ul>
-            <li>
-                <img src="images/zapatillas/jordan 1.jpg" alt="Jordan 1 rojas">
-            </li>
-            <li>
-                <img src="images/zapatillas/jordan 4 red fire.jpg" alt="Jordan 4 red fire">
-            </li>
-            <li>
-                <img src="images/zapatillas/jordan travis.jpg" alt="jordan travis scott">
-            </li>
-            <li>
-                <img src="images/zapatillas/addidas-slider.jpg" alt="jordan travis scott">
-            </li>
-
-        </ul>
-
-    </div>
-
-    <section class="conteiner-marcas">
-        <ul class="slider-logos">
-            <li id="nike-logo"> <img class="zoom" src="images/contenido-pagina/nike-logo.png" alt="logo Nike"></li>
-            <li id="vans-logo"> <img src="images/contenido-pagina/vans-logo.jpg" alt="logo Vans"></li>
-            <li id="adidas-logo"> <img src="images/contenido-pagina/adidas-logo.png" alt="logo Addidas"></li>
-            <li id="jordan-logo"> <img src="images/contenido-pagina/jordan-logo.png" alt="logo Air Jordan"></li>
-        </ul>
-    </section>
-    <div class="fondo-universo">
-        <div class="wrapper">
-            <h1 href="#">Most Sold Sneakers</h1>
-        </div>
-
-        <section class="container-hot">
-
-            <div class="image">
-                <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
-                <div class="image__overlay image__overlay--primary">
-                    <div class="image__title">Nike airmax 97 mettallic gold</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-            </div>
-            <div class="image">
-                <img class="image__img" src="images/zapatillas/adidas-mas-vendidas.jpg" alt="Adidas Yeezy 350v2 CREAM WHITE">
-                <div class="image__overlay image__overlay--primary">
-                    <div class="image__title">Adidas Yeezy cream white</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-            </div>
-            <div class="image">
-                <img class="image__img" src="images/zapatillas/jorda-jbalbin.jpeg" alt="Jordan 1 Retro High J Balvin">
-                <div class="image__overlay image__overlay--primary">
-                    <div class="image__title">Jordan 1 retro high J Balvin</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-            </div>
-            <div class="image">
-                <img class="image__img" src="images/zapatillas/vans-mas-vendidas.jpeg" alt="Vans Old Skool PRO Black/Brown">
-                <div class="image__overlay image__overlay--primary">
-                    <div class="image__title">Vans old skool black/brown</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-        <div class="wrapper">
-            <h1 href="#">Newest Drop</h1>
-        </div>
-
-        <section class="container-new">
-
-            <div id="Jordan">
-                <img class="image__img" src="images/contenido-pagina/michael-jordan-12.jpg" alt="Michael Jordan">
-            </div>
-            <div class="image">
-                <img class="image__img" src="images/zapatillas/vans-old-skook-pink.jpeg" alt="Vans old skool pink">
-                <div class="image__overlay image__overlay--primary">
-                    <div class="image__title">Vans old skool pink</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-            </div>
-            <div class="image">
-                <img class="image__img" src="images/zapatillas/Nike Sacai Regasus Vaporrly SP Navy Grey White Red Orange.jpeg" alt="Nike Sacai Regasus Vaporrly SP Navy Grey White Red Orange">
-                <div class="image__overlay image__overlay--primary">
-                    <div class="image__title">Nike Sacai Regasus Vaporrly</div>
-                    <p class="image__description">
-                        $4
-                    </p>
-                </div>
-            </div>
-        </section>
-
-</main>
-
-<footer id="jumpstore-footer">
-
-    <div class="black-area">
-
+    </header>
+    <nav id="jumpstore-navbar">
         <div class="container">
-
-            <div class="footer">
-                <div class="footer-col">
-                    <div class="footer-title">Jumpstore</div>
-                    <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
-                    <ul class="panel">
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/product/detail">Productos</li></a>
-                        <li><a href="/">Ofertas</a></li>
-                    </ul>
-                    <hr>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-title">Información</div>
-                    <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
-                    <ul class="panel">
-                        <li><a href="/">Términos y condiciones</a></li>
-                        <li><a href="/">Quienes somos</a></li>
-                        <li><a href="/">Formas de pago</a></li>
-                    </ul>
-                    <hr>
-                </div>
-                <div class="footer-col">
-                    <div class="footer-title">Redes</div>
-                    <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
-                    <ul class="panel">
-                        <li><a href="/">Instagram</a></li>
-                        <li><a href="/">Twitter</a></li>
-                        <li><a href="/">Facebook</a></li>
-                    </ul>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="grey-area">
-        <div class="container">
-            <div id="footer-copyright">
+            <div class="row">
                 <ul>
-                    <li>Copyright © 2021 Jumpstore. All rights reserved.</li>
-                    <li class="footer-separator">|</li>
-                    <li><a href="/">Términos y Condiciones</a></li>
-                    <li class="footer-separator">|</li>
-                    <li><a href="/">Políticas de Privacidad</a></li>
+                    <li><a href="/">Inicio</li></a>
+                    <li><a href="/product/detail">Productos</li></a>
+                    <li><a href="/">Ofertas</li></a>
+                    <li><a href="/">Novedades</li></a>
+                    <li><a href="/">Favoritos</li></a>
                 </ul>
             </div>
         </div>
-    </div>
-</footer>
+    </nav>
+    <nav id="jumpstore-navbar-mobile" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
+        <div class="overlay-content">
+            <div id="jumpstore-logo-mobile">
+                <img src="/images/logo/jumpstore logo.png" alt="logo desktop" class="logo">
+            </div>
 
+            <ul>
+                <li><a href="/">Inicio</li></a>
+                <li><a href="/product/detail">Productos</li></a>
+                <li><a href="/">Ofertas</li></a>
+                <li><a href="/">Novedades</li></a>
+                <li><a href="/">Favoritos</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="slider">
+
+            <ul>
+                <li>
+                    <img src="images/zapatillas/jordan 1.jpg" alt="Jordan 1 rojas">
+                </li>
+                <li>
+                    <img src="images/zapatillas/jordan 4 red fire.jpg" alt="Jordan 4 red fire">
+                </li>
+                <li>
+                    <img src="images/zapatillas/jordan travis.jpg" alt="jordan travis scott">
+                </li>
+                <li>
+                    <img src="images/zapatillas/addidas-slider.jpg" alt="jordan travis scott">
+                </li>
+
+            </ul>
+
+        </div>
+
+        <section class="conteiner-marcas">
+            <ul class="slider-logos">
+                <li id="nike-logo"> <img class="zoom" src="images/contenido-pagina/nike-logo.png" alt="logo Nike"></li>
+                <li id="vans-logo"> <img src="images/contenido-pagina/vans-logo.jpg" alt="logo Vans"></li>
+                <li id="adidas-logo"> <img src="images/contenido-pagina/adidas-logo.png" alt="logo Addidas"></li>
+                <li id="jordan-logo"> <img src="images/contenido-pagina/jordan-logo.png" alt="logo Air Jordan"></li>
+            </ul>
+        </section>
+        <div class="fondo-universo">
+            <div class="wrapper">
+                <h1 href="#">Most Sold Sneakers</h1>
+            </div>
+
+            <section class="container-hot">
+
+                <div class="image">
+                    <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">Nike airmax 97 mettallic gold</div>
+                        <p class="image__description">
+                            $4
+                        </p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="image__img" src="images/zapatillas/adidas-mas-vendidas.jpg" alt="Adidas Yeezy 350v2 CREAM WHITE">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">Adidas Yeezy cream white</div>
+                        <p class="image__description">
+                            $4
+                        </p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="image__img" src="images/zapatillas/jorda-jbalbin.jpeg" alt="Jordan 1 Retro High J Balvin">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">Jordan 1 retro high J Balvin</div>
+                        <p class="image__description">
+                            $4
+                        </p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="image__img" src="images/zapatillas/vans-mas-vendidas.jpeg" alt="Vans Old Skool PRO Black/Brown">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">Vans old skool black/brown</div>
+                        <p class="image__description">
+                            $4
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="wrapper">
+                <h1 href="#">Newest Drop</h1>
+            </div>
+
+            <section class="container-new">
+
+                <div id="Jordan">
+                    <img class="image__img" src="images/contenido-pagina/michael-jordan-12.jpg" alt="Michael Jordan">
+                </div>
+                <div class="image">
+                    <img class="image__img" src="images/zapatillas/vans-old-skook-pink.jpeg" alt="Vans old skool pink">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">Vans old skool pink</div>
+                        <p class="image__description">
+                            $4
+                        </p>
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="image__img" src="images/zapatillas/Nike Sacai Regasus Vaporrly SP Navy Grey White Red Orange.jpeg" alt="Nike Sacai Regasus Vaporrly SP Navy Grey White Red Orange">
+                    <div class="image__overlay image__overlay--primary">
+                        <div class="image__title">Nike Sacai Regasus Vaporrly</div>
+                        <p class="image__description">
+                            $4
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+    </main>
+
+    <footer id="jumpstore-footer">
+
+        <div class="black-area">
+
+            <div class="container">
+
+                <div class="footer">
+                    <div class="footer-col">
+                        <div class="footer-title">Jumpstore</div>
+                        
+                        <ul class="panel">
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/product/detail">Productos</li></a>
+                            <li><a href="/">Ofertas</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-title">Información</div>
+                        
+                        <ul class="panel">
+                            <li><a href="/">Términos y condiciones</a></li>
+                            <li><a href="/">Quienes somos</a></li>
+                            <li><a href="/">Formas de pago</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-title">Redes</div>
+                        
+                        <ul class="panel">
+                            <li><a href="/">Instagram</a></li>
+                            <li><a href="/">Twitter</a></li>
+                            <li><a href="/">Facebook</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="black-area-mobile">
+
+            <div class="container">
+
+                <div class="footer">
+                    <div class="footer-col">
+                        <div class="footer-title">Jumpstore</div>
+                        <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                        <ul class="panel">
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="/product/detail">Productos</li></a>
+                            <li><a href="/">Ofertas</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-title">Información</div>
+                        <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                        <ul class="panel">
+                            <li><a href="/">Términos y condiciones</a></li>
+                            <li><a href="/">Quienes somos</a></li>
+                            <li><a href="/">Formas de pago</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="footer-col">
+                        <div class="footer-title">Redes</div>
+                        <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                        <ul class="panel">
+                            <li><a href="/">Instagram</a></li>
+                            <li><a href="/">Twitter</a></li>
+                            <li><a href="/">Facebook</a></li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grey-area">
+            <div class="container">
+                <div id="footer-copyright">
+                    <ul>
+                        <li>Copyright © 2021 Jumpstore. All rights reserved.</li>
+                        <li class="footer-separator">|</li>
+                        <li><a href="/">Términos y Condiciones</a></li>
+                        <li class="footer-separator">|</li>
+                        <li><a href="/">Políticas de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
 
-</html>

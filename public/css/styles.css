@@ -172,7 +172,76 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     
 }
 #jumpstore-navbar li:hover {
-    background-color: turquoise;
+    background-color: black;
+
+}
+#jumpstore-navbar a {
+    transition: color 1s;
+}
+#jumpstore-navbar a:hover {
+    color: white;
+}
+
+/* nav mobile */
+.overlay-content ul {
+    padding-top: 10%;
+}
+#jumpstore-logo-mobile {
+    padding-left: 32px;
+    width: 70%;
+    padding-top: 1%;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 40px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 30px 8px 20px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    /* color: #818181; */
+    display: block;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 
@@ -189,7 +258,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     justify-content: space-between;
     margin-top: 60px;
 }
-.black-area{
+.black-area, .black-area-mobile{
     background-color: black;
 }
 .grey-area{
@@ -243,7 +312,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .footer-separator {
     margin: 0px 5px 0px 5px !important;
 }
-
+/* footer  mobile*/ 
+.black-area-mobile .jumpstore-arrow {
+    transition: 0.4s;
+}
+.black-area-mobile .panel {
+    padding-left: 10px;
+    display: none;
+    overflow: hidden;
+  }
 /* mediaqueries */
 
 @media (max-width: 767px) {
@@ -274,6 +351,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-navbar {
         display: none;
     }
+    
 
 
     /* footer */
@@ -293,12 +371,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         background: transparent;
         border: none;
     }
-    .footer ul.panel {
-        padding: 0 12px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-    }
     .footer hr {
         display: block;
         border: 0;
@@ -317,6 +389,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media (max-width: 768px) {
     .container {
         width: 100% ! important;
+    }
+    .black-area {
+        display: none !important;
     }
 
 }
@@ -348,6 +423,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     #jumpstore-search .fulltext-search-box, #jumpstore-search button.btn-buscar  {
         height: 30px;
+        color: black;
 
     }
     #jumpstore-search, #jumpstore-right-menu, #jumpstore-logo {
@@ -360,12 +436,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         margin: 0 5% 0 10%;
     }
     /* nav */
-    #jumpstore-navbar li{
+    #jumpstore-navbar a{
         padding: 10px 25px;
+    }
+    #jumpstore-navbar-mobile {
+        display: none !important;
     }
     /* footer */
     .footer .jumpstore-arrow, .footer hr  { 
         display: none;
+    }
+    .black-area-mobile {
+        display: none !important;
     }
 }
 
@@ -382,7 +464,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         margin: 0 3% 0 21%;
     }
         /* nav */
-    #jumpstore-navbar li{
+    #jumpstore-navbar a{
         padding: 10px 45px;
     }
 }
@@ -394,7 +476,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         margin: 0 5% 0 41%;
     }
          /* nav */
-    #jumpstore-navbar li{
+    #jumpstore-navbar a{
         padding: 20px 65px;
     }
 }
