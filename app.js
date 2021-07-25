@@ -1,11 +1,17 @@
 const express = require('express');
 const app = express();
 const path = require("path");
+const PORT = process.env.PORT || 3030;
 
 app.use(express.static("public"));
 
+<<<<<<< HEAD
 app.listen(3030, () => {
     console.log("Todo correcto");
+=======
+app.listen(PORT, () => {
+    console.log("Levantando un servidor con Express");
+>>>>>>> e5f9851ac64330acf255e140e00156296bd59f43
 })
 
 
