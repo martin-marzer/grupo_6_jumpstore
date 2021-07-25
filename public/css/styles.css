@@ -184,16 +184,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* nav mobile */
 .overlay-content ul {
-    padding-top: 10%;
+    padding-top: 10%;    
+    list-style: none;
+    padding-left: 0px;
 }
 #jumpstore-logo-mobile {
     padding-left: 32px;
     width: 70%;
     padding-top: 1%;
-}
-#jumpstore-logo-mobile ul {
-    list-style: none;
-    padding-left: 0px;
 }
 /* The side navigation menu */
 .sidenav {
