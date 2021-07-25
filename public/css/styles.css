@@ -259,7 +259,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
 }
 .black-area, .black-area-mobile{
     background-color: black;

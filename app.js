@@ -5,7 +5,7 @@ const path = require("path");
 app.use(express.static("public"));
 
 app.listen(3030, () => {
-    console.log("Levantando un servidor con Express");
+    console.log("Todo correcto");
 })
 
 
