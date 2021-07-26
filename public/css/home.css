@@ -272,6 +272,15 @@ h1:hover {
     width: 200px;
 }
 
+#vans-logo{
+    margin-left: 0px;
+}
+
+#nike-logo{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 @media (max-width: 767px) {
     .slider {
         height: 50vw;
