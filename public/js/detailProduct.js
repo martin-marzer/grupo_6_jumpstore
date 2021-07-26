@@ -1,3 +1,4 @@
+// este es que pasen las imagenes
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -27,6 +28,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+// esto es que cuando pasas el mouse hace zoom la img
 $(document).ready(function(){
   $('#img-product img').hover(function() {
       $("#img-product img").addClass('transition');

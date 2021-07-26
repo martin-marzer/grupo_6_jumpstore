@@ -188,10 +188,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     list-style: none;
     padding-left: 0px;
 }
+.overlay-content li {
+    margin-left: 50px;
+    margin-right: 50px;
+}
 #jumpstore-logo-mobile {
     padding-left: 32px;
     width: 70%;
     padding-top: 1%;
+}
+#opacity-mobile {
+    position: fixed;
+    z-index: 9999;
+    padding-top: 0px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
 }
 /* The side navigation menu */
 .sidenav {
@@ -209,10 +224,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 30px 8px 20px 32px;
+    padding: 30px 8px 20px 8px;
     text-decoration: none;
     font-size: 25px;
-    /* color: #818181; */
     display: block;
     transition: 0.3s;
     text-transform: uppercase;
@@ -364,6 +378,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         padding: 0 11px;
     }
     .footer .jumpstore-arrow {
+        width: 100%;
         color: white;
         display: block;
         position: absolute;
@@ -371,6 +386,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         right: 0;
         background: transparent;
         border: none;
+    }
+    .footer .jumpstore-arrow i {
+        display: flex;
+        justify-content: flex-end;
     }
     .footer hr {
         display: block;
@@ -394,6 +413,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .black-area {
         display: none !important;
     }
+
 
 }
 
@@ -441,6 +461,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         padding: 10px 25px;
     }
     #jumpstore-navbar-mobile {
+        display: none !important;
+    }    
+    #opacity-mobile {
         display: none !important;
     }
     /* footer */
