@@ -25,3 +25,8 @@ Amantes de las buenas zapatillas, en general un publico que disfruta del buen gu
 ```
 Elegimos estas paginas porque son interesantes propuestas, y referentes en el mercado que vamos a abarcar.
 ```
+## Bocetos
+```
+https://marvelapp.com/prototype/7495fih/screen/80807823
+```
+
