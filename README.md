@@ -16,7 +16,7 @@ Amantes de las buenas zapatillas, en general un publico que disfruta del buen gu
 ### Nombre: Martin Vazquez
 #### Edad: 17
 #### Actividad preferida: jugar al basquet y ver twitch.
-## Paginas de Inspiracion:
+## Paginas de Inspiracion 📖
 * https://www.grid.com.ar/
 * https://www.dafiti.com.ar/
 * https://tienda.fila.com.ar/
