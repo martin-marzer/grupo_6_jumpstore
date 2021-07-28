@@ -10,7 +10,7 @@ Amantes de las buenas zapatillas, en general un publico que disfruta del buen gu
 ### Nombre: Alejandro Gonzalez
 #### Edad: 17
 #### Actividad preferida: visualizar peliculas y jugar ajedrez.
-### Nombre: Nacho Sulling
+### Nombre: Nacho Sullings
 #### Edad: 17
 #### Actividad preferida: visualizar partidos de futbol.
 ### Nombre: Martin Vazquez
