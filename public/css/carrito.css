@@ -40,7 +40,8 @@
 .contenedor-producto{
     border: 1px solid gray;
     border-radius: 5px;
-    width: 765px;
+    /* width: 765px; */
+    width: 60%;
 }
 
 .segundo-contenedor-producto{
@@ -51,7 +52,8 @@
 .basura-icon{
     position: absolute;
     font-size: 20px;
-    left: 720px;
+    left: 95%;
+    top: 2px;
 }
 
 .imagen-producto-carrito{
@@ -124,28 +126,31 @@
 
 /* Menu Derecha */
 .contenedor-menu-derecha{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-end; */
+    width: 30%;
+    border: 1px solid red;
+    /* justify-content: flex-end; */
+    margin: 0  0 0 10%;
 }
 .contenedor-codigo-promocional{
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 .texto-codigo{
     text-align: right;
     margin: 0;
-    position: absolute;
-    right: 510px;
-    top: 284px;
+    /* position: absolute; */
+    /* right: 510px; */
+    /* top: 284px; */
     font-size: 16px;
     font-weight: 500;
 } 
 .input-codigo{
-    position: absolute;
-    top: 310px;
-    right: 530px;
-
+    /* position: absolute; */
+    /* top: 310px; */
+    /* right: 530px; */
 }
 #input-codigo2{
     width: 220px;
@@ -154,9 +159,9 @@
     border-radius: 3px;
 }
 .boton-codigo{
-    position: absolute;
-    right: 392px;
-    top: 310px;
+    /* position: absolute; */
+    /* right: 392px; */
+    /* top: 310px; */
 }
 .boton-codigo2{
     height: 40px;
@@ -168,16 +173,16 @@
 }
 .texto-envio{
     margin: 0;
-    position: absolute;
-    top: 384px;
-    right: 575px;
+    /* position: absolute; */
+    /* top: 384px; */
+    /* right: 575px; */
     font-size: 16px;
     font-weight: 500;
 }
 
 .input-envio{
-    position: absolute;
-    right: 529px;
+    /* position: absolute; */
+    /* right: 529px; */
 }
 
 #input-envio2{
@@ -187,10 +192,10 @@
     border-radius: 3px;
 }
 .boton-envio2{
-    position: absolute;
-    right: 392px;
-    height: 40px;
-    width: 135px;
+    /* position: absolute; */
+    /* right: 392px; */
+    /* height: 40px; */
+    /* width: 135px; */
     background-color: black;
     color: white;
     border-radius: 4px;
@@ -198,9 +203,9 @@
 }
 
 .boton-comprar{
-    position: absolute;
-    right: 392px;
-    top: 540px;
+    /* position: absolute; */
+    /* right: 392px; */
+    /* top: 540px; */
 }
 .boton-comprar2{
     width: 361px;
