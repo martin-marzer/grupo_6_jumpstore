@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/detailProduct.css">
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/carrito.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="/images/logo/jumpstore icono.jpg" sizes="32x32" />
-
-    <title>Producto</title>
+    <title>Carrito</title>
 </head>
 <body>
     <header class="main-header">
@@ -82,7 +81,6 @@
             </div>
         </div>
     </nav>
-    <div id="opacity-mobile"></div>
     <nav id="jumpstore-navbar-mobile" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
@@ -101,110 +99,146 @@
         </div>
     </nav>
     <main>
- 
-        
-        <div id="jumpstore-product" >
-
-            <div id="box-breadcrumbs">
+        <section>
+            <div class="main-carrito">
                 <div class="container">
-                    <ul class="breadcrumbs">
-                        <li class="breadcrumbs-item">
-                            <a href="/" class="breadcrumbs-link">JUMPSTORE</a>
-                        </li>
-                        <li class="breadcrumbs-item">
-                            <a href="/product" class="breadcrumbs-link breadcrumbs-link-active">Productos</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <section id="jumpstore-page">
-                <div class="container">
-                    <div id="content-page">
-                        <div id="img-product">
-                            <!-- Slideshow container -->
-                            <div class="slideshow-container">
-
-                                <!-- Full-width images with number and caption text -->
-                                <div class="mySlides fade">
-                                <img src="/images/zapatillas/Fila 1.jpg">
-                                </div>
-            
-                                <div class="mySlides fade">
-                                <img src="/images/zapatillas/Fila 2.jpg">
-                                </div>
-                            
-                                <div class="mySlides fade">
-                                <img src="/images/zapatillas/Fila 3.jpg">
-                                </div>
-                            
-                                <!-- Next and previous buttons -->
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <div class="carrito-header">
+                        <div class="carrito-header-titulo-producto">
+                            <h1 class="titulo-carrito-header">Mi Carrito</h1>
+                            <span class="producto-carrito-header">1 Producto</span>
+                        </div>
+                        <div class="ayuda-contenedor">
+                            <a class="seguir-comprando" href="/" title="Seguir Comprando">Seguir Comprando</a>
+                            <p>¿Necesitás ayuda? 0810-888-3398</p>
+                        </div>
+                    </div>
+                    <div class="contenedor-producto">
+                        <div class="segundo-contenedor-producto">
+                            <div class="basura-icon">
+                                <i class="fas fa-trash-alt"></i>
                             </div>
-                            <br>
-                            
-                            <!-- The dots/circles -->
-                            <div style="text-align:center">
-                                <span class="dot" onclick="currentSlide(1)"></span>
-                                <span class="dot" onclick="currentSlide(2)"></span>
-                                <span class="dot" onclick="currentSlide(3)"></span>
+                            <div class="imagen-producto-carrito">
+                                <img class="imagen-producto" src="../images/zapatillas/jorda-jbalbin.jpeg">
+                            </div>
+                            <div class="nombre-item">
+                                <p>Jordan 1 Retro High J Balvin</p>
+                            </div>
+                            <div class="contenedor-informacion-producto">
+                                <div class="informacion-producto">
+                                    <p class="talle">Talle 40</p>
+                                    <a href="/" class="editar-producto">Editar Producto</a>
+                                </div>
+                            </div>
+                            <div class="precio-cantidad-contenedor">
+                                <div class="cantidad-selector">
+                                    <p>Cantidad</p>
+                                    <select name="select" class="selector-cantidad">
+                                        <option value="value1">1</option>
+                                        <option value="value2">2</option>
+                                        <option value="value3">3</option>
+                                        <option value="value4">4</option>
+                                        <option value="value5">5</option>
+                                        <option value="value6">6</option>
+                                        <option value="value7">7</option>
+                                        <option value="value8">8</option>
+                                        <option value="value9">9</option>
+                                        <option value="value10">10</option>
+                                    </select>
+                                </div>
+                                <div class="cantidad-precio-item">
+                                    <p class="total-precio">Total</p>
+                                    <p class="precio-zapas">$4</p> 
+                                </div>
                             </div>
                         </div>
-                        <div id="description-product">
-
-                            <div class="product-title">
-                                <h1>ZAPATILLA FILA TREND 2.0</h1>
-                            </div>
-                            <div class="product-price">
-                                <p>$6.790,00</p>
-                            </div>
-                            <div class="product-cuotas">
-                                <p style="text-decoration: underline; font-size: 20px;">Ver cuotas</p>
-                            </div>
-                            <div class="product-talle">
-                                <section class="form-talle">
-                                    <select name="talle" id="talle">
-                                        <option value="" disabled selected>Selecciona un talle</option>
-                                        <option value="35">35</option>
-                                        <option value="36">36</option>
-                                        <option value="37">37</option>
-                                        <option value="38">38</option>
-                                        <option value="39">39</option>
-                                        <option value="40">40</option>
-                                        <option value="41">41</option>
-                                        <option value="42">42</option>
-                                        <option value="43">43</option>
-                                        <option value="44">44</option>
-                                        <option value="45">45</option>
-                                        
-                                    </select>
-                                </section>
-                            </div>
-
-                            <div class="product-carrito">
-                                <div class="field login">
-                                    <button type="button">
-                                        <a href="/" style="text-decoration: none; color: inherit; text-transform: uppercase;">Agregar al Carrito</a>
-                                    </button>
+                    </div>
+                    <div class="contenedor-menu-derecha">
+                        <div class="contenedor-codigo-promocional">
+                            <p class="texto-codigo">¿Tenés un código de promoción?</p>
+                            <div class="boton-input-codigo">
+                                <div class="input-codigo">
+                                    <input type="text" id="input-codigo2" name="Nombre" required minlength="4" maxlength="8" size="10" placeholder="Ingresá tu código">
+                                </div>
+                                <div class="boton-codigo">
+                                    <button class="boton-codigo2" type="submit">Validar</button>
                                 </div>
                             </div>
-                            <div class="product-details">
-                                <h3>Descripción</h3>
-                                <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
-                                <div class="panel">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt.</p>
+                        </div>
+                        <div class="contenedor-costo-envio">
+                            <p class="texto-envio">Calcuá el costo de envío</p>
+                            <div class="boton-input-envio">
+                                <div class="input-envio">
+                                    <input type="text" id="input-envio2" name="Nombre" required minlength="4" maxlength="8" size="10" placeholder="Código Postal">
+                                </div>
+                                <div class="boton-envio">
+                                    <button class="boton-envio2" type="submit">Calcular</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="listado-resumen">
+                            <div class="boton-comprar">
+                                <button class="boton-comprar2">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recomendados">
+                        <div class="lista-productos-recomendados">
+                            <div class="titulo-recomendados">
+                                <h3 class="titulo-recomendados2">Recomendados para vos</h3>
+                            </div>
+                            <div class="contenedor-zapatillas-recomendadas">
+                                <div class="zapatillas-recomendadas">
+                                    <div class="zapatilla1">   
+                                        <div class="imagen-zapatilla1">
+                                            <img src="../images/zapatillas/vans-mas-vendidas.jpeg" class="vans">
+                                            <!-- agregar boton favoritos -->
+                                            <div>
+                                                <p class="titulo-zapatilla">Vans Old Skook Black/Brown</p>
+                                            </div>
+                                            <div>
+                                                <p class="precio-zapatilla">$4</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="zapatilla2">
+                                        <img src="../images/zapatillas/adidas-mas-vendidas.jpg" class="adidas">
+                                        <!-- agregar boton favoritos -->
+                                        <div>
+                                            <p class="titulo-zapatilla">Adidas Yeezy Cream White</p>
+                                        </div>
+                                        <div>
+                                            <p class="precio-zapatilla">$4</p>
+                                        </div>
+                                    </div>
+                                    <div class="zapatilla3">
+                                        <img src="../images/zapatillas/nike-mas-vendido.jpg" class="nike">
+                                        <!-- agregar boton favoritos -->
+                                        <div>
+                                            <p class="titulo-zapatilla">Nike AirMax 97 Metallic Gold</p>
+                                        </div>
+                                        <div>
+                                            <p class="precio-zapatilla">$4</p>
+                                        </div>
+                                    </div>
+                                    <div class="zapatilla4">
+                                        <img src="../images/zapatillas/vans-old-skook-pink.jpeg" class="vans">
+                                        <!-- agregar boton favoritos -->
+                                        <div class="titulo-zapatilla4">
+                                            <p>Vans Old Skook Pink</p>
+                                        </div>
+                                        <div>
+                                            <p class="precio-zapatilla4">$4</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-        </div>
-
+            </div>
+        </section>
     </main>
+
     <footer id="jumpstore-footer">
 
         <div class="black-area">
@@ -299,8 +333,5 @@
         </div>
     </footer>
 <script src="/js/script.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/js/detailProduct.js"></script>
-
 </body>
 </html>
