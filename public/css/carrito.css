@@ -134,10 +134,7 @@
     /* justify-content: flex-end; */
     margin: 0  0 0 10%;
 }
-.contenedor-codigo-promocional{
-    /* display: flex; */
-    /* flex-direction: column; */
-}
+
 .texto-codigo{
     text-align: right;
     margin: 0;
@@ -147,22 +144,14 @@
     font-size: 16px;
     font-weight: 500;
 } 
-.input-codigo{
-    /* position: absolute; */
-    /* top: 310px; */
-    /* right: 530px; */
-}
+
 #input-codigo2{
     width: 220px;
     padding: 10px;
     border: 0.2px solid black;
     border-radius: 3px;
 }
-.boton-codigo{
-    /* position: absolute; */
-    /* right: 392px; */
-    /* top: 310px; */
-}
+
 .boton-codigo2{
     height: 40px;
     width: 135px;
@@ -180,10 +169,7 @@
     font-weight: 500;
 }
 
-.input-envio{
-    /* position: absolute; */
-    /* right: 529px; */
-}
+
 
 #input-envio2{
     width: 220px;
@@ -202,11 +188,6 @@
     border: 1px solid black;
 }
 
-.boton-comprar{
-    /* position: absolute; */
-    /* right: 392px; */
-    /* top: 540px; */
-}
 .boton-comprar2{
     width: 361px;
     height: 38px;
