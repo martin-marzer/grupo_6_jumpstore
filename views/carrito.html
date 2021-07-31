@@ -8,7 +8,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/images/logo/jumpstore icono.jpg" sizes="32x32">
     <title>Carrito</title>
-</head>
 <body>
     <header class="main-header">
 
@@ -111,79 +110,85 @@
                             <p>¿Necesitás ayuda? 0810-888-3398</p>
                         </div>
                     </div>
-                <div style="display:flex">
+                    <div class="contenedor-principal">
 
-                    <div class="contenedor-producto">
-                        <div class="segundo-contenedor-producto">
-                            <div class="basura-icon">
-                                <i class="fas fa-trash-alt"></i>
-                            </div>
+                        <div class="contenedor-producto">
+
                             <div class="imagen-producto-carrito">
                                 <img class="imagen-producto" src="../images/zapatillas/jorda-jbalbin.jpeg">
                             </div>
-                            <div class="nombre-item">
-                                <p>Jordan 1 Retro High J Balvin</p>
-                            </div>
-                            <div class="contenedor-informacion-producto">
-                                <div class="informacion-producto">
-                                    <p class="talle">Talle 40</p>
-                                    <a href="/" class="editar-producto">Editar Producto</a>
+                            <div class="contenedor-partes">
+                                <div class="parte-arriba">
+                                    <div class="contenedor-texto-producto">
+                                        <div class="nombre-item">
+                                            <p>Jordan 1 Retro High J Balvin</p>
+                                        </div>
+                                        <div class="basura-icon">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="precio-cantidad-contenedor">
-                                <div class="cantidad-selector">
-                                    <p>Cantidad</p>
-                                    <select name="select" class="selector-cantidad">
-                                        <option value="value1">1</option>
-                                        <option value="value2">2</option>
-                                        <option value="value3">3</option>
-                                        <option value="value4">4</option>
-                                        <option value="value5">5</option>
-                                        <option value="value6">6</option>
-                                        <option value="value7">7</option>
-                                        <option value="value8">8</option>
-                                        <option value="value9">9</option>
-                                        <option value="value10">10</option>
-                                    </select>
-                                </div>
-                                <div class="cantidad-precio-item">
-                                    <p class="total-precio">Total</p>
-                                    <p class="precio-zapas">$4</p> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contenedor-menu-derecha">
-                        <div class="contenedor-codigo-promocional">
-                            <p class="texto-codigo">¿Tenés un código de promoción?</p>
-                            <div class="boton-input-codigo">
-                                <div class="input-codigo">
-                                    <input type="text" id="input-codigo2" name="Nombre" required="" minlength="4" maxlength="8" size="10" placeholder="Ingresá tu código">
-                                </div>
-                                <div class="boton-codigo">
-                                    <button class="boton-codigo2" type="submit">Validar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contenedor-costo-envio">
-                            <p class="texto-envio">Calcuá el costo de envío</p>
-                            <div class="boton-input-envio">
-                                <div class="input-envio">
-                                    <input type="text" id="input-envio2" name="Nombre" required="" minlength="4" maxlength="8" size="10" placeholder="Código Postal">
-                                </div>
-                                <div class="boton-envio">
-                                    <button class="boton-envio2" type="submit">Calcular</button>
+                                <div class="parte-abajo">
+                                    <div class="contenedor-informacion-producto">
+                                        <div class="informacion-producto">
+                                            <p class="talle">Talle 40</p>
+                                            <a href="/" class="editar-producto">Editar Producto</a>
+                                        </div>
+                                        <div class="precio-cantidad-contenedor">
+                                            <div class="cantidad-selector">
+                                                <p>Cantidad</p>
+                                                <select name="select" class="selector-cantidad">
+                                                    <option value="value1">1</option>
+                                                    <option value="value2">2</option>
+                                                    <option value="value3">3</option>
+                                                    <option value="value4">4</option>
+                                                    <option value="value5">5</option>
+                                                    <option value="value6">6</option>
+                                                    <option value="value7">7</option>
+                                                    <option value="value8">8</option>
+                                                    <option value="value9">9</option>
+                                                    <option value="value10">10</option>
+                                                </select>
+                                            </div>
+                                            <div class="cantidad-precio-item">
+                                                <p class="total-precio">Total</p>
+                                                <p class="precio-zapas">$4</p> 
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="listado-resumen">
-                            <div class="boton-comprar">
-                                <button class="boton-comprar2">Comprar</button>
+                        <div class="contenedor-menu-derecha">
+                            <div class="contenedor-codigo-promocional">
+                                <p class="texto-codigo">¿Tenés un código de promoción?</p>
+                                <div class="boton-input-codigo">
+                                    <div class="input-codigo">
+                                        <input type="text" id="input-codigo2" name="Nombre" required="" minlength="4" maxlength="8" size="10" placeholder="Ingresá tu código">
+                                    </div>
+                                    <div class="boton-codigo">
+                                        <button class="boton-codigo2" type="submit">Validar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-costo-envio">
+                                <p class="texto-envio">Calcuá el costo de envío</p>
+                                <div class="boton-input-codigo">
+                                    <div class="input-envio">
+                                        <input type="text" id="input-envio2" name="Nombre" required="" minlength="4" maxlength="8" size="10" placeholder="Código Postal">
+                                    </div>
+                                    <div class="boton-envio">
+                                        <button class="boton-codigo2" type="submit">Calcular</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listado-resumen">
+                                <div class="boton-comprar">
+                                    <button class="boton-comprar2">Comprar</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-    
+                    </div>    
                     <div class="recomendados">
                         <div class="lista-productos-recomendados">
                             <div class="titulo-recomendados">
@@ -191,54 +196,46 @@
                             </div>
                             <div class="contenedor-zapatillas-recomendadas">
                                 <div class="zapatillas-recomendadas">
-                                    <div class="zapatilla1">   
-                                        <div class="imagen-zapatilla1">
-                                            <img src="../images/zapatillas/vans-mas-vendidas.jpeg" class="vans">
-                                            <!-- agregar boton favoritos -->
-                                            <div>
-                                                <p class="titulo-zapatilla">Vans Old Skook Black/Brown</p>
-                                            </div>
-                                            <div>
-                                                <p class="precio-zapatilla">$4</p>
-                                            </div>
+                                    <div class="zapatilla">
+                                        <div class="imagen-zapatillas">
+                                            <img src="../images/zapatillas/vans-mas-vendidas.jpeg">
+                                        </div>
+                                        <div class="texto-zapatilla">
+                                            <p class="titulo-zapatilla">Vans Old Skook Black/Brown</p>
+                                            <p class="precio-zapatilla">$4</p>
                                         </div>
                                     </div>
-                                    <div class="zapatilla2">
-                                        <img src="../images/zapatillas/adidas-mas-vendidas.jpg" class="adidas">
-                                        <!-- agregar boton favoritos -->
-                                        <div>
+                                    <div class="zapatilla">
+                                        <div class="imagen-zapatillas">
+                                            <img src="../images/zapatillas/adidas-mas-vendidas.jpg">
+                                        </div>
+                                        <div class="texto-zapatilla">
                                             <p class="titulo-zapatilla">Adidas Yeezy Cream White</p>
-                                        </div>
-                                        <div>
                                             <p class="precio-zapatilla">$4</p>
                                         </div>
                                     </div>
-                                    <div class="zapatilla3">
-                                        <img src="../images/zapatillas/nike-mas-vendido.jpg" class="nike">
-                                        <!-- agregar boton favoritos -->
-                                        <div>
+                                    <div class="zapatilla">
+                                        <div class="imagen-zapatillas">
+                                            <img src="../images/zapatillas/nike-mas-vendido.jpg">
+                                        </div>
+                                        <div class="texto-zapatilla">
                                             <p class="titulo-zapatilla">Nike AirMax 97 Metallic Gold</p>
-                                        </div>
-                                        <div>
                                             <p class="precio-zapatilla">$4</p>
                                         </div>
                                     </div>
-                                    <div class="zapatilla4">
-                                        <img src="../images/zapatillas/vans-old-skook-pink.jpeg" class="vans">
-                                        <!-- agregar boton favoritos -->
-                                        <div class="titulo-zapatilla4">
-                                            <p>Vans Old Skook Pink</p>
+                                    <div class="zapatilla">
+                                        <div class="imagen-zapatillas">
+                                            <img src="../images/zapatillas/vans-old-skook-pink.jpeg">
                                         </div>
-                                        <div>
-                                            <p class="precio-zapatilla4">$4</p>
+                                        <div class="texto-zapatilla">
+                                            <p class="titulo-zapatilla">Vans Old Skook Pink</p>
+                                            <p class="precio-zapatilla">$4</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </section>
     </main>
 

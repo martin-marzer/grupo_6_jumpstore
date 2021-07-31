@@ -1,7 +1,8 @@
 /* General */
-/* *{
-    border: 1px solid tomato;
-} */
+.main-carrito{
+    margin-top: 40px ;
+    margin-bottom: 40px;
+}
 
 
 /* Header carrito */
@@ -40,8 +41,9 @@
 .contenedor-producto{
     border: 1px solid gray;
     border-radius: 5px;
-    /* width: 765px; */
-    width: 60%;
+    width: 65%;
+    display: flex;
+    padding: 10px;
 }
 
 .segundo-contenedor-producto{
@@ -50,35 +52,33 @@
 }
 
 .basura-icon{
-    position: absolute;
     font-size: 20px;
-    left: 95%;
-    top: 2px;
 }
 
 .imagen-producto-carrito{
-    margin: 0px 6px;
-    width: 120px;
+    width: 30%;
 }
 .imagen-producto{
-    width: 125px;
-    height: 100px;
-    margin: 0 9,5px;
+    width: 100%;
 }
-.nombre-item{ 
-    position: absolute;
-    left: 140px;
-    top: 0px;
+.contenedor-partes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+}
+.contenedor-texto-producto{
+    display: flex;
+    justify-content: space-between;
 }
 .nombre-item p{
     margin: 0;
     font-weight: bold;
 }
 
-.informacion-producto{
-    position: absolute;
-    left: 140px;
-    top: 25px;
+.contenedor-informacion-producto{
+    display: flex;
+    justify-content: space-between;
 }
 
 .talle{
@@ -90,106 +90,77 @@
 }
 .precio-cantidad-contenedor{
     display: flex;
-    position: absolute;
-    left: 500px;
-    top: 40px;
     font-size: 14px;
-    align-items: top;
+    padding-right: 20%;
 }
 
 .cantidad-precio-item{
     margin-left: 10px;
 }
 .precio-zapas{
-    position: absolute;
-    right: -22px;
-    top: 16px;
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 2px;
 }
 .total-precio{
-    position: absolute;
-    right: -25px;
-    top: 0px;
     margin-bottom: 0;
 }
 
 .selector-cantidad{
     height: 30px;
-    flex-direction: column;
-    margin-left: 1px;
+    margin-top: 20%;
+    margin-left:12%;
 }
 .cantidad-selector p{
     margin-bottom: 0;
 }
 
 /* Menu Derecha */
-.contenedor-menu-derecha{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: flex-end; */
-    width: 30%;
-    border: 1px solid red;
-    /* justify-content: flex-end; */
-    margin: 0  0 0 10%;
-}
-
 .texto-codigo{
-    text-align: right;
     margin: 0;
-    /* position: absolute; */
-    /* right: 510px; */
-    /* top: 284px; */
     font-size: 16px;
     font-weight: 500;
 } 
 
 #input-codigo2{
-    width: 220px;
+    width: 100%;
     padding: 10px;
     border: 0.2px solid black;
     border-radius: 3px;
 }
-
+.boton-input-codigo{
+    position: relative;
+    margin: 15px 0;
+}
+.boton-codigo,.boton-envio{
+    position: absolute;
+    top: 1%;
+    right: 0%;
+}
 .boton-codigo2{
     height: 40px;
-    width: 135px;
+    width: 130%;
     background-color: black;
     color: white;
     border-radius: 4px;
     border: 1px solid black;
+    margin-left: -30%;
 }
 .texto-envio{
     margin: 0;
-    /* position: absolute; */
-    /* top: 384px; */
-    /* right: 575px; */
     font-size: 16px;
     font-weight: 500;
 }
 
-
-
 #input-envio2{
-    width: 220px;
+    width: 100%;
     padding: 10px;
     border: 0.2px solid black;
     border-radius: 3px;
 }
-.boton-envio2{
-    /* position: absolute; */
-    /* right: 392px; */
-    /* height: 40px; */
-    /* width: 135px; */
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    border: 1px solid black;
-}
 
 .boton-comprar2{
-    width: 361px;
+    width: 100%;
     height: 38px;
     background-color: black;
     color: white;
@@ -200,53 +171,94 @@
 .titulo-zapatilla{
     margin-bottom: 5px;
 }
-.precio-zapatilla{
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0;
+.recomendados{
+    margin-top: 20px;
 }
 .titulo-recomendados2{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
     margin-bottom: 50px;
-    margin-top:250px;
+    text-align: center;
 }
 .zapatillas-recomendadas{
     display: flex;
 }
-.zapatilla1{
+.zapatilla{
     margin-right: 65px;
+    width: 100%;
 }
-.precio-zapatilla1{
-    font-weight: 500;
-}
-.vans{
-    margin-bottom: 10px;
-    border-radius: 5px;
-    width: 295px;
-    height: 194px;
-}
-.zapatilla2{
-    margin-right: 65px;
-}
-.adidas{
-    margin-bottom: 10px;
-    border-radius: 5px;
-    width: 295px;
-    height: 194px;
-}
-.zapatilla3{
-    margin-right: 65px;
-}
-.nike{
-    margin-bottom: 10px;
-    border-radius: 5px;
-    width: 295px;
-    height: 194px;
+.zapatilla:last-of-type{
+    margin: 0;
 }
 
-.precio-zapatilla4{
+.zapatilla img{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.precio-zapatilla{
+    font-weight: 500;
     margin-top: 22px;
     font-size: 20px;
-    font-weight: 700;
+}
+
+
+
+
+
+@media (max-width: 767px){
+    .contenedor-producto{
+        margin-bottom: 20px;
+        width: 100% !important;
+    }
+    .zapatillas-recomendadas{
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .zapatilla{
+        margin: 0;
+    }
+    .imagen-producto{
+        height: 15vw;
+    }
+    .texto-codigo{
+        text-align: center;
+    }
+    .ayuda-contenedor{
+        margin-bottom: 20px;
+    }
+    .carrito-header-titulo-producto{
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 768px) {
+    .contenedor-principal{
+        display: flex;
+    }
+    .contenedor-producto{
+        height: 100%;
+    }
+    .imagen-producto{
+        height: 80%;
+    }
+    .contenedor-menu-derecha{
+        width: 30%;
+        margin: 0 0 0 5%;
+    }
+    .texto-codigo{
+        text-align: right;
+    }
+    .recomendados{
+        margin-top: 200px;
+    }
+}
+
+@media (min-width: 1200px){
+    .imagen-producto{
+        height: 100%;
+    }
 }
