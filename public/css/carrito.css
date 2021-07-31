@@ -242,9 +242,6 @@
     .contenedor-producto{
         height: 100%;
     }
-    .imagen-producto{
-        height: 80%;
-    }
     .contenedor-menu-derecha{
         width: 30%;
         margin: 0 0 0 5%;
@@ -254,11 +251,5 @@
     }
     .recomendados{
         margin-top: 200px;
-    }
-}
-
-@media (min-width: 1200px){
-    .imagen-producto{
-        height: 100%;
     }
 }
