@@ -86,7 +86,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: flex;
     align-items: center;
 }
-#jumpstore-box {
+#jumpstore-box, #jumpstore-box-mobile {
     display: flex;
     width: 100%;
 }
@@ -438,6 +438,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     #jumpstore-header-flex {
         position: relative;
+        padding: 3% 0;
     }
 
     #jumpstore-right-menu {

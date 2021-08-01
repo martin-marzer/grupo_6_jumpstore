@@ -90,7 +90,7 @@
         <div class="overlay-content">
 
             <div id="jumpstore-search-mobile">
-                <form id="jumpstore-box">
+                <form id="jumpstore-box-mobile">
                     <input class="fulltext-search-box" type="text" placeholder="Buscar">
                     <button  type="submit" class="btn-buscar">
                         <i class="fas fa-search"></i>
@@ -109,35 +109,37 @@
     </nav>
     <main>
         <div class="container">
-            
-            <form class="formulario">
-                <h2 style="text-transform: uppercase;" class="txt-title">Entrar</h2>
-                <h2 class="txt-content">¡Bienvenido de nuevo! Inicié sesión en su cuenta de Jumpstore</h2>
-                <div class="field username">
-                    <input type="text" placeholder="Nombre de usuario">
-                </div>
+            <div id="jumpstore-form">
+                <form class="formulario">
+                    <h2 style="text-transform: uppercase;" class="txt-title">Entrar</h2>
+                    <h2 class="txt-content">¡Bienvenido de nuevo! Inicié sesión en su cuenta de Jumpstore</h2>
 
-                <div class="field email">
-                    <input type="email" placeholder="Email">
-                </div>
-                <div class="field psw">
-                    <input type="password" placeholder="Contraseña">
-                </div>
+                    <div class="field username">
+                        <input type="text" placeholder="Nombre de usuario">
+                    </div>
 
-                <div class="field cancelar">
-                    <button type="reset"> Borrar datos</button>
-                </div>
-                <div class="field login">
-                    <button type="button">
-                        <a href="/" style="text-decoration: none; color: inherit;">Inicia sesión</a>
-                    </button>
-                </div>
-                <div class="miembro">
-                    Crear cuenta
-                    <a href="/register" style="color: black; text-decoration-line: underline !important;">Registrarse</a>
+                    <div class="field email">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="field psw">
+                        <input type="password" placeholder="Contraseña">
+                    </div>
                     
-                </div>
-            </form>
+                    <div class="field cancelar">
+                        <button type="reset">Borrar datos</button>
+                    </div>
+                    <div class="field registrar">
+                        <button type="button">
+                            <a href="/" style="text-decoration: none; color: inherit;">Iniciar sesión</a>
+                        </button>
+                    </div>
+                    <div class="miembro">
+                        ¿No tienes cuenta?
+                        <a href="/register" style="color: black; text-decoration-line: underline !important;">Registrarse</a>
+                    </div>
+                   
+                </form>
+            </div>    
         </div>
     </main>
     <footer id="jumpstore-footer">

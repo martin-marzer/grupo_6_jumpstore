@@ -1,5 +1,4 @@
 /* el body chaval */
-
 #jumpstore-page {
     margin-bottom: 100px;
 }
@@ -182,11 +181,14 @@
 @media (max-width:767px){
     #jumpstore-product {
         width: 95%;
-        margin: 0 auto;
+        margin: 5% auto;
     }
 }
 
 @media (min-width:768px) {
+    #jumpstore-product {
+        margin: 2% auto;
+    }
     #content-page {
     display: flex;
     }
