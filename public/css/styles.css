@@ -22,11 +22,7 @@ a {
     color: white;
     transition: 0s all !important;
 }
-a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
-    cursor: pointer;
-    -webkit-transition: 0.3s all;
-    transition: 0.3s all;
-}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -52,9 +48,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* header */
 .main-header {
-    padding: 40px 0;
     background-color: black;
     color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    transition: top 0.5s;
+    z-index: 999;
 }
 
 .row {
@@ -63,23 +62,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 #jumpstore-header-flex {
     display: flex;
+    padding: 3% 0;
 }
 #jumpstore-menu-mobile button, #jumpstore-cart button, #jumpstore-user button  {
     background-color: black;
     border: none;
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 #jumpstore-logo {
     display: flex;
     align-items: center;
 }
-#jumpstore-header-flex, #jumpstore-header-flex #jumpstore-logo, #jumpstore-header-flex #jumpstore-search{
+#jumpstore-header-flex, #jumpstore-header-flex, #jumpstore-header-flex #jumpstore-search{
     width: 100%;
 }
 #jumpstore-search {
     display: flex;
     align-items: center;
+}
+#jumpstore-box {
+    display: flex;
+    width: 100%;
 }
 #jumpstore-search .fulltext-search-box {
     width: 100%;
@@ -148,8 +152,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 #jumpstore-navbar {
+    background-color: rgb(255, 255, 255);
     border-bottom: 1px solid black;
-    
 }
 #jumpstore-navbar ul{
     justify-content: center;
@@ -183,15 +187,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* nav mobile */
+.overlay-content {
+    position: relative;
+}
 .overlay-content ul {
     padding-top: 10%;    
     list-style: none;
-    padding-left: 0px;
 }
-.overlay-content li {
-    margin-left: 50px;
-    margin-right: 50px;
-}
+
 #jumpstore-logo-mobile {
     padding-left: 32px;
     width: 70%;
@@ -218,17 +221,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: 0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 40px; /* Place content 60px from the top */
+  padding-top: 5%; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
+
 /* The navigation menu links */
-.sidenav a {
-    padding: 30px 8px 20px 8px;
+.sidenav .overlay-content ul a {
+    padding: 6% 10%;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     display: block;
-    transition: 0.3s;
+    transition: 0.5s;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -240,11 +244,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    position: absolute;
+    top: -2%;
+    right: 5%;
+    font-size: 8vw;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -347,9 +350,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         display: flex;
     }
     #jumpstore-search-mobile {
-        width: 95%;
-        margin: auto;
-        margin-top: 20px;
+        width: 70%;
+        margin: 0 0 0 5%;
     }
     #jumpstore-menu-mobile, #jumpstore-logo, #jumpstore-right-menu {
         justify-content: center !important;
@@ -413,6 +415,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .black-area {
         display: none !important;
     }
+    #jumpstore-logo {
+        width: 60%;
+    }
 
 
 }
@@ -420,6 +425,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media (min-width: 768px){
     .container {
         width: 750px;
+    }
+    a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
+        cursor: pointer;
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all;
     }
     /* header */
     #jumpstore-header-flex #jumpstore-menu-mobile, #jumpstore-header-flex #jumpstore-logo, #jumpstore-header-flex #jumpstore-search, #jumpstore-header-flex #jumpstore-right.menu {
@@ -473,6 +483,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .black-area-mobile {
         display: none !important;
     }
+    
 }
 
 @media (min-width: 992px){

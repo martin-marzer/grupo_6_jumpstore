@@ -11,11 +11,11 @@
 <body>
     <header class="main-header">
 
-        <div class="container">
+        <div  id="jumpstore-header">
 
-            <div class="row">
+            <div class="container">
 
-                <div id="jumpstore-header">
+                <div class="row">
 
                     <div id="jumpstore-header-flex">
 
@@ -32,10 +32,12 @@
                         </div>
 
                         <div id="jumpstore-search">
-                            <input class="fulltext-search-box" type="text">
-                            <button type="submit" class="btn-buscar">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <form id="jumpstore-box">
+                                <input class="fulltext-search-box" type="text" placeholder="Buscar">
+                                <button  type="submit" class="btn-buscar">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
                         </div>
                         <div id="jumpstore-right-menu"> 
                             <div id="jumpstore-user">
@@ -52,46 +54,52 @@
                         </div>
                         
                     </div>
-                    <div id="jumpstore-search-mobile">
-                        <input class="fulltext-search-box" type="text">
-                        <button type="submit" class="btn-buscar">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+
 
                 </div>
 
             </div>
 
         </div>
-    </header>
-    <nav id="jumpstore-navbar">
+
+        <nav id="jumpstore-navbar">
         <div class="container">
             <div class="row">
                 <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/product/detail">Productos</a></li>
-                    <li><a href="/">Ofertas</a></li>
-                    <li><a href="/">Novedades</a></li>
-                    <li><a href="/">Favoritos</a></li>
+                    <li><a href="/">Inicio</li></a>
+                    <li><a href="/product/detail">Productos</li></a>
+                    <li><a href="/">Ofertas</li></a>
+                    <li><a href="/">Novedades</li></a>
+                    <li><a href="/">Favoritos</li></a>
                 </ul>
             </div>
         </div>
-    </nav>
+        </nav>
+
+    </header>
+
+    <div id="opacity-mobile"></div>
     <nav id="jumpstore-navbar-mobile" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        
+        
 
         <div class="overlay-content">
-            <div id="jumpstore-logo-mobile">
-                <img src="/images/logo/jumpstore logo.png" alt="logo desktop" class="logo">
-            </div>
 
+            <div id="jumpstore-search-mobile">
+                <form id="jumpstore-box">
+                    <input class="fulltext-search-box" type="text" placeholder="Buscar">
+                    <button  type="submit" class="btn-buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/product/detail">Productos</a></li>
-                <li><a href="/">Ofertas</a></li>
-                <li><a href="/register">Ingresar</a></li>
-                <li><a href="/">Favoritos</a></li>
+                <li><a href="/">Inicio</li></a>
+                <li><a href="/product/detail">Productos</li></a>
+                <li><a href="/">Ofertas</li></a>
+                <li><a href="/register">Ingresar</li></a>
+                <li><a href="/">Favoritos</li></a>
             </ul>
         </div>
     </nav>

@@ -12,17 +12,31 @@ function closeNav() {
 }
 
 // acordion del footer
-var acc = document.getElementsByClassName("jumpstore-arrow");
-var i;
+let acc = document.getElementsByClassName("jumpstore-arrow");
+let i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var panel = this.nextElementSibling;
+    let panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
     }
   });
+}
+
+
+// acá es para la barra mobile para que aparezca cuando haces para arriba
+
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".main-header").style.top = "0";
+  } else {
+    document.querySelector(".main-header").style.top = "-100%";
+  }
+  prevScrollpos = currentScrollPos;
 }

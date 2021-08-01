@@ -1,9 +1,10 @@
 /* el body chaval */
+
 #jumpstore-page {
     margin-bottom: 100px;
 }
 .breadcrumbs {
-    padding: 10px;
+    padding: 10px 10px 10px 0;
 }
 .breadcrumbs-item {
     display: inline-block;
@@ -110,11 +111,18 @@
     object-fit: cover;
 }
 #description-product h1 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 30px 0 0 0;
 }
-#description-product .product-price {
-    font-size: 30px;
+#description-product .product-price p {
+    font-weight: 500;
+}
+#description-product .product-price p, #description-product .product-cuotas p {
+    font-size: 22px;
+    margin: 30px 0;
+}
+#description-product .product-cuotas p {
+    text-decoration: underline;
 }
 .product-talle select {
     outline: none;
@@ -125,7 +133,8 @@
 }
 .product-carrito {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 35px;
+    padding-bottom: 20px;
 }
 
 .field button {
@@ -170,6 +179,12 @@
     text-align: justify;
     line-height: 25px;
 }
+@media (max-width:767px){
+    #jumpstore-product {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
 
 @media (min-width:768px) {
     #content-page {
@@ -183,14 +198,16 @@
         transition: 0.5s;
     }
     #description-product {
-        flex-basis: 30%;
+        width: 40%;
         margin: 0 0 0 10%;
+    }
+    #description-product h1 {
+        font-size: 30px;
     }
 }
 @media (min-width:992px) {
     #img-product .mySlides img {
-        width: 700px;
-        height: 600px;
+        height: 500px
     }
 }
 
