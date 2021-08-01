@@ -12,6 +12,11 @@ img {
     vertical-align: middle;
     border: 0;
 }
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 a {
     margin: 0;
     padding: 0;
@@ -62,12 +67,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 #jumpstore-header-flex {
     display: flex;
-    padding: 3% 0;
+    padding: 5% 0;
 }
 #jumpstore-menu-mobile button, #jumpstore-cart button, #jumpstore-user button  {
     background-color: black;
     border: none;
-    font-size: 4vw;
+    font-size: 6vw;
 }
 
 #jumpstore-logo {
@@ -116,10 +121,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 #jumpstore-search-mobile .fulltext-search-box {
     width: 100%;
-    height: 7vw;
+    height: 9vw;
     border-radius: 0px;
     color: #999999;
-    font-size: 13px;
+    font-size: 3vw;
     letter-spacing: 0.01em;
     padding-left: 10px;
     background: white;
@@ -127,6 +132,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     outline: none;
 }
 #jumpstore-search-mobile  button.btn-buscar {
+    font-size: 4vw;
     position: relative;
     right: 0px;
     background-repeat: no-repeat;
@@ -134,8 +140,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background-color: white;
     border: none;
     border-radius: 0px;
-    width: 45px;
-    height: 7vw;
+    width: 20%;
+    height: 9vw;
     outline: none;
 }
 #jumpstore-header i:hover {
@@ -195,11 +201,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     list-style: none;
 }
 
-#jumpstore-logo-mobile {
-    padding-left: 32px;
-    width: 70%;
-    padding-top: 1%;
-}
 #opacity-mobile {
     position: fixed;
     z-index: 9999;
@@ -228,9 +229,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* The navigation menu links */
 .sidenav .overlay-content ul a {
-    padding: 6% 10%;
+    padding: 10%;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     display: block;
     transition: 0.5s;
     text-transform: uppercase;
@@ -247,7 +248,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     position: absolute;
     top: -2%;
     right: 5%;
-    font-size: 8vw;
+    font-size: 10vw;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -350,8 +351,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         display: flex;
     }
     #jumpstore-search-mobile {
-        width: 70%;
-        margin: 0 0 0 5%;
+        width: 65%;
+        margin: 0 0 0 10%;
     }
     #jumpstore-menu-mobile, #jumpstore-logo, #jumpstore-right-menu {
         justify-content: center !important;
@@ -416,7 +417,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         display: none !important;
     }
     #jumpstore-logo {
-        width: 60%;
+        width: 70%;
     }
 
 
