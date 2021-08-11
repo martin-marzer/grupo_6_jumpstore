@@ -30,3 +30,6 @@ Elegimos estas paginas porque son interesantes propuestas, y referentes en el me
 
 ## Deploy
 * https://jumpstore.herokuapp.com/
+
+## Trello
+* https://trello.com/b/YTGnhdiP/jumpstore
