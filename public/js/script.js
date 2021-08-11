@@ -1,14 +1,18 @@
 // barra de navegacion para el celular  
+
+
 /* Set the width of the side navigation to 250px */
 function openNav() {
-  document.getElementById("jumpstore-navbar-mobile").style.width = "80%";
-  document.getElementById("opacity-mobile").style.display = "block";
+  document.getElementById("jumpstore-navbar-mobile").style.left = "0";
+  document.getElementById("opacity-mobile").style.opacity = "1";
+  document.getElementById("opacity-mobile").style.width = "100%";
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
-  document.getElementById("jumpstore-navbar-mobile").style.width = "0";
-  document.getElementById("opacity-mobile").style.display = "none";
+  document.getElementById("jumpstore-navbar-mobile").style.left = "-100%";
+  document.getElementById("opacity-mobile").style.opacity = "0";
+  document.getElementById("opacity-mobile").style.width = "0";
 }
 
 // acordion del footer
@@ -28,15 +32,29 @@ for (i = 0; i < acc.length; i++) {
 }
 
 
-// acá es para la barra mobile para que aparezca cuando haces para arriba
+// button to scroll up
 
-let prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".main-header").style.top = "0";
+let btn = $('.button-scroll');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
   } else {
-    document.querySelector(".main-header").style.top = "-100%";
+    btn.removeClass('show');
   }
-  prevScrollpos = currentScrollPos;
-}
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+ 
+
+
+
+
+
+
+
+
+// asaa

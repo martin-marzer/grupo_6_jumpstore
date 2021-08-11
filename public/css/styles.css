@@ -55,10 +55,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .main-header {
     background-color: black;
     color: white;
-    position: sticky;
-    position: -webkit-sticky;
-    transition: top 0.5s;
-    z-index: 999;
 }
 
 .row {
@@ -193,6 +189,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* nav mobile */
+
 .overlay-content {
     position: relative;
 }
@@ -200,26 +197,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding-top: 10%;    
     list-style: none;
 }
+.overlay-content ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
 
 #opacity-mobile {
+    transition: opacity 0.5s;
     position: fixed;
     z-index: 9999;
     padding-top: 0px;
     left: 0px;
     top: 0px;
-    width: 100%;
+    width: 0;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    display: none;
+    background-color: rgba(0,0,0,0.5);
+    opacity:  0;
+    
 }
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 80%; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 9999; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
+  left: -100%;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 5%; /* Place content 60px from the top */
@@ -231,7 +234,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .sidenav .overlay-content ul a {
     padding: 10%;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 5vw;
     display: block;
     transition: 0.5s;
     text-transform: uppercase;
@@ -244,11 +247,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* Position and style the close button (top right corner) */
+.search-close {
+    display: flex;
+}
 .sidenav .closebtn {
-    position: absolute;
-    top: -2%;
-    right: 5%;
-    font-size: 10vw;
+    font-size: 11vw;
+    margin-left: 10%;
+    height: 9vw;
+    margin-top: -3%;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -344,6 +350,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @media (max-width: 767px) {
     /* header */
+    .main-header {
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: 999;
+    }
     #jumpstore-header-flex {
         align-items: center;
     }
@@ -422,16 +434,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 }
+@media (min-width:600px) {
+    a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
+    cursor: pointer;
+    -webkit-transition: 0.3s all;
+    transition: 0.3s all;
+}
+}
 
 @media (min-width: 768px){
     .container {
         width: 750px;
     }
-    a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
-        cursor: pointer;
-        -webkit-transition: 0.3s all;
-        transition: 0.3s all;
-    }
+
     /* header */
     #jumpstore-header-flex #jumpstore-menu-mobile, #jumpstore-header-flex #jumpstore-logo, #jumpstore-header-flex #jumpstore-search, #jumpstore-header-flex #jumpstore-right.menu {
         width: 100%;
@@ -485,7 +500,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .black-area-mobile {
         display: none !important;
     }
-    
+    .button-scroll {
+        display: inline-block;
+        background-color: #656565;
+        width: 4vw;
+        height: 4vw;
+        text-align: center;
+        border-radius: 30%;
+        position: fixed;
+        bottom: 3vw;
+        right: 3vw;
+        transition: background-color .3s, opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+      }
+      .button-scroll i {
+        transform: rotateZ(180deg); 
+        font-size: 3vw;
+        line-height: 4vw;
+        color: #fff;
+      }
+      .button-scroll:hover {
+        cursor: pointer;
+        background-color: #b1b1b1;
+      }
+      .button-scroll:active {
+        background-color: #555;
+      }
+      .button-scroll.show {
+        opacity: 1;
+        visibility: visible;
+      }
 }
 
 @media (min-width: 992px){

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Productos</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/listProducts.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+
+        <div id="jumpstore-page" >
+            <div class="container">
+                <div class="jumpstore-content">
+                    <div class="select-results-flex">
+                        <div class="select-filter-container">
+                            <div class="select-container">
+                                <select name="sort-order" id="">
+                                    <option value="" class="most-relevant">Más relevantes</option>
+                                    <option value="" class="lowest-price">Precio más bajo</option>
+                                    <option value="" class="highest-price">Precio más alto</option>
+                                </select>
+                            </div>
+                            <div class="filter-container">
+                                <button type="button" class="btn">Filtro</button>
+                            </div>
+                        </div>
+                        <div class="results-container">
+                            <p> <strong>15.000</strong> Resultados</p>
+                        </div>
+                    </div>
+                    <div class="products-filter">
+                        <div class="filter-container-desktop">
+                            <div class="each-filter">
+                                <p class="categoria">marca</p>
+                                <div class="filter-scroll">
+                                    <div class="control-group">
+                                        <label class="control control-checkbox">
+                                            adidas
+                                                <input type="checkbox"/>
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            converse
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            fila
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            nike
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            puma
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            vans
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            under armor
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <!-- <label class="control control-checkbox">
+                                            Disabled
+                                                <input type="checkbox" disabled="disabled" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            Disabled & checked
+                                                <input type="checkbox" disabled="disabled" checked="checked" />
+                                            <div class="control_indicator"></div>
+                                        </label> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="each-filter">
+                                <p class="categoria">talle</p>
+                                <div class="filter-scroll">
+                                    <div class="control-group talle">
+                                        <label class="control control-checkbox">
+                                            35
+                                                <input type="checkbox"/>
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            36
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            37
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            38
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            39
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            41
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            42
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            43
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            44
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            45
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="each-filter">
+                                <p class="categoria">precio</p>
+                                <div class="filter-scroll">
+                                    <div class="control-group precio">
+                                        <label class="control control-checkbox">
+                                            $2000 - $4999
+                                                <input type="checkbox"/>
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            $5000 - $10000
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            $10000 - $14999
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        <label class="control control-checkbox">
+                                            $15000 o más
+                                                <input type="checkbox" />
+                                            <div class="control_indicator"></div>
+                                        </label>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="products-container">
+                            
+                            <% let articulosArr = articulos; %>
+                            <% articulos.forEach(articulo => { %>
+                              <%- include("./partials/listProducts", {nombre: articulo.nombre, descrip: articulo.descrip, linkID : articulosArr.indexOf(articulo) + 1, precio: articulo.precio, imagen: articulo.img[0]}) %>  
+                            <% }); %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+
+</body>
+</html>

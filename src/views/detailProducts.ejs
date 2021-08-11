@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zapatilla</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/detailProducts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+
+        <div id="jumpstore-page" >
+
+            <div id="box-breadcrumbs">
+                <div class="container">
+                    <ul class="breadcrumbs">
+                        <li class="breadcrumbs-item">
+                            <a href="/" class="breadcrumbs-link">JUMPSTORE</a>
+                        </li>
+                        <li class="breadcrumbs-item ">
+                            <a href="/products" class="breadcrumbs-link breadcrumbs-link-active last">Productos</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <section id="jumpstore-product">
+                <div class="container">
+                    <%- include("./partials/detailProduct",{precio: articuloId.precio, nombre: articuloId.nombre, imagenes: articuloId.img, descripcion: articuloId.descrip } ) %>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+      
+    <script src="/js/detailProducts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+
+</body>
+</html>

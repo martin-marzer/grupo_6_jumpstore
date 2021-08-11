@@ -1,0 +1,79 @@
+<div id="content-page">
+    <div id="img-product">
+        <!-- Slideshow container -->
+        <div id="image-slider" class="splide">
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="splide__track ">
+                
+                <ul class="splide__list ">
+                    <li class="splide__slide">
+                        <img src="<%= imagenes[0] %> ">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="<%= imagenes[1] %> ">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="<%= imagenes[2] %> ">
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+    <div id="description-product">
+
+        <div class="product-title">
+            <h1><%= nombre %></h1>
+        </div>
+        <div class="product-price">
+            <p><%= precio %></p>
+        </div>
+        <div class="product-cuotas">
+            <p>Ver cuotas</p>
+        </div>
+        <div class="product-talle">
+            <section class="form-talle">
+                <select name="talle" id="talle">
+                    <option value="" disabled selected>Selecciona un talle</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    
+                </select>
+            </section>
+        </div>
+
+        <div class="product-carrito">
+            <div class="field login">
+                <a href="/">
+                    <button type="button">
+                     <p>Agregar al Carrito</p>
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="product-details">
+            <h3>Descripción</h3>
+            <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+            <div class="panel">
+                <p><%= descripcion %></p>
+            </div>
+        </div>
+    </div>
+</div>

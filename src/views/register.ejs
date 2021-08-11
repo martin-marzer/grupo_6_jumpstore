@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <%- include("./partials/head") %>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+        <div class="container">
+            <div id="jumpstore-form">
+                <form class="formulario">
+                    <h2 style="text-transform: uppercase;" class="txt-title">Crear cuenta</h2>
+                    <h2 class="txt-content">Creá tu perfil de miembro de Jumpstore y obtené acceso anticipado a los mejores productos, inspiración y comunidad Jumpstore.</h2>
+
+                    <div class="field username">
+                        <input type="text" placeholder="Nombre de usuario">
+                    </div>
+
+                    <div class="field home">
+                        <input type="text" placeholder="Domicilio">
+                    </div>
+                    <div class="field email">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="field psw">
+                        <input type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="field psw-confirm">
+                        <input type="password" placeholder="Confirma Contraseña">
+                    </div> 
+                    <div class="field terminos">
+                        <input type="checkbox">
+                        <label for="">Estoy de acuerdo con los términos y condiciones</label>
+                    </div>
+                    
+                    <div class="field cancelar">
+                        <button type="reset">Borrar datos</button>
+                    </div>
+                    <div class="field registrar">
+                        <button type="button">
+                            <a href="/" style="text-decoration: none; color: inherit;">Registrarse</a>
+                        </button>
+                    </div>
+                    <div class="miembro">
+                        ¿Ya sos miembro?
+                        <a href="/login" style="color: black; text-decoration-line: underline !important;">Inicia Sesión</a>
+                    </div>
+                   
+                </form>
+            </div>    
+        </div>
+    </main>
+    <%- include("./partials/footer") %>
+    <%- include("./partials/scripts") %>
+</body>
+</html>
