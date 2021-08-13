@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const articulosFilePath = path.join(__dirname, '../data/productosDataBase.json');
-const articulos = JSON.parse(fs.readFileSync(articulosFilePath, 'utf-8'));
+const articulosDelJson = JSON.parse(fs.readFileSync(articulosFilePath, 'utf-8'));
+const articulos = [].concat(articulosDelJson);
+
 
 const controlador = {
     productsList: (req,res) => {
