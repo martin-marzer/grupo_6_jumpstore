@@ -20,7 +20,12 @@ const controlador = {
         } else {
             res.send("te re hackee por poner numero incorrecto")
           }
-    })
+    }),
+    administratorTools: (req,res) => {
+        res.render("administratorToolsProducts", {
+            articulos: articulos
+        });
+    },
 };
 module.exports = controlador;
 
