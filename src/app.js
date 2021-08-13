@@ -12,6 +12,10 @@ app.set("view engine", "ejs");
 app.set("views", "./src/views")
 
 
+app.listen(PORT, () => {
+    console.log("Todo correcto");
+
+})
 
 app.use(rutaMain);
 app.use(rutaProducts);
@@ -19,7 +23,3 @@ app.use(rutaUsers);
 
 
 
-app.listen(PORT, () => {
-    console.log("Todo correcto");
-
-})
