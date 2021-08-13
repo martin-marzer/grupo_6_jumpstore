@@ -130,6 +130,9 @@
     .img-container{
         height: 180px;
     }
+    .text {
+        margin-top: -12%;
+    }
     .sneaker-name {
         font-size: 17px;
     }
@@ -330,7 +333,7 @@
         opacity: 0.4;
     }
     .text {
-        margin-top: -12%;
+        margin: -12% 10px 0 10px;
     }
 
     .filter-scroll::-webkit-scrollbar-track
@@ -361,9 +364,5 @@
     }
     .img-container{
         height: 260px;
-    }
-    .product .price p {
-        margin: 0;
-        margin-bottom: 15px;
     }
 }
