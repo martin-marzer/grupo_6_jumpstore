@@ -65,8 +65,8 @@
                             <div class="name">LeBron James</div>
                             <div class="job">Vendedor</div>
                         </div>
-                        <i class='bx bx-log-out' id="log_out"></i>
                       </div>
+                      <i class='bx bx-log-out' id="log_out"></i>
                   </div>
               </div>
         </ul>
@@ -74,7 +74,18 @@
     <div class="home_content">
         <div class="text">Contenido del home</div>
     </div>
-
     
+    <script>
+        let btn = document.querySelector("#btn");
+        let sliderbar = document.querySelector(".sliderbar");
+        let searchBtn = document.querySelector(".bx-search");
+
+        btn.onclick = function(){
+            sliderbar.classList.toggle("active");
+        }
+        searchBtn.onclick = function(){
+            sliderbar.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
