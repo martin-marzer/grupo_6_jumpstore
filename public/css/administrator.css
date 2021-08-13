@@ -1,3 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.sliderbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background: #11101d;
+    padding: 6px 14px;
+}
+
+.sliderbar .logo_content .logo_administrator{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.logo_content .logo_administrator i{
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_content .logo_administrator .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sliderbar #btn{
+    position: absolute;
+    color:  #fff;
+    left: 90%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+
+.sliderbar ul{
+    margin-top: 20px;
+}
+
+.sliderbar ul li{
+    position: relative;
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    margin: 0px 5px;
+    line-height: 50px;
+}
+
+.sliderbar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+}
+
+.sliderbar ul li a:hover{
+    color: #11101d;
+    background: #fff;
+}
+
+.sliderbar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
 a{
     color: black;
 }
