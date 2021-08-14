@@ -3,6 +3,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
     'rewind': true,
 		'cover'      : true,
 		'heightRatio': "0.7",
+    'pagination': false,
     classes: {
       arrows: 'splide__arrows your-class-arrows',
       arrow : 'splide__arrow your-class-arrow',

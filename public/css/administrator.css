@@ -50,7 +50,6 @@ body{
 }
 
 .sliderbar #btn{
-    cursor: pointer;
     position: absolute;
     color:  #fff;
     left: 50%;
@@ -244,4 +243,9 @@ body{
 }
 a{
     color: black;
+}
+@media (min-width:992px) {
+    .sliderbar #btn{
+        cursor: pointer;
+    }
 }

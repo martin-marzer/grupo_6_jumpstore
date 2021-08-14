@@ -1,5 +1,6 @@
 <div class="product-container">
     <div class="product">
+        
         <div class="info-product">
             <div class="img-container">
                 <a href="/products/detail/<%= linkID %>">
@@ -7,12 +8,14 @@
                 </a>
             </div>
             <div class="text">
-                <div class="sneaker-name">
-                    <a class="link" href="/products/detail/<%= linkID %>">ZAPATILLA <%= nombre %></a>
-                </div>
-                <div class="price">
-                    <p><%= precio %></p>
-                </div>                                    
+                <a href="/products/detail/<%= linkID %>" class="link-detail">
+                    <div class="sneaker-name">
+                        <a class="link" href="/products/detail/<%= linkID %>">ZAPATILLA <%= nombre %></a>
+                    </div>
+                    <div class="price">
+                        <p><%= precio %></p>
+                    </div>               
+               </a>                          
             </div>
         </div>
     </div>

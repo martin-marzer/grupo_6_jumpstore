@@ -217,13 +217,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .overlay-content {
     position: relative;
+    height: 100%;
+    overflow: auto;
 }
 .overlay-content ul {
     list-style: none;
 }
-.overlay-content ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+.footer-modal .nav-user ul {
+    display: flex;
+    margin: 0;
+    padding: 1vw 0;
+    align-items: center;
+    list-style: none;
+    background-color: #0d0d0d;
+}
+.nav-user ul i{
+    color: rgb(255, 255, 255);
+    padding: 0 5%;
+    font-size: 7vw;
+}
+.nav-user li.user-item {
+    margin: 2vw;
+    font-size: 4vw;
 }
 
 #opacity-mobile {
@@ -279,8 +294,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* Position and style the close button (top right corner) */
 .search-close {
-    display: flex;
-    height: 17.2vw;
     display: flex;
     height: 17.2vw;
     width: 100%;
