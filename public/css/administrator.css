@@ -50,6 +50,7 @@ body{
 }
 
 .sliderbar #btn{
+    cursor: pointer;
     position: absolute;
     color:  #fff;
     left: 50%;
@@ -204,6 +205,7 @@ body{
     font-size: 12px;
 }
 .profile #log_out{
+    cursor: pointer;
     position: absolute;
     bottom: 5px;
     left: 50%;
@@ -215,6 +217,7 @@ body{
     text-align: center;
     transition: all 0.4s ease;
     background: #1d1b31;
+    color: rgb(255, 255, 255);
 }
 .sliderbar.active .profile #log_out{
     left: 88%;

@@ -64,11 +64,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #jumpstore-header-flex {
     display: flex;
     padding: 5% 0;
+    position: relative;
 }
-#jumpstore-menu-mobile button, #jumpstore-cart button, #jumpstore-user button  {
-    background-color: black;
+#jumpstore-menu-mobile button, #jumpstore-cart button, #jumpstore-user button , #jumpstore-search-btn button, #jumpstore-admin button {
+    background-color: rgb(0, 0, 0);
     border: none;
     font-size: 6vw;
+    color: rgb(255, 255, 255);
 }
 
 #jumpstore-logo {
@@ -82,7 +84,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: flex;
     align-items: center;
 }
-#jumpstore-box, #jumpstore-box-mobile {
+#jumpstore-box {
     display: flex;
     width: 100%;
 }
@@ -114,31 +116,54 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #jumpstore-menu-mobile, #jumpstore-right-menu {
     width: 20%;
 }
-
-#jumpstore-search-mobile .fulltext-search-box {
+.jumpstore-search-mobile{
+    position: absolute;
     width: 100%;
-    height: 9vw;
-    border-radius: 0px;
-    color: #999999;
-    font-size: 3vw;
-    letter-spacing: 0.01em;
-    padding-left: 10px;
-    background: white;
-    border: black;
-    outline: none;
+    height: 60px;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000;
+    transition: all .25s ease;
+    opacity: 0;
+    pointer-events: none;
 }
-#jumpstore-search-mobile  button.btn-buscar {
+.jumpstore-search-mobile.open {
+    opacity: 1;
+    pointer-events: all;
+}
+#jumpstore-box-mobile {
+    width: 100%;
+    padding-left: 5%;
+}
+#jumpstore-box-mobile .form-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.form-search .fulltext-search-box {
+    width: 100%;
     font-size: 4vw;
-    position: relative;
-    right: 0px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
+}
+.form-search .btn-buscar, .form-search .fulltext-search-box, .closebtn {
+    background: transparent;
     border: none;
-    border-radius: 0px;
-    width: 20%;
-    height: 9vw;
     outline: none;
+    color: #fff;
+}
+
+.form-search .fulltext-search-box::placeholder {
+    color: rgb(204, 203, 203);
+}
+.closebtn {
+    font-size: 11vw;
+    margin-bottom: 1vw;
+    padding-right: 5%;
+}
+.form-search .btn-buscar {
+    font-size: 6vw;
+    margin-right: 5%;
 }
 #jumpstore-header i:hover {
     color: white;
@@ -194,7 +219,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     position: relative;
 }
 .overlay-content ul {
-    padding-top: 10%;    
     list-style: none;
 }
 .overlay-content ul li {
@@ -215,6 +239,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     opacity:  0;
     
 }
+#opacity-mobile.show-opacity {
+    opacity: 1;
+    width: 100%;
+}
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -223,12 +251,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 9999; /* Stay on top */
   top: 0; /* Stay at the top */
   left: -100%;
-  background-color: #111; /* Black*/
+  background-color: #f3f3f3;
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 5%; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  transition: all .5s ease; /* 0.5 second transition effect to slide in the sidenav */
+  
 }
-
+.sidenav.open-menu {
+    left: 0;
+}
 
 /* The navigation menu links */
 .sidenav .overlay-content ul a {
@@ -239,6 +269,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     transition: 0.5s;
     text-transform: uppercase;
     font-weight: bold;
+    color: #000 ;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -249,12 +280,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* Position and style the close button (top right corner) */
 .search-close {
     display: flex;
+    height: 17.2vw;
+    display: flex;
+    height: 17.2vw;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #111;
 }
-.sidenav .closebtn {
-    font-size: 11vw;
-    margin-left: 10%;
-    height: 9vw;
-    margin-top: -3%;
+.jumpstore-logo-menu {
+    width: 33%;
+    align-self: center;
+    margin-left: 32%;
+}
+.sidenav .closebtn-overlay {
+    font-size: 12vw;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    border: none;
+    color: rgb(255, 255, 255);
+    background: transparent;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -263,11 +307,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 
 
 
@@ -362,18 +401,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-menu-mobile, #jumpstore-search-mobile, #jumpstore-right-menu {
         display: flex;
     }
-    #jumpstore-search-mobile {
-        width: 65%;
-        margin: 0 0 0 10%;
-    }
     #jumpstore-menu-mobile, #jumpstore-logo, #jumpstore-right-menu {
         justify-content: center !important;
         align-items: center;
     }
+    
     #jumpstore-search, #jumpstore-nav {
         display: none !important;
     }
-    #jumpstore-user button {
+    #jumpstore-user, #jumpstore-cart {
         display: none;
     }
 
@@ -431,6 +467,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-logo {
         width: 70%;
     }
+    #jumpstore-search-btn button, #jumpstore-admin button {
+        font-size: 4vw;
+    }
 
 
 }
@@ -455,15 +494,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         position: relative;
         padding: 3% 0;
     }
-
+    .jumpstore-search-mobile {
+        display: none;
+    }
     #jumpstore-right-menu {
         display: flex;
         align-items: center;
         justify-content: flex-end;
 
     }
+    #jumpstore-search-btn {
+        display: none;
+    }
     
-    #jumpstore-cart button, #jumpstore-user button{
+    #jumpstore-cart button, #jumpstore-user button, #jumpstore-admin button{
         font-size: 30px;
     }
     #jumpstore-header-flex #jumpstore-logo {

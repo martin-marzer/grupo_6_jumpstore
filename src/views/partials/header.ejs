@@ -8,8 +8,20 @@
 
                 <div id="jumpstore-header-flex">
 
+                    <div class="jumpstore-search-mobile">
+                        <form id="jumpstore-box-mobile">
+                            <div class="form-search">
+                                <button  type="submit" class="btn-buscar">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <input class="fulltext-search-box" type="text" placeholder="Buscar">
+                            </div>
+                        </form>
+                        <button class="closebtn">&times;</button>
+                    </div>
+
                     <div id="jumpstore-menu-mobile">
-                        <button onclick="openNav()" class="btn-menu" style="color: white;">
+                        <button class="btn-menu">
                             <i class="fas fa-bars"></i>
                         </button>
                     </div>
@@ -40,12 +52,18 @@
                                 <a href="/carrito"><i class="fas fa-shopping-cart"></i></a>
                             </button>
                         </div>
-
-                        <div id="jumpstore-cart">
+                        
+                        <div id="jumpstore-admin">
                             <button>
                                 <a href="/administrator"><i class="fas fa-user-cog"></i></a>
                             </button>
                         </div>
+                        <div id="jumpstore-search-btn">
+                            <button>
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        
                     </div>
                     
                 </div>
