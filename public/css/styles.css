@@ -215,31 +215,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* nav mobile */
 
-.overlay-content {
-    position: relative;
-    height: 100%;
-    overflow: auto;
-}
-.overlay-content ul {
-    list-style: none;
-}
-.footer-modal .nav-user ul {
-    display: flex;
-    margin: 0;
-    padding: 1vw 0;
-    align-items: center;
-    list-style: none;
-    background-color: #0d0d0d;
-}
-.nav-user ul i{
-    color: rgb(255, 255, 255);
-    padding: 0 5%;
-    font-size: 7vw;
-}
-.nav-user li.user-item {
-    margin: 2vw;
-    font-size: 4vw;
-}
 
 #opacity-mobile {
     transition: opacity 0.5s;
@@ -275,8 +250,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     left: 0;
 }
 
+.overlay-content {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+.overlay-content ul {
+    list-style: none;
+}
+
 /* The navigation menu links */
-.sidenav .overlay-content ul a {
+.overlay-content .links a {
     padding: 10%;
     text-decoration: none;
     font-size: 5vw;
@@ -313,16 +297,28 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: rgb(255, 255, 255);
     background: transparent;
 }
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
+.footer-modal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
-
-
-
-
+.footer-modal .nav-user ul {
+    display: flex;
+    margin: 0;
+    padding: 1vw 0;
+    align-items: center;
+    list-style: none;
+    background-color: #0d0d0d;
+}
+.nav-user ul i{
+    color: rgb(255, 255, 255);
+    padding: 0 5%;
+    font-size: 7vw;
+}
+.nav-user li.user-item {
+    margin: 2vw;
+    font-size: 4vw;
+}
 
 
 /* footer */
