@@ -1,0 +1,112 @@
+.encabezado_content{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 40px;
+}
+.conteiner_general{
+    width: 90%;
+    background: whitesmoke;
+    margin: 0 auto;
+    border: black 1px;
+}
+.ubicacion_content li{
+    display: inline-block;
+}
+.ubicacion_content a{
+    color: black;
+}
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+}
+.form_content{
+    background: whitesmoke;
+    width: 90%;
+    margin: 0 auto;
+}
+.form_ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0px 40px 0px;
+}
+.titulo_form{
+    font-size: 23px;
+    font-weight: bold;
+}
+.add_edit_product{
+border: 1px solid #2e518b; 
+padding: 10px;
+background-color: black; 
+color: #ffffff; 
+text-decoration: none; 
+text-transform: uppercase; 
+font-family: 'Helvetica', sans-serif; 
+border-radius: 50px; 
+font-size: 12px;
+transition:  0.3s;
+cursor: pointer;
+}.add_edit_product:hover{
+    background: rgba(0, 0, 0, 0.637);
+}
+.titulos_conteiner{
+    display: flex;
+    justify-content: space-around;
+    background: #cecdcd;
+    padding: 10px;
+}
+.titulos_conteiner li{
+    font-size: 18px;
+    font-weight: bold;
+    width: 25%;
+    text-align: center;
+}
+.products-container{
+    padding: 10px;
+    padding-top: 15px;
+}
+.lista_conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.lista_conteiner li{
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+}
+.lista_conteiner li img{
+    width: 80px;
+    height: 80px;
+    border-radius: 40%;
+    object-fit: cover;
+}
+.conteiner_general{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 2%;
+}
+
+@media (max-width: 768px) {
+    .encabezado_content{
+        flex-wrap: wrap;
+    }
+    .titulo{
+        font-size: 22px;
+    }
+    .ubicacion_content ul li{
+        font-size: 13.5px;
+    }
+    .form_ul{
+        flex-wrap: wrap;
+    }
+    .titulo_form{
+        padding-bottom: 10px;
+    }
+    .titulos_conteiner li{
+        font-size: 14.5px;
+    }
+    .lista_conteiner li img{
+        height: 70px;
+    }
+}

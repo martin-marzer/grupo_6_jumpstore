@@ -5,6 +5,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+.subtitulo{
+    font-size: 18px;
+    font-weight: 500;
+    color: #999999;
+    margin: 12px;
+}
 body{
     position: relative;
     min-height: 100vh;

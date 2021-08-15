@@ -5,13 +5,57 @@
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/administratorToolsProducts.css">
 </head>
+
 <body>
     <%- include("./partials/header") %>
+    
     <%- include("./partials/menuMobile") %>
-   
 
-    <%- include("./partials/footer") %>
-    <%- include("./partials/scripts") %>
+    <div class="encabezado_content">
+       <div class="titulo">Productos de Jumpstore</div>
+       <div class="ubicacion_content">
+           <ul>
+               <li><a href="/administrator">Panel de administracion</a></li>
+               <li>></li>
+               <li>Productos</li>
+           </ul>
+       </div>
+    </div>
+    <div class="conteiner_general">
+    <div class="form_content">
+        <ul class="form_ul">
+        <li class="titulo_form">Listado de productos</li>
+        <li>
+            <button class="add_edit_product">Nuevo</button>
+            <button class="add_edit_product">Editar</button>
+        </li>
+    </ul>
+     </div>
+     <div class="conteiner_general_list">
+     <div class="titulos-container">
+        <ul class="titulos_conteiner">
+            <li>Seleccionar</li>
+            <li>Nombre</li>
+            <li>Imagen</li>
+            <li>Precio</li>
+        </ul>
+    </div>
 
+    <!-- esto se remplaza con javascrip -->
+
+     <div class="products-container">       
+        <ul class="lista_conteiner">
+            <li><input type="checkbox"></li>
+            <li>J Balbin</li>
+            <li><img src="images/zapatillas/jorda-jbalbin.jpeg"></li>
+            <li>$1221</li>
+            <li><input type="checkbox"></li>
+            <li>Jordan Travis Scoot </li>
+            <li><img src="images/zapatillas/jordan travis.jpg"></li>
+            <li>$1221</li>
+        </ul>
+    </div>
+</div>
+<%- include("./partials/scripts") %>
 </body>
 </html>
