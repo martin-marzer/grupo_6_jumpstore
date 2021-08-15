@@ -1,19 +1,27 @@
 // barra de navegacion para el celular  
 
+$('.btn-menu').click(function(){
+  $("#opacity-mobile").addClass("show-opacity");
+  $(".sidenav").addClass("open-menu");
+});
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("jumpstore-navbar-mobile").style.left = "0";
-  document.getElementById("opacity-mobile").style.opacity = "1";
-  document.getElementById("opacity-mobile").style.width = "100%";
-}
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("jumpstore-navbar-mobile").style.left = "-100%";
-  document.getElementById("opacity-mobile").style.opacity = "0";
-  document.getElementById("opacity-mobile").style.width = "0";
-}
+$('.closebtn-overlay').click(function(){
+  $("#opacity-mobile").removeClass("show-opacity");
+  $(".sidenav").removeClass("open-menu");
+});
+
+
+
+
+
+// search mobile
+$('#jumpstore-search-btn').click(function(){
+  $(".jumpstore-search-mobile").addClass("open");
+});
+$('.closebtn').click(function(){
+  $(".jumpstore-search-mobile").removeClass("open");
+});
 
 // acordion del footer
 let acc = document.getElementsByClassName("jumpstore-arrow");

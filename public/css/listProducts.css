@@ -5,6 +5,7 @@
 }
 .select-results-flex {
     display: flex;
+    top: 1vw;
 }
 .products-container {
     display: flex;
@@ -13,6 +14,7 @@
 .product {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 .info-product {
     height: 100%;
@@ -31,6 +33,72 @@
 .price {
     font-weight: 500;
 }
+
+/* filter menu mobile */ 
+
+.sidenav-filter {
+    height: 100%; /* 100% Full-height */
+    width: 100%; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: -100%;
+    background-color: #f3f3f3;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: all .5s ease; /* 0.5 second transition effect to slide in the sidenav */
+    
+  }
+  .sidenav-filter.open-filter {
+      right: 0;
+  }
+  .overlay-content-filter {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+}
+.search-close-filter {
+    display: flex;
+    height: 17.2vw;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #111;
+}
+.sidenav-filter .closebtn-filter {
+    font-size: 10vw;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    border: none;
+    color: rgb(255, 255, 255);
+    background: transparent;
+}
+.sidenav-filter .title-filter {
+    align-self: center;
+    margin-left: 42%;
+    color: #ffffff;
+}
+
+.sidenav-filter .filter-body {
+    padding: 5%;
+}
+.filter-body .categoria {
+    font-size: 7vw;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 2vw 0;
+}
+.filter-body .control-group {
+    margin-left: 5%;
+}
+.filter-body .control {
+    text-transform: uppercase;
+    font-size: 4vw;
+    padding: 2vw 0;
+}
+.filter-body .control input {
+    padding: 0;
+    margin: 3vw;
+}
+
 @media (max-width:599px) {
     .products-container {
         justify-content: space-between;
@@ -62,6 +130,9 @@
     .price {
         font-size: 3vw;
     }
+    .select-results-flex {
+        top: 4vw;
+    }
 }
 @media (max-width:767px) {
     body {
@@ -69,6 +140,11 @@
     }
     .select-results-flex {
         flex-direction: column;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 99;
+        background-color: #ffffff;
+        padding-bottom: 2vw;
     }
     .results-container {
         order: -1;
@@ -111,8 +187,12 @@
     .text {
         margin-top: -8%;
     }
+    .product .text .link-detail {
+        display: none;
+    }
 
 }
+
 @media (min-width:768px) {
     .products-container {
         margin-top: 30px;
@@ -176,8 +256,28 @@
         color: rgb(255, 255, 255);
         border-radius: 0.5vw;
     }
+    .sidenav-filter {
+        width: 80%; 
+    }
+    .search-close-filter {
+        height: 10.2vw;
+    }
+    .sidenav-filter .closebtn-filter {
+        font-size: 7vw;
+    }
+    .filter-body .categoria {
+        font-size: 4vw;
+    }
+    .filter-body .control {
+        font-size: 2.5vw;
+    }
+    .filter-body .control input {
+        margin: 3vw 2vw;
+        height: 20px;
+        width: 20px;
+    }
 }
-@media (max-width:992px) {
+@media (max-width:991px) {
     .filter-container-desktop {
         display: none;
     }
@@ -198,6 +298,7 @@
     .select-container select {
         width: 80%;
         height: 100%;
+        cursor: pointer;
     }
     .results-container {
         display: flex;
@@ -236,10 +337,6 @@
         height: 150px;
         overflow-y: scroll;
         padding: 0 6px 15px 6px;
-    }
-    .control-group.talle {
-        display: flex;
-        flex-wrap: wrap;
     }
     .control-group.talle .control {
         width: 49%;
@@ -352,6 +449,15 @@
     {
         border-radius: 10px;
         background-color: #c7c4c4;
+    }
+    .product .text .link-detail {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .sidenav-filter {
+        display: none !important;
     }
 }
 @media (min-width:1200px) {

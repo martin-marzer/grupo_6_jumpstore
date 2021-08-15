@@ -8,6 +8,96 @@
 <body>
     <%- include("./partials/header") %>
     <%- include("./partials/menuMobile") %>
+
+    <div class="sidenav-filter">
+    
+        <div class="overlay-content-filter">
+            <div class="search-close-filter">
+                <div class="title-filter">
+                    <h2>Filtros</h2>
+                </div>
+                <button class="closebtn-filter">&times;</button>
+            </div>
+            <div class="filter-body">
+                <div class="each-filter-mobile-mobile">
+                    <p class="categoria">marca</p>
+                    <div class="control-group">
+                        <label class="control control-checkbox">
+                            adidas
+                                <input type="checkbox"/>
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            fila
+                                <input type="checkbox" />
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            nike
+                                <input type="checkbox" />
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            vans
+                                <input type="checkbox" />
+                            <div class="control_indicator"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="each-filter-mobile">
+                    <p class="categoria">talle</p>
+                    <div class="control-group talle">
+                        <label class="control control-checkbox">
+                            35 - 37 
+                                <input type="checkbox"/>
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            38 - 40 
+                                <input type="checkbox"/>
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            41 - 43 
+                                <input type="checkbox"/>
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            44 - 45 
+                                <input type="checkbox"/>
+                            <div class="control_indicator"></div>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="each-filter-mobile">
+                    <p class="categoria">precio</p>
+                    <div class="control-group precio">
+                        <label class="control control-checkbox">
+                            $5000 - $10000
+                                <input type="checkbox" />
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            $10000 - $15000
+                                <input type="checkbox" />
+                            <div class="control_indicator"></div>
+                        </label>
+                        <label class="control control-checkbox">
+                            más
+                                <input type="checkbox" />
+                            <div class="control_indicator"></div>
+                        </label>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <main>
 
         <div id="jumpstore-page" >
@@ -20,10 +110,12 @@
                                     <option value="" class="most-relevant">Más relevantes</option>
                                     <option value="" class="lowest-price">Precio más bajo</option>
                                     <option value="" class="highest-price">Precio más alto</option>
+                                    <option value="" class="highest-price">A - Z</option>
+                                    <option value="" class="highest-price">Z - A</option>
                                 </select>
                             </div>
                             <div class="filter-container">
-                                <button type="button" class="btn">Filtro</button>
+                                <button class="btn">Filtro</button>
                             </div>
                         </div>
                         <div class="results-container">
@@ -42,11 +134,6 @@
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            converse
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
                                             fila
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
@@ -57,30 +144,10 @@
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            puma
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
                                             vans
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
                                         </label>
-                                        <label class="control control-checkbox">
-                                            under armor
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <!-- <label class="control control-checkbox">
-                                            Disabled
-                                                <input type="checkbox" disabled="disabled" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            Disabled & checked
-                                                <input type="checkbox" disabled="disabled" checked="checked" />
-                                            <div class="control_indicator"></div>
-                                        </label> -->
                                     </div>
                                 </div>
                             </div>
@@ -90,55 +157,26 @@
                                 <div class="filter-scroll">
                                     <div class="control-group talle">
                                         <label class="control control-checkbox">
-                                            35
+                                            35 - 37 
                                                 <input type="checkbox"/>
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            36
-                                                <input type="checkbox" />
+                                            38 - 40 
+                                                <input type="checkbox"/>
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            37
-                                                <input type="checkbox" />
+                                            41 - 43 
+                                                <input type="checkbox"/>
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            38
-                                                <input type="checkbox" />
+                                            44 - 45 
+                                                <input type="checkbox"/>
                                             <div class="control_indicator"></div>
                                         </label>
-                                        <label class="control control-checkbox">
-                                            39
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            41
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            42
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            43
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            44
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            45
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
+
                                     </div>
                                 </div>
                             </div>
@@ -148,22 +186,17 @@
                                 <div class="filter-scroll">
                                     <div class="control-group precio">
                                         <label class="control control-checkbox">
-                                            $2000 - $4999
-                                                <input type="checkbox"/>
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
                                             $5000 - $10000
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            $10000 - $14999
+                                            $10000 - $15000
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            $15000 o más
+                                            más
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
                                         </label>
@@ -189,6 +222,7 @@
     </main>
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
+    <script src="/js/listProducts.js"></script>
 
 </body>
 </html>

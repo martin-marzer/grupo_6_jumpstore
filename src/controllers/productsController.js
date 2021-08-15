@@ -4,6 +4,10 @@ const path = require('path');
 const articulosFilePath = path.join(__dirname, '../data/productosDataBase.json');
 const articulos = JSON.parse(fs.readFileSync(articulosFilePath, 'utf-8'));
 
+
+
+
+
 const controlador = {
     productsList: (req,res) => {
         res.render("listProducts", {

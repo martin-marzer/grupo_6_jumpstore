@@ -6,8 +6,11 @@ const rutaProducts = require("./routes/products");
 const rutaUsers = require("./routes/users");
 
 app.use(express.static("public"));
+
+
 app.set("view engine", "ejs");
 app.set("views", "./src/views")
+
 
 app.listen(PORT, () => {
     console.log("Todo correcto");
@@ -17,3 +20,6 @@ app.listen(PORT, () => {
 app.use(rutaMain);
 app.use(rutaProducts);
 app.use(rutaUsers);
+
+
+
