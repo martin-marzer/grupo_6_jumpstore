@@ -1,9 +1,8 @@
 .formulario-register {
     margin: 0 auto;
-    padding: 20px 15%;
+    padding: 20px 12%;
     width: 90%;
     margin-top: 20px;
-    background: #eeeeee ;
     border-radius: 2%;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
@@ -24,9 +23,10 @@
 .formulario-input {
     width: 100%;
     height: 40px;
-    border-radius: 5px;
     margin-bottom: 30px;
     border: none;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
     background-color: white;
 }
 .marcas label input{
@@ -47,7 +47,10 @@
     font-size: 12px;
     transition:  0.3s;
     cursor: pointer;
-    }
+     }
+.add_edit_product:hover{
+    background: rgba(0, 0, 0, 0.637);
+}
 .wrapper{
     display: flex;
     justify-content: space-evenly;
