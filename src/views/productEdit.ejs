@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Editar producto</title>
+        <%- include("./partials/head") %>
+        <link rel='stylesheet' href='/css/productEdit.css'>
+    </head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+
+    <main class="container_main">
+        <form class="formulario-edit" method="GET" action="/administratorToolsProducts">
+            <h1 class="titulo">Editar producto</h1>
+            <div>
+                <input class="formulario-input" type="text" name="nombre" class="cambiar-producto" placeholder="Nuevo nombre del producto">
+            </div>
+            <div>
+                <input class="formulario-input" type="text" name="nombre-de-usuario " class="cambiar-producto" placeholder="Nueva descripcion del producto">
+            </div>
+            <div>
+                <input class="formulario-input" type="date" name="fecha-de-creacion" class="cambiar-producto" placeholder="fecha de cambiar-producto">
+            </div>
+            <div>
+                <input class="formulario-input" type="number" name="fecha-de-creacion" class="cambiar-producto" placeholder="Nuevo precio">
+            </div>
+            <div>
+                <input class="formulario-input" id="add_edit_product" type="file" name="iamgen-del-producto" class="cambiar-producto" placeholder="añadir">
+            </div>
+            <section class="wrapper">
+                <button type="submit" class="add_edit_product"><a href="/administratorToolsProducts" class="link-boton">Guardar</a></button>
+                <button type="reset" class="add_edit_product">Borrar</button>
+                </section>
+            </form>
+    </main>
+    <%- include("./partials/scripts") %>
+</body>
+</html>

@@ -1,13 +1,13 @@
-.formulario-register {
-    margin: 0 auto;
-    padding: 20px 12%;
-    width: 90%;
-    margin-top: 20px;
-    border-radius: 2%;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+.container_main{
+margin: 0 auto;
+padding: 20px 12%;
+width: 90%;
+margin-top: 20px;
+border-radius: 2%;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.formulario-register div {
+.container_main div {
     width: 100%;
     margin-bottom: 5px;
 }
@@ -15,7 +15,7 @@
    display: flex;
     justify-content: space-around;
 }
-.formulario-register div label {
+.container_main div label {
     margin-top: 10px;
     margin-bottom: 10px;
 }
