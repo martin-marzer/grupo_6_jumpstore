@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Administracion de productos</title>
+    <title>Panel de administrador</title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/administrator.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+
     <div class="sliderbar">
         <div class="logo_content">
             <div class="logo_administrator">
@@ -71,9 +71,32 @@
               </div>
         </ul>
     </div>
-    <div class="home_content">
-        <div class="text">Contenido del home</div>
-    </div>
+    <main class="home_content">
+        <div class="text">Hola James!</div>
+        <div class="home">
+        <article class="article_content_1">
+          <section class="section_number_1">10 usuarios</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><a href="#">Ver más</a></section>
+        </article>
+        <article class="article_content_2">
+          <section class="section_number_2">3 mensajes</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><a href="#">Ver más</a></section>
+        </article>
+        <article class="article_content_3">
+          <section class="section_number_3">10 visitas</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><a href="#">Ver más</a></section>
+        </article>
+        <article class="article_content_4">
+          <section class="section_number_4">90 products.</section>
+          <i class='bx bxs-user'></i>
+          <section class="section_link"><a href="#">Ver más</a></section>
+        </article>
+       </div>
+    </main>
+    
     
     <script>
         let btn = document.querySelector("#btn");
@@ -87,5 +110,6 @@
             sliderbar.classList.toggle("active");
         }
     </script>
+
 </body>
 </html>
