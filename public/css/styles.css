@@ -112,7 +112,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     height: 4vw;
     outline: none;
 }
+#jumpstore-user {
+    position: relative;
+} 
+#jumpstore-user .dropdown-padding {
+    position: absolute;
+    padding: 8px;
+    width: 100px;
+    left: -70px;
+}
 
+#jumpstore-user .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    z-index: 999;
+    left: -50px;
+    text-align: center;
+}
+#jumpstore-user:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 17px;
+}
+.dropdown-content a:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(243, 243, 243);
+}
 #jumpstore-menu-mobile, #jumpstore-right-menu {
     width: 20%;
 }
@@ -305,14 +338,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .footer-modal .nav-user ul {
     display: flex;
     margin: 0;
-    padding: 1vw 0;
+    padding: 2vw 0;
     align-items: center;
     list-style: none;
-    background-color: #0d0d0d;
+    background-color: #212020;
+}
+.nav-user ul .icon-admin {
+    padding: 0 5%;
 }
 .nav-user ul i{
     color: rgb(255, 255, 255);
-    padding: 0 5%;
     font-size: 7vw;
 }
 .nav-user li.user-item {
@@ -418,7 +453,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search, #jumpstore-nav {
         display: none !important;
     }
-    #jumpstore-user, #jumpstore-cart {
+    #jumpstore-user, #jumpstore-cart,#jumpstore-admin  {
         display: none;
     }
 
@@ -476,8 +511,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-logo {
         width: 70%;
     }
-    #jumpstore-search-btn button, #jumpstore-admin button {
-        font-size: 4vw;
+    #jumpstore-search-btn button {
+        font-size: 5.5vw;
     }
 
 

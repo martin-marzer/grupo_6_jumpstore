@@ -5,16 +5,13 @@ const articulosFilePath = path.join(__dirname, '../data/productosDataBase.json')
 const articulos = JSON.parse(fs.readFileSync(articulosFilePath, 'utf-8'));
 
 
-
-
-
 const controlador = {
     productsList: (req,res) => {
         res.render("listProducts", {
             articulos: articulos
         });
     },
-    productDetail: ('/products/detail/:id', (req,res) => {
+    productDetail: (req,res) => {
         let idZapatilla = req.params.id;
         let articuloId = articulos[idZapatilla - 1];
         if(articulos.indexOf(articuloId) != -1){
@@ -24,22 +21,7 @@ const controlador = {
         } else {
             res.send("te re hackee por poner numero incorrecto")
           }
-    }),
-    administratorTools: (req,res) => {
-        res.render("administratorToolsProducts", {
-            articulos: articulos
-        });
-    },
-    productCreate: (req,res) => {
-        res.render("productCreate", {
-            articulos: articulos
-        });
-    },
-    productEdit: (req,res) => {
-        res.render("productEdit", {
-            articulos: articulos
-        });
-    },
+    }
 };
-module.exports = controlador;
 
+module.exports = controlador;

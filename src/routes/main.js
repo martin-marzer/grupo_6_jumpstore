@@ -5,7 +5,7 @@ const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.index);
 router.get("/carrito", mainController.carrito);
-router.get("/administrator", mainController.administrator);
+
 
 
 
