@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Añadir nuevo producto</title>
+        <%- include("./partials/head") %>
+        <link rel="stylesheet" href="/css/productCreate.css">
+    </head>
+<body>
+    <%- include("./partials/header") %>
+    <%- include("./partials/menuMobile") %>
+    <main>
+    <form class="formulario-register" method="GET" action="/administratorToolsProducts">
+    <div>
+        <input class="formulario-input" type="text" name="nombre" class="crear-producto" placeholder="Nombre del producto">
+    </div>
+    <div>
+        <input class="formulario-input" type="text" name="nombre-de-usuario " class="crear-producto" placeholder="Descripcion del producto">
+    </div>
+    <div>
+        <input class="formulario-input" type="date" name="fecha-de-creacion" class="crear-producto" placeholder="fecha de carga">
+    </div>
+    <div>
+        <input class="formulario-input" type="number" name="fecha-de-creacion" class="crear-producto" placeholder="Precio">
+    </div>
+    <div class="marcas">
+        <label><input type="radio" name="marcas" value="Jordan" >Jordan</label>
+        <label><input type="radio" name="marcas" value="Nike">Nike</label>
+        <label><input type="radio" name="marcas" value="Addidas">Addidas</label>
+        <label><input type="radio" name="marcas" value="Fila">Fila</label>
+        <label><input type="radio" name="marcas" value="Vans">Vans</label>
+    </div>
+    <div>
+        <input class="formulario-input" id="add_edit_product" type="file" name="iamgen-del-producto" class="crear-producto" placeholder="añadir">
+    </div>
+    <section class="wrapper">
+        <button type="submit" class="add_edit_product"><a href="/administratorToolsProducts" class="link-boton">Enviar</a></button>
+        <button type="reset" class="add_edit_product">Borrar</button>
+        </section>
+    </form>
+    </main>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+.formulario-register {
+    margin: 0 auto;
+    padding: 20px 15%;
+    width: 90%;
+    margin-top: 20px;
+    background: #eeeeee ;
+    border-radius: 2%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.formulario-register div {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.marcas{
+   display: flex;
+    justify-content: space-around;
+}
+.formulario-register div label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    border: none;
+    background-color: white;
+}
+.marcas label input{
+    display: inline-block;
+}
+#add_edit_product{
+    padding: 7px;
+}
+.add_edit_product{
+    border: 1px solid #2e518b; 
+    padding: 10px;
+    background-color: black; 
+    color: #ffffff; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-family: 'Helvetica', sans-serif; 
+    border-radius: 50px; 
+    font-size: 12px;
+    transition:  0.3s;
+    cursor: pointer;
+    }
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}

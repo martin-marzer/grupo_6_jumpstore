@@ -46,7 +46,8 @@ border-radius: 50px;
 font-size: 12px;
 transition:  0.3s;
 cursor: pointer;
-}.add_edit_product:hover{
+}
+.add_edit_product:hover{
     background: rgba(0, 0, 0, 0.637);
 }
 .titulos_conteiner{
