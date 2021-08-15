@@ -30,6 +30,16 @@ const controlador = {
             articulos: articulos
         });
     },
+    productCreate: (req,res) => {
+        res.render("productCreate", {
+            articulos: articulos
+        });
+    },
+    productEdit: (req,res) => {
+        res.render("productEdit", {
+            articulos: articulos
+        });
+    },
 };
 module.exports = controlador;
 
