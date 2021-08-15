@@ -309,3 +309,15 @@ a{
         cursor: pointer;
     }
 }
+@media (max-width: 768px) {
+    .article_content_3{
+        display: none;
+    }
+    .article_content_4{
+        display: none;
+    }
+    article{
+        width: 90%;
+        font-size: 20px;
+    }
+}
