@@ -3,12 +3,14 @@
 $('.btn-menu').click(function(){
   $("#opacity-mobile").addClass("show-opacity");
   $(".sidenav").addClass("open-menu");
+  $('body').css('overflow', 'hidden');
 });
 
 
 $('.closebtn-overlay').click(function(){
   $("#opacity-mobile").removeClass("show-opacity");
   $(".sidenav").removeClass("open-menu");
+  $('body').css('overflow', 'auto');
 });
 
 

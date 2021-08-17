@@ -11,6 +11,15 @@
     display: flex;
     flex-wrap: wrap;
 }
+.product-container{
+    position: relative;
+}
+.product-container .link-detail {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 .product {
     width: 100%;
     height: 100%;
@@ -107,6 +116,7 @@
         max-width: 48%;
         height: 50vw; 
         margin-bottom:10%;
+
     }
     .sneaker-name {
         font-size: 3.5vw;
@@ -114,18 +124,18 @@
     .price {
         font-size: 4vw;
     }
+
 }
 @media (min-width:600px) {
     .product-container {  
         margin-right: 5px;
         margin-left: 6px;
-        height: 30vw;
         max-width: 31%;
-        margin-bottom: 15%;
+        margin-bottom: 6%;
     }
     .sneaker-name {
-        font-size: 2.5vw;
-        height: 40px;
+        font-size: 2.3vw;
+        height: 100%;
     }
     .price {
         font-size: 3vw;
@@ -185,11 +195,9 @@
     }
 
     .text {
-        margin-top: -8%;
+        margin-top: -16%;
     }
-    .product .text .link-detail {
-        display: none;
-    }
+    
 
 }
 
@@ -201,7 +209,7 @@
         max-width: 23%;
         margin-right: 7px;
         margin-left: 7px;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
         height: auto;
     }
     .filter-container {
@@ -211,7 +219,7 @@
         height: 180px;
     }
     .text {
-        margin-top: -12%;
+        margin-top: -22%;
     }
     .sneaker-name {
         font-size: 17px;
@@ -422,15 +430,14 @@
     .img-container{
         height: 220px;
     }  
+    .product:hover .img-container img {
+        opacity: 0.5;
+    }
     .img-container img {
-        opacity: 1.0;
         transition: opacity 0.25s ease-out;
     }
-    .img-container img:hover {
-        opacity: 0.4;
-    }
     .text {
-        margin: -12% 10px 0 10px;
+        margin: -24% 10px 0 10px;
     }
 
     .filter-scroll::-webkit-scrollbar-track
@@ -449,12 +456,6 @@
     {
         border-radius: 10px;
         background-color: #c7c4c4;
-    }
-    .product .text .link-detail {
-        position: absolute;
-        display: block;
-        width: 100%;
-        height: 100%;
     }
     .sidenav-filter {
         display: none !important;
