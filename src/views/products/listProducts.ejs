@@ -107,11 +107,9 @@
                         <div class="select-filter-container">
                             <div class="select-container">
                                 <select name="sort-order" id="">
-                                    <option value="" class="most-relevant">Más relevantes</option>
-                                    <option value="" class="lowest-price">Precio más bajo</option>
-                                    <option value="" class="highest-price">Precio más alto</option>
-                                    <option value="" class="highest-price">A - Z</option>
-                                    <option value="" class="highest-price">Z - A</option>
+                                    <option value="" disabled  selected>Seleccione una opción</option>
+                                    <option value="lowest-price">Precio más bajo</option>
+                                    <option value="highest-price">Precio más alto</option>
                                 </select>
                             </div>
                             <div class="filter-container">
@@ -119,7 +117,7 @@
                             </div>
                         </div>
                         <div class="results-container">
-                            <p> <strong>15.000</strong> Resultados</p>
+                            <p> <strong><%= articulos.length %></strong> Resultados</p>
                         </div>
                     </div>
                     <div class="products-filter">
@@ -186,30 +184,45 @@
                                 <div class="filter-scroll">
                                     <div class="control-group precio">
                                         <label class="control control-checkbox">
-                                            $5000 - $10000
+                                            $5000 - $14999
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
                                         </label>
                                         <label class="control control-checkbox">
-                                            $10000 - $15000
+                                            $15000 - MAX
                                                 <input type="checkbox" />
                                             <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            más
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        
+                                        </label>     
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="products-container">
-                            
-                            <% let articulosArr = articulos; %>
+                            <%#= articulos.indexOf(articulo) + 1 %>
                             <% articulos.forEach(articulo => { %>
-                              <%- include("./partials/listProducts", {nombre: articulo.nombre, descrip: articulo.descrip, linkID : articulosArr.indexOf(articulo) + 1, precio: articulo.precio, imagen: articulo.img[0]}) %>  
+                                <div class="product-container">
+                                    <a href="/products/detail/<%= articulo.id %>" class="link-detail">
+                                        <div class="product">
+                                            
+                                            <div class="info-product">
+                                                <div class="img-container">
+                                                    <a href="/products/detail/<%= articulo.id %>">
+                                                        <img src="/images/zapatillas/<%= articulo.image[0] %>" alt="producto" class="img-product">
+                                                    </a>
+                                                    
+                                                </div>
+                                                <div class="text">
+                                                    <div class="sneaker-name">
+                                                        <p><%= articulo.name %></p>
+                                                    </div>
+                                                    <div class="price">
+                                                        <p>$<%= toThousand(articulo.price) %></p>
+                                                    </div>                                     
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>  
                             <% }); %>
 
                         </div>

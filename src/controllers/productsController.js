@@ -1,22 +1,26 @@
 const fs = require('fs');
 const path = require('path');
 
-const articulosFilePath = path.join(__dirname, '../data/productosDataBase.json');
-const articulos = JSON.parse(fs.readFileSync(articulosFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controlador = {
     productsList: (req,res) => {
         res.render("listProducts", {
-            articulos: articulos
+            articulos: products,
+            toThousand: toThousand
         });
     },
     productDetail: (req,res) => {
         let idZapatilla = req.params.id;
-        let articuloId = articulos[idZapatilla - 1];
-        if(articulos.indexOf(articuloId) != -1){
+        let articuloId = products[idZapatilla - 1];
+        if(products.indexOf(articuloId) != -1){
             res.render("detailProducts", {
-                articuloId: articuloId
+                articuloId: articuloId,
+                toThousand: toThousand
             });
         } else {
             res.send("te re hackee por poner numero incorrecto")

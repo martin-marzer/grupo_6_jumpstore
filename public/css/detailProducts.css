@@ -115,7 +115,7 @@
     background-color: #3f3f41;
 }
 .field.fav button:hover  {
-    background-color: #cecece;
+    color: #f32929;
 }
 .product-details {
     position: relative;

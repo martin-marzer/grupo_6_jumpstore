@@ -9,12 +9,12 @@
                 <div id="jumpstore-header-flex">
 
                     <div class="jumpstore-search-mobile">
-                        <form id="jumpstore-box-mobile">
+                        <form action="/search" method="GET" id="jumpstore-box-mobile">
                             <div class="form-search">
                                 <button  type="submit" class="btn-buscar">
                                     <i class="fas fa-search"></i>
                                 </button>
-                                <input class="fulltext-search-box" type="text" placeholder="Buscar">
+                                <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar">
                             </div>
                         </form>
                         <button class="closebtn">&times;</button>
@@ -33,8 +33,8 @@
                     </div>
 
                     <div id="jumpstore-search">
-                        <form id="jumpstore-box">
-                            <input class="fulltext-search-box" type="text" placeholder="Buscar">
+                        <form action="/search" method="GET" id="jumpstore-box">
+                            <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar">
                             <button  type="submit" class="btn-buscar">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -86,7 +86,6 @@
                 <li><a href="/">Inicio</li></a>
                 <li><a href="/products">Productos</li></a>
                 <li><a href="/">Ofertas</li></a>
-                <li><a href="/">Novedades</li></a>
                 <li><a href="/">Favoritos</li></a>
             </ul>
         </div>
