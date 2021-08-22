@@ -1,4 +1,8 @@
 /* el body chaval */
+body {
+    background-color: #f6f6f6;
+}
+
 #jumpstore-page a {
     color: rgb(0, 0, 0);
     text-transform: uppercase;
@@ -23,7 +27,7 @@
 }
 .product {
     width: 100%;
-    height: 95%;
+    height: 100%;
     position: relative;
 }
 .info-product {
@@ -121,7 +125,7 @@
     }
     .sneaker-name {
         font-size: 3.5vw;
-        height: 8vw;
+        height: 12vw;
     }
     .price {
         font-size: 4vw;
@@ -142,7 +146,7 @@
     }
     .sneaker-name {
         font-size: 2.3vw;
-        height: 30px;
+        height: 50px;
     }
     .price {
         font-size: 3vw;
@@ -153,8 +157,19 @@
 }
 @media (max-width:767px) {
     body {
-        font-size: 3vw;
-        background-color: #f3f3f3;;
+        font-size: 3vw
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+    box-shadow: 0 0 0 30px #121212 inset !important;
+    }
+    input:-webkit-autofill
+    {
+    -webkit-text-fill-color: rgb(255, 255, 255) !important;
     }
     .select-results-flex {
         flex-direction: column;
@@ -201,10 +216,13 @@
     .products-container {
         margin-top: 10%;
     }
-
+    .product-container {
+        -webkit-box-shadow: 0px 0px 20px -5px #000000;
+        box-shadow: 0px 0px 15px -5px #000000;
+    }
     .text {
-        margin-top: -16%;
-        padding: 0 2vw;
+        margin-top: -12%;
+        padding: 0 4vw;
     }
     
 
@@ -215,6 +233,18 @@
     }
 }
 @media (min-width:768px) {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    }
+    input:-webkit-autofill
+    {
+    -webkit-text-fill-color: rgb(0, 0, 0) !important;
+    }
     .products-container {
         margin-top: 30px;
     }
@@ -223,7 +253,7 @@
         margin-right: 7px;
         margin-left: 7px;
         margin-bottom: 5%;
-        height: 230px;
+        height: 250px;
         width: 100%;
     }
     .product-container:hover {
@@ -237,7 +267,7 @@
         height: 150px;
     }
     .text {
-        margin-top: -16%;
+        margin-top: -12%;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -350,9 +380,6 @@
         position: sticky;
         top: 15px;
     }
-    .product {
-        height: 100%;
-    }
     .each-filter{
         margin-bottom: 20px;
         border-bottom: 1px solid #cacaca;
@@ -368,6 +395,7 @@
         height: 150px;
         overflow-y: scroll;
         padding: 0 6px 15px 6px;
+        background: rgb(255, 255, 255);
     }
     .control-group.talle .control {
         width: 49%;
@@ -445,7 +473,7 @@
     .product-container {
         margin-right: 7px;
         margin-left: 7px;
-        height: 250px;
+        height: 270px;
     }
     .img-container{
         height: 180px;
@@ -457,7 +485,7 @@
         transition: opacity 0.25s ease-out;
     }
     .text {
-        margin: -18% 10px 0 10px;
+        margin: -16% 10px 0 10px;
     }
 
     .filter-scroll::-webkit-scrollbar-track
@@ -488,14 +516,14 @@
     }
     .product-container {
         margin-right: 11px;
-        height: 300px;
+        height: 330px;
     }
     .img-container{
         height: 210px;
     }
     .sneaker-name {
         font-size: 17px;
-        height: 40px;
+        height: 60px;
     }
     .price {
         font-size: 22px;
