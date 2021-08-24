@@ -9,7 +9,10 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
     index: (req,res) => {
-        res.render("home");
+        res.render("home", {
+		articulos: products,
+		toThousand: toThousand
+		})
     },
     carrito: (req,res) => {
         res.render("carrito");

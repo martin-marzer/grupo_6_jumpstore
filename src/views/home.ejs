@@ -47,9 +47,14 @@
             </div>
 
             <section class="container-hot">
+            <% for (let i = 0; i < 1; i++) {%>
+            
+            <% let articulo = articulos[i] %>
 
-                <div class="image">
-                    <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
+                <div class="image" >
+                    <a href="/products/detail/<%= articulo.id %>">
+                        <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
+                    </a>
                     <div class="image__overlay image__overlay--primary">
                         <div class="image__title">Nike airmax 97 mettallic gold</div>
                         <p class="image__description">
@@ -84,9 +89,8 @@
                         </p>
                     </div>
                 </div>
-
+            <% }; %>
             </section>
-
             <div class="wrapper">
                 <h1 href="#">Newest Drop</h1>
             </div>

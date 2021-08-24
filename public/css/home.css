@@ -15,7 +15,7 @@ main {
     overflow: hidden;
     margin: auto;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    height: 36vw;
+    height: 33vw;
 }
 
 ul,
@@ -128,7 +128,7 @@ ul.slider-logos li img {
     flex-direction: row;
     width: 60%;
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 40px;
     margin-bottom: 60px;
 }
 
@@ -169,7 +169,7 @@ h1:hover {
 
 .image {
     position: relative;
-    width: 400px;
+    width: 350px;
     margin-bottom: 18px;
     margin: 30px 0 0 0;
 }
@@ -220,7 +220,7 @@ h1:hover {
 }
 
 .image__title {
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
 }
 
@@ -242,7 +242,7 @@ h1:hover {
 }
 
 .container-new img {
-    max-width: 280%;
+    max-width: 200%;
     border-radius: 2%;
     position: relative;
 }
@@ -262,7 +262,7 @@ h1:hover {
 }
 .mode-celuar {
     position: relative;
-    width: 400px;
+    width: 350px;
     margin-bottom: 18px;
     margin: 30px 0 0 0;
 }
@@ -318,7 +318,7 @@ h1:hover {
         display: block;
     }
     .mode-celuar{
-        width: 90%;
+        width: 78%;
         margin: 10px;
     }
     .container-hot img {
@@ -351,10 +351,10 @@ h1:hover {
         flex-wrap: wrap;
         align-items: center;
         flex-direction: row;
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
-        padding-top: 60px;
-        padding-bottom: 35px;
+        padding-top: 80px;
+        padding-bottom: 50px;
     }
     .container-hot {
         width: 80%;
@@ -387,7 +387,7 @@ h1:hover {
         width: 60%;
         margin: 0 auto;
         align-content: flex-end;
-        padding-top: 60px;
-        padding-bottom: 35px;
+        padding-top: 80px;
+        padding-bottom: 40px;
     }
 }
