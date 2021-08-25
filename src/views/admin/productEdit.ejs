@@ -18,15 +18,21 @@
             <div>
                 <input class="formulario-input" type="text" name="nombre-de-usuario " class="cambiar-producto" placeholder="Nueva descripcion del producto">
             </div>
-            <div>
-                <input class="formulario-input" type="date" name="fecha-de-creacion" class="cambiar-producto" placeholder="fecha de cambiar-producto">
+            <div class="marcas">
+                <select id="select-marcas">
+                    <option value="seleccionar marca">seleccionar marca</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Addidas">Addidas</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Fila">Fila</option>
+                    <option value="Vans">Vans</option>
+                </select>
             </div>
-            <div>
-                <input class="formulario-input" type="number" name="fecha-de-creacion" class="cambiar-producto" placeholder="Nuevo precio">
-            </div>
-            <div>
-                <input class="formulario-input" id="add_edit_product" type="file" name="iamgen-del-producto" class="cambiar-producto" placeholder="añadir">
-            </div>
+            <div class="file-upload">
+                <input class="file-upload__input" type="file" name="myFile[]" id="myFile" multiple>
+                <button class="file-upload__button" type="button">Elige un archivo</button>
+                <span class="file-upload__label"></span>
+              </div>
             <section class="wrapper">
                 <button type="submit" class="add_edit_product"><a href="/administratorToolsProducts" class="link-boton">Guardar</a></button>
                 <button type="reset" class="add_edit_product">Borrar</button>
@@ -34,5 +40,6 @@
             </form>
     </main>
     <%- include("./partials/scripts") %>
+    <script src="/js/edit-CreateProduct.js"></script>
 </body>
 </html>
