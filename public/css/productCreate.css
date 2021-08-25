@@ -102,10 +102,20 @@ margin-bottom: 20px;
     font-family: "Quicksand", sans-serif;
   }
 
-@media (max-width: 767px){
+  @media (max-width: 767px){
     #select-marcas{
         width: 100%;
         height: 80%;
         font-size: 15px;
+    }
+    .file-upload{
+        font-size: 12px;
+        margin: 0;
+    }
+    .add_edit_product{
+        font-size: 12px;
+    }
+    .container_main{
+        width: 80%;
     }
 }
