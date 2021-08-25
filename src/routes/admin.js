@@ -6,7 +6,7 @@ const multer = require("multer");
 
 const multerStorage = multer.diskStorage({
     destination: function (req, file, cb) {
-        let folder = path.join(__dirname, "../../public/images/products");
+        let folder = path.join(__dirname, "../../public/images/zapatillas");
       cb(null, folder);
     },
     filename: function (req, file, cb) {
@@ -16,10 +16,11 @@ const multerStorage = multer.diskStorage({
   })
 
   const upload = multer({
-      error: function(req,file,cb){
+      store: multerStorage,
+      error: function(req, file, callback){
           let formato = path.extname(file.originalname);
           if(formato != ".png" && formato != ".jpeg"){
-             throw Error("Solo imagenes")
+            return callback(new Error("Solo imagenes"))
           }
       }
   })
@@ -32,7 +33,7 @@ router.get("/administratorToolsProducts", adminController.administratorTools)
 
 /*** CREATE ONE PRDUCT ***/  
 router.get("/productCreate", adminController.productCreate)
-router.post('/products', upload.array("img-product"), adminController.store);
+router.post('/administratorToolsProducts', upload.array("myFile[]"), adminController.store);
 
 /*** EDIT ONE PRDUCT ***/  
 router.get("/productEdit", adminController.productEdit)

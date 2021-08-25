@@ -16,13 +16,13 @@ const controlador = {
     },
     productCreate: (req,res) => {
         res.render("productCreate", {
-            articulos: articulos
         });
     },
     store: (req,res) => {
-        res.render("productCreate", {
-            articulos: articulos
-        });
+       
+        console.log(req.body)
+
+		res.redirect("/administratorToolsProducts");
     },
     productEdit: (req,res) => {
         res.render("productEdit", {
