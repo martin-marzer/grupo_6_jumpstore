@@ -19,10 +19,18 @@ const controlador = {
             articulos: articulos
         });
     },
+    store: (req,res) => {
+        res.render("productCreate", {
+            articulos: articulos
+        });
+    },
     productEdit: (req,res) => {
         res.render("productEdit", {
             articulos: articulos
         });
+    },
+    update: (req,res) => {
+        res.render("productEdit")
     }
 };
 
