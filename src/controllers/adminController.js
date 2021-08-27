@@ -19,6 +19,7 @@ const controlador = {
         });
     },
     store: (req,res) => {
+        
        let newId = articulos[articulos.length -1].id;
        let id = newId +1;
 
@@ -29,14 +30,20 @@ const controlador = {
            descripcion: req.body.descripcion,
            precio: req.body.precio,
            marca: req.body.marca,
+           imagen: req.file.filename
        }
+
+       newProduct.name = newProduct.name.charAt(0).toUpperCase() + newProduct.name.slice(1);
+       newProduct.descripcion = newProduct.descripcion.charAt(0).toUpperCase() + newProduct.descripcion.slice(1);
+       newProduct.precio = parseInt(newProduct.precio, 10)
+       
 
        let newBasedata = articulos.concat(newProduct)
        let finalProduct = JSON.stringify(newBasedata, null, 2)
-2
+
        fs.writeFileSync(articulosFilePath, finalProduct)  
 
-       console.log(finalProduct )
+       console.log(req.file)
 
 		res.redirect("/administratorToolsProducts");
     },
