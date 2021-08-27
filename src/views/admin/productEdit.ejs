@@ -13,36 +13,78 @@
         <form class="formulario-edit" method="POST" action="/administratorToolsProducts?_method=PUT">
             <h1 class="titulo">Editando <%= articulo.name %></h1>
             <div>
-                <input class="formulario-input" type="text" name="nombre" class="cambiar-producto" placeholder="<%= articulo.name %>">
+                <input class="formulario-input" type="text" name="nombre" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
             </div>
             <div>
-                <input class="formulario-input" type="text" name="talle" class="crear-producto" placeholder="<%= articulo.talle %>" required>
+                <label for="fecha">Fecha de entrada:</label>
+                <input class="formulario-input" type="date" name="fechaEntrada" id="fecha" class="cambiar-producto" value="<%= articulo.date %>"  min="2021-01-01" max="2022-01-01" required>
             </div>
+            <div class="selects">
+                <div class="talles">
+                    <select id="select-talles" required>
+                        <option value="35-37"
+                        <% if (articulo.talle == "35-37") { %>
+                            selected
+                            <% } %>
+                        >35-37</option>
+                        <option value="38-40"
+                        <% if (articulo.talle == "38-40") { %>
+                            selected
+                            <% } %>
+                        >38-40</option>
+                        <option value="41-43"
+                        <% if (articulo.talle == "41-43") { %>
+                            selected
+                            <% } %>
+                        >41-43</option>
+                        <option value="44-35"
+                        <% if (articulo.talle == "44-35") { %>
+                            selected
+                            <% } %>
+                        >44-35</option>
+                    </select>
+                </div>
+                <div class="marcas">
+                    <select id="select-marcas" required>
+                        <option value="Adidas"
+                        <% if (articulo.brand == "Adidas") { %>
+                            selected
+                            <% } %>
+                        >Adidas</option>
+
+                        <option value="Fila"
+                        <% if (articulo.brand == "Fila") { %>
+                            selected
+                            <% } %>
+                        >Fila</option>
+
+                        <option value="Nike"
+                        <% if (articulo.brand == "Nike") { %>
+                            selected
+                            <% } %>
+                        >Nike</option>
+
+                        <option value="Vans"
+                        <% if (articulo.brand == "Vans") { %>
+                            selected
+                            <% } %>
+                        >Vans</option>
+
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <input class="formulario-input" type="number" name="precio" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+            </div>
+
             <div class="col-12">
                 <label for="description" class="form-label">Descripción:</label>
-                <textarea name="descripcion" id="description" class="descripcion" required></textarea>
+                <textarea name="descripcion" id="description" class="descripcion" required ><%= articulo.description %></textarea>
             </div>
-            <div>
-                <input class="formulario-input" type="number" name="precio" class="cambiar-producto" placeholder="Nuevo precio del producto">
-            </div>
-            <div class="marcas">
-                <select id="select-marcas">
-                    <option value="seleccionar marca">seleccionar marca</option>
-                    <option value="Nike">Nike</option>
-                    <option value="Addidas">Addidas</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Fila">Fila</option>
-                    <option value="Vans">Vans</option>
-                </select>
-            </div>
-            <div class="file-upload">
-                <input class="file-upload__input" type="file" name="myFile[]" id="myFile" multiple>
-                <button class="file-upload__button" type="button">Nueva imagen</button>
-                <span class="file-upload__label"></span>
-              </div>
             <section class="wrapper">
-                <button type="submit" class="add_edit_product"><a href="/administratorToolsProducts" class="link-boton">Guardar</a></button>
-                <button type="reset" class="add_edit_product">Borrar</button>
+                <button type="submit" class="add_edit_product"><a href="/administratorToolsProducts" class="link-boton">Guardar Datos</a></button>
+                <button type="reset" class="add_edit_product">Borrar Datos</button>
                 </section>
             </form>
     </main>

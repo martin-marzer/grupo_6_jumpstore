@@ -3,7 +3,7 @@
 <head>
     <title>Productos</title>
     <%- include("./partials/head") %>
-    <link rel="stylesheet" href="./css/listProducts.css">
+    <link rel="stylesheet" href="/css/listProducts.css">
 </head>
 <body>
     <%- include("./partials/header") %>
@@ -106,10 +106,29 @@
                     <div class="select-results-flex">
                         <div class="select-filter-container">
                             <div class="select-container">
-                                <select name="sort-order" id="">
-                                    <option value="" disabled  selected>Seleccione una opción</option>
-                                    <option value="lowest-price">Precio más bajo</option>
-                                    <option value="highest-price">Precio más alto</option>
+                                <select id="sort-order">
+                                    <option value=""
+                                        <% if (order == undefined ) { %>
+                                            selected
+                                        <% } %>
+                                    >Relevantes</option>
+
+                                    <option value="OrderByPriceASC"
+                                        <% if (order == "OrderByPriceASC" ) { %>
+                                            selected
+                                        <% } %>
+                                    >Precio más bajo</option>
+
+                                    <option value="OrderByPriceDESC"
+                                        <% if (order == "OrderByPriceDESC" ) { %>
+                                            selected
+                                        <% } %>
+                                    >Precio más alto</option>
+                                    <option value="OrderByReleaseDateASC"
+                                    <% if (order == "OrderByReleaseDateASC" ) { %>
+                                        selected
+                                    <% } %>
+                                >Más nuevas</option>
                                 </select>
                             </div>
                             <div class="filter-container">

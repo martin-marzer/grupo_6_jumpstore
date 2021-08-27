@@ -425,6 +425,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* mediaqueries */
 
 @media (max-width: 767px) {
+    .container {
+        width: 100% ! important;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
+    box-shadow: 0 0 0 30px #121212 inset !important;
+    }
+    input:-webkit-autofill
+    {
+    -webkit-text-fill-color: rgb(255, 255, 255) !important;
+    }
+
     /* header */
     .main-header {
         position: sticky;
@@ -449,12 +466,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-user, #jumpstore-cart,#jumpstore-admin  {
         display: none;
     }
+    #jumpstore-logo {
+        width: 70%;
+    }
 
     /* nav */
     #jumpstore-navbar {
         display: none;
     }
-    
+
+    #jumpstore-search-btn button {
+        font-size: 5.5vw;
+    }
 
 
     /* footer */
@@ -493,22 +516,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .footer-separator {
         display: none;
     }
-}
-@media (max-width: 768px) {
-    .container {
-        width: 100% ! important;
+    .button-scroll {
+        display: none;
     }
     .black-area {
         display: none !important;
     }
-    #jumpstore-logo {
-        width: 70%;
-    }
-    #jumpstore-search-btn button {
-        font-size: 5.5vw;
-    }
-
-
 }
 @media (min-width:600px) {
     a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
@@ -521,6 +534,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media (min-width: 768px){
     .container {
         width: 750px;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    input:-webkit-autofill:active
+    {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
+    }
+    input:-webkit-autofill
+    {
+    -webkit-text-fill-color: rgb(0, 0, 0) !important;
     }
 
     /* header */

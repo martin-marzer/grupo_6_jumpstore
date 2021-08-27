@@ -24,7 +24,7 @@
     <div class="conteiner_general">
     <div class="form_content">
         <ul class="form_ul">
-        <li class="titulo_form">Listado de productos</li>
+        <li class="titulo_form">Listado de productos: <%= articulos.length %> </li>
         <li>
             <a href="/productCreate" class="add_edit_product">Nuevo</a>
         </li>
@@ -46,11 +46,13 @@
             <li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a></li>
             <li><%= articulo.name %></li>
             <li><img src="images/zapatillas/<%= articulo.image[0] %>"></li>
-            <li>$<%= articulo.price %></li>
+            <li>$<%= toThousand(articulo.price)  %></li>
         </ul>
     </div>
     <% }); %>
 </div>
+    </div>
+<%- include("./partials/footer") %>
 <%- include("./partials/scripts") %>
 </body>
 </html>

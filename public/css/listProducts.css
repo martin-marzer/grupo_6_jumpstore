@@ -159,18 +159,7 @@ body {
     body {
         font-size: 3vw
     }
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    input:-webkit-autofill:active
-    {
-    -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
-    box-shadow: 0 0 0 30px #121212 inset !important;
-    }
-    input:-webkit-autofill
-    {
-    -webkit-text-fill-color: rgb(255, 255, 255) !important;
-    }
+
     .select-results-flex {
         flex-direction: column;
         position: -webkit-sticky;
@@ -233,18 +222,6 @@ body {
     }
 }
 @media (min-width:768px) {
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    input:-webkit-autofill:active
-    {
-    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
-    box-shadow: 0 0 0 30px rgb(255, 255, 255) inset !important;
-    }
-    input:-webkit-autofill
-    {
-    -webkit-text-fill-color: rgb(0, 0, 0) !important;
-    }
     .products-container {
         margin-top: 30px;
     }
@@ -394,7 +371,7 @@ body {
     .filter-scroll {
         height: 150px;
         overflow-y: scroll;
-        padding: 0 6px 15px 6px;
+        padding: 10px 6px 15px 6px;
         background: rgb(255, 255, 255);
     }
     .control-group.talle .control {

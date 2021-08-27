@@ -4,11 +4,13 @@
     "name": "Fila Trending Topic 2.0",
     "price": 6790,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "Fila 1.jpg",
       "Fila 2.jpg",
       "Fila 3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -16,11 +18,13 @@
     "name": "Air Jordan 1 Retro Low 'Lakers top 3",
     "price": 23000,
     "talle": "35-37",
+    "brand": "Nike",
     "image": [
       "airjordan1retro.jpeg",
       "airjordan1retro2.jpeg",
       "airjordan1retro3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -28,11 +32,13 @@
     "name": "Nike AIRMAX 97",
     "price": 20600,
     "talle": "35-37",
+    "brand": "Nike",
     "image": [
       "airmax97-1.jpg",
       "airmax97-2.jpg",
       "airmax97-3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -40,11 +46,13 @@
     "name": "Jordan 1 Retro High White University",
     "price": 22400,
     "talle": "35-37",
+    "brand": "Nike",
     "image": [
       "jordan1retro.jpeg",
       "jordan1retro2.jpeg",
       "jordan1retro3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -52,11 +60,13 @@
     "name": "Jordan 5 Retro Grape Fresh Prince",
     "price": 22500,
     "talle": "35-37",
+    "brand": "Nike",
     "image": [
       "jordan5retro.jpeg",
       "jordan5retro2.jpeg",
       "jordan5retro3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -64,11 +74,13 @@
     "name": "Jordan 11 Retro Win Like 96",
     "price": 23700,
     "talle": "35-37",
+    "brand": "Nike",
     "image": [
       "jordan11retro.jpeg",
       "jordan11retro2.jpeg",
       "jordan11retro3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -76,11 +88,13 @@
     "name": "Adidas Yeezy 350v2 Black",
     "price": 20400,
     "talle": "35-37",
+    "brand": "Adidas",
     "image": [
       "Adidas Yeezyblack1.jpg",
       "Adidas Yeezyblack2.jpg",
       "Adidas Yeezyblack3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -88,11 +102,13 @@
     "name": "Adidas Yeezy 350v2 White",
     "price": 20400,
     "talle": "35-37",
+    "brand": "Adidas",
     "image": [
       "Adidas Yeezy1.jpg",
       "Adidas Yeezy2.jpg",
       "Adidas Yeezy3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -100,11 +116,13 @@
     "name": "Adidas X9000L4 CYBERPUNK 2077",
     "price": 20900,
     "talle": "35-37",
+    "brand": "Adidas",
     "image": [
       "adidascyberpunk1.jpeg",
       "adidascyberpunk2.jpeg",
       "adidascyberpunk3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -112,11 +130,13 @@
     "name": "Adidas X9000L4",
     "price": 20900,
     "talle": "35-37",
+    "brand": "Adidas",
     "image": [
       "Adidas X9000L4-1.jpeg",
       "Adidas X9000L4-2.jpeg",
       "Adidas X9000L4-3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -124,11 +144,13 @@
     "name": "Adidas Superstar Sean Wotherspoon",
     "price": 17200,
     "talle": "35-37",
+    "brand": "Adidas",
     "image": [
       "adidasSuperstar1.jpeg",
       "adidasSuperstar2.jpeg",
       "adidasSuperstar3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -136,11 +158,13 @@
     "name": "Adidas Superstar Melting Sadness",
     "price": 20200,
     "talle": "35-37",
+    "brand": "Adidas",
     "image": [
       "adidasmelting1.jpeg",
       "adidasmelting2.jpeg",
       "adidasmelting3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -148,11 +172,13 @@
     "name": "Fila archive RJV",
     "price": 12990,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "fila archive-1.jpg",
       "fila archive-2.jpg",
       "fila archive-3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -160,11 +186,13 @@
     "name": "Fila Flex Shine",
     "price": 20200,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "fila flex1.jpg",
       "fila flex2.jpg",
       "fila flex3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -172,11 +200,13 @@
     "name": "Fila Renno",
     "price": 19990,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "fila renno-1.jpg",
       "fila renno-2.jpg",
       "fila renno-3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -184,11 +214,13 @@
     "name": "Fila Renno 90S",
     "price": 19990,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "fila renno90s-1.jpg",
       "fila renno90s-2.jpg",
       "fila renno90s-3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -196,11 +228,13 @@
     "name": "Vans ERA",
     "price": 17900,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "vans era1.jpeg",
       "vans era2.jpeg",
       "vans era3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -208,11 +242,13 @@
     "name": "Vans Old Skool VLT LX",
     "price": 17900,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "vans oldskool vlt1.jpg",
       "vans oldskool vlt2.jpg",
       "vans oldskool vlt3.jpg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -220,11 +256,13 @@
     "name": "Vans Old Skool Supreme",
     "price": 17900,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "vans oldskool supreme1.jpeg",
       "vans oldskool supreme2.jpeg",
       "vans oldskool supreme3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
   },
   {
@@ -232,33 +270,13 @@
     "name": "Vans Old Skool",
     "price": 18700,
     "talle": "35-37",
+    "brand": "Fila",
     "image": [
       "vans oldskool1.jpeg",
       "vans oldskool2.jpeg",
       "vans oldskool3.jpeg"
     ],
+    "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
-  },
-  {
-    "id": 21,
-    "name": "Hola",
-    "talle": "1",
-    "description": "Buen",
-    "price": 1,
-    "marca": "Nike",
-    "image": [
-      "product-1630027870606.jpg"
-    ]
-  },
-  {
-    "id": 22,
-    "name": "Ale",
-    "talle": "120cm",
-    "description": "Sdf",
-    "price": 1,
-    "marca": "Nike",
-    "image": [
-      "product-1630028680336.jpg"
-    ]
   }
 ]
