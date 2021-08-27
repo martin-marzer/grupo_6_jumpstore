@@ -16,6 +16,7 @@ const controlador = {
     },
     productCreate: (req,res) => {
         res.render("productCreate", {
+            articulos: articulos
         });
     },
     store: (req,res) => {
@@ -27,15 +28,15 @@ const controlador = {
            id: id,
            name:  req.body.name,
            talle: req.body.talle,
-           descripcion: req.body.descripcion,
-           precio: req.body.precio,
+           description: req.body.descripcion,
+           price: req.body.precio,
            marca: req.body.marca,
-           imagen: req.file.filename
+           image: [req.file.filename]
        }
 
        newProduct.name = newProduct.name.charAt(0).toUpperCase() + newProduct.name.slice(1);
-       newProduct.descripcion = newProduct.descripcion.charAt(0).toUpperCase() + newProduct.descripcion.slice(1);
-       newProduct.precio = parseInt(newProduct.precio, 10)
+       newProduct.description = newProduct.description.charAt(0).toUpperCase() + newProduct.description.slice(1);
+       newProduct.price = parseInt(newProduct.price, 10)
        
 
        let newBasedata = articulos.concat(newProduct)
@@ -48,9 +49,10 @@ const controlador = {
 		res.redirect("/administratorToolsProducts");
     },
     productEdit: (req,res) => {
-        res.render("productEdit", {
-            articulos: articulos
-        });
+        let articuloID = req.params.id - 1;
+		res.render("productEdit", {
+			articulo: articulos[articuloID]
+		});
     },
     update: (req,res) => {
         res.render("productEdit")

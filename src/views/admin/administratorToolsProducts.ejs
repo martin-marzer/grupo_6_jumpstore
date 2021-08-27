@@ -33,27 +33,23 @@
      <div class="conteiner_general_list">
      <div class="titulos-container">
         <ul class="titulos_conteiner">
-            <li>Seleccionar</li>
+            <li>Editar/Borrar</li>
             <li>Nombre</li>
             <li>Imagen</li>
             <li>Precio</li>
         </ul>
     </div>
 
-    <!-- esto se remplaza con javascrip -->
-
-     <div class="products-container">       
+    <% articulos.forEach(articulo => { %> 
+     <div class="products-container">  
         <ul class="lista_conteiner">
-            <li><a href="/productEdit" class="add_edit_product">Editar</a></li>
-            <li>J Balvin</li>
-            <li><img src="images/zapatillas/jorda-jbalbin.jpeg"></li>
-            <li>$1221</li>
-            <li><a href="/productEdit" class="add_edit_product">Editar</a></li>
-            <li>Jordan Travis Scoot </li>
-            <li><img src="images/zapatillas/jordan travis.jpg"></li>
-            <li>$1221</li>
+            <li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a></li>
+            <li><%= articulo.name %></li>
+            <li><img src="images/zapatillas/<%= articulo.image[0] %>"></li>
+            <li>$<%= articulo.price %></li>
         </ul>
     </div>
+    <% }); %>
 </div>
 <%- include("./partials/scripts") %>
 </body>

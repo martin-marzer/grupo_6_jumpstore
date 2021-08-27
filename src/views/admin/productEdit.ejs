@@ -10,13 +10,17 @@
     <%- include("./partials/menuMobile") %>
 
     <main class="container_main">
-        <form class="formulario-edit" method="POST" action="/administratorToolsProducts">
-            <h1 class="titulo">Editar producto</h1>
+        <form class="formulario-edit" method="POST" action="/administratorToolsProducts?_method=PUT">
+            <h1 class="titulo">Editando <%= articulo.name %></h1>
             <div>
-                <input class="formulario-input" type="text" name="nombre" class="cambiar-producto" placeholder="Nuevo nombre del producto">
+                <input class="formulario-input" type="text" name="nombre" class="cambiar-producto" placeholder="<%= articulo.name %>">
             </div>
             <div>
-                <input class="formulario-input" type="text" name="descripcion" class="crear-producto" placeholder="Descripcion del producto">
+                <input class="formulario-input" type="text" name="talle" class="crear-producto" placeholder="<%= articulo.talle %>" required>
+            </div>
+            <div class="col-12">
+                <label for="description" class="form-label">Descripción:</label>
+                <textarea name="descripcion" id="description" class="descripcion" required></textarea>
             </div>
             <div>
                 <input class="formulario-input" type="number" name="precio" class="cambiar-producto" placeholder="Nuevo precio del producto">

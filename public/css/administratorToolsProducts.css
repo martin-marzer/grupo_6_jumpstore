@@ -3,12 +3,12 @@
     align-items: flex-end;
     justify-content: space-between;
     margin: 0 auto;
-    width: 90%;
+    width: 88%;
     padding: 40px 0;
 }
 .conteiner_general{
     width: 90%;
-    background: whitesmoke;
+    background: #fdfdfd;
     margin: 0 auto;
     border: black 1px;
 }
@@ -19,21 +19,21 @@
     color: black;
 }
 .titulo{
-    font-size: 30px;
+    font-size: 32px;
     font-weight: bold;
 }
 .form_content{
-    background: whitesmoke;
     width: 90%;
     margin: 0 auto;
 }
 .form_ul{
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
     padding: 40px 0px 40px 0px;
 }
 .titulo_form{
-    font-size: 23px;
+    font-size: 25px;
     font-weight: bold;
 }
 .add_edit_product{
@@ -45,7 +45,7 @@ text-decoration: none;
 text-transform: uppercase; 
 font-family: 'Helvetica', sans-serif; 
 border-radius: 50px; 
-font-size: 12px;
+font-size: 14px;
 transition:  0.3s;
 cursor: pointer;
 }
@@ -59,7 +59,7 @@ cursor: pointer;
     padding: 10px;
 }
 .titulos_conteiner li{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     width: 25%;
     text-align: center;
@@ -67,12 +67,17 @@ cursor: pointer;
 .products-container{
     padding: 10px;
     padding-top: 15px;
+    transition: 0.5s;
+}
+.products-container:hover{
+    background: #ebebeb;
 }
 .lista_conteiner{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    font-size: 17px;
 }
 .lista_conteiner li{
     width: 25%;
@@ -80,14 +85,15 @@ cursor: pointer;
     padding: 10px;
 }
 .lista_conteiner li img{
-    width: 80px;
-    height: 80px;
-    border-radius: 40%;
+    width: 95px;
+    height: 88px;
+    border-radius: 22%;
     object-fit: cover;
+    border: 0.5px solid;
 }
 .conteiner_general{
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    border-radius: 2%;
+    border-radius: 0.5%;
 }
 
 @media (max-width: 768px) {
@@ -107,9 +113,16 @@ cursor: pointer;
         padding-bottom: 10px;
     }
     .titulos_conteiner li{
-        font-size: 14.5px;
+        font-size: 13.5px;
     }
     .lista_conteiner li img{
         height: 70px;
+        width: 90px;
+    }
+    .add_edit_product{
+        font-size: 12px;
+    }
+    .conteiner_general{
+        width: 95%;
     }
 }

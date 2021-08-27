@@ -238,5 +238,27 @@
       "vans oldskool3.jpeg"
     ],
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
+  },
+  {
+    "id": 21,
+    "name": "Hola",
+    "talle": "1",
+    "description": "Buen",
+    "price": 1,
+    "marca": "Nike",
+    "image": [
+      "product-1630027870606.jpg"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Ale",
+    "talle": "120cm",
+    "description": "Sdf",
+    "price": 1,
+    "marca": "Nike",
+    "image": [
+      "product-1630028680336.jpg"
+    ]
   }
 ]

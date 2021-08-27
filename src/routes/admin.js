@@ -27,7 +27,7 @@ router.get("/productCreate", adminController.productCreate)
 router.post('/administratorToolsProducts', upload.single("myFile"), adminController.store); 
 
 /*** EDIT ONE PRDUCT ***/  
-router.get("/productEdit", adminController.productEdit)
+router.get("/products/edit/:id", adminController.productEdit)
 router.put('/products/edit/:id', adminController.update);
 
 module.exports = router;
