@@ -73,7 +73,34 @@ const controlador = {
         });
     },
     update: (req,res) => {
-        res.render("productEdit")
+        productToEditBody= req.body;
+		let idProduct = req.params.id - 1;
+        let product = products[idProduct];
+
+        product.name =  productToEditBody.name;
+        product.price = productToEditBody.price;
+        product.talle =  productToEditBody.talle;
+        product.brand = productToEditBody.brand;
+        // product.image = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
+        product.date = productToEditBody.date;
+        product.description = productToEditBody.description;
+                   
+        product.price = parseInt(product.price, 10)
+        product.name =  product.name.charAt(0).toUpperCase() +  product.name.slice(1);
+        product.description = product.description.charAt(0).toUpperCase() +  product.description.slice(1);
+
+        products[product] = product;
+
+        let newBasedata = products.concat(product)
+        let finalProduct = JSON.stringify(newBasedata, null, 2)
+
+        fs.writeFileSync(productsFilePath, finalProduct)
+
+        console.log(product)
+        res.redirect("/administratorToolsProducts");
+    }, 
+    delete: (req,res) => {
+
     }
 };
 

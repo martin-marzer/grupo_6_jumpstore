@@ -10,18 +10,18 @@
     <%- include("./partials/menuMobile") %>
 
     <main class="container_main">
-        <form class="formulario-edit" method="POST" action="/administratorToolsProducts?_method=PUT">
+        <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
             <h1 class="titulo">Editando <%= articulo.name %></h1>
             <div>
-                <input class="formulario-input" type="text" name="nombre" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
+                <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
             </div>
             <div>
                 <label for="fecha">Fecha de entrada:</label>
-                <input class="formulario-input" type="date" name="fechaEntrada" id="fecha" class="cambiar-producto" value="<%= articulo.date %>"  min="2021-01-01" max="2022-01-01" required>
+                <input class="formulario-input" type="date" name="date" id="fecha" class="cambiar-producto" value="<%= articulo.date %>"  min="2021-01-01" max="2022-01-01" required>
             </div>
             <div class="selects">
                 <div class="talles">
-                    <select id="select-talles" required>
+                    <select id="select-talles" name="talle" required>
                         <option value="35-37"
                         <% if (articulo.talle == "35-37") { %>
                             selected
@@ -45,7 +45,7 @@
                     </select>
                 </div>
                 <div class="marcas">
-                    <select id="select-marcas" required>
+                    <select id="select-marcas" name="brand" required>
                         <option value="Adidas"
                         <% if (articulo.brand == "Adidas") { %>
                             selected
@@ -75,15 +75,20 @@
 
             </div>
             <div>
-                <input class="formulario-input" type="number" name="precio" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+                <input class="formulario-input" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
             </div>
-
+           <!-- <div class="file-upload">
+                <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>
+                <button class="file-upload__button" type="button">Imagen del producto</button>
+                <span class="file-upload__label"></span>
+            </div>  -->
             <div class="col-12">
                 <label for="description" class="form-label">Descripción:</label>
-                <textarea name="descripcion" id="description" class="descripcion" required ><%= articulo.description %></textarea>
+                <textarea name="description" id="description" class="descripcion" required ><%= articulo.description %></textarea>
             </div>
             <section class="wrapper">
-                <button type="submit" class="add_edit_product"><a href="/administratorToolsProducts" class="link-boton">Guardar Datos</a></button>
+                <button type="submit" class="add_edit_product">Guardar Datos</button>
+                <button type="delete" class="add_edit_product">Borrar Datos</button>
                 <button type="reset" class="add_edit_product">Borrar Datos</button>
                 </section>
             </form>
