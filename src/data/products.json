@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Epicarda 1",
+    "name": "Epicarda 16",
     "price": 1,
     "talle": "35-37",
     "brand": "Fila",
@@ -275,62 +275,6 @@
       "vans oldskool1.jpeg",
       "vans oldskool2.jpeg",
       "vans oldskool3.jpeg"
-    ],
-    "date": "2021-08-25",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
-  },
-  {
-    "id": 1,
-    "name": "epicard 1",
-    "price": "6790",
-    "talle": "35-37",
-    "brand": "Fila",
-    "image": [
-      "Fila 1.jpg",
-      "Fila 2.jpg",
-      "Fila 3.jpg"
-    ],
-    "date": "2021-08-25",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
-  },
-  {
-    "id": 1,
-    "name": "epicard 1",
-    "price": 1,
-    "talle": "35-37",
-    "brand": "Fila",
-    "image": [
-      "Fila 1.jpg",
-      "Fila 2.jpg",
-      "Fila 3.jpg"
-    ],
-    "date": "2021-08-25",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
-  },
-  {
-    "id": 1,
-    "name": "Efunction slice() { [native code] }",
-    "price": 1,
-    "talle": "35-37",
-    "brand": "Fila",
-    "image": [
-      "Fila 1.jpg",
-      "Fila 2.jpg",
-      "Fila 3.jpg"
-    ],
-    "date": "2021-08-25",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."
-  },
-  {
-    "id": 1,
-    "name": "Epicarda 1",
-    "price": 1,
-    "talle": "35-37",
-    "brand": "Fila",
-    "image": [
-      "Fila 1.jpg",
-      "Fila 2.jpg",
-      "Fila 3.jpg"
     ],
     "date": "2021-08-25",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis placeat, dicta corporis in, porro incidunt aperiam eius maiores natus ad veritatis nihil provident enim nulla nemo optio. Placeat, ipsum incidunt."

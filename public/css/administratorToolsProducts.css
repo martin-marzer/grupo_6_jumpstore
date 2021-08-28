@@ -40,7 +40,7 @@ body {
     font-weight: bold;
 }
 .add_edit_product{
-border: 1px solid #2e518b; 
+border: white; 
 padding: 10px;
 background-color: black; 
 color: #ffffff; 
@@ -51,6 +51,8 @@ border-radius: 50px;
 font-size: 14px;
 transition:  0.3s;
 cursor: pointer;
+margin-bottom: 10px;
+width: 100px;
 }
 .add_edit_product:hover{
     background: rgba(0, 0, 0, 0.637);
@@ -100,6 +102,14 @@ cursor: pointer;
     margin: 0 auto 100px auto;
 
 }
+.liEditar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#delete_product{
+    background-color: #e73c37;
+}
 
 @media (max-width: 768px) {
     .encabezado_content{
@@ -125,7 +135,8 @@ cursor: pointer;
         width: 90px;
     }
     .add_edit_product{
-        font-size: 12px;
+        font-size: 11px;
+        width: 70px;
     }
     .conteiner_general{
         width: 95%;

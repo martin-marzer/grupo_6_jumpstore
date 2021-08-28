@@ -91,16 +91,35 @@ const controlador = {
 
         products[product] = product;
 
-        let newBasedata = products.concat(product)
-        let finalProduct = JSON.stringify(newBasedata, null, 2)
+        let finalProduct = JSON.stringify(products, null, 2)
 
         fs.writeFileSync(productsFilePath, finalProduct)
 
-        console.log(product)
+        console.log(product.image)
         res.redirect("/administratorToolsProducts");
     }, 
     delete: (req,res) => {
+      let productoBorrado = products.filter(product => (product.id != req.params.id))
+      // let productoBorrado = products.filter(cb => (products.id != req.params.id))
 
+      let finalProduct = JSON.stringify(productoBorrado, null, 2)
+      fs.writeFileSync(productsFilePath, finalProduct)
+
+       
+      // Aca intento ordenar los id desde 1 al eliminar un elemento 
+
+      let ordenarList = function ordear() {
+          for(let i = 1; i < products.length; i ++){
+            let ordenarId = products.id = [i === id];
+            ordenarId.sort()
+      } 
+      let FinalList = JSON.stringify(ordenarList, null, 2)
+      fs.writeFileSync(productsFilePath, FinalList) 
+    }
+      
+     
+      console.log(ordenarList)
+        res.redirect("/administratorToolsProducts");
     }
 };
 

@@ -41,9 +41,9 @@ router.post('/administratorToolsProducts', upload.array("myFile"), adminControll
 
 /*** EDIT ONE PRDUCT ***/  
 router.get("/products/edit/:id", adminController.productEdit)
-router.put('/products/edit/:id', upload.array("myFile"), adminController.update);
+router.put('/products/edit/:id', adminController.update);
 
 // /*** DELETE ONE PRODUCT***/ 
-router.delete('/products/delete/:id', productsController.delete); 
+router.delete('/products/delete/:id', adminController.delete); 
 
 module.exports = router;
