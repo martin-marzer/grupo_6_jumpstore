@@ -9,6 +9,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
     productsList: (req,res) => {
+        //esto ordena la vaina, obtiene el dato desde el link y de ahi se acomoda la vista
         let order = req.params.OrderBy;
         if (order == undefined ) {
             products.sort(function(a, b) {  

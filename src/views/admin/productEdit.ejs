@@ -75,7 +75,7 @@
 
             </div>
             <div>
-                <input class="formulario-input" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+                <input class="formulario-input" min="0" step="1000" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
             </div>
            <!-- <div class="file-upload">
                 <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>

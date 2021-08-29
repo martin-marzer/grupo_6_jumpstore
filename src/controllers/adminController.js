@@ -13,7 +13,6 @@ let resultHandler = function(err) {
        console.log("file deleted");
     }
 }
-
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
@@ -46,17 +45,21 @@ const controlador = {
            
        }
 
+
+       // aca convertimos algunos datos como el precio pasado a number en vez de string, y al text se le agrega mayusculas
        newProduct.name = newProduct.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
        newProduct.description = newProduct.description.charAt(0).toUpperCase() + newProduct.description.slice(1);
        newProduct.price = parseInt(newProduct.price, 10)
        
 
        let newBasedata = products.concat(newProduct)
+
+       //lo del null y 2 es para que el json respete el formato al editar productos
        let finalProduct = JSON.stringify(newBasedata, null, 2)
 
        fs.writeFileSync(productsFilePath, finalProduct)  
 
-       console.log(req.file)
+    //    console.log(req.file)
 
 		res.redirect("/administratorToolsProducts");
     },
@@ -73,9 +76,14 @@ const controlador = {
         });
     },
     update: (req,res) => {
-        productToEditBody= req.body;
-		let idProduct = req.params.id - 1;
-        let product = products[idProduct];
+        productToEditBody = req.body;
+		let idProduct = req.params.id;
+        let product;
+        products.forEach(producto => {
+            if (producto.id == idProduct) {
+                product = producto;
+            }
+	        })
 
         product.name =  productToEditBody.name;
         product.price = productToEditBody.price;
@@ -84,42 +92,69 @@ const controlador = {
         // product.image = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
         product.date = productToEditBody.date;
         product.description = productToEditBody.description;
-                   
+
+        // aca convertimos algunos datos como el precio pasado a number en vez de string, y al text se le agrega mayusculas
         product.price = parseInt(product.price, 10)
         product.name =  product.name.charAt(0).toUpperCase() +  product.name.slice(1);
         product.description = product.description.charAt(0).toUpperCase() +  product.description.slice(1);
-
+        
+        //el producto especifico ahora vale lo editado previamente
         products[product] = product;
-
+        
+        //lo del null y 2 es para que el json respete el formato al editar productos
         let finalProduct = JSON.stringify(products, null, 2)
 
         fs.writeFileSync(productsFilePath, finalProduct)
 
-        console.log(product.image)
+        // console.log(product.image)
         res.redirect("/administratorToolsProducts");
     }, 
     delete: (req,res) => {
-      let productoBorrado = products.filter(product => (product.id != req.params.id))
-      // let productoBorrado = products.filter(cb => (products.id != req.params.id))
 
-      let finalProduct = JSON.stringify(productoBorrado, null, 2)
-      fs.writeFileSync(productsFilePath, finalProduct)
+        //esto es para eliminar tambien las imagenes + json
 
-       
-      // Aca intento ordenar los id desde 1 al eliminar un elemento 
 
-      let ordenarList = function ordear() {
-          for(let i = 1; i < products.length; i ++){
-            let ordenarId = products.id = [i === id];
-            ordenarId.sort()
-      } 
-      let FinalList = JSON.stringify(ordenarList, null, 2)
-      fs.writeFileSync(productsFilePath, FinalList) 
-    }
+        let productoExiliado = products.filter(product => product.id == req.params.id);
+		let productsNew = products.filter(product => product.id != req.params.id)
+
+
+              // Aca es para ordenar los id tras eliminar un producto
+
+        for(let i = 0; i < productsNew.length; i ++){
+            let eachProduct = productsNew[i];
+            eachProduct.id =  i + 1
+        }
+
+        //lo del null y 2 es para que el json respete el formato al editar productos
+		let productsFinal = JSON.stringify(productsNew, null, 2);
+		let imageToDelete = productoExiliado[0].image;
+        //aca se mete un for para eliminar las imagenes al borrarla info del json
+		for (let i = 0; i < imageToDelete.length; i++) {
+			fs.unlinkSync(ImagesFolderPath + imageToDelete[i], resultHandler)
+		}
+		// console.log(imageToDelete)
+		fs.writeFileSync( productsFilePath, productsFinal);
+		res.redirect("/administratorToolsProducts");
+
+
+
+        // este elimina solo la info del json
+
+
+    //   let productsNew = products.filter(product => (product.id != req.params.id))
+      
+      // Aca es para ordenar los id tras eliminar un producto
+
+    //   for(let i = 0; i < productsNew.length; i ++){
+    //     let eachProduct = productsNew[i];
+    //     eachProduct.id =  i + 1
+    // }
+    //   let finalProduct = JSON.stringify(productsNew, null, 2)
+    //   fs.writeFileSync(productsFilePath, finalProduct)
+
       
      
-      console.log(ordenarList)
-        res.redirect("/administratorToolsProducts");
+    //     res.redirect("/administratorToolsProducts");
     }
 };
 

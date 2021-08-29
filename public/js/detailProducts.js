@@ -12,3 +12,4 @@ document.addEventListener( 'DOMContentLoaded', function () {
     }
 	} ).mount();
 } );
+//pues aqui se especifica como se quiere el slider del detalle, pues use splidejs para hacerlo :P

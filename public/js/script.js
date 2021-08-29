@@ -42,7 +42,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 
-// button to scroll up
+// button to scroll up according its height (lo q dice pero en español jeje)
 
 let btn = $('.button-scroll');
 
@@ -59,12 +59,3 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
  
-
-
-
-
-
-
-
-
-// asaa

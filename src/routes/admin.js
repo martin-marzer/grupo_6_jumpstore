@@ -18,11 +18,13 @@ const multerStorage = multer.diskStorage({
     storage: multerStorage,
     fileFilter: function (req, file, callback) {
         let ext = path.extname(file.originalname);
-        if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
+        //aca se especifica los archivos q admite
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
             return callback(new Error('solo imagenes pa'))
         }
         callback(null, true)
     },
+    //aca se especifica los limites, se aceptan aprox 2MB each foto, and only 3 files
     limits:{
         fileSize: 1424 * 1424,
         files: 3

@@ -18,12 +18,18 @@ const controlador = {
         res.render("carrito");
     },
     search: (req, res) => {
+
+		//aca es para recibir lo escrito y sacarle mayus y tildes
 		let searchUser = req.query.keywords;
-		let finalSentence = searchUser.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toLowerCase());
+		let normalizeSearch = finalSentence.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+		let finalSentence = normalizeSearch.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toLowerCase());
+		//aca se guardan los datos que coinciden con la busqueda
 		let usersResults = [];
 		for (let i = 0; i < products.length; i++) {
+			//aca es para cambiar el text de los productos y sacarle mayus and tildes
 			let nameNormal = products[i].name.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
 			let nameNormalFinal = nameNormal.toLowerCase();
+			// si lo que puso  en el buscador coincide con algun producto
 			if (nameNormalFinal.includes(finalSentence) && (finalSentence.length != 0) ) {
 				usersResults.push(products[i]);
 			}		
