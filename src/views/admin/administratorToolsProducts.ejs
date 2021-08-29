@@ -39,24 +39,31 @@
             <li>Precio</li>
         </ul>
     </div>
-
+    <div class="products-container">
     <% articulos.forEach(articulo => { %> 
-     <div class="products-container">  
+     <div class="product-container">  
         <ul class="lista_conteiner">
-            <li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
-                <form method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
-                    <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>
-                </form>
-            </li>
-            <li><%= articulo.name %></li>
-            <li><img src="images/zapatillas/<%= articulo.image[0] %>"></li>
-            <li>$<%= toThousand(articulo.price)  %></li>
+            <a href="/products/detail/<%= articulo.id %>" class="toDetail">
+                <li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
+                    <form method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
+                        <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>
+                    </form>
+                </li>
+                <li><%= articulo.name %></li>
+                <li><img src="images/zapatillas/<%= articulo.image[0] %>"></li>
+                <li>$<%= toThousand(articulo.price)  %></li>
+                
+            </a>
+
+
         </ul>
     </div>
     <% }); %>
 </div>
+</div>
     </div>
 <%- include("./partials/footer") %>
 <%- include("./partials/scripts") %>
+<script src="/js/adminProducts.js"></script>
 </body>
 </html>
