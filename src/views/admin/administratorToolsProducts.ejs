@@ -33,10 +33,11 @@
      <div class="conteiner_general_list">
      <div class="titulos-container">
         <ul class="titulos_conteiner">
-            <li>Editar/Borrar</li>
-            <li>Nombre</li>
-            <li>Imagen</li>
-            <li>Precio</li>
+            <li style="cursor: default;">Editar/Borrar</li>
+            <li><p>Orden de carga</p><i class="fas fa-arrows-alt-v"></i></li>
+            <li><p>Nombre</p><i class="fas fa-arrows-alt-v"></i></li>
+            <li style="cursor: default;">Imagen</li>
+            <li><p>Precio</p><i class="fas fa-arrows-alt-v"></i></li>
         </ul>
     </div>
     <div class="products-container">
@@ -49,9 +50,10 @@
                         <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>
                     </form>
                 </li>
+                <li><%= articulo.id %></li>
                 <li><%= articulo.name %></li>
                 <li><img src="images/zapatillas/<%= articulo.image[0] %>"></li>
-                <li>$<%= toThousand(articulo.price)  %></li>
+                <li class="precio">$<%= toThousand(articulo.price)  %></li>
                 
             </a>
 

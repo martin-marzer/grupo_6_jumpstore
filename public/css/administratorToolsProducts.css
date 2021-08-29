@@ -68,6 +68,13 @@ width: 100px;
     font-weight: bold;
     width: 25%;
     text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+}
+.titulos_conteiner li p {
+    margin: 0;
 }
 .product-container{
     padding: 10px;
@@ -95,9 +102,12 @@ width: 100px;
     display: none;
 }
 .lista_conteiner li{
-    width: 25%;
+    width: 20%;
     text-align: center;
     padding: 10px;
+}
+.lista_conteiner li.id {
+    width: 10%;
 }
 .lista_conteiner li img{
     width: 95px;
