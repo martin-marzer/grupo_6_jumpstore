@@ -20,3 +20,14 @@
 * Hacer menos: Enfocarnos menos en el diseño de la pagina
 
 * Dejar de hacer: Agregar funcionalidades que no nos pide la consigna  - Dejar todo para ultimo momento
+
+## SPRINT 2
+* Comenzar a hacer: Comentar cuando hacemos avances para que los otros miren
+
+* Hacer más:  Dividir mejor las tareas - Más anotaciones en el codigo
+
+* Continuar haciendo: Esforzarnos para hacerlo bien
+
+* Hacer menos: Nada
+
+* Dejar de hacer: Dejar todo para ultimo momento 
