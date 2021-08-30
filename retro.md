@@ -21,7 +21,7 @@
 
 * Dejar de hacer: Agregar funcionalidades que no nos pide la consigna  - Dejar todo para ultimo momento
 
-## SPRINT 2
+## SPRINT 3
 * Comenzar a hacer: Comentar cuando hacemos avances para que los otros miren
 
 * Hacer más:  Dividir mejor las tareas - Más anotaciones en el codigo
