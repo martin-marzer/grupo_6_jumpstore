@@ -13,9 +13,9 @@ for (let i = 0; i < info.length; i++) {
     if (i == 1) {
         eachINFO.onclick = sortByID;
     }
-    else if (i == 4) {
-        eachINFO.onclick = sortByPrice;
-    }
+    // else if (i == 4) {
+    //     eachINFO.onclick = sortByPrice;
+    // }
     // console.log(eachINFO)
 }
 
@@ -51,7 +51,7 @@ for (let i = 0; i < products.length; i++) {
 }
 console.log(eachPrice)
 productsContainer.innerHTML = eachPrice
-    alert("acomodando el precio, como pingo hagoooooo")
+    // alert("acomodando el precio, como pingo hagoooooo")
     // console.log(products)
 }
 
