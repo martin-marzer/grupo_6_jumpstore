@@ -9,7 +9,7 @@ Amantes de las buenas zapatillas, en general un publico que disfruta del buen gu
 ## integrantes 📋
 ### Nombre: Alejandro Gonzalez
 #### Edad: 17
-#### Actividad preferida: visualizar peliculas y jugar ajedrez.
+#### Actividad preferida: ver peliculas y jugar ajedrez.
 
 ### Nombre: Martin Vazquez
 #### Edad: 17
