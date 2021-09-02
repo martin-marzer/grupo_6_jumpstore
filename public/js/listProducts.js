@@ -18,3 +18,4 @@ document.getElementById('sort-order').onchange = function() {
     window.location.href= '/products' ;
   }
 };
+
