@@ -17,31 +17,57 @@
 
             <ul>
                 <li>
-                    <img src="images/contenido-pagina/jordan 1.jpg" alt="Jordan 1 rojas">
+                    <a href="/products">
+                        <img src="images/contenido-pagina/slider1.png" alt="Ofertas">
+                    </a>
                 </li>
                 <li>
-                    <img src="images/contenido-pagina/jordan 4 red fire.jpg" alt="Jordan 4 red fire">
+                    <a href="/products">
+                        <img src="images/contenido-pagina/slider2.png" alt="Travis Scoot">
+                    </a>
                 </li>
                 <li>
-                    <img src="images/contenido-pagina/jordan travis.jpg" alt="jordan travis scott">
+                    <a href="/products/detail/1">
+                        <img src="images/contenido-pagina/slider3.png" alt="Addidas yezzy">
+                    </a>
                 </li>
                 <li>
-                    <img src="images/contenido-pagina/addidas-slider.jpg" alt="jordan travis scott">
+                    <a href="/products">
+                        <img src="images/contenido-pagina/slider4.jpg" alt="Fila">
+                    </a>
                 </li>
 
             </ul>
 
         </div>
 
-        <section class="conteiner-marcas">
-            <ul class="slider-logos">
-                <li id="nike-logo"> <img class="zoom" src="images/contenido-pagina/nike-logo.png" alt="logo Nike"></li>
-                <li id="vans-logo"> <img src="images/contenido-pagina/vans-logo.jpg" alt="logo Vans"></li>
-                <li id="adidas-logo"> <img src="images/contenido-pagina/adidas-logo.png" alt="logo Addidas"></li>
-                <li id="jordan-logo"> <img src="images/contenido-pagina/jordan-logo.png" alt="logo Air Jordan"></li>
+        <div class="container-muestra">
+            <ul class="ul-muestra">
+                <li>
+                    <a href="/products"> 
+                        <p class="texto-muestra">New Adiddas</p>
+                        <img src="images/contenido-pagina/muestra1.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="/products">
+                        <p class="texto-muestra">Nike ineditas</p>
+                        <img src="images/contenido-pagina/muestra2.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="/products">
+                        <p class="texto-muestra">Mucho más..</p>
+                        <img src="images/contenido-pagina/muestra3.png">
+                    </a>
+                </li>
             </ul>
-        </section>
-        <div class="fondo-universo">
+        </div>
+
+        <div class="gifcard-container">
+            <img class="gifcard" src="images/contenido-pagina/gifcard.jpg" alt="gifcard">
+        </div>
+
             <div class="wrapper">
                 <h1 href="#">Most Sold Sneakers</h1>
             </div>
@@ -51,48 +77,25 @@
 
                 <div class="image" >
                     <a href="/products/detail/1">
-                        <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
-                    
-                    <div class="image__overlay image__overlay--primary">
+                            <img class="image__img" src="images/zapatillas/nike-mas-vendido.jpg" alt="Nike AIRMAX 97 METALLIC GOLD">
+                    </a>
+                    <div class="description-product">
                         <div class="image__title">Nike airmax 97 mettallic gold</div>
-                        <p class="image__description">
+                            <p class="image__description">
                             $4
-                        </p>
+                            </p>
                     </div>
-                </a>
                 </div>
                 <div class="image">
-                    <a href="/products/detail/1">
-                    <img class="image__img" src="images/zapatillas/adidas-mas-vendidas.jpg" alt="Adidas Yeezy 350v2 CREAM WHITE">
-                    <div class="image__overlay image__overlay--primary">
-                        <div class="image__title">Adidas Yeezy cream white</div>
-                        <p class="image__description">
-                            $4
-                        </p>
-                    </div>
-                </a>
-                </div>
-                <div class="mode-celuar">
                     <a href="/products/detail/1">
                     <img class="image__img" src="images/zapatillas/jorda-jbalbin.jpeg" alt="Jordan 1 Retro High J Balvin">
-                    <div class="image__overlay image__overlay--primary">
-                        <div class="image__title">Jordan 1 retro high J Balvin</div>
-                        <p class="image__description">
-                            $4
-                        </p>
-                    </div>
                 </a>
+                <div class="description-product">
+                    <div class="image__title">Jordan 1 retro high J Balvin</div>
+                    <p class="image__description">
+                        $4
+                    </p>
                 </div>
-                <div class="image">
-                    <a href="/products/detail/1">
-                    <img class="image__img" src="images/zapatillas/vans-mas-vendidas.jpeg" alt="Vans Old Skool PRO Black/Brown">
-                    <div class="image__overlay image__overlay--primary">
-                        <div class="image__title">Vans old skool black/brown</div>
-                        <p class="image__description">
-                            $4
-                        </p>
-                    </div>
-                    </a>
                 </div>
             </section>
             <div class="wrapper">
@@ -100,23 +103,19 @@
             </div>
 
             <section class="container-new">
-
-                <div id="Jordan">
-                    <img class="image__img" src="images/contenido-pagina/michael-jordan-12.jpg" alt="Michael Jordan">
-                </div>
                 <% for (let i = articulos.length -1 ; i > articulos.length - 3; i--) {%>
             
                     <% let articulo = articulos[i] %>
-                <div class="mode-celuar">
+                <div class="image">
                     <a href="/products/detail/<%= articulo.id %>">
                     <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
-                    <div class="image__overlay image__overlay--primary">
+                    </a>
+                    <div class="description-product">
                         <div class="image__title"><%= articulo.name %></div>
                         <p class="image__description">
                             $<%= articulo.price %>
                         </p>
                     </div>
-                    </a>
                 </div>
                 <% }; %>
             </section>
