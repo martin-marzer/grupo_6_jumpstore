@@ -19,80 +19,104 @@
                 <button class="closebtn-filter">&times;</button>
             </div>
             <div class="filter-body">
-                <div class="each-filter-mobile-mobile">
-                    <p class="categoria">marca</p>
-                    <div class="control-group">
-                        <label class="control control-checkbox">
-                            adidas
-                                <input type="checkbox"/>
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            fila
-                                <input type="checkbox" />
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            nike
-                                <input type="checkbox" />
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            vans
-                                <input type="checkbox" />
-                            <div class="control_indicator"></div>
-                        </label>
+                <form  method="POST" id="form-mobile">
+                    <div class="each-filter-mobile">
+                        <p class="categoria">marca</p>
+                        <div class="filter-scroll">
+                                <div class="control-group">
+                                    <label class="control control-checkbox">
+                                        adidas
+                                            <input type="checkbox"  value="adidas"
+                                            <% if (locals.filter != undefined && filter.includes("adidas")) { %>
+                                                checked
+                                            <% } %>
+                                            
+                                            />
+                                        <div class="control_indicator"></div>
+                                    </label>
+                                    <label class="control control-checkbox">
+                                        fila
+                                            <input type="checkbox"  class="check" value="fila"
+                                            <% if (locals.filter != undefined && filter.includes("fila")) { %>
+                                              checked
+                                            <% } %>
+                                            
+                                            />
+                                        <div class="control_indicator"></div>
+                                    </label>
+                                    <label class="control control-checkbox">
+                                        nike
+                                            <input type="checkbox"  value="nike" 
+                                            <% if (locals.filter != undefined && filter.includes("nike")) { %>
+                                              checked
+                                            <% } %>
+                                            
+                                            />
+                                        <div class="control_indicator"></div>
+                                    </label>
+                                    <label class="control control-checkbox">
+                                        vans
+                                            <input type="checkbox"  value="vans"
+                                            <% if (locals.filter != undefined && filter.includes("vans") ) { %>
+                                                checked 
+                                            <% } %>
+                                            
+                                            />
+                                        <div class="control_indicator"></div>
+                                    </label>
+                                </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="each-filter-mobile">
-                    <p class="categoria">talle</p>
-                    <div class="control-group talle">
-                        <label class="control control-checkbox">
-                            35 - 37 
-                                <input type="checkbox"/>
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            38 - 40 
-                                <input type="checkbox"/>
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            41 - 43 
-                                <input type="checkbox"/>
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            44 - 45 
-                                <input type="checkbox"/>
-                            <div class="control_indicator"></div>
-                        </label>
+                    <div class="each-filter-mobile">
+                        <p class="categoria">talle</p>
+                        <div class="filter-scroll">
+                            <div class="control-group talle">
+                                <label class="control control-checkbox">
+                                    35 - 37 
+                                        <input type="checkbox" value="35-37"
+                                        <% if (locals.filter != undefined && filter.includes("35-37")) { %>
+                                            checked
+                                        <% } %>
+                                        />
+                                    <div class="control_indicator"></div>
+                                </label>
+                                <label class="control control-checkbox">
+                                    38 - 40 
+                                        <input type="checkbox" value="38-40"
+                                        <% if (locals.filter != undefined && filter.includes("38-40")) { %>
+                                            checked
+                                        <% } %>
+                                        />
+                                    <div class="control_indicator"></div>
+                                </label>
+                                <label class="control control-checkbox">
+                                    41 - 43 
+                                        <input type="checkbox" value="41-43"
+                                        <% if (locals.filter != undefined && filter.includes("41-43")) { %>
+                                            checked
+                                        <% } %>
+                                        
+                                        />
+                                    <div class="control_indicator"></div>
+                                </label>
+                                <label class="control control-checkbox">
+                                    44 - 45 
+                                        <input type="checkbox" value="44-45"
+                                        <% if (locals.filter != undefined && filter.includes("44-45")) { %>
+                                            checked
+                                        <% } %>
+                                        />
+                                    <div class="control_indicator"></div>
+                                </label>
 
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="each-filter-mobile">
-                    <p class="categoria">precio</p>
-                    <div class="control-group precio">
-                        <label class="control control-checkbox">
-                            $5000 - $10000
-                                <input type="checkbox" />
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            $10000 - $15000
-                                <input type="checkbox" />
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-checkbox">
-                            más
-                                <input type="checkbox" />
-                            <div class="control_indicator"></div>
-                        </label>
-                        
+                    <div class="button">
+                        <button type="submit" id="button-form-mobile"> Filtrar</button>
                     </div>
-                </div>
+                </form>
             </div>
 
         </div>
@@ -107,8 +131,8 @@
                         <div class="select-filter-container">
                             <div class="select-container">
                                 <select id="sort-order">
-                                    <option value=""
-                                        <% if (order == undefined ) { %>
+                                    <option value="OrderByReleaseDateDESC"
+                                        <% if (order == "OrderByReleaseDateDESC" ) { %>
                                             selected
                                         <% } %>
                                     >Relevantes</option>
@@ -140,82 +164,109 @@
                         </div>
                     </div>
                     <div class="products-filter">
-                        <div class="filter-container-desktop">
-                            <div class="each-filter">
-                                <p class="categoria">marca</p>
-                                <div class="filter-scroll">
-                                    <div class="control-group">
-                                        <label class="control control-checkbox">
-                                            adidas
-                                                <input type="checkbox"/>
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            fila
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            nike
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            vans
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
+                        <div id="filter-container-desktop">
+                           
+                            <form  method="POST" id="form-desk">
+                                <div class="each-filter">
+                                    <p class="categoria">marca</p>
+                                    <div class="filter-scroll">
+                                            <div class="control-group">
+                                                <label class="control control-checkbox">
+                                                    adidas
+                                                        <input type="checkbox"  value="adidas"
+                                                        <% if (locals.filter != undefined && filter.includes("adidas")) { %>
+                                                            checked
+                                                        <% } %>
+                                                        
+                                                        />
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                                <label class="control control-checkbox">
+                                                    fila
+                                                        <input type="checkbox"  class="check" value="fila"
+                                                        <% if (locals.filter != undefined && filter.includes("fila")) { %>
+                                                          checked
+                                                        <% } %>
+                                                        
+                                                        />
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                                <label class="control control-checkbox">
+                                                    nike
+                                                        <input type="checkbox"  value="nike" 
+                                                        <% if (locals.filter != undefined && filter.includes("nike")) { %>
+                                                          checked
+                                                        <% } %>
+                                                        
+                                                        />
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                                <label class="control control-checkbox">
+                                                    vans
+                                                        <input type="checkbox"  value="vans"
+                                                        <% if (locals.filter != undefined && filter.includes("vans") ) { %>
+                                                            checked 
+                                                        <% } %>
+                                                        
+                                                        />
+                                                    <div class="control_indicator"></div>
+                                                </label>
+                                            </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="each-filter">
-                                <p class="categoria">talle</p>
-                                <div class="filter-scroll">
-                                    <div class="control-group talle">
-                                        <label class="control control-checkbox">
-                                            35 - 37 
-                                                <input type="checkbox"/>
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            38 - 40 
-                                                <input type="checkbox"/>
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            41 - 43 
-                                                <input type="checkbox"/>
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            44 - 45 
-                                                <input type="checkbox"/>
-                                            <div class="control_indicator"></div>
-                                        </label>
-
+    
+                                <div class="each-filter">
+                                    <p class="categoria">talle</p>
+                                    <div class="filter-scroll">
+                                        <div class="control-group talle">
+                                            <label class="control control-checkbox">
+                                                35 - 37 
+                                                    <input type="checkbox" value="35-37"
+                                                    <% if (locals.filter != undefined && filter.includes("35-37")) { %>
+                                                        checked
+                                                    <% } %>
+                                                    />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <label class="control control-checkbox">
+                                                38 - 40 
+                                                    <input type="checkbox" value="38-40"
+                                                    <% if (locals.filter != undefined && filter.includes("38-40")) { %>
+                                                        checked
+                                                    <% } %>
+                                                    />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <label class="control control-checkbox">
+                                                41 - 43 
+                                                    <input type="checkbox" value="41-43"
+                                                    <% if (locals.filter != undefined && filter.includes("41-43")) { %>
+                                                        checked
+                                                    <% } %>
+                                                    
+                                                    />
+                                                <div class="control_indicator"></div>
+                                            </label>
+                                            <label class="control control-checkbox">
+                                                44 - 45 
+                                                    <input type="checkbox" value="44-45"
+                                                    <% if (locals.filter != undefined && filter.includes("44-45")) { %>
+                                                        checked
+                                                    <% } %>
+                                                    />
+                                                <div class="control_indicator"></div>
+                                            </label>
+    
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="each-filter">
-                                <p class="categoria">precio</p>
-                                <div class="filter-scroll">
-                                    <div class="control-group precio">
-                                        <label class="control control-checkbox">
-                                            $5000 - $14999
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>
-                                        <label class="control control-checkbox">
-                                            $15000 - MAX
-                                                <input type="checkbox" />
-                                            <div class="control_indicator"></div>
-                                        </label>     
-                                    </div>
+                                <div class="button">
+                                    <button type="submit" id="button-form"> Filtrar</button>
                                 </div>
-                            </div>
+                                
+                            </form>
                         </div>
+                        
                         <div class="products-container">
                             <%#= articulos.indexOf(articulo) + 1 %>
                             <% articulos.forEach(articulo => { %>

@@ -93,6 +93,31 @@ body {
 
 .sidenav-filter .filter-body {
     padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter-body #form-mobile {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.filter-body .each-filter-mobile {
+    width: 50%;
+    text-align: center;
+}
+.filter-body .button {
+    margin-top: 5vw;
+    width: 100%;
+    text-align-last: center;
+}
+.filter-body .button button {
+    background: #121212;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 70%;
+    height: 8vw;
+    font-size: 3vw;
+    text-align: center;
 }
 .filter-body .categoria {
     font-size: 7vw;
@@ -311,9 +336,12 @@ body {
         height: 20px;
         width: 20px;
     }
+    .filter-body .button button {
+        height: 6vw;
+    }
 }
 @media (max-width:991px) {
-    .filter-container-desktop {
+    #filter-container-desktop, #filter-container-desktop .button {
         display: none;
     }
 }
@@ -350,12 +378,26 @@ body {
     .products-filter {
         display: flex;
     }
-    .filter-container-desktop {
+    #filter-container-desktop {
         width: 20%;
         margin-top: 30px;
         height: 630px;
         position: sticky;
         top: 15px;
+    }
+    #filter-container-desktop .button {
+        height: 40px;
+    }
+    #filter-container-desktop .button button {
+        background: #121212;
+        color: white;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s;
+    }
+    #filter-container-desktop .button button:hover {
+        background: #2b2a2a;
     }
     .each-filter{
         margin-bottom: 20px;
@@ -373,6 +415,9 @@ body {
         overflow-y: scroll;
         padding: 10px 6px 15px 6px;
         background: rgb(255, 255, 255);
+    }
+    .filter-scroll.last {
+        height: 120px;
     }
     .control-group.talle .control {
         width: 49%;
@@ -468,13 +513,13 @@ body {
     .filter-scroll::-webkit-scrollbar-track
     {
         border-radius: 10px;
-        background-color: #F5F5F5;
+        background-color: #ffffff;
     }
     
     .filter-scroll::-webkit-scrollbar
     {
         width: 8px;
-        background-color: #F5F5F5;
+        background-color: #ffffff;
     }
     
     .filter-scroll::-webkit-scrollbar-thumb

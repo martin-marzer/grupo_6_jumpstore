@@ -105,10 +105,12 @@ label{
   
   .file-upload__label {
     font-size: 0.95em;
+    display: -webkit-box;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
     font-family: "Quicksand", sans-serif;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   textarea.form-input{

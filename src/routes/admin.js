@@ -24,7 +24,7 @@ const multerStorage = multer.diskStorage({
         }
         callback(null, true)
     },
-    //aca se especifica los limites, se aceptan aprox 2MB each foto, and only 3 files
+    //aca se especifica los limites, se aceptan aprox 2MB each foto, and only 3 files sino no se sube
     limits:{
         fileSize: 1424 * 1424,
         files: 3

@@ -29,4 +29,3 @@ Array.prototype.forEach.call(
   );
   
 
-  $('textarea').autoResize();
