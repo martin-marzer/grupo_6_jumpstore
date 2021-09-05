@@ -5,6 +5,7 @@
     <title>Home</title>
     <%- include("./partials/head") %>
     <link rel='stylesheet' href='/css/home.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 </head>
 <body>
     <%- include("./partials/header") %>
@@ -17,22 +18,22 @@
 
             <ul>
                 <li>
-                    <a href="/products">
+                    <a href="/products/OrderByReleaseDateDESC">
                         <img src="images/contenido-pagina/slider1.png" alt="Ofertas">
                     </a>
                 </li>
                 <li>
-                    <a href="/products">
+                    <a href="/products/OrderByReleaseDateDESC/nike">
                         <img src="images/contenido-pagina/slider2.png" alt="Travis Scoot">
                     </a>
                 </li>
                 <li>
-                    <a href="/products/detail/1">
-                        <img src="images/contenido-pagina/slider3.png" alt="Addidas yezzy">
+                    <a href="/products/OrderByReleaseDateDESC/adidas">
+                        <img src="images/contenido-pagina/slider3.png" alt="Adidas yezzy">
                     </a>
                 </li>
                 <li>
-                    <a href="/products">
+                    <a href="/products/OrderByReleaseDateDESC/fila">
                         <img src="images/contenido-pagina/slider4.jpg" alt="Fila">
                     </a>
                 </li>
@@ -40,24 +41,26 @@
             </ul>
 
         </div>
-
+        <div class="wrapper">
+            <h1 href="#">categorías destacadas</h1>
+        </div>
         <div class="container-muestra">
             <ul class="ul-muestra">
                 <li>
-                    <a href="/products"> 
-                        <p class="texto-muestra">New Adiddas</p>
+                    <a href="/products/OrderByReleaseDateDESC/adidas"> 
+                        <p class="texto-muestra">New Adidas</p>
                         <img src="images/contenido-pagina/muestra1.png" >
                     </a>
                 </li>
                 <li>
-                    <a href="/products">
+                    <a href="/products/OrderByReleaseDateDESC/nike">
                         <p class="texto-muestra">Nike ineditas</p>
                         <img src="images/contenido-pagina/muestra2.jpg">
                     </a>
                 </li>
                 <li>
-                    <a href="/products">
-                        <p class="texto-muestra">Mucho más..</p>
+                    <a href="/products/OrderByReleaseDateASC">
+                        <p class="texto-muestra">más productos</p>
                         <img src="images/contenido-pagina/muestra3.png">
                     </a>
                 </li>
@@ -68,7 +71,7 @@
             <img class="gifcard" src="images/contenido-pagina/gifcard.jpg" alt="gifcard">
         </div>
 
-            <div class="wrapper">
+            <!-- <div class="wrapper">
                 <h1 href="#">Most Sold Sneakers</h1>
             </div>
 
@@ -97,13 +100,14 @@
                     </p>
                 </div>
                 </div>
-            </section>
+            </section> -->
+
             <div class="wrapper">
-                <h1 href="#">Newest Drop</h1>
+                <h1 href="#">ultimos lanzamientos</h1>
             </div>
 
-            <section class="container-new">
-                <% for (let i = articulos.length -1 ; i > articulos.length - 3; i--) {%>
+            <section class="container-new" >
+                <% for (let i = articulos.length -1 ; i > articulos.length - 4; i--) {%>
             
                     <% let articulo = articulos[i] %>
                 <div class="image">
@@ -119,11 +123,41 @@
                 </div>
                 <% }; %>
             </section>
+
+            <div class="container-splide">
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <% for (let i = articulos.length -1 ; i > articulos.length - 4; i--) {%>
+            
+                                <% let articulo = articulos[i] %>
+                            <li class="splide__slide">
+                                <div class="image">
+                                    <a href="/products/detail/<%= articulo.id %>">
+                                    <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
+                                    </a>
+                                    <div class="description-product">
+                                        <div class="image__title"><%= articulo.name %></div>
+                                        <p class="image__description">
+                                            $<%= articulo.price %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <% }; %>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             
     </main>
     
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
+    <script src="/js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 </body>
 </html>
 

@@ -14,10 +14,12 @@ $('.closebtn-filter').click(function(){
 document.getElementById('sort-order').onchange = function() {
   let urlArray = window.location.pathname.split("/");
   if (this.options[this.selectedIndex].value != "") {
-    // window.location.href= '/products/' + this.options[this.selectedIndex].value;
     console.log(urlArray)
     if (urlArray.length > 3) {
         window.location.href= '/products/' + this.options[this.selectedIndex].value + "/"  + urlArray[3]
+    }
+    else{
+      window.location.href= '/products/' + this.options[this.selectedIndex].value
     }
   } else {
     window.location.href= '/products' ;
