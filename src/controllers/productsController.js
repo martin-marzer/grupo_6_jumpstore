@@ -138,6 +138,7 @@ const controlador = {
             if (producto.id == idZapatilla) {
                 articuloId = producto;
             }
+            
         }); 
 
         if(products.indexOf(articuloId) != -1){
