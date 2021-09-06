@@ -44,7 +44,7 @@
     <% articulos.forEach(articulo => { %> 
      <div class="product-container">  
         <ul class="lista_conteiner">
-            <a href="/products/detail/<%= articulo.id %>" class="toDetail">
+            <a href="/sneakers/detail/<%= articulo.id %>" class="toDetail">
                 <li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
                     <form method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
                         <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>

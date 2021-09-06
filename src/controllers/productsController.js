@@ -1,14 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productsFilePath = path.resolve(__dirname, '../data/products.json');
+
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controlador = {
     productsList: (req,res) => {
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //esto ordena la vaina, obtiene el dato desde el link y de ahi se acomoda la vista
         let order = req.params.OrderBy;
         if (order == "OrderByReleaseDateDESC" ) {
@@ -38,6 +39,7 @@ const controlador = {
         });
     },
     productsFilter: (req,res) => {
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let order = req.params.OrderBy;
         if (order == "OrderByReleaseDateDESC" ) {
             products.sort(function(a, b) {  
@@ -132,6 +134,7 @@ const controlador = {
 
     },
     productDetail: (req,res) => {
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let idZapatilla = req.params.id;
         let articuloId;
         products.forEach(producto => {

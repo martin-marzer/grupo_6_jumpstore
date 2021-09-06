@@ -58,4 +58,15 @@ btn.on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
 });
- 
+
+let urlArraySelected = window.location.pathname.split("/");
+console.log(urlArraySelected)
+let links = document.querySelectorAll(".row ul li a")
+console.log(links)
+
+if (urlArraySelected[1] == "") {
+  links[0].classList.add("selected")
+}
+else if (urlArraySelected.length > 2) {
+  links[1].classList.add("selected")
+}

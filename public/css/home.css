@@ -164,6 +164,10 @@ li {
 .image:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.image:hover img {
+    filter: opacity(0.8);
+    
+}
 
 .container-hot img {
     max-width: 280%;
@@ -375,6 +379,7 @@ h1:hover {
         width: 80%;
         margin: 0 auto;
     } */
+
     .container-splide img {
         width: 100%;
         margin: 0 auto;

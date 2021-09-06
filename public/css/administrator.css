@@ -237,6 +237,7 @@ body{
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
+    overflow: auto;
 }
 .home_content .text{
     font-size: 25px;
@@ -311,7 +312,7 @@ a{
 }
 @media (max-width: 768px) {
     .article_content_3{
-        display: none;
+        order: -1;
     }
     .article_content_4{
         display: none;

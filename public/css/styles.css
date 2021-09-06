@@ -24,7 +24,7 @@ a {
     vertical-align: baseline;
     background: transparent;
     text-decoration: none !important;
-    color: white;
+    color: rgb(255, 255, 255);
     transition: 0s all !important;
 }
 
@@ -54,7 +54,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* header */
 .main-header {
     background-color: #121212;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .row {
@@ -96,7 +96,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 13px;
     letter-spacing: 0.01em;
     padding-left: 10px;
-    background: white;
+    background: rgb(255, 255, 255);
     border: black;
     outline: none;
 }
@@ -105,7 +105,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     right: 0px;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 0px;
     width: 45px;
@@ -198,12 +198,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 6vw;
     margin-right: 5%;
 }
-#jumpstore-header i:hover {
-    color: white;
-    transition: color 1s;
+#jumpstore-header i {
+    color: rgb(255, 255, 255);
+    transition: color 0.5s;
 }
 #jumpstore-header i:hover {
-    color:turquoise
+    color:rgb(64, 224, 208)
 }
 
 
@@ -223,28 +223,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding: 0;
     margin: 0;
 }
+#jumpstore-navbar li {
+    background-color: #121212;
+    
+}
 #jumpstore-navbar a{
     font-size: 20px;
     text-decoration: none;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color:  rgb(220, 226, 225);
     display: flex;
     text-transform: uppercase;
 }
-#jumpstore-navbar li {
-    background-color: #121212;
-    transition: background-color 1s;
-    
-}
-#jumpstore-navbar li:hover {
-    background-color: rgb(255, 255, 255);
-
-}
-#jumpstore-navbar a {
-    transition: color 1s;
+.selected {
+    color: rgb(64, 224, 208) !important;
+    box-shadow: 0px 12px 10px -7px rgb(64 224 208);
+    margin-bottom: -6px;
 }
 #jumpstore-navbar a:hover {
-    color: rgb(0, 0, 0);
+    color: rgb(64, 224, 208);
+    margin-bottom: -6px;
 }
 
 /* nav mobile */
@@ -369,7 +367,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 .footer-title {
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     font-size: 16px;
 }
@@ -490,7 +488,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     .footer .jumpstore-arrow {
         width: 100%;
-        color: white;
+        color: rgb(255, 255, 255);
         display: block;
         position: absolute;
         top: 0;
@@ -578,7 +576,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     #jumpstore-search .fulltext-search-box, #jumpstore-search button.btn-buscar  {
         height: 30px;
-        color: black;
+        color: rgb(0, 0, 0);
 
     }
     #jumpstore-search, #jumpstore-right-menu, #jumpstore-logo {

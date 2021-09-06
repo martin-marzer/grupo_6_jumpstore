@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const ImagesFolderPath = path.join(__dirname, '../../public/images/zapatillas/');
 
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 let resultHandler = function(err) { 
     if(err) {
@@ -20,6 +20,7 @@ const controlador = {
         res.render("administrator");
     },
     administratorTools: (req,res) => {
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         res.render("administratorToolsProducts", {
             articulos: products,
             toThousand: toThousand
@@ -29,7 +30,7 @@ const controlador = {
         res.render("productCreate");
     },
     store: (req,res) => {
-        
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
        let newId = products[products.length -1].id;
        let id = newId +1;
 
@@ -64,6 +65,7 @@ const controlador = {
 		res.redirect("/administratorToolsProducts");
     },
     productEdit: (req,res) => {
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let idZapatilla = req.params.id;
         let productId;
         products.forEach(producto => {
@@ -76,6 +78,7 @@ const controlador = {
         });
     },
     update: (req,res) => {
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         productToEditBody = req.body;
 		let idProduct = req.params.id;
         let product;
@@ -110,7 +113,7 @@ const controlador = {
         res.redirect("/administratorToolsProducts");
     }, 
     delete: (req,res) => {
-
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //esto es para eliminar tambien las imagenes + json
 
 
@@ -129,9 +132,9 @@ const controlador = {
 		let productsFinal = JSON.stringify(productsNew, null, 2);
 		let imageToDelete = productoExiliado[0].image;
         //aca se mete un for para eliminar las imagenes al borrarla info del json
-		for (let i = 0; i < imageToDelete.length; i++) {
-			fs.unlinkSync(ImagesFolderPath + imageToDelete[i], resultHandler)
-		}
+		// for (let i = 0; i < imageToDelete.length; i++) {
+		// 	fs.unlinkSync(ImagesFolderPath + imageToDelete[i], resultHandler)
+		// }
 		// console.log(imageToDelete)
 		fs.writeFileSync( productsFilePath, productsFinal);
 		res.redirect("/administratorToolsProducts");
