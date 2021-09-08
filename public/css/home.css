@@ -328,7 +328,7 @@ h1:hover {
     .gifcard-container{
         display: flex;
         justify-content: center;
-        height: 30vw;
+        height: 250px;
     }
     .texto-muestra {
         font-size: 27px;
@@ -338,20 +338,22 @@ h1:hover {
 
     .ul-muestra {
         display: flex;
-        justify-content:normal !important; 
-        align-items:baseline;
+        justify-content: space-between;
     }
     .ul-muestra li {
-        overflow: hidden;
         position: relative;
-        width: 33.333%;
-        margin: 0 auto;
+        width: 32%;
         text-align-last: center;
+    }
+    .img-cont {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
     }
     .ul-muestra li img {
 
         height: 390px;
-        width: 90%;
+        width: 100%;
     }
     .container-splide {
         width: 80%;
@@ -394,7 +396,7 @@ h1:hover {
         height: 450px;
     }
     .gifcard-container{
-        height: 30vw;
+        height: 350px;
     }
     .container-splide {
         width: 85%;

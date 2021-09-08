@@ -41,7 +41,11 @@ label.field {
 .formulario .field button {
     text-transform: uppercase;
 }
-
+.field label a, .miembro a {
+    color: #002244;
+    text-decoration:underline !important;
+    font-weight: 800;
+}
 
 
 @media (max-width:768px) {
@@ -167,11 +171,7 @@ label.field {
         display: block;
         text-align: center;
     }
-    .field label a, .miembro a {
-        color: #002244;
-        text-decoration-line: revert !important;
-        font-weight: 800;
-    }
+
     .field-cancelar-registrar {
         display: flex;
         justify-content: space-between;
