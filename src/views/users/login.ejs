@@ -3,7 +3,7 @@
 <head>
     <title>Login</title>
     <%- include("./partials/head") %>
-    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/register-login.css">
 </head>
 <body>
     <%- include("./partials/header") %>
@@ -16,26 +16,24 @@
         <div class="container">
             <div id="jumpstore-form">
                 <form class="formulario">
-                    <h2 style="text-transform: uppercase;" class="txt-title">Entrar</h2>
-                    <h2 class="txt-content">¡Bienvenido de nuevo! Inicié sesión en su cuenta de Jumpstore</h2>
-
-                    <div class="field username">
-                        <input type="text" placeholder="Nombre de usuario">
+                    <div class="txt-title-content">
+                        <h1>Entrar</h2>
+                        <h2>¡Bienvenido de nuevo! Inicié sesión en su cuenta de Jumpstore.</h2>
                     </div>
 
                     <div class="field email">
-                        <input type="email" placeholder="Email">
+                        <label for="Email">Correo Electronico:</label>
+                        <input type="email" id="email" name="email">
                     </div>
                     <div class="field psw">
-                        <input type="password" placeholder="Contraseña">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password">
                     </div>
                     
-                    <div class="field cancelar">
-                        <button type="reset">Borrar datos</button>
-                    </div>
-                    <div class="field registrar">
+                    <div class="field-cancelar-registrar">
+                        <button type="reset">Cancelar</button>
                         <button type="button">
-                            <a href="/" style="text-decoration: none; color: inherit;">Iniciar sesión</a>
+                            <a href="/">Iniciar sesión</a>
                         </button>
                     </div>
                     <div class="miembro">

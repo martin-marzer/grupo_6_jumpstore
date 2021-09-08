@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.set("view engine", "ejs");
-app.set("views", ["./src/views", "./src/views/products", "./src/views/users", "./src/views/admin"]); 
+app.set("views", ["./src/views", "./src/views/products", "./src/views/users", "./src/views/admin", "./src/views/info"]); 
 // cuentan como vistas todas esos directorios, en todos esos lugares hay archivos ejs
 
 
