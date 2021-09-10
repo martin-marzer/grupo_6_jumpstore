@@ -119,17 +119,19 @@
                 <% for (let i = articulos.length -1 ; i > articulos.length - 4; i--) {%>
             
                     <% let articulo = articulos[i] %>
-                <div class="image">
-                    <a href="/sneakers/detail/<%= articulo.id %>">
-                    <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
-                    </a>
-                    <div class="description-product">
-                        <div class="image__title"><%= articulo.name %></div>
-                        <p class="image__description">
-                            $<%= articulo.price %>
-                        </p>
+                <a href="/sneakers/detail/<%= articulo.id %>">
+                    <div class="image">
+
+                        <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
+                    
+                        <div class="description-product">
+                            <div class="image__title"><%= articulo.name %></div>
+                            <p class="image__description">
+                                $<%= articulo.price %>
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <% }; %>
             </section>
 
@@ -148,17 +150,17 @@
             
                                 <% let articulo = articulos[i] %>
                             <li class="splide__slide">
-                                <div class="image">
-                                    <a href="/sneakers/detail/<%= articulo.id %>">
-                                    <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
-                                    </a>
-                                    <div class="description-product">
-                                        <div class="image__title"><%= articulo.name %></div>
-                                        <p class="image__description">
-                                            $<%= articulo.price %>
-                                        </p>
+                                <a href="/sneakers/detail/<%= articulo.id %>">
+                                    <div class="image">
+                                        <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
+                                        <div class="description-product">
+                                            <div class="image__title"><%= articulo.name %></div>
+                                            <p class="image__description">
+                                                $<%= articulo.price %>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </li>
                             <% }; %>
 

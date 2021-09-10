@@ -23,9 +23,9 @@ a {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-    text-decoration: none !important;
+    text-decoration: none;
     color: rgb(255, 255, 255);
-    transition: 0s all !important;
+    transition: 0s all;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -148,7 +148,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 #jumpstore-menu-mobile, #jumpstore-right-menu {
     width: 20%;
+    color: rgb(255, 255, 255);
+    transition: color 0.5s;
 }
+#jumpstore-menu-mobile i:hover, #jumpstore-right-menu i:hover{
+    color:rgb(212, 212, 212)
+}
+
 .jumpstore-search-mobile{
     position: absolute;
     width: 100%;
@@ -198,13 +204,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 6vw;
     margin-right: 5%;
 }
-#jumpstore-header i {
-    color: rgb(255, 255, 255);
-    transition: color 0.5s;
-}
-#jumpstore-header i:hover {
-    color:rgb(64, 224, 208)
-}
+
 
 
 
@@ -236,12 +236,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     text-transform: uppercase;
 }
 .selected {
-    color: rgb(255, 255, 255) !important;
-    box-shadow: 10px 16px 20px -6px rgb(64 224 208);
-    margin-bottom: -6px;
+    color: rgb(175 175 175) !important;
 }
 #jumpstore-navbar a:hover {
-    color: rgb(157, 243, 234);
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 /* nav mobile */
@@ -301,6 +300,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     text-transform: uppercase;
     font-weight: bold;
     color: #000 ;
+    border-left: 8px solid transparent
+}
+.overlay-content .links a:hover {
+    text-decoration-line: underline ;
+}
+.selected-mobile {
+    background: #e6e1e1;
+    color: #111111 !important;
+    border-left: #212020 8px solid !important;
 }
 
 
@@ -608,7 +616,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     .button-scroll {
         display: inline-block;
-        background-color: #4e4e4e;
+        background-color: #000000;
         width: 4vw;
         height: 4vw;
         text-align: center;
@@ -620,6 +628,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         opacity: 0;
         visibility: hidden;
         z-index: 1000;
+        box-shadow: 0px 0px 4px 0px rgb(255, 255, 255);
       }
       .button-scroll i {
         transform: rotateZ(180deg); 
@@ -629,13 +638,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
       }
       .button-scroll:hover {
         cursor: pointer;
-        background-color: #bdbdbd;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
       }
       .button-scroll:hover i {
         color: #000000;
       }
       .button-scroll:active {
-        background-color: #555;
+        background-color: rgb(0, 0, 0);
       }
       .button-scroll.show {
         opacity: 1;

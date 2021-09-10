@@ -36,7 +36,7 @@ let nose = window.location.pathname.split("/").pop();
 let urlArray = window.location.pathname.split("/");
 
 
-// console.log(urlArray)
+console.log(urlArray)
 
 
 let form = document.getElementById("form-desk")  
@@ -52,6 +52,7 @@ let checkboxValues = [];
 
 if (checkboxValues.length == 0 && urlArray.length == 3) {
   button.disabled = true;
+
 } else if (checkboxValues.length == 0 && urlArray.length > 3) {
   button.disabled = false;
 }
@@ -93,6 +94,7 @@ checkboxes.forEach((box) => {
       if (checkboxValues.length == 0 ) {
         button.disabled = true;
         form.action = window.location.href
+
       }
       else if (checkboxValues.length > 0 ) {
         form.action = window.location.href + "/" + checkboxValues.join("+")
@@ -100,9 +102,10 @@ checkboxes.forEach((box) => {
     } 
     else if (urlArray.length == 4){
       if (checkboxValues.length == 0 ) {
-        var hola = urlArray.slice(0, -1);
+        let hola = urlArray.slice(0, -1);
         button.disabled = false;
         form.action = window.location.protocol  +  hola.join("/")
+
       }
       else if (checkboxValues.length > 0 ) {
         // let withoutLast = urlArray.pop()

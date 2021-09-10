@@ -161,9 +161,10 @@ li {
     border-radius: 2%;
     height: 100%;
 }
-.image:hover{
+.container-new a:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .image:hover img {
     filter: opacity(0.8);
     
@@ -263,8 +264,8 @@ h1:hover {
         margin: 0;
     }
     .ul-muestra li img{
-        height: 70vw;
-        width: 60vw;
+        height: 80vw;
+        width: 70vw;
         border-radius: 5px;
    }
     .wrapper {
@@ -301,7 +302,7 @@ h1:hover {
     .container-new img{
         max-width: 100%;
     }
-    .image {
+    .container-new a {
         margin-bottom: 3vw;
     }
     .description-product{
@@ -335,7 +336,9 @@ h1:hover {
         left: 9%;
         width: 85%;
     }
-
+    .image:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
     .ul-muestra {
         display: flex;
         justify-content: space-between;

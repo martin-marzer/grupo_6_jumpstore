@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.resolve(__dirname, '../data/products.json');
+const productsFilePath = path.resolve(__dirname, '../database/products.json');
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -146,6 +146,7 @@ const controlador = {
 
         if(products.indexOf(articuloId) != -1){
             res.render("detailProducts", {
+                articulos: products,
                 articuloId: articuloId,
                 toThousand: toThousand
             });

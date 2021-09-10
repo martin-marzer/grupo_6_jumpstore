@@ -4,31 +4,27 @@
         "username": "martin_marzer",
         "email": "xxxxx@xxx.com",
         "password": "hola123pa",
-        "category": "admin",
-        "image": "imagenOtaku.jpg"
+        "category": "admin"
     },
     {
         "id": "2",
         "username": "alegon7",
         "email": "xxxxx@xxx.com",
         "password": "chau123pa",
-        "category": "admin",
-        "image": "imagenGamer.jpg"
+        "category": "admin"
     },
     {
         "id": "3",
         "username": "eldes conocido",
         "email": "xxxxx@xxx.com",
         "password": "estoNoEsUnaContraseña",
-        "category": "user",
-        "image": "imagenGatito.jpg"
+        "category": "user"
     },
     {
         "id": "4",
         "username": "comprador IV",
         "email": "xxxxx@xxx.com",
         "password": "estoNoEsUnaContraseñaLaSecuela",
-        "category": "user",
-        "image": "imagenPerrito.jpg"
+        "category": "user"
     }
 ]

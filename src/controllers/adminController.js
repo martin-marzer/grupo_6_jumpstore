@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.resolve(__dirname, '../data/products.json');
+const productsFilePath = path.resolve(__dirname, '../database/products.json');
 const ImagesFolderPath = path.join(__dirname, '../../public/images/zapatillas/');
 
 

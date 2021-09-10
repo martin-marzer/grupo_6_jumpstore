@@ -71,6 +71,7 @@ width: 100px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 .titulos_conteiner li p {
@@ -126,7 +127,7 @@ width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 999;
+    z-index: 99;
 }
 #delete_product{
     background-color: #e73c37;
@@ -149,15 +150,18 @@ width: 100px;
         padding-bottom: 10px;
     }
     .titulos_conteiner li{
-        font-size: 13.5px;
+        font-size: 3vw;
+    }
+    .lista_conteiner {
+        font-size: 4vw;
     }
     .lista_conteiner li img{
-        height: 70px;
-        width: 90px;
+        height: 15vw;
+        width: 15vw;
     }
     .add_edit_product{
-        font-size: 11px;
-        width: 70px;
+        font-size: 2.5vw;
+        width: 15vw;
     }
     .conteiner_general{
         width: 95%;

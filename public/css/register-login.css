@@ -10,6 +10,12 @@ body {
     display: flex;
     margin-bottom: 20px;
     flex-direction: column;
+    position: relative;
+}
+.field i {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
 }
 .formulario .field input[type=text], .formulario .field input[type=date], .formulario .field input[type=password], .formulario .field input[type=email] {
     height: 45px;
@@ -166,6 +172,9 @@ label.field {
     }
     .field label {
         margin-bottom: 20px;
+    }
+    .field i {
+        cursor: pointer;
     }
     .field.terminos {
         display: block;

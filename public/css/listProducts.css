@@ -388,9 +388,12 @@ body {
     #filter-container-desktop .button {
         height: 40px;
     }
+    #filter-container-desktop .button.last button {
+        background-color: #7b7b7b;
+    }
     #filter-container-desktop .button button {
         background: #121212;
-        color: white;
+        color: rgb(255, 255, 255);
         border-radius: 5px;
         width: 100%;
         height: 100%;
