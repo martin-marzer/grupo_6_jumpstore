@@ -181,6 +181,9 @@ body {
     }
 }
 @media (max-width:767px) {
+    .top-banner {
+        display: none;
+    }
     body {
         font-size: 3vw
     }
@@ -247,6 +250,10 @@ body {
     }
 }
 @media (min-width:768px) {
+    .top-banner {
+        text-align: center;
+        margin: 50px;
+    }
     .products-container {
         margin-top: 30px;
     }
