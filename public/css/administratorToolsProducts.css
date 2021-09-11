@@ -163,7 +163,14 @@ width: 100px;
         font-size: 2.5vw;
         width: 15vw;
     }
+    .conteiner_general_list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 180%;
+    }
     .conteiner_general{
         width: 95%;
+        overflow: auto;
+        border-radius: unset;
     }
 }
