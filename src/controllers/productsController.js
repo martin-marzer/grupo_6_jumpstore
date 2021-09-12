@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { each } = require('jquery');
 const path = require('path');
 
 const productsFilePath = path.resolve(__dirname, '../database/products.json');
@@ -12,60 +13,33 @@ const controlador = {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //esto ordena la vaina, obtiene el dato desde el link y de ahi se acomoda la vista
         let order = req.params.OrderBy;
-        if (order == "OrderByReleaseDateDESC" ) {
-            products.sort(function(a, b) {  
-                return a.id - b.id ;  
-            }); 
+        
+        let orderFunc = () => {
+            if (order == "OrderByReleaseDateDESC" ) {
+                products.sort(function(a, b) {  
+                    return a.id - b.id ;  
+                }); 
+            }
+            else if (order == "OrderByReleaseDateASC" ) {
+                products.sort(function(a, b) {  
+                    return  b.id - a.id ;  
+                }); 
+            }
+            else if (order == "OrderByPriceASC") {
+                products.sort(function(a, b) {  
+                    return a.price - b.price ;  
+                }); 
+            }
+            else if (order == "OrderByPriceDESC") {
+                products.sort(function(a, b) {  
+                    return b.price - a.price ;  
+                }); 
+            }
         }
-        else if (order == "OrderByReleaseDateASC" ) {
-            products.sort(function(a, b) {  
-                return  b.id - a.id ;  
-            }); 
-        }
-        else if (order == "OrderByPriceASC") {
-            products.sort(function(a, b) {  
-                return a.price - b.price ;  
-            }); 
-        }
-        else if (order == "OrderByPriceDESC") {
-            products.sort(function(a, b) {  
-                return b.price - a.price ;  
-            }); 
-        }
-        res.render("listProducts", {
-            articulos: products,
-            order: order,
-            toThousand: toThousand
-        });
-    },
-    productsFilter: (req,res) => {
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let order = req.params.OrderBy;
-        if (order == "OrderByReleaseDateDESC" ) {
-            products.sort(function(a, b) {  
-                return a.id - b.id ;  
-            }); 
-        }
-        else if (order == "OrderByReleaseDateASC" ) {
-            products.sort(function(a, b) {  
-                return  b.id - a.id ;  
-            }); 
-        }
-        else if (order == "OrderByPriceASC") {
-            products.sort(function(a, b) {  
-                return a.price - b.price ;  
-            }); 
-        }
-        else if (order == "OrderByPriceDESC") {
-            products.sort(function(a, b) {  
-                return b.price - a.price ;  
-            }); 
-        }
-
-
 
         let filterData =  req.params.FilterBy
-        let filterFinal = [];
+        let filterFunc = () => {
+            let filterFinal = [];
         if (filterData != undefined) {
             filterProcess = filterData.split("+")
             for (let i = 0; i < filterProcess.length; i++) {
@@ -98,10 +72,16 @@ const controlador = {
                 }
                 if  ( (ojo[0].length != 0 && ojo[1].length != 0) ) {
                     
-                    marcas = products.filter(product => product.brand == eachFilter) 
-                    filteredProducts = marcas.filter(product => product.talle == eachFilter)
-
-                    filteredProducts.forEach(producto => productsFilterFinal.push(producto) )
+                    let marcas = products.map(product => {
+                          if (product.brand == eachFilter) {
+                            return product
+                          }
+                    } ) 
+                    
+                    let mitadCamino = marcas.filter(producto => producto != undefined)
+                    let productosFiltradosFinal = mitadCamino.filter(producto => producto.talle == ojo[1] )
+                    // console.log(productosFiltradosFinal)
+                    productsFilterFinal = productosFiltradosFinal
                 }
                 else if ( ojo[0].length != 0 && ojo[1].length == 0 ) {
                     filteredProducts = products.filter(product => product.brand == eachFilter)
@@ -131,7 +111,10 @@ const controlador = {
                 toThousand: toThousand
             });
         }
-
+        }
+        orderFunc();
+        filterFunc();
+        
     },
     productDetail: (req,res) => {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
