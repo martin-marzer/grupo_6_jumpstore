@@ -430,6 +430,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 /* mediaqueries */
 
+.button-scroll {
+    display: inline-block;
+    background-color: #000000;
+    width: 12vw;
+    height: 12vw;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 6vw;
+    right: 4vw;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    box-shadow: 0px 0px 4px 0px rgb(255, 255, 255);
+  }
+  .button-scroll i {
+    transform: rotateZ(180deg); 
+    font-size: 9vw;
+    line-height: 11vw;
+    color: #fff;
+  }
+  .button-scroll:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
+  }
+  .button-scroll:hover i {
+    color: #000000;
+  }
+  .button-scroll:active {
+    background-color: rgb(0, 0, 0);
+  }
+  .button-scroll.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+
 @media (max-width: 767px) {
     .container {
         width: 100% ! important;
@@ -522,9 +561,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .footer-separator {
         display: none;
     }
-    .button-scroll {
-        display: none;
-    }
+
     .black-area {
         display: none !important;
     }
@@ -534,7 +571,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     cursor: pointer;
     -webkit-transition: 0.3s all;
     transition: 0.3s all;
-}
+    }
+    .button-scroll {
+        width: 8vw;
+        height: 8vw;
+        bottom: 4vw;
+        right: 4vw;
+      }
+      .button-scroll i {
+        font-size: 6vw;
+        line-height: 7vw;
+      }
 }
 
 @media (min-width: 768px){
@@ -614,42 +661,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         display: none !important;
     }
     .button-scroll {
-        display: inline-block;
-        background-color: #000000;
         width: 4vw;
         height: 4vw;
-        text-align: center;
-        border-radius: 50%;
-        position: fixed;
         bottom: 3vw;
         right: 3vw;
-        transition: background-color .3s, opacity .5s, visibility .5s;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 1000;
-        box-shadow: 0px 0px 4px 0px rgb(255, 255, 255);
       }
       .button-scroll i {
-        transform: rotateZ(180deg); 
         font-size: 3vw;
         line-height: 4vw;
-        color: #fff;
       }
-      .button-scroll:hover {
-        cursor: pointer;
-        background-color: #ffffff;
-        box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
-      }
-      .button-scroll:hover i {
-        color: #000000;
-      }
-      .button-scroll:active {
-        background-color: rgb(0, 0, 0);
-      }
-      .button-scroll.show {
-        opacity: 1;
-        visibility: visible;
-      }
+
 }
 
 @media (min-width: 992px){
