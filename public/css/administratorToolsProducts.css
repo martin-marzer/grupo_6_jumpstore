@@ -23,7 +23,7 @@ tbody tr:hover {
 td {
     font-size: 20px;
 }
-td a img {
+td img {
     width: 110px;
     height: 90px;
     border-radius: 22%;
@@ -218,5 +218,10 @@ width: 100px;
         width: 95%;
         overflow: auto;
         border-radius: unset;
+    }
+}
+@media (min-width:769px) {
+    tbody tr {
+        cursor: pointer;
     }
 }
