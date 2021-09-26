@@ -11,12 +11,11 @@ main {
 }
 
 .slider {
-    width: 90%;
+    width: 100%;
     overflow: hidden;
     margin: auto;
     box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
-    height: 60vh;
-    margin-top: 40px;
+    height: 500px;
 }
 .slider img{
     overflow:hidden;
@@ -161,9 +160,10 @@ li {
     border-radius: 2%;
     height: 100%;
 }
-.image:hover{
+.container-new a:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 .image:hover img {
     filter: opacity(0.8);
     
@@ -242,8 +242,7 @@ h1:hover {
     .slider {
         height: 90vw;
         box-shadow: none;
-        width: 95%;
-        margin-top: 15px;
+        margin: 0;
     }
     .ul-muestra{
         flex-direction: column;
@@ -257,14 +256,14 @@ h1:hover {
         letter-spacing: 4px;
     }
     .ul-muestra li{
-        margin: 0 0 40px 0;
+        margin: 0 0 50px 0;
     }
     .ul-muestra li:last-of-type {
         margin: 0;
     }
     .ul-muestra li img{
-        height: 70vw;
-        width: 60vw;
+        height: 90vw;
+        width: 70vw;
         border-radius: 5px;
    }
     .wrapper {
@@ -276,7 +275,7 @@ h1:hover {
         letter-spacing: 2px;
     }
     .gifcard-container{
-        height: 33vw;
+        height: 60vw;
         padding: 7px;
         margin-bottom: 2vw;
     }
@@ -301,7 +300,7 @@ h1:hover {
     .container-new img{
         max-width: 100%;
     }
-    .image {
+    .container-new a {
         margin-bottom: 3vw;
     }
     .description-product{
@@ -335,7 +334,9 @@ h1:hover {
         left: 9%;
         width: 85%;
     }
-
+    .image:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
     .ul-muestra {
         display: flex;
         justify-content: space-between;

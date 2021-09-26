@@ -4,7 +4,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
         perPage: 3,
         perMove: 1,
         width: 1000,
-        pagination: "false",
+        pagination: false,
         classes: {
             arrow : 'splide__arrow arrow-splide',
             prev  : 'splide__arrow--prev arrow-splide-prev',
@@ -12,3 +12,13 @@ document.addEventListener( 'DOMContentLoaded', function () {
         },
 	} ).mount();
 } );
+
+const width  = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
+if (width < 768) {
+    console.log(width)
+    let img = document.getElementById("img-fila")
+    let giftcard = document.getElementsByClassName("gifcard-container")[0]
+    img.src = "images/contenido-pagina/slider-fila-mobile.jpg"
+    giftcard.firstElementChild.src = "images/contenido-pagina/pumastyle_Giftcards.jpg"
+}

@@ -60,13 +60,19 @@ btn.on('click', function(e) {
 });
 
 let urlArraySelected = window.location.pathname.split("/");
-console.log(urlArraySelected)
+// console.log(urlArraySelected)
 let links = document.querySelectorAll(".row ul li a")
-console.log(links)
+let linksMobile = document.querySelectorAll(".overlay-content .links li a")
+// console.log(links)
 
 if (urlArraySelected[1] == "") {
   links[0].classList.add("selected")
+  linksMobile[0].classList.add("selected-mobile")
 }
-else if (urlArraySelected.length > 2) {
+else if (urlArraySelected.length >= 2 && urlArraySelected.includes("sneakers")) {
   links[1].classList.add("selected")
+  linksMobile[1].classList.add("selected-mobile")
+}
+else if (urlArraySelected.length == 2 && urlArraySelected.includes("carrito") ) {
+  linksMobile[4].classList.add("selected-mobile")
 }

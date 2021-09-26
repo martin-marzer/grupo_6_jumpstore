@@ -48,4 +48,7 @@ router.put('/products/edit/:id', adminController.update);
 // /*** DELETE ONE PRODUCT***/ 
 router.delete('/products/delete/:id', adminController.delete); 
 
+/*** GET ALL USERS AS ADMIN ***/  
+router.get("/administratorToolsUsers", adminController.administratorUsers)
+
 module.exports = router;

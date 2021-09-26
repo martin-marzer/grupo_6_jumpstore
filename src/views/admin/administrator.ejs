@@ -64,9 +64,10 @@
         <p class="subtitulo">Aqui tienes un resumen de tu sitio web</p>
         <div class="home">
         <article class="article_content_1">
-          <section class="section_number_1">10 usuarios</section>
+          <a href="/administratorToolsUsers"></a>
+          <section class="section_number_1"> <%= usuarios.length %>  usuarios</section>
           <i class='bx bxs-user'></i>
-          <section class="section_link"><a href="#">Ver más</a></section>
+          <section class="section_link"><p>Ver más</p></section>
         </article>
         <article class="article_content_2">
           <section class="section_number_2">3 mensajes</section>
@@ -74,9 +75,10 @@
           <section class="section_link"><a href="#">Ver más</a></section>
         </article>
         <article class="article_content_3">
-          <section class="section_number_3">90 products.</section>
+          <a href="/administratorToolsProducts"></a>
+          <section class="section_number_3"><%= articulos.length %> products.</section>
           <i class='bx bxs-user'></i>
-          <section class="section_link"><a href="/administratorToolsProducts">Ver más</a></section>
+          <section class="section_link"><p>Ver más</p></section>
         </article>
        </div>
     </main>

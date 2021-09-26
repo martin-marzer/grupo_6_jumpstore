@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.resolve(__dirname, '../data/products.json');
+const productsFilePath = path.resolve(__dirname, '../database/products.json');
 const ImagesFolderPath = path.join(__dirname, '../../public/images/zapatillas/');
-
+const usersFilePath = path.resolve(__dirname, '../database/users.json');
 
 
 let resultHandler = function(err) { 
@@ -17,7 +17,12 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controlador = {
     administrator: (req,res) => {
-        res.render("administrator");
+        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        res.render("administrator", {
+            articulos: products,
+            usuarios: users
+        });
     },
     administratorTools: (req,res) => {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -158,6 +163,9 @@ const controlador = {
       
      
     //     res.redirect("/administratorToolsProducts");
+    },
+    administratorUsers: (req,res) => {
+        res.send("aca iria para ver los perfiles, podria editarse para cambiar su rol")
     }
 };
 

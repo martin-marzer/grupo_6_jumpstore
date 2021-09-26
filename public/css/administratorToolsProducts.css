@@ -1,3 +1,57 @@
+table {
+    border: none;
+}
+thead {
+    background: #cecdcd;
+}
+tbody tr {
+    position: relative;
+}
+tbody tr:hover {
+    background: #ebebeb;
+}
+.table-sortable {
+    width: 100%;
+    text-align: center;
+}
+.table-sortable th {
+    cursor: pointer;
+    width: 20%;
+    padding: 10px;
+    font-size: 20px;
+}
+td {
+    font-size: 20px;
+}
+td img {
+    width: 110px;
+    height: 90px;
+    border-radius: 22%;
+    object-fit: cover;
+    border: 0.5px solid black;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+  content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
 body {
     background-color: #faf9f9;
 }
@@ -51,7 +105,7 @@ border-radius: 50px;
 font-size: 14px;
 transition:  0.3s;
 cursor: pointer;
-margin-bottom: 10px;
+margin: 5px 0;
 width: 100px;
 }
 .add_edit_product:hover{
@@ -71,20 +125,13 @@ width: 100px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 .titulos_conteiner li p {
     margin: 0;
 }
-.product-container{
-    padding: 10px;
-    padding-top: 15px;
-    transition: 0.5s;
-    position: relative;
-}
-.product-container:hover{
-    background: #ebebeb;
-}
+
 .lista_conteiner{
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +139,7 @@ width: 100px;
     align-items: center;
     font-size: 17px;
 }
-.lista_conteiner .toDetail {
+ .toDetail {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -126,7 +173,7 @@ width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 999;
+    z-index: 99;
 }
 #delete_product{
     background-color: #e73c37;
@@ -149,17 +196,32 @@ width: 100px;
         padding-bottom: 10px;
     }
     .titulos_conteiner li{
-        font-size: 13.5px;
+        font-size: 3vw;
+    }
+    .lista_conteiner {
+        font-size: 4vw;
     }
     .lista_conteiner li img{
-        height: 70px;
-        width: 90px;
+        height: 15vw;
+        width: 15vw;
     }
     .add_edit_product{
-        font-size: 11px;
-        width: 70px;
+        font-size: 3.5vw;
+        width: 20vw;
+    }
+    .conteiner_general_list {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 180%;
     }
     .conteiner_general{
         width: 95%;
+        overflow: auto;
+        border-radius: unset;
+    }
+}
+@media (min-width:769px) {
+    tbody tr {
+        cursor: pointer;
     }
 }
