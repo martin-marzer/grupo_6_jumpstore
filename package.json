@@ -1,7 +1,7 @@
 {
   "name": "jumpstore",
   "version": "1.0.0",
-  "description": "",
+  "description": "```\r Venta de zapatillas enfocado en lo urbano.\r ```\r ## Publico objetivo 🚀\r ``` \r Amantes de las buenas zapatillas, en general un publico que disfruta del buen gusto con un espiritu joven. \r ```\r ## integrantes 📋\r ### Nombre: Alejandro Gonzalez\r #### Edad: 17\r #### Actividad preferida: ver peliculas y jugar ajedrez.",
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
@@ -19,5 +19,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-marzer/grupo_6_jumpstore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/martin-marzer/grupo_6_jumpstore/issues"
+  },
+  "homepage": "https://github.com/martin-marzer/grupo_6_jumpstore#readme"
 }
