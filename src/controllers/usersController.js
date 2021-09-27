@@ -48,10 +48,15 @@ const controlador = {
         if (verifiquePassword){
             delete userToLogin.password
             req.session.userLogged = userToLogin;
+            if(req.body.recordame != undefined){
+                res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
+              }
+              // console.log("prueba", req.body.recordame)
             return res.redirect("/profile")
         }
        }
-
+      
+      
        return res.render("login", {
            errors: {
                email: {

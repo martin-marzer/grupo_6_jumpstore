@@ -3,6 +3,7 @@ const app = express();
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const createError = require('http-errors'); // mostrar los errores en la pagina renderizada
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const PORT = process.env.PORT || 3030;
 
 
@@ -24,6 +25,7 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(softAuthMiddleware);
+app.use(cookieParser());
 
 app.set("view engine", "ejs");
 app.set("views", ["./src/views", "./src/views/products", "./src/views/users", "./src/views/admin", "./src/views/info"]); 
