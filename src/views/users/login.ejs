@@ -25,7 +25,7 @@
                         <label for="Email">Correo Electronico:</label>
                         <input type="email" id="email" name="email">
                         <% if (locals.errors && errors.email) { %>
-                         <div classs="text-danger">
+                         <div class="text-danger">
                              <%= errors.email.msg %> 
                          </div>
                         <% } %>
@@ -34,6 +34,11 @@
                         <label for="password">Contraseña:</label>
                         <input type="password" name="password" id="password"> <i class="fas fa-eye eyePsw"></i>
                     </div>
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                       <% } %>
                     
                     <div class="field-cancelar-registrar">
                         <button type="reset" id="delete-button">Cancelar</button>
