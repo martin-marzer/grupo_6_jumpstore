@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require("path")
 const bcrypt = require('bcryptjs');
 const usersFilePath = path.resolve(__dirname, '../database/users.json');
+const User = require("../models/User");
 
 const controlador = {
     register: (req,res) => {
@@ -36,10 +37,35 @@ const controlador = {
             res.redirect("/login")
         }
     },
+    
     login: (req,res) => {
         res.render("login");
-    }
+    },
+    loginProcess: (req,res) => {
+       let userToLogin = User.findByField("email", req.body.email);
+       if(userToLogin) {
+           let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+        if (verifiquePassword){
+            delete userToLogin.password
+            req.session.userLogged = userToLogin;
+            return res.redirect("/profile")
+        }
+       }
 
+       return res.render("login", {
+           errors: {
+               email: {
+                   msg:"Encontramos datos erroneos"
+               }
+           }
+       })
+    },
+
+    profile: function (req, res) {
+        res.render("profile", {
+            user: req.session.userLogged
+        });
+    }
 };
 
 module.exports = controlador;

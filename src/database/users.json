@@ -33,5 +33,12 @@
     "email": "martinvazquez1104@gmail.com",
     "password": "$2a$10$pLgJLTzebjs0PnbeyAh1WeuImVh6mLMhqiOc5iAUwKjDp3FCJqTXC",
     "category": "user"
+  },
+  {
+    "id": 6,
+    "username": "ale xd",
+    "email": "alegon2772@gmail.com",
+    "password": "$2a$10$USkH5FPwHmGITcJR8.7./O13qKPSBkZfPTdTYVBiHGhJVQnuygd5i",
+    "category": "user"
   }
 ]
