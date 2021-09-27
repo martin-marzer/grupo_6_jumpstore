@@ -60,6 +60,11 @@ const controlador = {
            }
        })
     },
+    logout: (req,res) =>{
+        req.session.destroy();
+        res.cookie('email',null,{maxAge: -1});
+        res.redirect('/')
+      },
 
     profile: function (req, res) {
         res.render("profile", {

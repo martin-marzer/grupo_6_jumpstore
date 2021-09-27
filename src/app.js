@@ -7,6 +7,12 @@ const PORT = process.env.PORT || 3030;
 
 
 
+// se definen las middleware
+const softAuthMiddleware = require("./middlewares/softAuthMiddleware");
+
+
+
+
 // se expresa los middlewares a usar
 app.use(express.static("public"));
 app.use(express.json());
@@ -17,7 +23,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-
+app.use(softAuthMiddleware);
 
 app.set("view engine", "ejs");
 app.set("views", ["./src/views", "./src/views/products", "./src/views/users", "./src/views/admin", "./src/views/info"]); 
@@ -36,6 +42,7 @@ app.use(rutaMain);
 app.use(rutaProducts);
 app.use(rutaUsers);
 app.use(rutaAdmin);
+
 
 
 

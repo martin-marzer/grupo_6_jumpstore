@@ -342,6 +342,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 .nav-user ul .icon-admin {
     padding: 0 5%;
+    order: -1;
 }
 .nav-user ul i{
     color: rgb(255, 255, 255);
@@ -350,6 +351,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .nav-user li.user-item {
     margin: 2vw;
     font-size: 4vw;
+
 }
 
 

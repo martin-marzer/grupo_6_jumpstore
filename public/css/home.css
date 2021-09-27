@@ -11,7 +11,6 @@ main {
 }
 
 .slider {
-    width: 90%;
     overflow: hidden;
     margin: auto;
     box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
@@ -317,6 +316,9 @@ h1:hover {
 }
 
 @media (min-width: 768px){
+    .slider {
+        width: 90%;
+    }
     .container-new {
         /* width: 80%;
         margin-bottom: 80px; */

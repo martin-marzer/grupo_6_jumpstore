@@ -1,9 +1,31 @@
+const fs = require('fs');
+const path = require('path');
+let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+
+
 function authMiddleware (req, res, next) {
- if (req.session.usuarioLogueado != undefined) {
+ if (req.session.userLogged != undefined) {
+    res.locals.usuario = req.session.userLogged;
+    usuario = res.locals.usuario
+    // console.log(res.locals.usuario);
      next()
  } else {
-     res.send("Crea una cuenta")
+     res.send("Registrate o inicia sesion")
  }
+
+
+
+//  if(req.session.usuario){
+//      res.locals.usuario = req.session.usuario;
+//      return next();
+//  }else if(req.cookies.email){
+//      let usuario = archivoUsuarios.find(usuario => usuario.email == req.cookies.email)
+//      req.session.usuario = usuario;
+//      res.locals.usuario = usuario;
+//      return next();
+//  }else{
+//      return next();
+//  }
 }
 
 
