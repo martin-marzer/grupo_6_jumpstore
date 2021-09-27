@@ -26,6 +26,6 @@ const User = {
     }
 }
 
-console.log(User.getData())
+// console.log(User.getData())
 
 module.exports = User;
