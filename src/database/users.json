@@ -40,5 +40,12 @@
     "email": "alegon2772@gmail.com",
     "password": "$2a$10$USkH5FPwHmGITcJR8.7./O13qKPSBkZfPTdTYVBiHGhJVQnuygd5i",
     "category": "user"
+  },
+  {
+    "id": 7,
+    "username": "Alesan",
+    "email": "alegonzalez1@hotmail.es",
+    "password": "$2a$10$dNnl8/WRtbAecYjVB6y3rOlI1cL.x/xiiS8RMwaO85sVu.JArmc3S",
+    "category": "user"
   }
 ]
