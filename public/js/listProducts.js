@@ -30,20 +30,21 @@ document.getElementById('sort-order').onchange = function() {
 // let nose = window.location.pathname
 let nose = window.location.pathname.split("/").pop();
 
-// console.log(nose)
+// // console.log(nose)
 
 
 let urlArray = window.location.pathname.split("/");
 
 
-console.log(urlArray)
+// console.log(urlArray)
 
 
 let form = document.getElementById("form-desk")  
-// console.log(form);
+// // console.log(form);
 
 let button = document.getElementById("button-form")
-// console.log(button);
+let resetButton = document.getElementById("button-form-reset")
+// // console.log(button);
 
 
 const checkboxes = document.querySelectorAll(".each-filter input[type='checkbox']") 
@@ -86,9 +87,9 @@ checkboxes.forEach((box) => {
           checkboxValues.splice(index, 1);
         }
 
-      // console.log(checkboxValues);
+      // // console.log(checkboxValues);
     }
-    console.log(checkboxValues);
+    // console.log(checkboxValues);
 
     if (urlArray.length <= 3) {
       if (checkboxValues.length == 0 ) {
@@ -101,22 +102,30 @@ checkboxes.forEach((box) => {
       }
     } 
     else if (urlArray.length == 4){
+      // console.log(checkboxValues)
       if (checkboxValues.length == 0 ) {
         let hola = urlArray.slice(0, -1);
         button.disabled = false;
         form.action = window.location.protocol  +  hola.join("/")
-
       }
       else if (checkboxValues.length > 0 ) {
         // let withoutLast = urlArray.pop()
         urlArray[3] = checkboxValues.join("+")
-        console.log(urlArray[3]);
+        // // console.log(urlArray[3]);
         form.action = window.location.protocol  +  urlArray.join("/")
-        console.log(urlArray)
+        // // console.log(urlArray)
+
       }
     }
-
-    
+  }
+  resetButton.onclick = () => {
+    checkboxes.forEach(box => box.checked = false)
+    if (urlArray.length <= 3) {
+      form.action = window.location.protocol + urlArray.join("/")
+    }
+    else if (urlArray.length == 4) {
+      form.action = window.location.protocol + urlArray.slice(0,3).join("/")
+    }
   }
 });
 
@@ -129,6 +138,7 @@ checkboxes.forEach((box) => {
 let formPhone = document.getElementById("form-mobile") 
 
 let buttonPhone = document.getElementById("button-form-mobile")
+let resetButtonPhone = document.getElementById("button-form-reset-mobile")
 
 
 const checkboxesPhone = document.querySelectorAll(".each-filter-mobile input[type='checkbox']");
@@ -172,9 +182,9 @@ checkboxesPhone.forEach((box) => {
           checkboxValuesPhone.splice(index, 1);
         }
 
-      // console.log(checkboxValuesPhone);
+      // // console.log(checkboxValuesPhone);
     }
-    console.log(checkboxValuesPhone);
+    // // console.log(checkboxValuesPhone);
 
     if (urlArray.length <= 3) {
       if (checkboxValuesPhone.length == 0 ) {
@@ -194,12 +204,23 @@ checkboxesPhone.forEach((box) => {
       else if (checkboxValuesPhone.length > 0 ) {
         // let withoutLast = urlArray.pop()
         urlArray[3] = checkboxValuesPhone.join("+")
-        console.log(urlArray[3]);
+        // console.log(urlArray[3]);
         formPhone.action = window.location.protocol  +  urlArray.join("/")
-        console.log(urlArray)
+        // console.log(urlArray)
       }
     }
 
     
   }
+
+  resetButtonPhone.onclick = () => {
+    checkboxesPhone.forEach(box => box.checked = false)
+    if (urlArray.length <= 3) {
+      formPhone.action = window.location.protocol + urlArray.join("/")
+    }
+    else if (urlArray.length == 4) {
+      formPhone.action = window.location.protocol + urlArray.slice(0,3).join("/")
+    }
+  }
+
 });

@@ -109,15 +109,20 @@ body {
     margin-top: 5vw;
     width: 100%;
     text-align-last: center;
+    display: flex;
+    justify-content: space-between;
 }
 .filter-body .button button {
     background: #121212;
     color: rgb(255, 255, 255);
     border-radius: 5px;
-    width: 70%;
+    width: 48%;
     height: 8vw;
     font-size: 3vw;
     text-align: center;
+}
+.filter-body .button button:last-of-type {
+    background-color: #7b7b7b;
 }
 .filter-body .categoria {
     font-size: 7vw;
@@ -394,21 +399,25 @@ body {
     }
     #filter-container-desktop .button {
         height: 40px;
+        display: flex;
+        justify-content: space-between;
     }
-    #filter-container-desktop .button.last button {
-        background-color: #7b7b7b;
-    }
+
     #filter-container-desktop .button button {
         background: #121212;
         color: rgb(255, 255, 255);
         border-radius: 5px;
-        width: 100%;
+        width: 47%;
         height: 100%;
         transition: all 0.2s;
+    }
+    #filter-container-desktop .button button:last-of-type {
+        background-color: #7b7b7b;
     }
     #filter-container-desktop .button button:hover {
         background: #2b2a2a;
     }
+  
     .each-filter{
         margin-bottom: 20px;
         border-bottom: 1px solid #cacaca;
