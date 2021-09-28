@@ -10,11 +10,13 @@ const PORT = process.env.PORT || 3030;
 
 // se definen las middleware
 const softAuthMiddleware = require("./middlewares/softAuthMiddleware");
+const recordingMiddleware = require("./middlewares/recordingMiddleware")
 
 
 
 
 // se expresa los middlewares a usar
+app.use(cookieParser());
 app.use(express.static("public"));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -24,8 +26,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+app.use(recordingMiddleware)
 app.use(softAuthMiddleware);
-app.use(cookieParser());
 
 app.set("view engine", "ejs");
 app.set("views", ["./src/views", "./src/views/products", "./src/views/users", "./src/views/admin", "./src/views/info"]); 
