@@ -10,7 +10,7 @@ function authMiddleware (req, res, next) {
     // console.log(res.locals.usuario);
      next()
  } else {
-     res.send("Registrate o inicia sesion")
+     res.redirect("/login")
  }
 
 
