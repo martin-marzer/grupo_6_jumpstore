@@ -160,6 +160,9 @@ li {
     border-radius: 2%;
     height: 100%;
 }
+.image:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .container-new a:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -176,7 +179,7 @@ li {
     padding: 10px;
 }
 .description-product {
-    font-size: 25px;
+    font-size: 22px;
     font-family: system-ui;
     margin-top: 30px;
     text-align: center;
@@ -187,7 +190,7 @@ li {
     height: 60px;
 }
 .image__description{
-    font-size: 28px;
+    font-size: 25px;
     font-weight: bold;
     color: black;
 }
@@ -236,7 +239,26 @@ h1:hover {
     padding: 10px;
 }
 
+.container-splide {
+    margin-bottom: 50px;
+}
+.splide__slide {
+    width: 1.9% !important;
+    margin: 0 0.1% !important;
+}
+.splide__track {
+    height: 300px !important;
+}
+/* .container-splide .image {
+    width: 80%;
+    margin: 0 auto;
+} */
 
+.container-splide img {
+    width: 100%;
+    margin: 0 auto;
+    
+}
 
 @media (max-width: 767px) {
     .slider {
@@ -291,28 +313,7 @@ h1:hover {
     .container-hot img{
         max-height: 190px;
     }
-    .container-new {
-        flex-direction: column;
-        width: 60%;
-        height: 100%;
-        margin-bottom: 30px;
-    }
-    .container-new img{
-        max-width: 100%;
-    }
-    .container-new a {
-        margin-bottom: 3vw;
-    }
-    .description-product{
-        margin-top: 10px;
-    }
-    .image__description{
-        margin-top: 18px;
-        font-size: 25px;
-    }
-    .container-splide {
-        display: none;
-    }
+
 }
 
 @media (min-width: 768px){
@@ -336,9 +337,6 @@ h1:hover {
         font-size: 27px;
         left: 9%;
         width: 85%;
-    }
-    .image:hover{
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
     .ul-muestra {
         display: flex;
@@ -374,23 +372,7 @@ h1:hover {
     .container-splide  .arrow-splide-next{
         right: -8%;
     }
-    .splide__slide {
-        width: 2% !important;
-        margin: 0 0.1% !important;
-    }
-    .splide__track {
-        height: 350px !important;
-    }
-    /* .container-splide .image {
-        width: 80%;
-        margin: 0 auto;
-    } */
 
-    .container-splide img {
-        width: 100%;
-        margin: 0 auto;
-        
-    }
 
 }
 

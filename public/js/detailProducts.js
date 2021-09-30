@@ -1,15 +1,25 @@
-document.addEventListener( 'DOMContentLoaded', function () {
-	new Splide( '#image-slider', {
-    'rewind': true,
-		'cover'      : true,
-		'heightRatio': "0.7",
-    'pagination': false,
-    classes: {
-      arrows: 'splide__arrows your-class-arrows',
-      arrow : 'splide__arrow your-class-arrow',
-      prev  : 'splide__arrow--prev your-class-prev',
-      next  : 'splide__arrow--next your-class-next',
-    }
-	} ).mount();
-} );
-//pues aqui se especifica como se quiere el slider del detalle, pues use splidejs para hacerlo :P
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btnModal = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btnModal.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
