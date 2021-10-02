@@ -38,6 +38,7 @@
     width: 100%;
     justify-content: space-between;
     background-color: #d5d6d522;
+    margin-bottom: 20px;
 }
 .info-product {
     width: 100%;
@@ -55,10 +56,12 @@
 .name {
     width: 90%;
 }
-.name p, .precio-zapas, .talle-edit a{
+.name p, .precio-zapas, .talle-edit a, .help a{
     font-weight: 600;
 }
-
+p.precio-zapas {
+    font-size: 5vw !important;
+}
 .trash-icon {
     width: 10%;
     font-size: 20px;
@@ -120,14 +123,9 @@ td {
     width: 100%;
     display: block;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
 }
-
-
-
-
-
-
-
 
 
 
@@ -138,9 +136,14 @@ td {
     .info-product .down-info p, .info-product .down-info a {
         font-size: 18px;
     }
+    p.precio-zapas {
+        font-size: 4.5vw !important;
+    }
 }
 @media (min-width: 650px) {
-
+    p.precio-zapas {
+        font-size: 3.5vw !important;
+    }
 }
 
 
@@ -181,6 +184,9 @@ td {
     .img-product-mobile {
         display: none;
     }
+    .product {
+        height: 120px;
+    }
     .info-product {
         width: 75%;
     }
@@ -189,6 +195,10 @@ td {
     }
     .img-product {
         width: 20%;
+        align-self: center;
+    }
+    .img-product img {
+        border-radius: 2px;
     }
     .up-info, .down-info {
         height: 50%;
@@ -207,13 +217,10 @@ td {
     }
 
     .col-products {
-        width: 60%;
+        width: 65%;
     }
     .col-resume {
         width: 30%;
-    }
-    .img-product {
-    width: 20%;
     }
     .title p:first-of-type {
         font-size: 28px;
@@ -226,6 +233,9 @@ td {
     }
     .help a {
         font-size: 18px;
+    }
+    p.precio-zapas {
+        font-size: 20px !important;
     }
 }
 @media (min-width: 992px) {
