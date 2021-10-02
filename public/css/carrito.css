@@ -109,6 +109,18 @@ td {
     border-top: 1px solid #bababa;
     padding: 10px 0px 10px 15px;
 }
+.pago {
+    margin-top: 20px ;
+}
+.btn {
+    color: rgb(255, 255, 255);
+    background-color: rgb(131, 131, 131);
+    padding: 10px 20px;
+    border-radius: 3px;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
 
 
 
