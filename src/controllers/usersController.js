@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require("path")
 const bcrypt = require('bcryptjs');
 const usersFilePath = path.resolve(__dirname, '../database/users.json');
-const User = require("../models/User");
+const User = require("../database/models/User");
 
 const controlador = {
     register: (req,res) => {

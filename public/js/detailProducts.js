@@ -47,4 +47,17 @@ for (let i = 0; i < modal.length; i++) {
   }
 
 }
+let link = document.getElementsByClassName("breadcrumbs-link")[1];
+let prevLink = document.referrer
+let prevLinkArray = prevLink.split("/")
+
+if (prevLinkArray.length == 0) {
+  link.href = "/sneakers/OrderByReleaseDateDESC"
+}
+else if (prevLinkArray.includes("sneakers")) {
+  link.href = document.referrer
+}
+else {
+  link.href = "/sneakers/OrderByReleaseDateDESC"
+}
 

@@ -20,7 +20,6 @@ body {
     outline: 1px solid #7e7e7e;
 }
 .product-container .link-detail {
-    position: absolute;
     display: block;
     width: 100%;
     height: 100%;
@@ -97,12 +96,10 @@ body {
     flex-wrap: wrap;
 }
 .filter-body #form-mobile {
-    display: flex;
     width: 100%;
-    flex-wrap: wrap;
 }
 .filter-body .each-filter-mobile {
-    width: 50%;
+    width: 100%;
     text-align: center;
 }
 .filter-body .button {
@@ -132,11 +129,12 @@ body {
 }
 .filter-body .control-group {
     margin-left: 5%;
+    display: flex;
+    flex-direction: column;
 }
 .filter-body .control {
     text-transform: uppercase;
     font-size: 4vw;
-    padding: 2vw 0;
 }
 .filter-body .control input {
     padding: 0;
@@ -291,6 +289,12 @@ body {
     .price {
         font-size: 17px;
     }
+    .sidenav-filter .title-filter {
+        margin-left: 45%;
+    }
+    .filter-body .control input {
+        transform: scale(1.2);
+    }
 
 }
 @media (max-width:991px) and (min-width:768px)  {
@@ -431,15 +435,12 @@ body {
     }
     .filter-scroll {
         height: 150px;
-        overflow-y: scroll;
         padding: 10px 6px 15px 6px;
         background: rgb(255, 255, 255);
     }
-    .filter-scroll.last {
-        height: 120px;
-    }
-    .control-group.talle .control {
-        width: 49%;
+    
+    .filter-scroll.med, .filter-scroll.last {
+        height: 80px;
     }
     .control-group.talle .control, .control-group.precio .control{
        font-size: 16px 
@@ -528,26 +529,32 @@ body {
     .text {
         margin: -16% 10px 0 10px;
     }
-
-    .filter-scroll::-webkit-scrollbar-track
+    
+    .filter-scroll::-webkit-scrollbar-track, #form-desk::-webkit-scrollbar-track
     {
         border-radius: 10px;
         background-color: #ffffff;
     }
     
-    .filter-scroll::-webkit-scrollbar
+    .filter-scroll::-webkit-scrollbar, #form-desk::-webkit-scrollbar
     {
         width: 8px;
         background-color: #ffffff;
     }
     
-    .filter-scroll::-webkit-scrollbar-thumb
+    .filter-scroll::-webkit-scrollbar-thumb, #form-desk::-webkit-scrollbar-thumb
     {
         border-radius: 10px;
         background-color: #c7c4c4;
     }
     .sidenav-filter {
         display: none !important;
+    }
+}
+@media (min-width:992px) and (max-width:1200px) {
+    #form-desk {
+        overflow-y: scroll;
+        height: 450px;
     }
 }
 @media (min-width:1200px) {
@@ -568,5 +575,8 @@ body {
     }
     .price {
         font-size: 22px;
+    }
+    .filter-scroll {
+        overflow-y: scroll;
     }
 }

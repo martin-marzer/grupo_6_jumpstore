@@ -1,13 +1,3 @@
-//esto es para mostrar en los dispositivos moviles el sidenav de los filtros
-
-$('.btn').click(function(){
-  $(".sidenav-filter").addClass("open-filter");
-  $('body').css('overflow', 'hidden');
-});
-$('.closebtn-filter').click(function(){
-  $(".sidenav-filter").removeClass("open-filter");
-  $('body').css('overflow', 'auto');
-});
 
 //esto es para el selected cuando se selecciona te lleva a ese link, 
 // lo sacas (eso esta en el ejs seleccionado según su link) y te lleva al products (default) 
@@ -39,100 +29,30 @@ let urlArray = window.location.pathname.split("/");
 // console.log(urlArray)
 
 
-let form = document.getElementById("form-desk")  
-// // console.log(form);
+// dependiendo q dispositivo se corre x funcion
+let width = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
 
-let button = document.getElementById("button-form")
-let resetButton = document.getElementById("button-form-reset")
-// // console.log(button);
+//esto es para mostrar en los dispositivos moviles el sidenav de los filtros
+if (width <= 992 ) {
+  $('.btn').click(function(){
+    $(".sidenav-filter").addClass("open-filter");
+    $('body').css('overflow', 'hidden');
+  });
+  $('.closebtn-filter').click(function(){
+    $(".sidenav-filter").removeClass("open-filter");
+    $('body').css('overflow', 'auto');
+  });
+  
 
-
-const checkboxes = document.querySelectorAll(".each-filter input[type='checkbox']") 
-let checkboxValues = [];
-
-
-if (checkboxValues.length == 0 && urlArray.length == 3) {
-  button.disabled = true;
-
-} else if (checkboxValues.length == 0 && urlArray.length > 3) {
-  button.disabled = false;
 }
 
 
+// esto es la logica de lo q sucede con los filtros
+if (width <= 768 ) {
 
-checkboxes.forEach((box) => {
-  if (box.checked == true) {
-    checkboxValues.push(box.value)
-    
-  } else {
-  const index = checkboxValues.indexOf(box.value);
-      if (index > -1) {
-        checkboxValues.splice(index, 1);
-      }
-
-      // form.action = window.location.href  
-      // + "/" + checkboxValues.join("+")
-  }
-  box.addEventListener("change", () => hola());
-  function hola() {
-
-    if (box.checked == true) {
-      checkboxValues.push(box.value)
-      button.disabled = false;
-      
-
-    } else {
-      const index = checkboxValues.indexOf(box.value);
-        if (index > -1) {
-          checkboxValues.splice(index, 1);
-        }
-
-      // // console.log(checkboxValues);
-    }
-    // console.log(checkboxValues);
-
-    if (urlArray.length <= 3) {
-      if (checkboxValues.length == 0 ) {
-        button.disabled = true;
-        form.action = window.location.href
-
-      }
-      else if (checkboxValues.length > 0 ) {
-        form.action = window.location.href + "/" + checkboxValues.join("+")
-      }
-    } 
-    else if (urlArray.length == 4){
-      // console.log(checkboxValues)
-      if (checkboxValues.length == 0 ) {
-        let hola = urlArray.slice(0, -1);
-        button.disabled = false;
-        form.action = window.location.protocol  +  hola.join("/")
-      }
-      else if (checkboxValues.length > 0 ) {
-        // let withoutLast = urlArray.pop()
-        urlArray[3] = checkboxValues.join("+")
-        // // console.log(urlArray[3]);
-        form.action = window.location.protocol  +  urlArray.join("/")
-        // // console.log(urlArray)
-
-      }
-    }
-  }
-  resetButton.onclick = () => {
-    checkboxes.forEach(box => box.checked = false)
-    if (urlArray.length <= 3) {
-      form.action = window.location.protocol + urlArray.join("/")
-    }
-    else if (urlArray.length == 4) {
-      form.action = window.location.protocol + urlArray.slice(0,3).join("/")
-    }
-  }
-});
-
-
-
-
-// ESTO ES PARA EL CELULARASDAS
+  // ESTO ES PARA EL CELULARASDAS
 //aCELUARRRRRRRRR function
 
 let formPhone = document.getElementById("form-mobile") 
@@ -224,3 +144,104 @@ checkboxesPhone.forEach((box) => {
   }
 
 });
+
+} else if (width >= 769) {
+
+
+
+  let form = document.getElementById("form-desk")  
+// // console.log(form);
+
+let button = document.getElementById("button-form")
+let resetButton = document.getElementById("button-form-reset")
+// // console.log(button);
+
+
+const checkboxes = document.querySelectorAll(".each-filter input[type='checkbox']") 
+let checkboxValues = [];
+
+
+if (checkboxValues.length == 0 && urlArray.length == 3) {
+  button.disabled = true;
+
+} else if (checkboxValues.length == 0 && urlArray.length > 3) {
+  button.disabled = false;
+}
+
+
+
+checkboxes.forEach((box) => {
+  if (box.checked == true) {
+    checkboxValues.push(box.value)
+    
+  } else {
+  const index = checkboxValues.indexOf(box.value);
+      if (index > -1) {
+        checkboxValues.splice(index, 1);
+      }
+
+      // form.action = window.location.href  
+      // + "/" + checkboxValues.join("+")
+  }
+  box.addEventListener("change", () => hola());
+  function hola() {
+
+    if (box.checked == true) {
+      checkboxValues.push(box.value)
+      button.disabled = false;
+      
+
+    } else {
+      const index = checkboxValues.indexOf(box.value);
+        if (index > -1) {
+          checkboxValues.splice(index, 1);
+        }
+
+      // // console.log(checkboxValues);
+    }
+    // console.log(checkboxValues);
+
+    if (urlArray.length <= 3) {
+      if (checkboxValues.length == 0 ) {
+        button.disabled = true;
+        form.action = window.location.href
+
+      }
+      else if (checkboxValues.length > 0 ) {
+        form.action = window.location.href + "/" + checkboxValues.join("+")
+      }
+    } 
+    else if (urlArray.length == 4){
+      // console.log(checkboxValues)
+      if (checkboxValues.length == 0 ) {
+        let hola = urlArray.slice(0, -1);
+        button.disabled = false;
+        form.action = window.location.protocol  +  hola.join("/")
+      }
+      else if (checkboxValues.length > 0 ) {
+        // let withoutLast = urlArray.pop()
+        urlArray[3] = checkboxValues.join("+")
+        // // console.log(urlArray[3]);
+        form.action = window.location.protocol  +  urlArray.join("/")
+        // // console.log(urlArray)
+
+      }
+    }
+  }
+  resetButton.onclick = () => {
+    checkboxes.forEach(box => box.checked = false)
+    if (urlArray.length <= 3) {
+      form.action = window.location.protocol + urlArray.join("/")
+    }
+    else if (urlArray.length == 4) {
+      form.action = window.location.protocol + urlArray.slice(0,3).join("/")
+    }
+  }
+});
+}
+
+
+
+
+
+

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Air Jordan 1 Retro Low 'Lakers top 3",
     "price": 23000,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "nike",
     "image": [
       "airjordan1retro.jpeg",
@@ -17,7 +17,7 @@
     "id": 2,
     "name": "Nike AIRMAX 97",
     "price": 20600,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "nike",
     "image": [
       "airmax97-1.jpg",
@@ -31,7 +31,7 @@
     "id": 3,
     "name": "Jordan 1 Retro High White University",
     "price": 22400,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "nike",
     "image": [
       "jordan1retro.jpeg",
@@ -45,7 +45,7 @@
     "id": 4,
     "name": "Jordan 5 Retro Grape Fresh Prince",
     "price": 22500,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "nike",
     "image": [
       "jordan5retro.jpeg",
@@ -59,7 +59,7 @@
     "id": 5,
     "name": "Jordan 11 Retro Win Like 96",
     "price": 23700,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "nike",
     "image": [
       "jordan11retro.jpeg",
@@ -73,7 +73,7 @@
     "id": 6,
     "name": "Adidas Yeezy 350v2 Black",
     "price": 20400,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "adidas",
     "image": [
       "Adidas Yeezyblack1.jpg",
@@ -87,7 +87,7 @@
     "id": 7,
     "name": "Adidas Yeezy 350v2 White",
     "price": 20400,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "adidas",
     "image": [
       "Adidas Yeezy1.jpg",
@@ -101,7 +101,7 @@
     "id": 8,
     "name": "Adidas X9000L4 CYBERPUNK 2077",
     "price": 20900,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "adidas",
     "image": [
       "adidascyberpunk1.jpeg",
@@ -115,7 +115,7 @@
     "id": 9,
     "name": "Adidas X9000L4",
     "price": 20900,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "adidas",
     "image": [
       "Adidas X9000L4-1.jpeg",
@@ -129,7 +129,7 @@
     "id": 10,
     "name": "Adidas Superstar Sean Wotherspoon",
     "price": 17200,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "adidas",
     "image": [
       "adidasSuperstar1.jpeg",
@@ -143,7 +143,7 @@
     "id": 11,
     "name": "Adidas Superstar Melting Sadness",
     "price": 20200,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "adidas",
     "image": [
       "adidasmelting1.jpeg",
@@ -157,7 +157,7 @@
     "id": 12,
     "name": "Fila archive RJV",
     "price": 12990,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "fila",
     "image": [
       "fila archive-1.jpg",
@@ -171,7 +171,7 @@
     "id": 13,
     "name": "Fila Flex Shine",
     "price": 20200,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "fila",
     "image": [
       "fila flex1.jpg",
@@ -185,7 +185,7 @@
     "id": 14,
     "name": "Fila Renno",
     "price": 19990,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "fila",
     "image": [
       "fila renno-1.jpg",
@@ -199,7 +199,7 @@
     "id": 15,
     "name": "Fila Renno 90S",
     "price": 19990,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "fila",
     "image": [
       "fila renno90s-1.jpg",
@@ -213,7 +213,7 @@
     "id": 16,
     "name": "Vans ERA",
     "price": 17900,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "vans",
     "image": [
       "vans era1.jpeg",
@@ -227,7 +227,7 @@
     "id": 17,
     "name": "Vans Old Skool VLT LX",
     "price": 17900,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "vans",
     "image": [
       "vans oldskool vlt1.jpg",
@@ -241,7 +241,7 @@
     "id": 18,
     "name": "Vans Old Skool Supreme",
     "price": 17900,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "vans",
     "image": [
       "vans oldskool supreme1.jpeg",
@@ -253,7 +253,7 @@
     "id": 19,
     "name": "Vans Old Skool",
     "price": 18700,
-    "talle": "35-37",
+    "talle": "35-40",
     "brand": "vans",
     "image": [
       "vans oldskool1.jpeg",

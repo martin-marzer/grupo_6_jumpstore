@@ -227,6 +227,19 @@ h1:hover {
     letter-spacing: 4px;
 }
 
+.brands {
+    background: rgba(7, 7, 7, 0.1);
+    margin-bottom: 50px;
+}
+.brands-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.brandImage-container {
+    width: 20%;
+    margin: 30px 0;
+}
 .container-new {
     width: 50%;
     display: flex;
@@ -262,7 +275,7 @@ h1:hover {
 
 @media (max-width: 767px) {
     .slider {
-        height: 90vw;
+        height: 70vw;
         box-shadow: none;
         margin: 0;
     }
@@ -353,10 +366,21 @@ h1:hover {
         width: 100%;
     }
     .ul-muestra li img {
-
         height: 390px;
         width: 100%;
     }
+
+    .brands-flex{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;  
+        width: 90%;
+        margin: 0 auto;
+    }
+    .brandImage-container {
+        width: 10%;
+    }
+
     .container-splide {
         width: 80%;
         margin: 0px auto 80px;
@@ -388,7 +412,7 @@ h1:hover {
         width: 85%;
     }
     .splide__slide {
-        width: 3% !important;
+        width: 2.5% !important;
     }
     .splide__track {
         height: 400px !important;
