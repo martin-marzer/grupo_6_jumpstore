@@ -27,5 +27,9 @@ Array.prototype.forEach.call(
       });
     }
   );
+
+let fechaValue = document.getElementById("fechaValue")
   
+let today = new Date();
+fechaValue.valueAsDate = today
 

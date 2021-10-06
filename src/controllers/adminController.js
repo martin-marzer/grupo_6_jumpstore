@@ -43,11 +43,14 @@ const controlador = {
        let newProduct = {
            id: id,
            name:  req.body.name,
-           price: req.body.precio,
+           price: parseInt(req.body.precio, 10),
+           discount:  parseInt(req.body.descuento, 10),
+           priceFinal: parseInt(req.body.precio, 10) - ( parseInt(req.body.precio, 10) * parseInt(req.body.descuento, 10) / 100),
            talle: req.body.talle,
            brand: req.body.marca,
            image: [req.files[0].filename, req.files[1].filename, req.files[2].filename],
            date: req.body.fechaEntrada,
+           stock: 1,
            description: req.body.descripcion,
            
        }
@@ -56,7 +59,6 @@ const controlador = {
        // aca convertimos algunos datos como el precio pasado a number en vez de string, y al text se le agrega mayusculas
        newProduct.name = newProduct.name.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
        newProduct.description = newProduct.description.charAt(0).toUpperCase() + newProduct.description.slice(1);
-       newProduct.price = parseInt(newProduct.price, 10)
        
 
        let newBasedata = products.concat(newProduct)
@@ -95,7 +97,9 @@ const controlador = {
 	        })
 
         product.name =  productToEditBody.name;
-        product.price = productToEditBody.price;
+        product.price = parseInt(productToEditBody.price, 10);
+        product.discount = parseInt(productToEditBody.discount, 10);
+        product.priceFinal = price - (price * discount / 100)
         product.talle =  productToEditBody.talle;
         product.brand = productToEditBody.brand;
         // product.image = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
@@ -103,7 +107,6 @@ const controlador = {
         product.description = productToEditBody.description;
 
         // aca convertimos algunos datos como el precio pasado a number en vez de string, y al text se le agrega mayusculas
-        product.price = parseInt(product.price, 10)
         product.name =  product.name.charAt(0).toUpperCase() +  product.name.slice(1);
         product.description = product.description.charAt(0).toUpperCase() +  product.description.slice(1);
         
@@ -144,26 +147,6 @@ const controlador = {
 		// console.log(imageToDelete)
 		fs.writeFileSync( productsFilePath, productsFinal);
 		res.redirect("/administratorToolsProducts");
-
-
-
-        // este elimina solo la info del json
-
-
-    //   let productsNew = products.filter(product => (product.id != req.params.id))
-      
-      // Aca es para ordenar los id tras eliminar un producto
-
-    //   for(let i = 0; i < productsNew.length; i ++){
-    //     let eachProduct = productsNew[i];
-    //     eachProduct.id =  i + 1
-    // }
-    //   let finalProduct = JSON.stringify(productsNew, null, 2)
-    //   fs.writeFileSync(productsFilePath, finalProduct)
-
-      
-     
-    //     res.redirect("/administratorToolsProducts");
     },
     administratorUsers: (req,res) => {
         res.send("aca iria para ver los perfiles, podria editarse para cambiar su rol")

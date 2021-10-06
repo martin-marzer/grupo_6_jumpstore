@@ -10,7 +10,9 @@
     <%- include("./partials/menuMobile") %>
 
     <main class="container_main">
+        
         <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
+            <a href="/administratorToolsProducts">Volver</a>
             <h1 class="titulo">Editando <%= articulo.name %></h1>
             <div>
                 <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
@@ -64,8 +66,9 @@
                 </div>
 
             </div>
-            <div>
-                <input class="formulario-input" min="0" step="1000" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+            <div class="selects">
+                <input class="formulario-input price-discount" min="0" step="1000" type="number" name="price" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
+                <input class="formulario-input price-discount" type="number"  min="0" max="100" value="<%= articulo.discount %>" name="discount" class="crear-producto" placeholder="Descuento" required>
             </div>
            <!-- <div class="file-upload">
                 <input class="file-upload__input" type="file" for="myFile" name="myFile" id="myFile" required multiple>

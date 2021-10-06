@@ -92,7 +92,7 @@ linksFuncMobile()
     if (urlArraySelected[1] == "") {
       links[0].classList.add("selected")
     }
-    else if (urlArraySelected.length >= 2 && urlArraySelected.includes("sneakers")) {
+    else if (urlArraySelected.length >= 2 && urlArraySelected.includes("sneakers") && !urlArraySelected.includes("detail")) {
       links[1].classList.add("selected")
     }
     else if (urlArraySelected.length >= 2 && urlArraySelected.includes("ofertas")) {

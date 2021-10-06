@@ -306,7 +306,7 @@
                                                     </div>
                                                     <div class="price">
                                                         <% if (articulo.discount != 0) { %>
-                                                                <p>$<%= toThousand(articulo.price - (articulo.price * articulo.discount / 100)) %></p>
+                                                                <p>$<%= toThousand(articulo.priceFinal)%></p>
                                                                 <p class="oldPrice">$<%= toThousand(articulo.price)%></p>
                                                         <% } else {%>
                                                             <p>$<%= toThousand(articulo.price) %></p>

@@ -22,8 +22,8 @@ const controlador = {
                 if (product.discount != 0) {
                     return product
                 }
-
             })
+            // console.log(products)
         }
 
         //esto ordena la vaina, obtiene el dato desde el link y de ahi se acomoda la vista
@@ -135,12 +135,12 @@ const controlador = {
                         cleanFilter.map(product => {
                             
                             if (precio == "0$-19999$") {                               
-                                if (product.price >= 0 && product.price <= 19999) {
+                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
                                     filterByPrecio.push(product) 
                                 } 
                             }
                             if (precio == "20000$-max") {                               
-                                if (product.price >= 20000 && product.price <= 200_000) {
+                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
                                     filterByPrecio.push(product) 
                                 } 
                             }  
@@ -201,12 +201,12 @@ const controlador = {
                         principioCamino.map(product => {
                             
                             if (precio == "0$-19999$") {                               
-                                if (product.price >= 0 && product.price <= 19999) {
+                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
                                     filterByPrecio.push(product) 
                                 } 
                             }
                             if (precio == "20000$-max") {                               
-                                if (product.price >= 20000 && product.price <= 200_000) {
+                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
                                     filterByPrecio.push(product) 
                                 } 
                             }  
@@ -236,12 +236,12 @@ const controlador = {
                         cleanFilter.map(product => {
                             
                             if (precio == "0$-19999$") {                               
-                                if (product.price >= 0 && product.price <= 19999) {
+                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
                                     filterByPrecio.push(product) 
                                 } 
                             }
                             if (precio == "20000$-max") {                               
-                                if (product.price >= 20000 && product.price <= 200_000) {
+                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
                                     filterByPrecio.push(product) 
                                 } 
                             }  
@@ -292,12 +292,12 @@ const controlador = {
                         products.map(product => {
                             
                             if (precio == "0$-19999$") {                               
-                                if (product.price >= 0 && product.price <= 19999) {
+                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
                                     filterByPrecio.push(product) 
                                 } 
                             }
                             if (precio == "20000$-max") {                               
-                                if (product.price >= 20000 && product.price <= 200_000) {
+                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
                                     filterByPrecio.push(product) 
                                 } 
                             }  

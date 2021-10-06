@@ -20,6 +20,7 @@ body {
 .selects {
     display: flex;
     margin-bottom: 30px;
+    justify-content: space-between;
 }
 #select-talles, #select-marcas {
     width: 90%;
@@ -44,6 +45,10 @@ body {
     background: whitesmoke;
     border: none;
     border-radius: 10px;
+}
+.price-discount {
+    width: 48%;
+    margin: 0;
 }
 .marcas label input{
     display: inline-block;
