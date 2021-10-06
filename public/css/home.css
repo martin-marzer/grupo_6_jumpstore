@@ -256,7 +256,6 @@ h1:hover {
     margin-bottom: 50px;
 }
 .splide__slide {
-    width: 1.2% !important;
     margin: 0 0.1% !important;
 }
 .splide__track {
@@ -329,9 +328,6 @@ h1:hover {
 @media (min-width: 500px){
     .splide__track {
         height: 350px !important;
-    }
-    .splide__slide {
-        width: 2% !important;
     }
     .container-splide img {
         height: 50%;
@@ -419,9 +415,6 @@ h1:hover {
     }
     .container-splide {
         width: 85%;
-    }
-    .splide__slide {
-        width: 1.5% !important;
     }
     .splide__track {
         height: 400px !important;
