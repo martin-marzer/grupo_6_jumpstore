@@ -30,12 +30,12 @@ let urlArray = window.location.pathname.split("/");
 
 
 // dependiendo q dispositivo se corre x funcion
-let width = window.innerWidth
+let widthListProducts = window.innerWidth
 || document.documentElement.clientWidth
 || document.body.clientWidth;
 
 //esto es para mostrar en los dispositivos moviles el sidenav de los filtros
-if (width <= 992 ) {
+if (widthListProducts <= 992 ) {
   $('.btn').click(function(){
     $(".sidenav-filter").addClass("open-filter");
     $('body').css('overflow', 'hidden');
@@ -50,7 +50,7 @@ if (width <= 992 ) {
 
 
 // esto es la logica de lo q sucede con los filtros
-if (width <= 768 ) {
+if (widthListProducts <= 768 ) {
 
   // ESTO ES PARA EL CELULARASDAS
 //aCELUARRRRRRRRR function
@@ -145,7 +145,7 @@ checkboxesPhone.forEach((box) => {
 
 });
 
-} else if (width >= 769) {
+} else if (widthListProducts >= 769) {
 
 
 

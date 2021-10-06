@@ -56,14 +56,29 @@
     object-fit: cover;
 }
 #description-product h1 {
-    font-size: 25px;
+    font-size: 8vw;
     margin: 30px 0 0 0;
     text-transform: uppercase;
 }
+.product-price {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+.product-price .oldPrice {
+    text-decoration: line-through;
+}
 #description-product .product-price p {
     font-weight: 500;
+    font-size: 8vw;
+    margin: 0;
+    width: 50%;
 }
-#description-product .product-price p, #description-product .product-cuotas p {
+#description-product .product-price p.oldPrice {
+    font-size: 6vw;
+    font-weight: 400;
+}
+#description-product .product-cuotas p {
     font-size: 22px;
     margin: 30px 0;
 }
@@ -189,26 +204,33 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
   }
   
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
+    overflow: auto;
+    height: 500px;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+    line-height: 1.5;
+  }
+  .container-modal {
+    padding: 20px;
   }
   
   /* The Close Button */
-  .close {
+  button.close {
     color: #aaa;
-    float: right;
     font-size: 28px !important;
     font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
   
   .close:hover,
@@ -223,6 +245,10 @@
     margin-top: 50px;
 }
 .label {
+    font-weight: 500;
+}
+.container-title p {
+    margin: 0;
     font-weight: 500;
 }
   
@@ -249,6 +275,16 @@
     .text-info p:first-of-type {
         font-size: 3vw;
     }
+    #description-product h1 {
+        font-size: 6vw;
+    }
+    #description-product .product-price p {
+        font-size: 6vw;
+        width: 30%;;
+    }
+    #description-product .product-price p.oldPrice {
+        font-size: 4vw;
+    }
 }
 @media (min-width:768px) {
     #jumpstore-page {
@@ -265,12 +301,19 @@
         transition: 0.5s;
         height: 360px;
     }
-    #descrip-form {
+    #description-product{
         width: 40%;
         margin: 0 0 0 10%;
     }
     #description-product h1 {
         font-size: 30px;
+    }
+    #description-product .product-price p {
+        font-size: 28px;
+        width: 35%;
+    }
+    #description-product .product-price p.oldPrice {
+        font-size: 20px;
     }
     .product-talle select {
         cursor: pointer;
@@ -285,6 +328,7 @@
     }
     .modal-content {
         margin: 5% auto; /* 15% from the top and centered */
+        width: 30%;
       }
 
     .icon-info {
@@ -323,7 +367,14 @@
         font-size: 20px;
         margin-top: 10px;
     }
-    #description-product .product-price p, #description-product .product-cuotas p {
+    #description-product .product-price p {
+        font-size: 15px;
+    }
+    #description-product .product-price p.oldPrice {
+        font-size: 12px;
+    }
+    
+    #description-product .product-cuotas p {
         font-size: 15px;
         margin: 20px 0;
     }

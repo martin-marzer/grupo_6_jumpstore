@@ -15,10 +15,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	} ).mount();
 } );
 
-const width  = window.innerWidth || document.documentElement.clientWidth || 
+const widthHome  = window.innerWidth || document.documentElement.clientWidth || 
 document.body.clientWidth;
-if (width < 768) {
-    console.log(width)
+if (widthHome < 768) {
+    // console.log(widthHome)
     let img = document.getElementById("img-fila")
     let giftcard = document.getElementsByClassName("gifcard-container")[0]
     img.src = "images/contenido-pagina/slider-fila-mobile.jpg"

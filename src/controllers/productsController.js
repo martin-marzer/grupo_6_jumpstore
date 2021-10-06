@@ -12,6 +12,19 @@ const controlador = {
     productsList: (req,res) => {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+        let url = req.originalUrl.split("/")
+        let viewToRender;
+        if (url.includes("sneakers")) {
+            viewToRender = "listProducts"
+        } else {
+            viewToRender = "ofertas"
+            products = products.filter(product => {
+                if (product.discount != 0) {
+                    return product
+                }
+
+            })
+        }
 
         //esto ordena la vaina, obtiene el dato desde el link y de ahi se acomoda la vista
 
@@ -82,22 +95,19 @@ const controlador = {
                 let size = categoriaFiltros[1]
                 let price = categoriaFiltros[2]
 
-                let allMarcas = categoriaFiltros[0]
                 let filterByMarca = []
 
 
-                let allTalles = categoriaFiltros[1]
                 let filterByTalle = []
 
-                let allPrecios = categoriaFiltros[2]
                 let filterByPrecio = []
 
 
                 // todas los categoria de filtro seleccionada
                 if  ( brands.length != 0 && size.length != 0 && price.length != 0 ) {
 
-                    for (let i = 0; i < allMarcas.length; i++) {
-                        const marca = allMarcas[i];
+                    for (let i = 0; i < brands.length; i++) {
+                        const marca = brands[i];
                         products.map(product => {
                         
                             if (product.brand == marca) {
@@ -108,8 +118,8 @@ const controlador = {
 
                     let principioCamino = filterByMarca.filter(producto => producto != undefined)
 
-                    for (let i = 0; i < allTalles.length; i++) {
-                        const talle = allTalles[i];
+                    for (let i = 0; i < size.length; i++) {
+                        const talle = size[i];
                         principioCamino.map(product => {
                         
                             if (product.talle == talle) {
@@ -120,8 +130,8 @@ const controlador = {
 
                     let cleanFilter = filterByTalle.filter(producto => producto != undefined)
                     
-                    for (let i = 0; i < allPrecios.length; i++) {
-                        const precio = allPrecios[i];
+                    for (let i = 0; i < price.length; i++) {
+                        const precio = price[i];
                         cleanFilter.map(product => {
                             
                             if (precio == "0$-19999$") {                               
@@ -147,8 +157,8 @@ const controlador = {
                 // 2 categorias selected
 
                 else if (brands.length != 0 && size.length != 0 && price.length == 0) {
-                    for (let i = 0; i < allMarcas.length; i++) {
-                        const marca = allMarcas[i];
+                    for (let i = 0; i < brands.length; i++) {
+                        const marca = brands[i];
                         products.map(product => {
                         
                             if (product.brand == marca) {
@@ -160,8 +170,8 @@ const controlador = {
                     let principioCamino = filterByMarca.filter(producto => producto != undefined)
 
                     
-                    for (let i = 0; i < allTalles.length; i++) {
-                        const talle = allTalles[i];
+                    for (let i = 0; i < size.length; i++) {
+                        const talle = size[i];
                         principioCamino.map(product => {
                         
                             if (product.talle == talle) {
@@ -175,8 +185,8 @@ const controlador = {
                 }
 
                 else if (brands.length != 0 && size.length == 0 && price.length != 0) {
-                    for (let i = 0; i < allMarcas.length; i++) {
-                        const marca = allMarcas[i];
+                    for (let i = 0; i < brands.length; i++) {
+                        const marca = brands[i];
                         products.map(product => {
                         
                             if (product.brand == marca) {
@@ -186,8 +196,8 @@ const controlador = {
                     }
 
                     let principioCamino = filterByMarca.filter(producto => producto != undefined)
-                    for (let i = 0; i < allPrecios.length; i++) {
-                        const precio = allPrecios[i];
+                    for (let i = 0; i < price.length; i++) {
+                        const precio = price[i];
                         principioCamino.map(product => {
                             
                             if (precio == "0$-19999$") {                               
@@ -209,8 +219,8 @@ const controlador = {
                 }
 
                 else if (brands.length == 0 && size.length != 0 && price.length != 0) {
-                    for (let i = 0; i < allTalles.length; i++) {
-                        const talle = allTalles[i];
+                    for (let i = 0; i < size.length; i++) {
+                        const talle = size[i];
                         products.map(product => {
                         
                             if (product.talle == talle) {
@@ -221,8 +231,8 @@ const controlador = {
 
                     let cleanFilter = filterByTalle.filter(producto => producto != undefined)
                     
-                    for (let i = 0; i < allPrecios.length; i++) {
-                        const precio = allPrecios[i];
+                    for (let i = 0; i < price.length; i++) {
+                        const precio = price[i];
                         cleanFilter.map(product => {
                             
                             if (precio == "0$-19999$") {                               
@@ -247,8 +257,8 @@ const controlador = {
 
                 // 1 categoria seleccionada
                 else if (brands.length != 0 && size.length == 0 && price.length == 0) {
-                    for (let i = 0; i < allMarcas.length; i++) {
-                        const marca = allMarcas[i];
+                    for (let i = 0; i < brands.length; i++) {
+                        const marca = brands[i];
                         products.map(product => {
                         
                             if (product.brand == marca) {
@@ -262,8 +272,8 @@ const controlador = {
                 }
 
                 else if (brands.length == 0 && size.length != 0 && price.length == 0) {
-                    for (let i = 0; i < allTalles.length; i++) {
-                        const talle = allTalles[i];
+                    for (let i = 0; i < size.length; i++) {
+                        const talle = size[i];
                         products.map(product => {
                         
                             if (product.talle == talle) {
@@ -277,8 +287,8 @@ const controlador = {
                 }
 
                 else if (brands.length == 0 && size.length == 0 && price.length != 0) {
-                    for (let i = 0; i < allPrecios.length; i++) {
-                        const precio = allPrecios[i];
+                    for (let i = 0; i < price.length; i++) {
+                        const precio = price[i];
                         products.map(product => {
                             
                             if (precio == "0$-19999$") {                               
@@ -302,14 +312,14 @@ const controlador = {
                 }
 
 
-            res.render("listProducts", {
+            res.render(viewToRender, {
                 articulos: productsFilterFinal,
                 order: order,
                 filter: filterFinal,
                 toThousand: toThousand
                 })
             } else {
-                res.render("listProducts", {
+                res.render(viewToRender, {
                     articulos: products,
                     order: order,
                     filter: filterFinal,
