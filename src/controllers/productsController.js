@@ -23,7 +23,6 @@ const controlador = {
                     return product
                 }
             })
-            // console.log(products)
         }
 
         //esto ordena la vaina, obtiene el dato desde el link y de ahi se acomoda la vista
@@ -67,9 +66,7 @@ const controlador = {
                 for (let i = 0; i < filterProcess.length; i++) {
                     const element = filterProcess[i];
                     filterFinal.push(element)
-                    // console.log(filterFinal)
                 }
-                
                 let productsFilterFinal = [];
                 // categoriaFIltrosOrden: marcas, talles, precio
                 let categoriaFiltros = [
@@ -80,15 +77,25 @@ const controlador = {
                 
                 for (let i = 0; i < filterFinal.length; i++) {
                     const eachFilter = filterFinal[i]
-                        // 'adidas', 'fila', 'nike', 'vans'  '35-37', '38-40', '41-43', '44-45'    '$5000-$14999', '$15000-max'
-                    if (eachFilter == "adidas" || eachFilter == "fila" || eachFilter == "nike" || eachFilter == "vans") {
-                       categoriaFiltros[0].push(eachFilter)
-                    }
-                    else if (eachFilter ==  "35-40" || eachFilter ==  "40-45") {
-                        categoriaFiltros[1].push(eachFilter)
-                    }
-                    else if (eachFilter ==  "0$-19999$" || eachFilter ==  "20000$-max") {
-                        categoriaFiltros[2].push(eachFilter)
+                    switch (eachFilter) {
+
+                        case "adidas":
+                        case "fila":
+                        case "nike":
+                        case "vans":
+                            categoriaFiltros[0].push(eachFilter)
+                            break;
+
+                        case "35-40":
+                        case "40-45":
+                            categoriaFiltros[1].push(eachFilter)
+                            break;
+                        case "0$-19999$":
+                        case "20000$-max":
+                            categoriaFiltros[2].push(eachFilter)
+                            break;
+                        default:
+                            break;
                     }
                 }
                 let brands = categoriaFiltros[0]
@@ -97,42 +104,39 @@ const controlador = {
 
                 let filterByMarca = []
 
-
                 let filterByTalle = []
 
                 let filterByPrecio = []
 
-
-                // todas los categoria de filtro seleccionada
-                if  ( brands.length != 0 && size.length != 0 && price.length != 0 ) {
-
+                brandFilter = () => {
                     for (let i = 0; i < brands.length; i++) {
                         const marca = brands[i];
-                        products.map(product => {
+                         products.filter(product => {
                         
                             if (product.brand == marca) {
-                              filterByMarca.push(product)
+                                filterByMarca.push(product)
                             }
                       } ) 
                     }
-
-                    let principioCamino = filterByMarca.filter(producto => producto != undefined)
-
+                    products = filterByMarca
+                }
+                
+                sizeFilter = () => {
                     for (let i = 0; i < size.length; i++) {
                         const talle = size[i];
-                        principioCamino.map(product => {
+                        products.filter(product => {
                         
                             if (product.talle == talle) {
                                 filterByTalle.push(product) 
                             } 
                       } ) 
                     }
-
-                    let cleanFilter = filterByTalle.filter(producto => producto != undefined)
-                    
+                    products = filterByTalle
+                }
+                priceFilter = () => {
                     for (let i = 0; i < price.length; i++) {
                         const precio = price[i];
-                        cleanFilter.map(product => {
+                        products.filter(product => {
                             
                             if (precio == "0$-19999$") {                               
                                 if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
@@ -147,170 +151,54 @@ const controlador = {
                             
                       } ) 
                     }
-                    
-                    let finishedFilter = filterByPrecio
-            
-                    productsFilterFinal = finishedFilter
+                    products = filterByPrecio
                 }
 
 
-                // 2 categorias selected
+                switch (true) {
 
-                else if (brands.length != 0 && size.length != 0 && price.length == 0) {
-                    for (let i = 0; i < brands.length; i++) {
-                        const marca = brands[i];
-                        products.map(product => {
-                        
-                            if (product.brand == marca) {
-                              filterByMarca.push(product)
-                            }
-                      } ) 
-                    }
+                    // si  todas las categorias estan seleccionadas
+                    case brands.length != 0 && size.length != 0 && price.length != 0 :
+                        brandFilter()
+                        sizeFilter()
+                        priceFilter()
+                        break;
 
-                    let principioCamino = filterByMarca.filter(producto => producto != undefined)
+                    // si hay hay 2 categorias seleccionadas
 
-                    
-                    for (let i = 0; i < size.length; i++) {
-                        const talle = size[i];
-                        principioCamino.map(product => {
-                        
-                            if (product.talle == talle) {
-                                filterByTalle.push(product) 
-                            } 
-                      } ) 
-                    }
+                    case brands.length != 0 && size.length != 0 && price.length == 0 :
+                        brandFilter()
+                        sizeFilter()
+                        break;
 
-                    let cleanFilter = filterByTalle.filter(producto => producto != undefined)
-                    productsFilterFinal = cleanFilter
+                    case brands.length != 0 && size.length == 0 && price.length != 0 :
+                        brandFilter()
+                        priceFilter()
+                        break;
+
+                    case brands.length == 0 && size.length != 0 && price.length != 0 :
+                        sizeFilter()
+                        priceFilter()
+                        break;
+
+                    // si solo hay una categoria seleccionada
+
+                    case brands.length != 0 && size.length == 0 && price.length == 0 :
+                        brandFilter()
+                        break;
+
+                    case brands.length == 0 && size.length != 0 && price.length == 0 :
+                        sizeFilter()
+                        break;
+
+                    case brands.length == 0 && size.length == 0 && price.length != 0 :
+                        priceFilter()
+                        break;
+
+                    default:
+                        break;
                 }
-
-                else if (brands.length != 0 && size.length == 0 && price.length != 0) {
-                    for (let i = 0; i < brands.length; i++) {
-                        const marca = brands[i];
-                        products.map(product => {
-                        
-                            if (product.brand == marca) {
-                              filterByMarca.push(product)
-                            }
-                      } ) 
-                    }
-
-                    let principioCamino = filterByMarca.filter(producto => producto != undefined)
-                    for (let i = 0; i < price.length; i++) {
-                        const precio = price[i];
-                        principioCamino.map(product => {
-                            
-                            if (precio == "0$-19999$") {                               
-                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
-                                    filterByPrecio.push(product) 
-                                } 
-                            }
-                            if (precio == "20000$-max") {                               
-                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
-                                    filterByPrecio.push(product) 
-                                } 
-                            }  
-                            
-                      } ) 
-                    }
-
-
-                    productsFilterFinal = filterByPrecio
-                }
-
-                else if (brands.length == 0 && size.length != 0 && price.length != 0) {
-                    for (let i = 0; i < size.length; i++) {
-                        const talle = size[i];
-                        products.map(product => {
-                        
-                            if (product.talle == talle) {
-                                filterByTalle.push(product) 
-                            } 
-                      } ) 
-                    }
-
-                    let cleanFilter = filterByTalle.filter(producto => producto != undefined)
-                    
-                    for (let i = 0; i < price.length; i++) {
-                        const precio = price[i];
-                        cleanFilter.map(product => {
-                            
-                            if (precio == "0$-19999$") {                               
-                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
-                                    filterByPrecio.push(product) 
-                                } 
-                            }
-                            if (precio == "20000$-max") {                               
-                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
-                                    filterByPrecio.push(product) 
-                                } 
-                            }  
-                            
-                      } ) 
-                    }
-                    
-                    let finishedFilter = filterByPrecio
-            
-                    productsFilterFinal = finishedFilter
-                }
-
-
-                // 1 categoria seleccionada
-                else if (brands.length != 0 && size.length == 0 && price.length == 0) {
-                    for (let i = 0; i < brands.length; i++) {
-                        const marca = brands[i];
-                        products.map(product => {
-                        
-                            if (product.brand == marca) {
-                              filterByMarca.push(product)
-                            }
-                      } ) 
-                    }
-
-                    let finalCamino = filterByMarca.filter(producto => producto != undefined)
-                    productsFilterFinal = finalCamino
-                }
-
-                else if (brands.length == 0 && size.length != 0 && price.length == 0) {
-                    for (let i = 0; i < size.length; i++) {
-                        const talle = size[i];
-                        products.map(product => {
-                        
-                            if (product.talle == talle) {
-                                filterByTalle.push(product) 
-                            } 
-                      } ) 
-                    }
-
-                    let finalCamino = filterByTalle.filter(producto => producto != undefined)
-                    productsFilterFinal = finalCamino
-                }
-
-                else if (brands.length == 0 && size.length == 0 && price.length != 0) {
-                    for (let i = 0; i < price.length; i++) {
-                        const precio = price[i];
-                        products.map(product => {
-                            
-                            if (precio == "0$-19999$") {                               
-                                if (product.priceFinal >= 0 && product.priceFinal <= 19999) {
-                                    filterByPrecio.push(product) 
-                                } 
-                            }
-                            if (precio == "20000$-max") {                               
-                                if (product.priceFinal >= 20000 && product.priceFinal <= 200_000) {
-                                    filterByPrecio.push(product) 
-                                } 
-                            }  
-                            
-                      } ) 
-                    }
-                    let finishedFilter = filterByPrecio
-            
-                    productsFilterFinal = finishedFilter
-
-
-                }
-
+                productsFilterFinal = products
 
             res.render(viewToRender, {
                 articulos: productsFilterFinal,
