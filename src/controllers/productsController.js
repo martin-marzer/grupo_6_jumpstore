@@ -243,3 +243,32 @@ const controlador = {
 };
 
 module.exports = controlador;
+
+
+
+{/* <h2 class="products-title">Resultados de la búsqueda:  <%= searchUser %> </h2>
+<h2 class="products-title">Productos:  <%=usersResults.length %> </h2>
+
+<% for( let i = 0; i < usersResults.length; i++ ) { %>
+    <div class="col-12 col-sm-6 col-lg-3">
+        <section class="product-box">
+            <a href="/sneakers/detail/<%=usersResults[i].id%>">
+                <figure class="product-box_image">
+                    <img src="/images/zapatillas/<%=usersResults[i].image[0]%>" alt="imagen de producto">
+                </figure>
+                <article class="product-box_data">
+                    <h2>$<%=toThousand(usersResults[i].price)%></h2>
+                    <!-- <span><%#=(usersResults[i].discount)%>% OFF</span> -->
+                    <p><%=(usersResults[i].name)%></p>
+                </article>
+            </a>
+        </section>
+    </div>
+<% } %>
+
+
+<div class="col-12">
+<% if (usersResults == 0) { %>
+    <h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+<% } %>
+</div> */}
