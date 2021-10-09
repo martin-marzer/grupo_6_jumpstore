@@ -6,13 +6,13 @@ document.getElementById('sort-order').onchange = function() {
   if (this.options[this.selectedIndex].value != "") {
     console.log(urlArray)
     if (urlArray.length > 3) {
-        window.location.href= '/sneakers/' + this.options[this.selectedIndex].value + "/"  + urlArray[3]
+        window.location.href = "/"+ urlArray[1] +"/" + this.options[this.selectedIndex].value + "/"  + urlArray[3]
     }
     else{
-      window.location.href= '/sneakers/' + this.options[this.selectedIndex].value
+      window.location.href = "/"+ urlArray[1] +"/" + this.options[this.selectedIndex].value
     }
   } else {
-    window.location.href= '/sneakers' ;
+    window.location.href = "/"+ urlArray[1] +"/" ;
   }
 };
 

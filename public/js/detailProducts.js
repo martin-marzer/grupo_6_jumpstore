@@ -35,13 +35,14 @@ let link = document.getElementsByClassName("breadcrumbs-link")[1];
 let prevLink = document.referrer
 let prevLinkArray = prevLink.split("/")
 
-if (prevLinkArray.length == 0) {
-  link.href = "/sneakers/OrderByReleaseDateDESC"
+if (prevLinkArray.length == 1) {
+  link.href =  "/sneakers/OrderByReleaseDateDESC"
 }
-else if (prevLinkArray.includes("sneakers")) {
+else if (prevLinkArray.includes("sneakers") || prevLinkArray.includes("ofertas")) {
   link.href = document.referrer
 }
 else {
-  link.href = "/sneakers/OrderByReleaseDateDESC"
+  link.href = "/" + prevLinkArray[3] +"/" + "OrderByReleaseDateDESC"
+
 }
 

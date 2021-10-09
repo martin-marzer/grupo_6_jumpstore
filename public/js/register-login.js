@@ -1,7 +1,7 @@
 let form = document.getElementById("password")
-console.log(form)
+// console.log(form)
 let eyePsw = document.querySelector(".field.psw .eyePsw")
-console.log(eyePsw)
+// console.log(eyePsw)
 eyePsw.addEventListener ("click", hola);
 function hola () {
     if (eyePsw.className != "fas fa-eye-slash eyePsw") {
