@@ -31,9 +31,15 @@ const controlador = {
 			let nameNormalFinal = nameNormal.toLowerCase();
 			// si lo que puso  en el buscador coincide con algun producto
 			if (nameNormalFinal.includes(finalSentence) && (finalSentence.length != 0) ) {
+				if (finalSentence == "nike") {
+					usersResults = products.filter(product => {
+						return product.brand == "nike"
+					});
+				}
 				usersResults.push(products[i]);
 			}		
 		}
+		// console.log(usersResults)
 		res.render("results", {
 			searchUser: searchUser,
 			usersResults, usersResults,
