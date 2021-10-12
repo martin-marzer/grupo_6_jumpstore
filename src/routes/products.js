@@ -16,5 +16,11 @@ router.post("/sneakers/:OrderBy/:FilterBy?", productsController.productsList);
 router.get("/ofertas/:OrderBy/:FilterBy?", productsController.productsList);
 router.post("/ofertas/:OrderBy/:FilterBy?", productsController.productsList);
 
+router.get("/prueba/:OrderBy", productsController.prueba);
+
+router.get("/prueba/detail/:id", productsController.pruebaDetail);
+
+router.get("/prueba/:OrderBy/:FilterBy?", productsController.prueba);
+router.post("/prueba/:OrderBy/:FilterBy?", productsController.prueba);
 
 module.exports = router;

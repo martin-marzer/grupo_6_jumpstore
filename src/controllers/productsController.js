@@ -3,6 +3,9 @@ const { each } = require('jquery');
 const path = require('path');
 
 const productsFilePath = path.resolve(__dirname, '../database/products.json');
+const db = require("../database/models")
+const Products = db.Product
+const ProductsImages = db.ImagesProduct
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -31,13 +34,13 @@ const controlador = {
         let orderFunc = () => {
             
             switch (order) {
-                case "OrderByReleaseDateDESC":
+                case "OrderByReleaseDateASC":
                     products.sort(function(a, b) {  
                         return a.id - b.id ;  
                     }); 
                     break;
 
-                case "OrderByReleaseDateASC":
+                case "OrderByReleaseDateDESC":
                     products.sort(function(a, b) {  
                         return  b.id - a.id ;  
                     }); 
@@ -239,6 +242,75 @@ const controlador = {
         } else {
             res.render("error")
           }
+    },
+    prueba: (req, res) => {
+        let orderParams = req.params.OrderBy;
+        Products.findAll({
+            include: ['images', "stocks", "brands","discounts", "sizes"],
+        })
+            .then(allProducts => {
+
+
+
+                res.render("prueba",{
+                    articulos: allProducts,
+                    order: orderParams,
+                    toThousand: toThousand
+                   })})
+                .catch(error => res.send(error))
+
+        // let promProducts = Products.findAll()
+        // let promImages = ProductsImages.findAll()
+
+        // Promise
+        // .all([promProducts, promImages])
+        // .then(([allProducts, allImages]) => {
+            
+        //     let eachProduct = []
+        //     let eachImage = []
+            
+        //     allProducts.forEach(product => {
+        //         eachProduct.push(product.dataValues) 
+        //     })
+        //     allImages.forEach(image => {
+        //         eachImage.push(image.dataValues) 
+        //     })
+
+        //     eachProduct.forEach(product => {
+        //         product.images = []
+        //         eachImage.forEach(image => {
+
+        //             if (image.productsID == product.id) {
+        //                 product.images.push(image.url)
+        //             }
+
+        //         })
+        //     })
+
+            
+        // // console.log(eachImage);
+        //    res.render("prueba",{
+        //     articulos: eachProduct,
+        //     toThousand: toThousand
+        //    })})
+        // .catch(error => res.send(error))
+
+        // .then(products => {
+        //     res.json(products)
+        // })
+    },
+    pruebaDetail: (req,res) => {
+        let idProduct = req.params.id
+        Products.findByPk(idProduct,
+            {
+                include: ['images', "stocks", "brands","discounts"]
+            })
+            .then(product => {
+                res.render('pruebaDetail', {
+                    articuloID: product,
+                    toThousand: toThousand
+                });
+            });
     }
 };
 

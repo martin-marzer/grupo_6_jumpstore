@@ -1,4 +1,4 @@
-const User = require("../database/models/User");
+const User = require("../database/User");
 
 function recordingMiddleware (req, res, next){
 
