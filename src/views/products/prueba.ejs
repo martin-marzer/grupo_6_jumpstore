@@ -137,6 +137,12 @@
                         <div class="select-filter-container">
                             <div class="select-container">
                                 <select id="sort-order">
+                                    <option value="OrderByReleaseDateASC"
+                                    <% if (order == "OrderByReleaseDateASC" ) { %>
+                                        selected
+                                    <% } %>
+
+                                >Relevantes</option>
                                     <option value="OrderByReleaseDateDESC"
                                     <% if (order == "OrderByReleaseDateDESC" ) { %>
                                         selected
@@ -156,11 +162,6 @@
                                         <% } %>
                                     >Precio más alto</option>
 
-                                    <option value="OrderByReleaseDateASC"
-                                    <% if (order == "OrderByReleaseDateASC" ) { %>
-                                        selected
-                                    <% } %>
-                                    >Relevantes</option>
                                 </select>
                             </div>
                             <div class="filter-container">
@@ -325,6 +326,18 @@
 
                         </div>
                     </div>
+                    <!-- <div class="pagination-container">
+                        <form action="" method="GET">
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a href="/prueba/OrderByReleaseDateASC?page=<%#= offsetData %>">1</a>
+                                <a class="active" href="/prueba/OrderByReleaseDateASC?page=2">2</a>
+                                <a href="/prueba/OrderByReleaseDateASC?page=3">3</a>
+                                <a href="#">&raquo;</a>
+                            </div>
+                        </form>
+                    </div> -->
+
                 </div>
             </div>
         </div>
