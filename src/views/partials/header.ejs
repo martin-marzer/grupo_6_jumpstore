@@ -14,7 +14,9 @@
                                 <button  type="submit" class="btn-buscar">
                                     <i class="fas fa-search"></i>
                                 </button>
-                                <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar">
+                                <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar"
+                                value = "<%= locals.searchUser ? searchUser : null %>" 
+                                >
                             </div>
                         </form>
                         <button class="closebtn">&times;</button>
@@ -34,7 +36,9 @@
 
                     <div id="jumpstore-search">
                         <form action="/search" method="GET" id="jumpstore-box">
-                            <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar">
+                            <input class="fulltext-search-box" type="text" name="keywords" placeholder="Buscar"
+                            value = "<%= locals.searchUser ? searchUser : null %>" 
+                            >
                             <button  type="submit" class="btn-buscar">
                                 <i class="fas fa-search"></i>
                             </button>
