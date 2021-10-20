@@ -15,7 +15,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	} ).mount();
 } );
 
-const widthHome  = window.innerWidth || document.documentElement.clientWidth || 
+window.addEventListener("load", () => {
+    const widthHome  = window.innerWidth || document.documentElement.clientWidth || 
 document.body.clientWidth;
 if (widthHome < 768) {
     // console.log(widthHome)
@@ -24,3 +25,6 @@ if (widthHome < 768) {
     img.src = "images/contenido-pagina/slider-fila-mobile.jpg"
     giftcard.firstElementChild.src = "images/contenido-pagina/pumastyle_Giftcards.jpg"
 }
+
+})
+

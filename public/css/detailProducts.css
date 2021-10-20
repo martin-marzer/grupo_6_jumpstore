@@ -78,12 +78,15 @@
     font-size: 6vw;
     font-weight: 400;
 }
-#description-product .product-cuotas p {
+#description-product .product-cuotas button p {
     font-size: 22px;
-    margin: 30px 0;
+    margin-bottom: 30px;
+    margin-top: 0;
 }
-#description-product .product-cuotas p {
+#description-product .product-cuotas button {
     text-decoration: underline;
+    background-color: transparent;
+    border: none;
 }
 .product-talle select {
     outline: none;
@@ -329,6 +332,10 @@
     .modal-content {
         margin: 5% auto; /* 15% from the top and centered */
         width: 30%;
+    }
+    .modal-content.talles-data {
+        margin: 5% auto;
+        width: 75%;
       }
 
     .icon-info {
@@ -374,9 +381,10 @@
         font-size: 12px;
     }
     
-    #description-product .product-cuotas p {
+    #description-product .product-cuotas button p {
         font-size: 15px;
-        margin: 20px 0;
+        margin-bottom: 20px;
+        margin-top: 0;
     }
     .product-talle select {
         height: 30px;

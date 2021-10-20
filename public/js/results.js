@@ -1,5 +1,5 @@
- 
-  // dependiendo q dispositivo se corre x funcion
+window.addEventListener("load", () => {
+    // dependiendo q dispositivo se corre x funcion
   let width = window.innerWidth
   || document.documentElement.clientWidth
   || document.body.clientWidth;
@@ -20,6 +20,9 @@
   
   
   // esto es la logica de lo q sucede con los filtros
+
+})
+
 
   
 

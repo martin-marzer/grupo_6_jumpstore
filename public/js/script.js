@@ -1,6 +1,5 @@
-
-
-// button to scroll up according its height (lo q dice pero en español jeje)
+window.addEventListener("load", () => {
+  // button to scroll up according its height (lo q dice pero en español jeje)
 
 let btn = $('.button-scroll');
 
@@ -101,4 +100,8 @@ linksFuncMobile()
   }
   linksFunc()
 }
+
+
+})
+
 

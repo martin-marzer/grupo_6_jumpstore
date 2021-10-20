@@ -3,7 +3,10 @@ const fs = require('fs');
 const path = require("path")
 const bcrypt = require('bcryptjs');
 const usersFilePath = path.resolve(__dirname, '../database/users.json');
-const User = require("../database/User");
+// const User = require("../database/User");
+
+const db = require("../database/models")
+const User = db.User
 
 const controlador = {
     register: (req,res) => {
@@ -42,28 +45,57 @@ const controlador = {
         res.render("login");
     },
     loginProcess: (req,res) => {
-       let userToLogin = User.findByField("email", req.body.email);
-       if(userToLogin) {
-           let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-        if (verifiquePassword){
-            delete userToLogin.password
-            req.session.userLogged = userToLogin;
-            if(req.body.recordame != undefined){
-                res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
-              }
-              // console.log("prueba", req.body.recordame)
-            return res.redirect("/profile")
-        }
-       }
+        User.findOne ({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(userToLogin => {
+            // console.log(userToLogin)
+            if(userToLogin) {
+                let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+             if (verifiquePassword){
+                 delete userToLogin.password
+                 req.session.userLogged = userToLogin;
+                 if(req.body.recordame != undefined){
+                     res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
+                   }
+                   // console.log("prueba", req.body.recordame)
+                 return res.redirect("/profile")
+             }
+            }
+           
+           
+            return res.render("login", {
+                errors: {
+                    email: {
+                        msg:"Encontramos datos erroneos"
+                    }
+                }
+            })
+        })
+    //    let userToLogin = User.findByField("email", req.body.email);
+    //    if(userToLogin) {
+    //        let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+    //     if (verifiquePassword){
+    //         delete userToLogin.password
+    //         req.session.userLogged = userToLogin;
+    //         if(req.body.recordame != undefined){
+    //             res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
+    //           }
+    //           // console.log("prueba", req.body.recordame)
+    //         return res.redirect("/profile")
+    //     }
+    //    }
       
       
-       return res.render("login", {
-           errors: {
-               email: {
-                   msg:"Encontramos datos erroneos"
-               }
-           }
-       })
+    //    return res.render("login", {
+    //        errors: {
+    //            email: {
+    //                msg:"Encontramos datos erroneos"
+    //            }
+    //        }
+    //    })
     },
     logout: (req,res) =>{
         req.session.destroy();

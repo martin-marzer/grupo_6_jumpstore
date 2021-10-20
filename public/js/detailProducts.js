@@ -1,3 +1,5 @@
+window.addEventListener("load", () => {
+  let modalDescription = () => {
 // Get the modal
 let modal = document.getElementsByClassName("data");
 
@@ -29,20 +31,56 @@ for (let i = 0; i < modal.length; i++) {
   }
 
 }
+  }
+ let linkBreadcrumbs = () => {
+  let link = document.getElementsByClassName("breadcrumbs-link")[1];
+  let prevLink = document.referrer
+  let prevLinkArray = prevLink.split("/")
+
+  if (prevLinkArray.length == 1 || prevLinkArray.length == 4) {
+    link.href =  "/sneakers/OrderByReleaseDateDESC"
+  }
+  else if (prevLinkArray.includes("sneakers") || prevLinkArray.includes("ofertas")) {
+    link.href = document.referrer
+  }
+  else {
+    link.href = "/" + prevLinkArray[3] +"/" + "OrderByReleaseDateDESC"
+  }
+ }
+ let carritoAdd = () => {
+  let buttonSubmit =  document.querySelector(".field.login button")
+  let select = document.querySelector("#talle")
+  buttonSubmit.disabled = true
+  if (buttonSubmit.disabled == true) {
+    buttonSubmit.style.filter ="opacity(0.3)"
+    buttonSubmit.style.cursor = "default"
+  }
+
+  if (select.value != "") {
+    buttonSubmit.disabled = false
+    buttonSubmit.style.filter =""
+    buttonSubmit.style.cursor = "pointer"
+  }
+
+   let form = document.querySelector("#form-desktop");
+  //  console.log(form);
+   ["change", "submit"].forEach((e) => {
+    form.addEventListener(e, () => {
+      if (select.value != "") {
+        buttonSubmit.disabled = false
+        buttonSubmit.style.filter =""
+        buttonSubmit.style.cursor = "pointer"
+      } else {
+        e.preventDefault()
+      }
+    })
+   })
+ }
+
+  modalDescription()
+  linkBreadcrumbs()
+  carritoAdd()
+})
 
 
-let link = document.getElementsByClassName("breadcrumbs-link")[1];
-let prevLink = document.referrer
-let prevLinkArray = prevLink.split("/")
-
-if (prevLinkArray.length == 1) {
-  link.href =  "/sneakers/OrderByReleaseDateDESC"
-}
-else if (prevLinkArray.includes("sneakers") || prevLinkArray.includes("ofertas")) {
-  link.href = document.referrer
-}
-else {
-  link.href = "/" + prevLinkArray[3] +"/" + "OrderByReleaseDateDESC"
-
-}
 

@@ -63,7 +63,11 @@
                                             <label>categoria</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <p><%= user.category %></p>
+                                            <% if (user.rol) { %>
+                                                <p>admin</p>
+                                            <% } else { %>
+                                                <p>user</p>
+                                            <% }  %>
                                         </div>
                                     </div>
                                     <div class="row">

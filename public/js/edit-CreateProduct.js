@@ -1,4 +1,5 @@
-Array.prototype.forEach.call(
+window.addEventListener("load", () => {
+  Array.prototype.forEach.call(
     document.querySelectorAll(".file-upload__button"),
     function(button) {
       const hiddenInput = button.parentElement.querySelector(
@@ -32,4 +33,8 @@ let fechaValue = document.getElementById("fechaValue")
   
 let today = new Date();
 fechaValue.valueAsDate = today
+})
+
+
+
 

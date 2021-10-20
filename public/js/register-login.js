@@ -1,4 +1,5 @@
-let form = document.getElementById("password")
+window.addEventListener("load", () => {
+   let form = document.getElementById("password")
 // console.log(form)
 let eyePsw = document.querySelector(".field.psw .eyePsw")
 // console.log(eyePsw)
@@ -22,4 +23,8 @@ buttonToDelete.onclick = () => {
         input.value = ""
         
     }
-}
+} 
+})
+
+
+

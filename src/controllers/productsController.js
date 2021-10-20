@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { each } = require('jquery');
 const path = require('path');
 
 const productsFilePath = path.resolve(__dirname, '../database/products.json');

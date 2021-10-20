@@ -35,7 +35,7 @@
                         </li>
                     <% } %>
 
-                    <% if (locals.usuario && locals.usuario.category == "admin") { %>
+                    <% if (locals.usuario && locals.usuario.rol == true) { %>
                         <a href="/administrator" class="icon-admin"><i class="fas fa-user-cog"></i></a>
                     <% } else { %>
                         <a href="/register" class="icon-admin"><i class="far fa-user"></i></a>

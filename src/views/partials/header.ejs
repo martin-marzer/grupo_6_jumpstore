@@ -66,7 +66,7 @@
                                 <a href="/carrito" class="icono"><i class="fas fa-shopping-cart"></i></a>
                             </button>
                         </div>
-                        <% if (locals.usuario && locals.usuario.category == "admin") { %>
+                        <% if (locals.usuario && locals.usuario.rol == true) { %>
                             <%# console.log(locals.usuario); %>
                             <div id="jumpstore-admin">
                                 <button>
