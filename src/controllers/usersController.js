@@ -3,9 +3,9 @@ const fs = require('fs');
 const path = require("path")
 const bcrypt = require('bcryptjs');
 const usersFilePath = path.resolve(__dirname, '../database/users.json');
-// const User = require("../database/User");
-
+    
 const db = require("../database/models")
+
 const User = db.User
 
 const controlador = {
@@ -13,32 +13,18 @@ const controlador = {
         res.render("register");
     },
     processRegister: (req,res) => {
-        const resultValidation = validationResult(req);
-        let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        
-        if (resultValidation.errors.length > 0) {
-            res.render("register", {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-        }
-        else {
-            let infoUser = req.body
-            let lastID = users[users.length -1].id;
+        let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
+        User.create({
+                username: req.body.name,
+                email: req.body.email,
+                password: encryptedPassword,
+                rol: 2
+            })
+            .then(user => {
+                req.session.usuarioLogeado = user;
 
-            let newUser = {
-                id: lastID + 1,
-                username: infoUser.username,
-                email: infoUser.email,
-                password: bcrypt.hashSync(infoUser.password, 10),
-                category: "user"
-            }
-            let newJSON = users.concat(newUser);
-            let userJSON = JSON.stringify(newJSON, null, 2);
-
-            fs.writeFileSync( usersFilePath, userJSON);
-            res.redirect("/login")
-        }
+                return res.redirect("/");
+            })
     },
     
     login: (req,res) => {

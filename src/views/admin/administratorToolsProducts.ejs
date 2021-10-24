@@ -59,7 +59,8 @@
                     <td style="width: 10%;"><%= articulo.id %></td>
                     <td><%= articulo.name %></td>
                     <td>
-                        <img src="images/zapatillas/<%= articulo.image[0] %>">
+                         <img src="images/zapatillas/<%= articulo.images[0].url %>">
+                         <%# console.log(articulo.images[0]) %>  
                     </td>
                     <td><%= articulo.price %></td>
               </tr>
