@@ -26,6 +26,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BIGINT(10),
             allowNull: false
         },
+        discountID: {
+            type: dataTypes.BIGINT(10),
+            allowNull: false
+        },
         brandID: {
             type: dataTypes.BIGINT(10),
             allowNull: false

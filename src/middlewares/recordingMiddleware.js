@@ -16,19 +16,16 @@ function recordingMiddleware (req, res, next){
             }
         })
         .then(UserFromCookie => {
-            if(UserFromCookie){
-                req.session.userLogged = UserFromCookie;
-            }
-        
-            if(req.session.userLogged){
-                res.locals.isLogged = true;
-                res.locals.userLogged = req.session.userLogged;
-            }
-            //console.log(UserFromCookie)
-        
+
+            infoUser = UserFromCookie
            
         })
+        res.locals.isLogged = true;
+
+        req.session.userLogged = infoUser;
+        res.locals.userLogged = req.session.userLogged;
     }
+            //console.log(UserFromCookie)
 
     next();
 
