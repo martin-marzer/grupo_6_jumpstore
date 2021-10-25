@@ -138,22 +138,23 @@
                     </div>
                     <div class="splide__track">
                         <ul class="splide__list">
+                            <% console.log(articulos); %>
                             <% for (let i = articulos.length -1 ; i > articulos.length - 5; i--) {%>
             
                                 <% let articulo = articulos[i] %>
-                            <li class="splide__slide">
-                                <a href="/sneakers/detail/<%= articulo.id %>">
-                                    <div class="image">
-                                        <img class="image__img" src="/images/zapatillas/<%= articulo.image[0] %>" alt="Vans old skool pink">
-                                        <div class="description-product">
-                                            <div class="image__title"><%= articulo.name %></div>
-                                            <p class="image__description">
-                                                $<%= articulo.price %>
-                                            </p>
+                                <li class="splide__slide">
+                                    <a href="/sneakers/detail/<%= articulo.id %>">
+                                        <div class="image">
+                                            <img class="image__img" src="/images/zapatillas/<%= articulo.images[0].url %>" alt="Vans old skool pink">
+                                            <div class="description-product">
+                                                <div class="image__title"><%= articulo.name %></div>
+                                                <p class="image__description">
+                                                    $<%= articulo.price %>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
                             <% }; %>
 
                         </ul>

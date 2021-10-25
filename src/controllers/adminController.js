@@ -70,11 +70,10 @@ const controlador = {
                 })
 
             })
-
-        })
-        .then(()=> {
-            res.redirect('/administratorToolsProducts')
-        })            
+            .then(()=> {
+                res.redirect('/administratorToolsProducts')
+            })      
+        })    
         .catch(error => res.send(error))
     },
     productEdit: (req,res) => {
@@ -110,21 +109,27 @@ const controlador = {
         .catch(error => res.send(error))
     }, 
     delete: (req,res) => {
-        SizesProduct.destroy ({
+
+        ImagesProduct.findAll ({
             where: {
-                sizeID: req.body.talle,
-                productID: req.params.id
-            },
-            force: true
+                productsID: req.params.id
+            }
+        })
+        .then((images)=> {
+            let arrIMG = [images[0].url, images[1].url, images[2].url]
+            arrIMG.forEach(image => {
+                fs.unlinkSync(ImagesFolderPath + image)
+            })
         })
         .then(() => {
             ImagesProduct.destroy( {
                 where: {productsID: req.params.id}, force: true})
+            .then(() => {
+                Product.destroy( {
+                    where: {id: req.params.id}, force: true})
+            })
         })
-        .then(() => {
-            Product.destroy( {
-                where: {id: req.params.id}, force: true})
-        })
+
         .then(()=>{
             res.redirect('/administratorToolsProducts')})
         .catch(error => res.send(error)) 
