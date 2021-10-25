@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Zapatilla <%= articuloId.name %> </title>
+    <title>Zapatilla <%= articuloID.name %> </title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/detailProducts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
@@ -45,13 +45,13 @@
                                     
                                     <ul class="splide__list ">
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.images[0].url %> ">
+                                            <img src="/images/zapatillas/<%= articuloID.images[0].url %> ">
                                         </li>
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.images[1].url %> ">
+                                            <img src="/images/zapatillas/<%= articuloID.images[1].url %> ">
                                         </li>
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.images[2].url %> ">
+                                            <img src="/images/zapatillas/<%= articuloID.images[2].url %> ">
                                         </li>
                                     </ul>
                                 </div>
@@ -60,46 +60,21 @@
                             
                         </div>
                         <div id="description-product">
-                            <form action="/carrito" method="GET" id="form-desktop">
+                            <form id="form-desktop" action="/carrito" method="GET">
                                 <div class="product-title">
-                                    <h1><%= articuloId.name %></h1>
+                                    <h1><%= articuloID.name %></h1>
                                 </div>
                                 <div class="product-price">
-                                    <% if (articuloId.discount != 0) { %>
-                                        <p>$<%= toThousand(articuloId.price - (articuloId.price * articuloId.discount / 100)) %></p>
-                                        <p class="oldPrice">$<%= toThousand(articuloId.price)%></p>
+                                    <% if (articuloID.discounts.active == true) { %>
+                                        <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discounts.discountPercent / 100)) %></p>
+                                        <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
                                     <% } else {%>
-                                        <p>$<%= toThousand(articuloId.price) %></p>
+                                        <p>$<%= toThousand(articuloID.price) %></p>
     
                                     <% } %>
                                 </div>
                                 <div class="product-cuotas">
-                                    <button type="button" class="myBtn">
-                                        <p>Tabla de Talles</p>
-                                    </button>
-
-                                    <div class="data">
-                                        <!-- The Modal -->
-                                        <div class="myModal" class="modal">
-        
-                                            <!-- Modal content -->
-                                            <div class="modal-content">
-                                                <div class="container-modal talles-data">
-                                                    <div class="container-close">
-                                                        <button type="button" class="close">&times;</button>
-                                                    </div>
-                                                    
-                                                    <div>
-                                                        <img src="/images/contenido-pagina/tabla-talle-calzado-desk.jpg" alt="talles">
-                                                    </div>
-                                                </div>
-        
-        
-                                            </div>
-        
-                                        </div>
-        
-                                    </div>
+                                    <p>Ver cuotas</p>
                                 </div>
                                 <div class="product-talle">
                                     <section class="form-talle">
@@ -118,23 +93,24 @@
                                             </button>
                                     </div>
                                     <div class="field fav">
-
+                                        <a href="/">
                                             <button type="button">
                                                 <i class="fas fa-heart"></i>
                                             </button>
+                                        </a>
                                     </div>    
                                 </div>
                         
                                 <div class="product-details">
                                     <h3>Descripción</h3>
-                                    <button  type="button" class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
+                                    <button class="jumpstore-arrow"><i class="fas fa-angle-down"></i></button>
                                     <div class="panel">
-                                        <p><%= articuloId.description %></p>
+                                        <p><%= articuloID.description %></p>
                                     </div>
                                 </div>
                             </form>
-                    
-
+                            <%# console.log(articuloID.discounts); %>
+                            
                         </div>
                     </div>
                     <div class="icons-data">
@@ -339,39 +315,10 @@
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Marca:</span>
-                                    
-                                    <%= articuloId.brand %>
-                                    
-                                </p>
-                            </li>
-
-                            <li class="attribute-values">
-                                <p>
-                                    <span class="label">Beneficios:</span>
-                                    
-                                    Amortiguación
+                                    <%= articuloID.brands.name.toUpperCase() %>
                                     
                                 </p>
                             </li>
-                            <li class="attribute-values">
-                                <p>
-                                    <span class="label">Beneficios:</span>
-                                    
-                                    Amortiguación
-                                    
-                                </p>
-                            </li>
-
-                            <li class="attribute-values">
-                                <p>
-                                    <span class="label">
-                                        Adecuado para:</span>
-                                    
-                                        Todo el día
-                                    
-                                </p>
-                            </li>
-                            
                         
                     </ul>
                     </div>

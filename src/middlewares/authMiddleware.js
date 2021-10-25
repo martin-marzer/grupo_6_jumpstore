@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-let archivoUsuarios =  JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
+
 
 
 function authMiddleware (req, res, next) {

@@ -51,9 +51,7 @@
                 <% articulos.forEach(articulo => { %> 
                 <tr data-href="/sneakers/detail/<%= articulo.id %>">
                     <td><li class="liEditar"><a href="/products/edit/<%= articulo.id %>" class="add_edit_product">Editar</a>
-                        <form method="POST" action="/products/delete/<%= articulo.id %>?_method=DELETE">
-                            <button type="submit" id="delete_product" class="add_edit_product">Borrar</button>
-                        </form>
+                        
                         </li>
                     </td>
                     <td style="width: 10%;"><%= articulo.id %></td>

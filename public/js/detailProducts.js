@@ -38,13 +38,13 @@ for (let i = 0; i < modal.length; i++) {
   let prevLinkArray = prevLink.split("/")
 
   if (prevLinkArray.length == 1 || prevLinkArray.length == 4) {
-    link.href =  "/sneakers/OrderByReleaseDateDESC"
+    link.href =  "/sneakers/OrderByReleaseDateASC"
   }
   else if (prevLinkArray.includes("sneakers") || prevLinkArray.includes("ofertas")) {
     link.href = document.referrer
   }
   else {
-    link.href = "/" + prevLinkArray[3] +"/" + "OrderByReleaseDateDESC"
+    link.href = "/" + prevLinkArray[3] +"/" + "OrderByReleaseDateASC"
   }
  }
  let carritoAdd = () => {

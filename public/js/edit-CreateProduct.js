@@ -30,9 +30,12 @@ window.addEventListener("load", () => {
   );
 
 let fechaValue = document.getElementById("fechaValue")
+if (fechaValue != undefined) {
+  let today = new Date();
+  fechaValue.valueAsDate = today
+}
   
-let today = new Date();
-fechaValue.valueAsDate = today
+
 })
 
 
