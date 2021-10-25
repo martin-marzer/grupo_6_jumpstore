@@ -10,6 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: {
             type: dataTypes.DATE
         },
+        updatedAt: {
+            type: dataTypes.DATE,
+            allowNull: true
+        },
         name: {
             type: dataTypes.STRING(100),
             allowNull: false
@@ -39,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         timestamps: true,
         createdAt: 'createdAt',
-        updatedAt: false,
+        updatedAt: "updatedAt",
         deletedAt: false
     }
     const Product = sequelize.define(alias, cols, config);

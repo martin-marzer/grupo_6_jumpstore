@@ -47,7 +47,7 @@ const controlador = {
             description: req.body.descripcion,
             brandID: req.body.marca,
             discountID: 1,
-            createdAt: req.body.fechaEntrada,
+            updatedAt: req.body.fechaEntrada,
             stockID: 1
         })
         .then (() => {
@@ -110,12 +110,12 @@ const controlador = {
         .catch(error => res.send(error))
     }, 
     delete: (req,res) => {
-
         SizesProduct.destroy ({
             where: {
-                sizeID: req.body.talle ,
+                sizeID: req.body.talle,
                 productID: req.params.id
-            }
+            },
+            force: true
         })
         .then(() => {
             ImagesProduct.destroy( {
@@ -123,7 +123,7 @@ const controlador = {
         })
         .then(() => {
             Product.destroy( {
-                where: {id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
+                where: {id: req.params.id}, force: true})
         })
         .then(()=>{
             res.redirect('/administratorToolsProducts')})

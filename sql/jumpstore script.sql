@@ -85,6 +85,7 @@ CREATE TABLE jumpstore.products (
 	discountID INT(10) NOT null,
 	brandID INT(10) NOT null,
 	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt timestamp NULL DEFAULT NULL,
 	stockID INT(10) NOT null,
 	description text NOT NULL,
 	CONSTRAINT products_pk PRIMARY KEY (ID),
@@ -97,28 +98,28 @@ DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 
 insert into jumpstore.products
-values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 2, 3, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Nike AIRMAX 97", 20600, 1, 3, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Jordan 1 Retro High White University", 22400, 1, 3, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Jordan 5 Retro Grape Fresh Prince", 22500, 1, 3, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Jordan 11 Retro Win Like 96", 23700, 1, 3, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 2, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Nike AIRMAX 97", 20600, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Jordan 1 Retro High White University", 22400, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Jordan 5 Retro Grape Fresh Prince", 22500, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Jordan 11 Retro Win Like 96", 23700, 1, 3, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
-(default, "Adidas Yeezy 350v2 Black", 20400, 1, 1, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas Yeezy 350v2 White", 20400, 1, 1, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas X9000L4 CYBERPUNK 2077", 20900, 1, 1, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas X9000L4", 20900, 1, 1, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas Superstar Sean Wotherspoon", 17200, 1, 1, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas Superstar Melting Sadness", 20200, 1, 1, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Yeezy 350v2 Black", 20400, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Yeezy 350v2 White", 20400, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas X9000L4 CYBERPUNK 2077", 20900, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas X9000L4", 20900, 1, 1, default, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Superstar Sean Wotherspoon", 17200, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas Superstar Melting Sadness", 20200, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
-(default, "Fila archive RJV", 12990, 1, 2, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Fila Flex Shine", 20200, 1, 2, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Fila Renno", 19990, 1, 2, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Fila Renno 90S", 19990, 1, 2, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila archive RJV", 12990, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila Flex Shine", 20200, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila Renno", 19990, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Fila Renno 90S", 19990, 1, 2, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
-(default, "Vans ERA", 17900, 1, 4, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool VLT LX", 17900, 1, 4, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool Supreme", 17900, 1, 4, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool", 18700, 1, 4, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
+(default, "Vans ERA", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Vans Old Skool VLT LX", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Vans Old Skool Supreme", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Vans Old Skool", 18700, 1, 4, default, default,, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
 ;
 
 
