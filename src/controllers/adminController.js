@@ -75,17 +75,16 @@ const controlador = {
         .catch(error => res.send(error))
     },
     productEdit: (req,res) => {
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let idZapatilla = req.params.id;
-        let productId;
-        products.forEach(producto => {
-            if (producto.id == idZapatilla) {
-                productId = producto;
-            }
-        }); 
-        res.render("productEdit", {
-            articulo: productId
-        });
+        Product.findByPk(req.params.id, {
+            include: ['images', "stocks", "brands","discounts", "sizes"]
+        })
+        .then(product => {
+            return res.render("productEdit", {
+                articulo: product,
+                toThousand: toThousand
+            });
+        })
+        .catch(error => res.send(error))
     },
     update: (req,res) => {
         let productId = req.params.id;

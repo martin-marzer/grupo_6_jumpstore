@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.resolve(__dirname, '../database/products.json');
+
 const db = require("../database/models")
+
 const Products = db.Product
 const Op = db.Sequelize.Op
 
@@ -10,7 +12,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controlador = {
-    productsList: (req,res) => {
+    /*productsList: (req,res) => {
         let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         let url = req.originalUrl.split("/")
@@ -219,9 +221,9 @@ const controlador = {
         orderFunc();
         filterFunc();
         
-    },
+    },*/
     productDetail: (req,res) => {
-        let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        /*let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let idZapatilla = req.params.id;
         let articuloId;
         products.forEach(producto => {
@@ -237,11 +239,19 @@ const controlador = {
                 articuloId: articuloId,
                 toThousand: toThousand
             });
-        } else {
-            res.render("error")
-          }
+        } */
+        Products.findByPk(req.params.id, {
+            include: ['images', "stocks", "brands","discounts", "sizes"]
+        })
+        .then(product => {
+            return res.render("detailProducts", {
+                articuloId: product,
+                toThousand: toThousand
+            });
+        })
+        .catch(error => res.send(error))
     },
-    prueba: (req, res) => {
+    productsList: (req, res) => {
         let orderParams = req.params.OrderBy;
         let filterData =  req.params.FilterBy
 
@@ -442,19 +452,6 @@ const controlador = {
                 filterFunc()
                 })
                 .catch(error => res.send(error))
-    },
-    pruebaDetail: (req,res) => {
-        let idProduct = req.params.id
-        Products.findByPk(idProduct,
-            {
-                include: ['images', "stocks", "brands","discounts"]
-            })
-            .then(product => {
-                res.render('pruebaDetail', {
-                    articuloID: product,
-                    toThousand: toThousand
-                });
-            });
     }
 };
 

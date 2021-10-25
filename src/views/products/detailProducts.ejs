@@ -45,13 +45,13 @@
                                     
                                     <ul class="splide__list ">
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.image[0] %> ">
+                                            <img src="/images/zapatillas/<%= articuloId.images[0].url %> ">
                                         </li>
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.image[1] %> ">
+                                            <img src="/images/zapatillas/<%= articuloId.images[1].url %> ">
                                         </li>
                                         <li class="splide__slide">
-                                            <img src="/images/zapatillas/<%= articuloId.image[2] %> ">
+                                            <img src="/images/zapatillas/<%= articuloId.images[2].url %> ">
                                         </li>
                                     </ul>
                                 </div>
@@ -340,7 +340,7 @@
                                 <p>
                                     <span class="label">Marca:</span>
                                     
-                                    <%= articuloId.brand.toUpperCase() %>
+                                    <%= articuloId.brand %>
                                     
                                 </p>
                             </li>
