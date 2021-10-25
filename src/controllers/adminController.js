@@ -55,20 +55,22 @@ const controlador = {
                 col: 'Product.id'
             })
             .then(count => {
+                images.forEach(image => {
+        
+                    ImagesProduct.create({
+                        url: image,
+                        productsID: count
+                    })
+                
+                })
+
                 SizesProduct.create({
                     sizeID: req.body.talle,
                     productID: count
                 })
 
-                images.forEach(image => {
-            
-                    ImagesProduct.create({
-                        url: image,
-                        productsID: count
-                    })
-                    
-                })
-              })
+            })
+
         })
         .then(()=> {
             res.redirect('/administratorToolsProducts')
@@ -109,23 +111,23 @@ const controlador = {
     }, 
     delete: (req,res) => {
 
-        let promDestroySizes = SizesProduct.destroy ({
+        SizesProduct.destroy ({
             where: {
-                sizeID: 2 ,
+                sizeID: req.body.talle ,
                 productID: req.params.id
             }
         })
-
-        let promDestroyProducts = Product.destroy( {
-            where: {id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
-
-        let promDestroyImages = ImagesProduct.destroy( {
-            where: {productsID: req.params.id}, force: true})
-        
-        Promise.all([promDestroyProducts, promDestroyImages])
-            .then(()=>{
-                return res.redirect('/administratorToolsProducts')})
-            .catch(error => res.send(error)) 
+        .then(() => {
+            ImagesProduct.destroy( {
+                where: {productsID: req.params.id}, force: true})
+        })
+        .then(() => {
+            Product.destroy( {
+                where: {id: req.params.id}, force: true}) // force: true es para asegurar que se ejecute la acción
+        })
+        .then(()=>{
+            res.redirect('/administratorToolsProducts')})
+        .catch(error => res.send(error)) 
     },
     administratorUsers: (req,res) => {
         res.send("aca iria para ver los perfiles, podria editarse para cambiar su rol")
