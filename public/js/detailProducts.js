@@ -50,31 +50,35 @@ for (let i = 0; i < modal.length; i++) {
  let carritoAdd = () => {
   let buttonSubmit =  document.querySelector(".field.login button")
   let select = document.querySelector("#talle")
-  buttonSubmit.disabled = true
-  if (buttonSubmit.disabled == true) {
-    buttonSubmit.style.filter ="opacity(0.3)"
-    buttonSubmit.style.cursor = "default"
-  }
+  let favButton = document.querySelector(".field.fav")
+  let desc = document.querySelector(".jumpstore-arrow")
 
-  if (select.value != "") {
-    buttonSubmit.disabled = false
-    buttonSubmit.style.filter =""
-    buttonSubmit.style.cursor = "pointer"
-  }
+  let form = document.querySelector("#form-desktop");
 
-   let form = document.querySelector("#form-desktop");
-  //  console.log(form);
-   ["change", "submit"].forEach((e) => {
-    form.addEventListener(e, () => {
-      if (select.value != "") {
-        buttonSubmit.disabled = false
-        buttonSubmit.style.filter =""
-        buttonSubmit.style.cursor = "pointer"
-      } else {
-        e.preventDefault()
-      }
-    })
-   })
+
+  form.addEventListener("submit", (e) => {
+    
+      e.preventDefault()
+  })
+
+  //  [ "load", "change", "submit"].forEach((e) => {
+  //   form.addEventListener(e, () => {
+  //     console.log(select.value);
+  //     if (select.value != "") {
+  //       buttonSubmit.disabled = false
+  //       buttonSubmit.style.filter =""
+  //       buttonSubmit.style.cursor = "pointer"
+  //     } else {
+  //       e.preventDefault()
+  //     }
+  //   })
+  //   if (buttonSubmit.disabled == true) {
+  //     buttonSubmit.style.filter ="opacity(0.3)"
+  //     buttonSubmit.style.cursor = "default"
+  //   }
+  //  })
+   
+  
  }
 
   modalDescription()

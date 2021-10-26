@@ -7,7 +7,6 @@ function authMiddleware (req, res, next) {
  if (req.session.userLogged != undefined) {
     res.locals.usuario = req.session.userLogged;
     usuario = res.locals.usuario
-    // console.log(res.locals.usuario);
      next()
  } else {
      res.redirect("/login")

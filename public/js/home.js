@@ -44,7 +44,6 @@ window.addEventListener("load", () => {
     const widthHome  = window.innerWidth || document.documentElement.clientWidth || 
 document.body.clientWidth;
 if (widthHome < 768) {
-    // console.log(widthHome)
     let img = document.getElementById("img-fila")
     let giftcard = document.getElementsByClassName("gifcard-container")[0]
     img.src = "images/contenido-pagina/slider-fila-mobile.jpg"

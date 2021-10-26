@@ -33,7 +33,6 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false
     }
     const Discount = sequelize.define(alias, cols, config);
-    // console.log(Product);
 
     Discount.associate = function (models) {
         Discount.hasOne(models.Product, {

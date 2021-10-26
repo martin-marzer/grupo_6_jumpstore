@@ -6,6 +6,8 @@ const path = require('path');
 const db = require("../database/models")
 const Products = db.Product
 
+const Op = db.Sequelize.Op
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 

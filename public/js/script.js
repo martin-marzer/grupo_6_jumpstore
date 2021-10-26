@@ -18,10 +18,8 @@ btn.on('click', function(e) {
 
 
 let urlArraySelected = window.location.pathname.split("/");
-// console.log(urlArraySelected)
 let links = document.querySelectorAll(".row ul li a")
 let linksMobile = document.querySelectorAll(".overlay-content .links li a")
-// console.log(links)
 
 
 // acordion del footer y descrip detail product
@@ -48,44 +46,14 @@ if (widthScript <= 768) {
   // barra de navegacion para el celular  
 
 $('.btn-menu').click(function(){
-  $("#opacity-mobile").addClass("show-opacity");
-  $(".sidenav").addClass("open-menu");
-  $('body').css('overflow', 'hidden');
-});
-
-
-$('.closebtn-overlay').click(function(){
-  $("#opacity-mobile").removeClass("show-opacity");
-  $(".sidenav").removeClass("open-menu");
-  $('body').css('overflow', 'auto');
-});
-
-
-// search mobile
-$('#jumpstore-search-btn').click(function(){
-  $(".jumpstore-search-mobile").addClass("open");
-});
-$('.closebtn').click(function(){
-  $(".jumpstore-search-mobile").removeClass("open");
+  // $("#opacity-mobile").addClass("show-opacity");
+  $(".sidenav").toggleClass("open-menu");
+  // $('body').css('overflow', 'hidden');
 });
 
 
 
-linksFuncMobile = () => {
-  if (urlArraySelected[1] == "") {
-    linksMobile[0].classList.add("selected-mobile")
-  }
-  else if (urlArraySelected.length >= 2 && urlArraySelected.includes("sneakers")) {
-    linksMobile[1].classList.add("selected-mobile")
-  }
-  else if (urlArraySelected.length >= 2 && urlArraySelected.includes("ofertas") ) {
-    linksMobile[2].classList.add("selected-mobile")
-  }
-  else if (urlArraySelected.length == 2 && urlArraySelected.includes("carrito") ) {
-    linksMobile[4].classList.add("selected-mobile")
-  }
-}
-linksFuncMobile()
+
 } else {
   linksFunc = () => {
     if (urlArraySelected[1] == "") {

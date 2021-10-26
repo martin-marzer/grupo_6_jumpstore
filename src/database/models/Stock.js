@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false
     }
     const Stock = sequelize.define(alias, cols, config);
-    // console.log(Product);
+
 
     Stock.associate = function (models) {
         Stock.hasOne(models.Product, {
