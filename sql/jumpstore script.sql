@@ -107,7 +107,7 @@ values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 2, 3, default, d
 (default, "Adidas Yeezy 350v2 Black", 20400, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 (default, "Adidas Yeezy 350v2 White", 20400, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 (default, "Adidas X9000L4 CYBERPUNK 2077", 20900, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Adidas X9000L4", 20900, 1, 1, default, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
+(default, "Adidas X9000L4", 20900, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 (default, "Adidas Superstar Sean Wotherspoon", 17200, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 (default, "Adidas Superstar Melting Sadness", 20200, 1, 1, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 
@@ -119,10 +119,13 @@ values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 2, 3, default, d
 (default, "Vans ERA", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 (default, "Vans Old Skool VLT LX", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
 (default, "Vans Old Skool Supreme", 17900, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." ),
-(default, "Vans Old Skool", 18700, 1, 4, default, default,, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
+(default, "Vans Old Skool", 18700, 1, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
 ;
 
-
+ALTER TABLE jumpstore.products DROP FOREIGN KEY products_FK_1;
+ALTER TABLE jumpstore.products ADD CONSTRAINT products_FK_1 FOREIGN KEY (brandID) REFERENCES jumpstore.brands(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
+ALTER TABLE jumpstore.products DROP FOREIGN KEY products_FK_2;
+ALTER TABLE jumpstore.products ADD CONSTRAINT products_FK_2 FOREIGN KEY (stockID) REFERENCES jumpstore.stocks(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 
 
@@ -145,6 +148,12 @@ values (default, 1, 1), (default, 1, 2), (default, 1, 3), (default, 1, 4), (defa
 (default, 1, 9), (default, 1, 10), (default, 1, 11), (default, 1, 12), (default, 1, 13), (default, 1, 14), (default, 1, 15), (default, 1, 16),
 (default, 1, 17), (default, 1, 18), (default, 1, 19)
 ;
+
+ALTER TABLE jumpstore.sizesproducts DROP FOREIGN KEY sizesProducts_pk_FK;
+ALTER TABLE jumpstore.sizesproducts ADD CONSTRAINT sizesProducts_pk_FK FOREIGN KEY (sizeID) REFERENCES jumpstore.sizes(ID) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE jumpstore.sizesproducts DROP FOREIGN KEY sizesProducts_pk_FK_1;
+ALTER TABLE jumpstore.sizesproducts ADD CONSTRAINT sizesProducts_pk_FK_1 FOREIGN KEY (productID) REFERENCES jumpstore.products(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
+
 
 
 DROP TABLE IF EXISTS jumpstore.imagesProducts;
