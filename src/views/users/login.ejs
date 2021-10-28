@@ -32,6 +32,7 @@
                         id="email"
                         name="email"
                         class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.email : null %>"
                         >
                         <% if (locals.errors && errors.email) { %>
                             <i class="fas fa-exclamation-circle" style="bottom: 16px;"></i>
@@ -44,6 +45,7 @@
                         name="password"
                         id="password"
                         class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                        value="<%= locals.oldData ? oldData.password : null %>" 
                         >
                         <% if (locals.errors && errors.email) { %>
                             <i class="fas fa-eye eyePsw" style="right: 34px;"></i>
