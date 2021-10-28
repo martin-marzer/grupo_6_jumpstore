@@ -4,7 +4,6 @@
     <title>Register</title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/register-login.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
 </head>
 <body>
     <%- include("./partials/header") %>
@@ -76,10 +75,10 @@
                     </div>
                     <div class="field terminos">
                         <% if (locals.errors && errors.terminos) { %>
-                            <input type="checkbox" name="terminos" id="terminos" >
+                            <input type="checkbox" name="terminos" id="terminos">
                             <label for="terminos" style="color: #dc3545;">Estoy de acuerdo con los <a href="/terminos-y-condiciones">términos y condiciones</a></label>
                         <% } else {%>
-                            <input type="checkbox" name="terminos" id="terminos">
+                            <input type="checkbox" name="terminos" id="terminos" checked>
                             <label for="terminos">Estoy de acuerdo con los <a href="/terminos-y-condiciones">términos y condiciones</a></label>
                         <% } %>
                     </div>

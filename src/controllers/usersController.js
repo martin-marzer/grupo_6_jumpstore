@@ -13,8 +13,15 @@ const controlador = {
         res.render("register");
     },
     processRegister: (req,res) => {
+        const resultValidation = validationResult(req);
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
-        User.create({
+        if (resultValidation.errors.length > 0) {
+            res.render("register", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else {
+            User.create({
                 username: req.body.username,
                 email: req.body.email,
                 password: encryptedPassword,
@@ -26,6 +33,7 @@ const controlador = {
                 return res.redirect("/");
             })
             .catch(error => res.send(error))
+        }
     },
     
     login: (req,res) => {
@@ -50,8 +58,7 @@ const controlador = {
                  return res.redirect("/profile")
              }
             }
-           
-           
+                     
             return res.render("login", {
                 errors: {
                     email: {
@@ -60,28 +67,6 @@ const controlador = {
                 }
             })
         })
-    //    let userToLogin = User.findByField("email", req.body.email);
-    //    if(userToLogin) {
-    //        let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-    //     if (verifiquePassword){
-    //         delete userToLogin.password
-    //         req.session.userLogged = userToLogin;
-    //         if(req.body.recordame != undefined){
-    //             res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
-    //           }
-    //           // console.log("prueba", req.body.recordame)
-    //         return res.redirect("/profile")
-    //     }
-    //    }
-      
-      
-    //    return res.render("login", {
-    //        errors: {
-    //            email: {
-    //                msg:"Encontramos datos erroneos"
-    //            }
-    //        }
-    //    })
     },
     logout: (req,res) =>{
         req.session.destroy();
