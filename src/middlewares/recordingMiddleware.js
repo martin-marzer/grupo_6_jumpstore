@@ -1,11 +1,8 @@
-// const User = require("../database/User");
-
 const db = require("../database/models")
 const User = db.User
 
 function recordingMiddleware (req, res, next){
 
-    
     let emailInCookie = req.cookies.recordame
 
     if (emailInCookie != undefined) {
@@ -15,18 +12,15 @@ function recordingMiddleware (req, res, next){
             }
         })
         .then(UserFromCookie => {
-
-            infoUser = UserFromCookie
-            
+            req.session.userLogged = UserFromCookie;
+            res.locals.usuario = req.session.userLogged;
+            next();
         })
-        res.locals.isLogged = true;
-        req.session.userLogged = infoUser;
-        res.locals.userLogged = req.session.userLogged;
+
 
     } else {
-        res.locals.isLogged = false;
+        next();
     }
-    next();
 }
 
 module.exports = recordingMiddleware;

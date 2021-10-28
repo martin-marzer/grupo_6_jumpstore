@@ -15,16 +15,17 @@ const controlador = {
     processRegister: (req,res) => {
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
         User.create({
-                username: req.body.name,
+                username: req.body.username,
                 email: req.body.email,
                 password: encryptedPassword,
                 rol: 2
             })
             .then(user => {
-                req.session.usuarioLogeado = user;
+                req.session.userLogged = user;
 
                 return res.redirect("/");
             })
+            .catch(error => res.send(error))
     },
     
     login: (req,res) => {

@@ -15,23 +15,23 @@ const validations = [
 
     body("email")
     .notEmpty().withMessage("Escribe el email").bail()
-    .isEmail().withMessage("Formato Invalido")
-    .custom(function(value) {
-        let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        let users;
-        if (usersJSON == "") {
-            users = []
-        } else {
-            users = usersJSON
-        }
-        for (let i = 0; i < users.length; i++) {
-            const user = users[i];
-            if (user.email == value) {
-                return false
-            }
-        }
-        return true
-    }).withMessage("Datos Incorrectos"),
+    .isEmail().withMessage("Formato Invalido"),
+    // .custom(function(value) {
+    //     let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    //     let users;
+    //     if (usersJSON == "") {
+    //         users = []
+    //     } else {
+    //         users = usersJSON
+    //     }
+    //     for (let i = 0; i < users.length; i++) {
+    //         const user = users[i];
+    //         if (user.email == value) {
+    //             return false
+    //         }
+    //     }
+    //     return true
+    // }).withMessage("Datos Incorrectos"),
 
     body("password")
     .notEmpty().withMessage("Escribe Una Contraseña").bail()
