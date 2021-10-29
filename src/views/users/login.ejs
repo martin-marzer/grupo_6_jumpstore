@@ -19,9 +19,9 @@
                     <div class="txt-title-content">
                         <h1>Entrar</h2>
                         <h2>¡Bienvenido de nuevo! Inicié sesión en su cuenta de Jumpstore.</h2>
-                        <% if (locals.errors && errors.email) { %>
+                        <% if (locals.errorsGeneral) { %>
                             <div class="text-danger">
-                                <%= errors.email.msg %> 
+                                <%= errorsGeneral.msg %> 
                             </div>
                            <% } %>
                     </div>
@@ -35,7 +35,10 @@
                         value="<%= locals.oldData ? oldData.email : null %>"
                         >
                         <% if (locals.errors && errors.email) { %>
-                            <i class="fas fa-exclamation-circle" style="bottom: 16px;"></i>
+                            <i class="fas fa-exclamation-circle" ></i>
+                            <div class="text-danger">
+                                <%= errors.email.msg %> 
+                            </div>
                         <% } %>
 
                     </div>
@@ -47,9 +50,17 @@
                         class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                         value="<%= locals.oldData ? oldData.password : null %>" 
                         >
-                        <% if (locals.errors && errors.email) { %>
-                            <i class="fas fa-eye eyePsw" style="right: 34px;"></i>
-                            <i class="fas fa-exclamation-circle" style="bottom: 16px;"></i>
+                        <% if (locals.errors && errors.password) { %>
+                            <% if (errors.password.msg == "La contraseña debe contener una mayúscula, minúscula, número y un caracter especial") { %>
+                                <i class="fas fa-eye eyePsw" style="right: 34px; bottom: 68px;"></i>
+                                <i class="fas fa-exclamation-circle" style="bottom: 68px;"></i>
+                            <% } else { %>
+                                <i class="fas fa-eye eyePsw" style="right: 34px; bottom: 32px;"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                            <% } %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %> 
+                            </div>
                         <% } else {%>
                             <i class="fas fa-eye eyePsw"></i>
                         <% } %>

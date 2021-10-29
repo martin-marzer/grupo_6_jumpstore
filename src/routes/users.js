@@ -10,7 +10,7 @@ const User = db.User;
 
 const { body } = require("express-validator")
 
-const validations = [
+const validationsRegister = [
     body("username")
     .notEmpty().withMessage("Escribe un Nombre").bail()
     .isLength({min:3, max:10}).withMessage("Longitud: 3 a 10 Caracteres"),
@@ -18,38 +18,52 @@ const validations = [
     body("email")
     .notEmpty().withMessage("Escribe el email").bail()
     .isEmail().withMessage("Formato Invalido")
-    .custom(value => {
-        User.findOne({
+    .custom( async value => {
+        let emailCheck = await User.findOne({
             where: {
                 email: value
             }
         })
-        .then(user => {
-                if (user != null) {
-                    return false
-                    // console.log(user);
-                } else{
-                    return true
-                }
-
-        })
-    }).withMessage("Datos Incorrectos"),
+        if (emailCheck !== null) {
+            return Promise.reject();
+        } 
+        return true
+    }).withMessage("Email invalido"),
 
     body("password")
     .notEmpty().withMessage("Escribe Una Contraseña").bail()
-    .isLength({min:4, max:15}).withMessage("Longitud: 4 a 15 Caracteres"),
-
+    .isLength({min:4, max:15}).withMessage("Longitud: 4 a 15 Caracteres").bail()
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{4,}$/, "i").withMessage("La contraseña debe contener una mayúscula, minúscula, número y un caracter especial"),
+    
     body("terminos")
     .notEmpty()
 ];
 
+const validationsLogin = [
+    body("username")
+    .notEmpty().withMessage("Escribe un Nombre").bail()
+    .isLength({min:3, max:10}).withMessage("Longitud: 3 a 10 Caracteres"),
+
+    body("email")
+    .notEmpty().withMessage("Escribe el email").bail()
+    .isEmail().withMessage("Formato Invalido"),
+
+    body("password")
+    .notEmpty().withMessage("Escribe Una Contraseña").bail()
+    .isLength({min:4, max:15}).withMessage("Longitud: 4 a 15 Caracteres").bail()
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{4,}$/, "i").withMessage("La contraseña debe contener una mayúscula, minúscula, número y un caracter especial"),
+    
+    body("terminos")
+    .notEmpty()
+]
+
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post("/register", validations, usersController.processRegister);
+router.post("/register", validationsRegister, usersController.processRegister);
 
 router.get("/login", guestMiddleware, usersController.login);
 
-router.post("/login", usersController.loginProcess);
+router.post("/login", validationsLogin, usersController.loginProcess);
 
 router.get('/logout', usersController.logout);
 

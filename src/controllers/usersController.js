@@ -40,6 +40,7 @@ const controlador = {
         res.render("login");
     },
     loginProcess: (req,res) => {
+        const resultValidation = validationResult(req);
         User.findOne ({
             where: {
                 email: req.body.email
@@ -60,10 +61,9 @@ const controlador = {
             }
                      
             return res.render("login", {
-                errors: {
-                    email: {
-                        msg:"Encontramos datos erroneos"
-                    }
+                errors: resultValidation.mapped(),
+                errorsGeneral: {
+                    msg:"Hubo un problema con su inicio de sesión"
                 },
                 oldData: req.body
             })
