@@ -46,9 +46,9 @@ const controlador = {
             price: req.body.precio,
             description: req.body.descripcion,
             brandID: req.body.marca,
-            discountID: 1,
+            discount: req.body.descuento,
             updatedAt: req.body.fechaEntrada,
-            stockID: 1
+            quantity: req.body.stock
         })
         .then (() => {
             Product.count({
@@ -68,17 +68,17 @@ const controlador = {
                     sizeID: req.body.talle,
                     productID: count
                 })
-
+                .then(()=> {
+                    res.redirect('/administratorToolsProducts')
+                })   
             })
-            .then(()=> {
-                res.redirect('/administratorToolsProducts')
-            })      
+   
         })    
         .catch(error => res.send(error))
     },
     productEdit: (req,res) => {
         Product.findByPk(req.params.id, {
-            include: ['images', "stocks", "brands","discounts", "sizes"]
+            include: ['images', "brands", "sizes"]
         })
         .then(product => {
             res.render("productEdit", {
@@ -97,15 +97,16 @@ const controlador = {
                 price: req.body.precio,
                 description: req.body.descripcion,
                 brandID: req.body.marca,
-                discountID: 1,
+                discount: req.body.descuento,
                 createdAt: req.body.fechaEntrada,
-                stockID: 1
+                quantity: req.body.stock
             },
             {
                 where: {id: productId}
             })
         .then(()=> {
-            res.redirect('/administratorToolsProducts')})            
+            res.redirect('/administratorToolsProducts')
+        })            
         .catch(error => res.send(error))
     }, 
     delete: (req,res) => {
@@ -123,15 +124,23 @@ const controlador = {
         })
         .then(() => {
             ImagesProduct.destroy( {
-                where: {productsID: req.params.id}, force: true})
+                where: {
+                    productsID: req.params.id
+                }, force: true
+            })
             .then(() => {
                 Product.destroy( {
-                    where: {id: req.params.id}, force: true})
+                    where: {
+                        id: req.params.id
+                    }, force: true
+                })
+                .then(()=>{
+                    res.redirect('/administratorToolsProducts')
+                })
             })
         })
 
-        .then(()=>{
-            res.redirect('/administratorToolsProducts')})
+        
         .catch(error => res.send(error)) 
     },
     administratorUsers: (req,res) => {

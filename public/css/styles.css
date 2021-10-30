@@ -143,8 +143,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 17px;
 }
 .dropdown-content a:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(243, 243, 243);
+    text-decoration: underline;
 }
 #jumpstore-menu-mobile, #jumpstore-right-menu {
     width: 20%;
