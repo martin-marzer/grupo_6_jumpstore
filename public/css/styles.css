@@ -57,7 +57,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: rgb(255, 255, 255);
 }
 
-.row {
+.row-jumpstore {
     margin-right: -15px;
     margin-left: -15px;
 }

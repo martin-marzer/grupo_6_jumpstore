@@ -18,7 +18,7 @@ btn.on('click', function(e) {
 
 
 let urlArraySelected = window.location.pathname.split("/");
-let links = document.querySelectorAll(".row ul li a")
+let links = document.querySelectorAll(".row-jumpstore ul li a")
 let linksMobile = document.querySelectorAll(".overlay-content .links li a")
 
 

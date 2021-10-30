@@ -27,15 +27,16 @@ module.exports = (sequelize, dataTypes) => {
         createdAt: {
             type: dataTypes.DATE
         },
-        modifiedAt: {
-            type: dataTypes.DATE
+        updatedAt: {
+            type: dataTypes.DATE,
+            allowNull: true
         },
          
     };
     let config = {
         timestamps: true,
         createdAt: 'createdAt',
-        updatedAt: "modifiedAt",
+        updatedAt: "updatedAt",
         deletedAt: false
     }
     const User = sequelize.define(alias, cols, config);
