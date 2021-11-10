@@ -32,6 +32,8 @@ const multerStorage = multer.diskStorage({
     }
 });
 
+// router.get("/holi", adminMiddleware, adminController.nose);
+
 /*** GET ADMINISTRATOR ***/  
 router.get("/administrator", adminMiddleware, adminController.administrator);
 

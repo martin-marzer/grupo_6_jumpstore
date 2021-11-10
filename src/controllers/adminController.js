@@ -11,6 +11,7 @@ const User = db.User;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
 const controlador = {
     administrator: (req,res) => {
         let promProducts = Product.findAll()
@@ -47,7 +48,8 @@ const controlador = {
             description: req.body.descripcion,
             brandID: req.body.marca,
             discount: req.body.descuento,
-            updatedAt: req.body.fechaEntrada,
+            createdAt: req.body.fechaEntrada,
+            updatedAt: null,
             quantity: req.body.stock
         })
         .then (() => {
@@ -63,7 +65,7 @@ const controlador = {
                     })
                 
                 })
-
+                console.log(count);
                 SizesProduct.create({
                     sizeID: req.body.talle,
                     productID: count
@@ -129,14 +131,47 @@ const controlador = {
                 }, force: true
             })
             .then(() => {
-                Product.destroy( {
+                SizesProduct.destroy( {
                     where: {
-                        id: req.params.id
+                        productID: req.params.id,
+                        sizeID: req.body.talle
                     }, force: true
                 })
-                .then(()=>{
-                    res.redirect('/administratorToolsProducts')
+                .then(() => {
+                    Product.destroy( {
+                        where: {
+                            id: req.params.id
+                        }, force: true
+                    })
+                    // .then(()=>{
+                        
+                    //     Product.count({
+                    //         col: "Product.id"
+                    //     })
+                    //     .then(count => {
+                    //         for (let i = 1; i <= count; i++) {
+                    //             Product.findByPk(i)
+                    //             .then(producto => {
+                    //                 if (producto == undefined) {
+                    //                     Product.update(
+                    //                         { id: i},
+                    //                         { where: {id: i + 1} }
+                    //                     )
+                    //                 }
+                                    
+                    //             })
+                               
+                    //         }
+                    //     })
+    
+    
+                    // })
+                    .then(() => {
+                        res.redirect('/administratorToolsProducts')
+                    })
                 })
+
+
             })
         })
 
@@ -145,7 +180,52 @@ const controlador = {
     },
     administratorUsers: (req,res) => {
         res.send("aca iria para ver los perfiles, podria editarse para cambiar su rol")
-    }
+    },
+    // nose: (req, res) => {
+    //     Product.count({
+    //         col: 'Product.id'
+    //     })
+    //     .then(count => {
+    //         let idk = [];
+
+    //         for (let i = 1; i <= count; i++) {
+    //             const eachwacho = i;
+    //             idk.push(eachwacho)
+    //             Product.findByPk(i)
+    //             .then(producto => {
+    //                 if (producto == undefined) {
+    //                     Product
+    //                     .update(
+    //                         {
+    //                             id: id - 1
+    //                         },
+    //                         {
+    //                             where: {id: i + 1}
+    //                         })
+    //                 } 
+    //             })
+
+    //             // Product
+    //             // .update(
+    //             //     {
+    //             //         id: i
+    //             //     },
+    //             //     {
+    //             //         where: {id: i}
+    //             //     })
+            
+    //             // console.log( eachwacho);
+    //         }
+
+    //         //  let hola = Array.from(Array(count).keys()).map(e => {
+    //         //      return e + 1
+    //         //  })
+    //         // console.log(hola);
+            
+    //         res.json(idk)
+    //     })
+
+    // }
 };
 
 module.exports = controlador;

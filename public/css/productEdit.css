@@ -64,17 +64,18 @@ body {
     padding: 7px;
 }
 .add_edit_product{
-    border: 1px solid #2e518b; 
-    padding: 10px;
-    background-color: black; 
-    color: #ffffff; 
-    text-decoration: none; 
-    text-transform: uppercase; 
-    font-family: 'Helvetica', sans-serif; 
-    border-radius: 50px; 
-    font-size: 15px;
-    transition:  0.3s;
+    border: 1px solid #2e518b;
+    padding: 6px;
+    background-color: black;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 50px;
+    font-size: 8px;
+    transition: 0.3s;
     cursor: pointer;
+    width: 30%;
 }
 #delete_product{
     background-color: #e73c37;
@@ -158,13 +159,6 @@ body {
         margin-bottom: 25px;
     }
 
-    .file-upload{
-        font-size: 12px;
-        margin: 0;
-    }
-    .add_edit_product{
-        font-size: 12px;
-    }
     textarea.descripcion{
         height: 100px;
     }
@@ -173,18 +167,35 @@ body {
     }
    
 }
-@media (min-width: 768px) {
-    #delete-form {
-        right: 32%;
-        top: 7%;
+@media (min-width: 400px) {
+    .add_edit_product {
+        padding: 6px;
+        font-size: 10px;
+    }
+}
+@media (min-width: 560px) {
+    .add_edit_product {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+@media (min-width: 750px) {
+    .add_edit_product {
+        padding: 4px;
+        font-size: 10px;
     }
 }
 @media (min-width: 768px) {
+
     .forms-container {
         padding: 50px 30%;
     }
     .titulo{
         font-size: 28px;
+    }
+    .add_edit_product {
+        padding: 8px;
+        font-size: 12px;
     }
 }
 
