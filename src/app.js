@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3030;
 // se definen las middleware
 const softAuthMiddleware = require("./middlewares/softAuthMiddleware");
 const recordingMiddleware = require("./middlewares/recordingMiddleware")
-
+const adminMiddleware = require("./middlewares/adminMiddleware");
 
 
 
@@ -45,7 +45,7 @@ const rutaAdmin = require("./routes/admin");
 app.use(rutaMain);
 app.use(rutaProducts);
 app.use(rutaUsers);
-app.use(rutaAdmin);
+app.use("/administrator", adminMiddleware, rutaAdmin);
 
 
 

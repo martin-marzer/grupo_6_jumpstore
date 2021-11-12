@@ -4,7 +4,7 @@ body {
 }
 
 .formulario-register {
-    margin: 50px 30%;
+    margin: 50px 20%;
     padding: 20px 4%;
     border-radius: 2%;
     box-shadow: rgb(0 0 0 / 5%) 0px 6px 24px 0px, rgb(0 0 0 / 8%) 0px 0px 0px 1px;
@@ -21,6 +21,11 @@ label{
     display: flex;
     margin-bottom: 30px;
     justify-content: space-between;
+}
+.selects .price-discount-stock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #select-talles, #select-marcas {
     width: 90%;
@@ -42,9 +47,9 @@ label{
     border: none;
     border-radius: 10px;
 }
-.price-discount {
-    width: 30%;
-    margin: 0;
+.input-price-discount-stock {
+    margin-top: 15px;
+    margin-bottom: 0;
 }
 .marcas label input{
     display: inline-block;
@@ -161,5 +166,17 @@ label{
         width: 92%;
         margin-top: 8%;
         margin-bottom: 8%;
+    }
+}
+
+@media (min-width: 768px){
+    .input-price-discount-stock {
+        width: 85%;
+    }
+}
+
+@media (min-width: 992px){
+    .formulario-register {
+        margin: 50px 30%;
     }
 }

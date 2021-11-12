@@ -250,7 +250,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* The side navigation menu */
 .sidenav {
-    height: 80vw;
+    height: 70vw;
     width: 100%;; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 999; /* Stay on top */
@@ -276,9 +276,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* The navigation menu links */
 .overlay-content .links a {
-    padding: 5% 2%;
+    padding: 4% 2%;
     text-decoration: none;
-    font-size: 5vw;
+    font-size: 4.5vw;
     display: block;
     transition: 0.5s;
     font-weight: 600;
@@ -460,6 +460,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @media (max-width: 767px) {
     .container {
         width: 100% ! important;
+        max-width: 100%;
     }
 
     .form-search input:-webkit-autofill,

@@ -13,7 +13,7 @@
         <div class="forms-container">
 
             <form class="formulario-edit" method="POST" action="/products/edit/<%= articulo.id %>?_method=PUT">
-                <a href="/administratorToolsProducts">Volver</a>
+                <a href="/administrator/products">Volver</a>
                 <h1 class="titulo">Editando <%= articulo.name %></h1>
                 <div>
                     <input class="formulario-input" type="text" name="name" class="cambiar-producto" value="<%= articulo.name %>" placeholder="Nuevo nombre" required>
@@ -73,9 +73,22 @@
                 </div>
     
                 <div class="selects">
-                    <input class="formulario-input price-discount" min="0" step="1000" type="number" name="precio" class="cambiar-producto" value="<%= articulo.price %>" placeholder="Nuevo precio del producto" required>
-                    <input class="formulario-input price-discount" type="number"  min="0" max="100" value="<%= articulo.discount %>" name="descuento" class="crear-producto" placeholder="Descuento" required>
-                    <input class="formulario-input price-discount" type="number"  min="1" max="100" value="<%= articulo.quantity %>" name="stock" class="crear-producto" placeholder="Stock" required>
+
+                    <div class="price-discount-stock">
+                        <label for="precio"> Precio</label>
+                        <input class="formulario-input input-price-discount-stock" type="number"  min="0" step="1000" name="precio"  value="<%= articulo.price %>" class="crear-producto" required>
+                    </div>
+                    <div class="price-discount-stock">
+                        <label for="precio"> Descuento</label>
+                        <input class="formulario-input input-price-discount-stock" type="number"  min="0" max="100"  name="descuento" value="<%= articulo.discount %>" class="crear-producto" required>
+                    </div>
+                    <div class="price-discount-stock">
+                        <label for="precio"> Stock</label>
+                        <input class="formulario-input input-price-discount-stock" type="number"  min="1" max="100"  name="stock"  value="<%= articulo.quantity %>"class="crear-producto"  required>
+                    </div>
+                    
+                    
+            
                 </div>
     
                 <div class="col-12">

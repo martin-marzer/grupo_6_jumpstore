@@ -26,15 +26,16 @@ const controlador = {
             });
         })
     },
-    administratorTools: (req,res) => {
+    allProducts: (req,res) => {
         Product.findAll({
                 include: ["images"]
         })
         .then(articulos => {
-            res.render("administratorToolsProducts", {
+            res.render("administratorProducts", {
                 articulos: articulos,
                 toThousand: toThousand
-        })});
+            })
+        });
     },
     productCreate: (req,res) => {
         res.render('productCreate');
@@ -71,7 +72,7 @@ const controlador = {
                     productID: count
                 })
                 .then(()=> {
-                    res.redirect('/administratorToolsProducts')
+                    res.redirect('/administrator/products')
                 })   
             })
    
@@ -107,7 +108,7 @@ const controlador = {
                 where: {id: productId}
             })
         .then(()=> {
-            res.redirect('/administratorToolsProducts')
+            res.redirect('/administrator/products')
         })            
         .catch(error => res.send(error))
     }, 
@@ -178,9 +179,37 @@ const controlador = {
         
         .catch(error => res.send(error)) 
     },
-    administratorUsers: (req,res) => {
-        res.send("aca iria para ver los perfiles, podria editarse para cambiar su rol")
+    allUsers: (req,res) => {
+        User.findAll()
+        .then(usuarios => {
+            res.render("administratorUsers", {
+                usuarios: usuarios
+            })
+        });
     },
+    userEdit: (req,res) => {
+        User.findByPk(req.params.id)
+        .then(user => {
+            res.render("userEdit", {
+                user: user,
+            });
+        })
+        .catch(error => res.send(error))
+    },
+    userUpdate: (req,res) => {
+        User
+        .update(
+            {
+                rol: req.body.rol
+            },
+            {
+                where: {id: req.params.id}
+            })
+        .then(()=> {
+            res.redirect('/administrator/users')
+        })            
+        .catch(error => res.send(error))
+    }
     // nose: (req, res) => {
     //     Product.count({
     //         col: 'Product.id'
