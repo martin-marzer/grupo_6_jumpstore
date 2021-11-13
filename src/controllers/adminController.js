@@ -10,7 +10,7 @@ const SizesProduct = db.SizesProduct;
 const User = db.User;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const { validationResult } = require("express-validator")
 
 const controlador = {
     administrator: (req,res) => {
@@ -41,43 +41,53 @@ const controlador = {
         res.render('productCreate');
     },
     store: (req,res) => {
-        let images = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
+        const resultValidation = validationResult(req);
 
-        Product.create({
-            name: req.body.name,
-            price: req.body.precio,
-            description: req.body.descripcion,
-            brandID: req.body.marca,
-            discount: req.body.descuento,
-            createdAt: req.body.fechaEntrada,
-            updatedAt: null,
-            quantity: req.body.stock
-        })
-        .then (() => {
-            Product.count({
-                col: 'Product.id'
+        if (resultValidation.errors.length > 0) {
+            res.render("productCreate", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else {
+            let images = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
+
+            Product.create({
+                name: req.body.name,
+                price: req.body.precio,
+                description: req.body.descripcion,
+                brandID: req.body.marca,
+                discount: req.body.descuento,
+                createdAt: req.body.fechaEntrada,
+                updatedAt: null,
+                quantity: req.body.stock
             })
-            .then(count => {
-                images.forEach(image => {
-        
-                    ImagesProduct.create({
-                        url: image,
-                        productsID: count
+            .then (() => {
+                Product.count({
+                    col: 'Product.id'
+                })
+                .then(count => {
+                    images.forEach(image => {
+            
+                        ImagesProduct.create({
+                            url: image,
+                            productsID: count
+                        })
+                    
                     })
-                
+                    console.log(count);
+                    SizesProduct.create({
+                        sizeID: req.body.talle,
+                        productID: count
+                    })
+                    .then(()=> {
+                        res.redirect('/administrator/products')
+                    })   
                 })
-                console.log(count);
-                SizesProduct.create({
-                    sizeID: req.body.talle,
-                    productID: count
-                })
-                .then(()=> {
-                    res.redirect('/administrator/products')
-                })   
-            })
-   
-        })    
-        .catch(error => res.send(error))
+       
+            })    
+            .catch(error => res.send(error))
+        }
+
     },
     productEdit: (req,res) => {
         Product.findByPk(req.params.id, {

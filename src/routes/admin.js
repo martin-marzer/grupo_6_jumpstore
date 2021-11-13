@@ -3,6 +3,7 @@ const router = express.Router();
 const adminController = require("../controllers/adminController");
 const path = require("path");
 const multer = require("multer");
+const { body } = require("express-validator")
 
 const multerStorage = multer.diskStorage({
     destination:  (req, file, cb) => {
@@ -31,6 +32,39 @@ const multerStorage = multer.diskStorage({
     }
 });
 
+
+
+const validations = [
+  body("name")
+  .notEmpty().withMessage("Escribe un Nombre").bail()
+  .isLength({min:5, max:100}).withMessage("Longitud: 5 a 100 Caracteres"),
+
+  body("precio")
+  .notEmpty().withMessage("Escribe el precio").bail()
+  .isInt().withMessage("solo números"),
+
+  body("descripcion")
+  .notEmpty().withMessage("Escribe la descripcion").bail()
+  .isLength({min:1, max:200}).withMessage("Longitud: 1 a 200 Caracteres"),,
+
+  body("marca")
+  .notEmpty().withMessage("Elige la marca").bail()
+  .isInt().withMessage(),
+
+  body("descuento")
+  .notEmpty().withMessage("Escribe el descuento").bail()
+  .isInt().withMessage("solo números"),
+
+  body("fechaEntrada")
+  .notEmpty().withMessage("No puede estar vacío").bail()
+  .isDate().withMessage("Elige una fecha"),
+
+  body("stock")
+  .notEmpty().withMessage("Escribe el descuento").bail()
+  .isInt().withMessage("solo números")
+];
+
+// console.log(validations);
 // router.get("/holi", adminMiddleware, adminController.nose);
 
 /*** GET ADMINISTRATOR ***/  

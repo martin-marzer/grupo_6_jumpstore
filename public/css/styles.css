@@ -440,17 +440,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     line-height: 11vw;
     color: #fff;
   }
-  .button-scroll:hover {
-    cursor: pointer;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
-  }
-  .button-scroll:hover i {
-    color: #000000;
-  }
-  .button-scroll:active {
-    background-color: rgb(0, 0, 0);
-  }
   .button-scroll.show {
     opacity: 1;
     visibility: visible;
@@ -668,10 +657,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         bottom: 3vw;
         right: 3vw;
       }
-      .button-scroll i {
+    .button-scroll i {
         font-size: 3vw;
         line-height: 4vw;
-      }
+    }
+
+    .button-scroll:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
+    }
+    .button-scroll:hover i {
+    color: #000000;
+    }
+    .button-scroll:active {
+    background-color: rgb(0, 0, 0);
+    }
 }
 
 @media (min-width: 992px){

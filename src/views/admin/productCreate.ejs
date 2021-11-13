@@ -9,11 +9,11 @@
     <%- include("./partials/header") %>
     <%- include("./partials/menuMobile") %>
     <main>
-        <form class="formulario-register" method="POST" action="/administratorToolsProducts" enctype="multipart/form-data">
+        <form class="formulario-register" method="POST" action="/administrator/products" enctype="multipart/form-data">
             <a href="/administrator/products">Volver</a>
             <h1 class="titulo">Añadir producto</h1> 
             <div>
-                <input class="formulario-input" type="text" name="name" class="crear-producto" placeholder="Nombre del producto" required>
+                <input class="formulario-input" type="text" name="name" class="crear-producto" placeholder="Nombre del producto"  value="<%= locals.oldData ? oldData.username : null %>" required>
             </div>
             <div>
                 <label for="fecha">Fecha de entrada:</label>

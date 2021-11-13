@@ -62,7 +62,15 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  if (res.locals.usuario && res.locals.usuario.rol == 1) {
+    res.render('error');
+  } else {
+    url = req.originalUrl
+    res.render('error404', {
+      url: url
+    });
+  }
+
 });
 
 
