@@ -2,7 +2,10 @@ body {
     background-color: #f6f6f6b8;
     background-image: url(../images/administrador/sitio-web-oficial-de-nike.jpg);
 }
-
+.text-danger {
+    color: #dc3545;
+    text-align-last: center;
+}
 .formulario-register {
     margin: 50px 20%;
     padding: 20px 4%;
@@ -14,42 +17,44 @@ label{
     font-size: 20px;
     font-weight: bold
 }
-.formulario-register div {
-    width: 100%;
+
+.formulario-register .input-container {
+    margin-bottom: 30px;
 }
 .selects {
     display: flex;
-    margin-bottom: 30px;
     justify-content: space-between;
+}
+.marcas, .talles {
+    text-align: center;
+    width: 45% !important;
 }
 .selects .price-discount-stock {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
+
 #select-talles, #select-marcas {
-    width: 90%;
+    width: 100%;
     height: 45px;
     background: whitesmoke;
     border: none;
     border-radius: 6px;
 }
-#select-marcas {
-    margin-left: 10%;
-}
 
 .formulario-input {
     width: 100%;
     height: 40px;
-    margin-bottom: 30px;
     border: 0.5px #0000007a solid;
     background: whitesmoke;
     border: none;
     border-radius: 10px;
 }
 .input-price-discount-stock {
-    margin-top: 15px;
-    margin-bottom: 0;
+    margin: 15px 0;
 }
 .marcas label input{
     display: inline-block;
@@ -86,7 +91,6 @@ label{
     align-items: baseline;
     font-size: 15px;
     margin: 10px;
-    height: 70px;
   }
   
   .file-upload__input {
@@ -123,7 +127,7 @@ label{
   }
 
   textarea.form-input{
-    margin: 0px 0px 30px;
+    margin-bottom: 15px;
     line-height: 2;
     max-width: 100%;
     min-width: 100%;
@@ -158,9 +162,6 @@ label{
         height: 40px;
         width: 100%;
     }
-    .talles{
-        margin-bottom: 25px;
-    }
     .formulario-register{
         margin: 0 auto;
         width: 92%;
@@ -173,10 +174,18 @@ label{
     .input-price-discount-stock {
         width: 85%;
     }
+    .formulario-register {
+        margin: 50px 10%;
+    }
 }
 
 @media (min-width: 992px){
     .formulario-register {
-        margin: 50px 30%;
+        margin: 50px 20%;
+    }
+}
+@media (min-width: 1200px){
+    .formulario-register {
+        margin: 50px 25%;
     }
 }

@@ -3,6 +3,10 @@ body {
     background-image: url(../images/administrador/sitio-web-oficial-de-nike.jpg);
 
 }
+.text-danger {
+    color: #dc3545;
+    text-align-last: center;
+}
 
 .forms-container {
     padding: 50px 4%;
