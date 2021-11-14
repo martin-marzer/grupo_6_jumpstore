@@ -21,14 +21,16 @@ const validationsRegister = [
             }
         })
         if (userCheck !== null) {
-
-            return Promise.reject();
+            let randomNumber = Math.random() * 100;
+            throw new Error(`Ya está en uso, le sugerimos: ${userCheck.username}${Math.floor(randomNumber) }`);
+            // return Promise.reject(userCheck.username);
         } 
         return true
-    }).withMessage(`Nombre de usuario en uso`),
+    }),
 
     body("email")
     .notEmpty().withMessage("Escribe el email").bail()
+    .isLength({min:1, max:50}).withMessage("Longitud: 5 a 50 Caracteres").bail()
     .isEmail().withMessage("Formato Invalido").bail()
     .custom( async value => {
         let emailCheck = await User.findOne({
@@ -44,8 +46,8 @@ const validationsRegister = [
 
     body("password")
     .notEmpty().withMessage("Escribe Una Contraseña").bail()
-    .isLength({min:8, max:20}).withMessage("Longitud minima: 8 Caracteres").bail()
-    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{4,}$/, "i").withMessage("Minimo: una mayúscula, una minúscula, un número y un caracter especial"),
+    .isLength({min:4, max:20}).withMessage("Longitud minima: 4 Caracteres").bail()
+    .matches(/^[a-zA-Z0-9\,\.\-\_\^\*\¡\¿\?\=\)\(\/\&\%\$\#\"\!]{4,20}$/, "i"),
     
     body("terminos")
     .notEmpty()

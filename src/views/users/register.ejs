@@ -21,16 +21,23 @@
                     </div>
 
                     <div class="field username">
-                        <label for="username">Nombre de usuario:</label>
-                        <input type="text"
-                        name="username"
-                        id="username"
-                        class="form-control <%= locals.errors && errors.username ? 'is-invalid' : null %>"
-                        value="<%= locals.oldData ? oldData.username : null %>"
-                        >
-                        
+                        <div class="psw-username-container">
+                            <label for="username">Nombre de usuario:</label>
+                            <input type="text"
+                            name="username"
+                            id="username"
+                            class="form-control <%= locals.errors && errors.username ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.username : null %>"
+                            >
+                            
+                            <% if (locals.errors && errors.username && (errors.username.msg != "Escribe un Nombre" || errors.username.msg != "Longitud: 5 a 30 Caracteres")  ) { %>
+                                <i class="fas fa-exclamation-circle" style="bottom: 15px;"></i>
+                            <% } else if (locals.errors && errors.username) {%>
+                                <i class="fas fa-exclamation-circle">
+                            <% } %> 
+                        </div>
+
                         <% if (locals.errors && errors.username) { %>
-                            <i class="fas fa-exclamation-circle"></i>
                             <div class="text-danger">
                                 <%= errors.username.msg %> 
                             </div>
@@ -55,7 +62,7 @@
                     </div>
                     
                     <div class="field psw">
-                        <div class="psw-container">
+                        <div class="psw-username-container">
                             <label for="password">Contraseña:</label> 
                             <input type="password"
                             name="password"

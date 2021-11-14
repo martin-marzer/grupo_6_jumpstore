@@ -6,10 +6,6 @@ body {
     width: 100%;
 }
 
-.text-danger{
-    color: red;
-}
-
 .field {
     display: flex;
     margin-bottom: 20px;
@@ -44,7 +40,7 @@ i.fas.fa-exclamation-circle {
 .text-danger {
     color: #dc3545;
 }
-.psw-container {
+.psw-username-container {
     display: flex;
     flex-direction: column;
     position: relative;

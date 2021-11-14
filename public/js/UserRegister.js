@@ -14,12 +14,12 @@ window.addEventListener("load", () => {
 
     let card = document.createElement("p");
 
-    name.addEventListener("change", (e) => {
-        if(name.value == ""){
-            card.innerHTML += "no es asi";
-            divUsername.appendChild(card);
-        }else{
-            divUsername.removeChild(card);
-        }
-    })
+    // name.addEventListener("change", (e) => {
+    //     if(name.value == ""){
+    //         card.innerHTML += "no es asi";
+    //         divUsername.appendChild(card);
+    //     }else{
+    //         divUsername.removeChild(card);
+    //     }
+    // })
 });

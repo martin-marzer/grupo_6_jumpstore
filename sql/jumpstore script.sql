@@ -154,7 +154,7 @@ DROP TABLE IF EXISTS jumpstore.users;
 CREATE TABLE jumpstore.users (
 	ID INT(10) NOT NULL AUTO_INCREMENT,
 	username varchar(20) NOT NULL,
-	email varchar(30) NOT NULL,
+	email varchar(50) NOT NULL,
 	password text NOT NULL,
 	rol boolean not null,
 	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
