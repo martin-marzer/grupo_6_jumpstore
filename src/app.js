@@ -40,12 +40,20 @@ const rutaProducts = require("./routes/products");
 const rutaUsers = require("./routes/users");
 const rutaAdmin = require("./routes/admin");
 
+//apis
+const rutaProductsAPI = require("./routes/api/products");
+const rutaUsersAPI = require("./routes/api/users");
+
 
 // se usan las rutas
 app.use(rutaMain);
 app.use(rutaProducts);
 app.use(rutaUsers);
 app.use("/administrator", adminMiddleware, rutaAdmin);
+
+//apis
+app.use(rutaProductsAPI);
+app.use(rutaUsersAPI);
 
 
 
