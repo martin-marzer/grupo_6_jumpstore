@@ -109,9 +109,6 @@ const validations = [
 
 ];
 
-// console.log(validations);
-// router.get("/holi", adminMiddleware, adminController.nose);
-
 /*** GET ADMINISTRATOR ***/
 router.get("/", adminController.administrator);
 

@@ -30,7 +30,8 @@ module.exports = (sequelize, dataTypes) => {
             through: "sizesproducts",
             foreignKey: "sizeID",
             otherKey: "productID",
-            timestamps: false
+            timestamps: false,
+            onDelete: 'cascade'
         })
 
         SizesProduct.belongsToMany(models.Size, {
@@ -38,7 +39,8 @@ module.exports = (sequelize, dataTypes) => {
             through: "sizesproducts",
             foreignKey: "productID",
             otherKey: "sizeID",
-            timestamps: false
+            timestamps: false,
+            onDelete: 'cascade'
         })
     
     }

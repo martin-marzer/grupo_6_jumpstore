@@ -61,28 +61,24 @@ const controlador = {
                 updatedAt: null,
                 quantity: req.body.stock
             })
-                .then(() => {
-                    Product.count({
-                        col: 'Product.id'
+            .then((user) => {
+                images.forEach(image => {
+
+                    ImagesProduct.create({
+                        url: image,
+                        productsID: user.id
                     })
-                        .then(count => {
-                            images.forEach(image => {
 
-                                ImagesProduct.create({
-                                    url: image,
-                                    productsID: count
-                                })
-
-                            })
-                            console.log(count);
-                            SizesProduct.create({
-                                sizeID: req.body.talle,
-                                productID: count
-                            })
-                                .then(() => {
-                                    res.redirect('/administrator/products')
-                                })
-                        })
+                })
+                console.log(user.id);
+                SizesProduct.create({
+                    sizeID: req.body.talle,
+                    productID: user.id
+                })
+                .then(() => {
+                    res.redirect('/administrator/products')
+                })
+                        
 
                 })
                 .catch(error => res.send(error))
@@ -120,91 +116,48 @@ const controlador = {
         } else {
             let productId = req.params.id;
             Product
-                .update(
-                    {
-                        name: req.body.name,
-                        price: req.body.precio,
-                        description: req.body.descripcion,
-                        brandID: req.body.marca,
-                        discount: req.body.descuento,
-                        createdAt: req.body.fechaEntrada,
-                        quantity: req.body.stock
-                    },
-                    {
-                        where: { id: productId }
-                    })
-                .then(() => {
-                    res.redirect('/administrator/products')
+            .update(
+                {
+                    name: req.body.name,
+                    price: req.body.precio,
+                    description: req.body.descripcion,
+                    brandID: req.body.marca,
+                    discount: req.body.descuento,
+                    updatedAt: req.body.fechaEntrada,
+                    quantity: req.body.stock
+                },
+                {
+                    where: { id: productId }
                 })
-                .catch(error => res.send(error))
+            .then(() => {
+                res.redirect('/administrator/products')
+            })
+            .catch(error => res.send(error))
         }
     },
     delete: (req, res) => {
-
         ImagesProduct.findAll({
             where: {
                 productsID: req.params.id
             }
         })
-            .then((images) => {
-                let arrIMG = [images[0].url, images[1].url, images[2].url]
-                arrIMG.forEach(image => {
-                    fs.unlinkSync(ImagesFolderPath + image)
-                })
+        .then((images) => {
+            let arrIMG = [images[0].url, images[1].url, images[2].url]
+            arrIMG.forEach(image => {
+                fs.unlinkSync(ImagesFolderPath + image)
+            })
+        })
+        .then(() => {
+            Product.destroy({
+                where: {
+                    id: req.params.id
+                }, force: true
             })
             .then(() => {
-                ImagesProduct.destroy({
-                    where: {
-                        productsID: req.params.id
-                    }, force: true
-                })
-                    .then(() => {
-                        SizesProduct.destroy({
-                            where: {
-                                productID: req.params.id,
-                                sizeID: req.body.talle
-                            }, force: true
-                        })
-                            .then(() => {
-                                Product.destroy({
-                                    where: {
-                                        id: req.params.id
-                                    }, force: true
-                                })
-                                    // .then(()=>{
-
-                                    //     Product.count({
-                                    //         col: "Product.id"
-                                    //     })
-                                    //     .then(count => {
-                                    //         for (let i = 1; i <= count; i++) {
-                                    //             Product.findByPk(i)
-                                    //             .then(producto => {
-                                    //                 if (producto == undefined) {
-                                    //                     Product.update(
-                                    //                         { id: i},
-                                    //                         { where: {id: i + 1} }
-                                    //                     )
-                                    //                 }
-
-                                    //             })
-
-                                    //         }
-                                    //     })
-
-
-                                    // })
-                                    .then(() => {
-                                        res.redirect('/administratorToolsProducts')
-                                    })
-                            })
-
-
-                    })
+                res.redirect('/administrator/products')
             })
-
-
-            .catch(error => res.send(error))
+        })
+        .catch(error => res.send(error))
     },
     allUsers: (req, res) => {
         User.findAll()
@@ -237,51 +190,6 @@ const controlador = {
             })
             .catch(error => res.send(error))
     }
-    // nose: (req, res) => {
-    //     Product.count({
-    //         col: 'Product.id'
-    //     })
-    //     .then(count => {
-    //         let idk = [];
-
-    //         for (let i = 1; i <= count; i++) {
-    //             const eachwacho = i;
-    //             idk.push(eachwacho)
-    //             Product.findByPk(i)
-    //             .then(producto => {
-    //                 if (producto == undefined) {
-    //                     Product
-    //                     .update(
-    //                         {
-    //                             id: id - 1
-    //                         },
-    //                         {
-    //                             where: {id: i + 1}
-    //                         })
-    //                 } 
-    //             })
-
-    //             // Product
-    //             // .update(
-    //             //     {
-    //             //         id: i
-    //             //     },
-    //             //     {
-    //             //         where: {id: i}
-    //             //     })
-
-    //             // console.log( eachwacho);
-    //         }
-
-    //         //  let hola = Array.from(Array(count).keys()).map(e => {
-    //         //      return e + 1
-    //         //  })
-    //         // console.log(hola);
-
-    //         res.json(idk)
-    //     })
-
-    // }
 };
 
 module.exports = controlador;

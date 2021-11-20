@@ -81,11 +81,6 @@ values (default, "Air Jordan 1 Retro Low 'Lakers top 3", 23000, 0, 3, default, d
 (default, "Vans Old Skool", 18700, 0, 4, default, default, 1, "lorem ipsum etc etc esto es un largo texto escrito y firmado." )
 ;
 
-ALTER TABLE jumpstore.products DROP FOREIGN KEY products_FK;
-ALTER TABLE jumpstore.products ADD CONSTRAINT products_FK FOREIGN KEY (brandID) REFERENCES jumpstore.brands(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
-
-
-
 
 DROP TABLE IF EXISTS jumpstore.sizesProducts;
 
@@ -108,7 +103,7 @@ values (default, 1, 1), (default, 1, 2), (default, 1, 3), (default, 1, 4), (defa
 ;
 
 ALTER TABLE jumpstore.sizesproducts DROP FOREIGN KEY sizesProducts_pk_FK;
-ALTER TABLE jumpstore.sizesproducts ADD CONSTRAINT sizesProducts_pk_FK FOREIGN KEY (sizeID) REFERENCES jumpstore.sizes(ID) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE jumpstore.sizesproducts ADD CONSTRAINT sizesProducts_pk_FK FOREIGN KEY (sizeID) REFERENCES jumpstore.sizes(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
 ALTER TABLE jumpstore.sizesproducts DROP FOREIGN KEY sizesProducts_pk_FK_1;
 ALTER TABLE jumpstore.sizesproducts ADD CONSTRAINT sizesProducts_pk_FK_1 FOREIGN KEY (productID) REFERENCES jumpstore.products(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
 
@@ -148,6 +143,11 @@ values (default, "airjordan1retro.jpeg", 1), (default, "airjordan1retro2.jpeg", 
 (default, "vans oldskool supreme1.jpeg", 18), (default, "vans oldskool supreme2.jpeg", 18), (default, "vans oldskool supreme3.jpeg", 18),
 (default, "vans oldskool1.jpeg", 19), (default, "vans oldskool2.jpeg", 19), (default, "vans oldskool3.jpeg", 19)
 ;
+
+ALTER TABLE jumpstore.imagesProducts DROP FOREIGN KEY imagesProduct_FK;
+ALTER TABLE jumpstore.imagesProducts ADD CONSTRAINT imagesProduct_FK FOREIGN KEY (productsID) REFERENCES jumpstore.products(ID) ON DELETE CASCADE ON UPDATE RESTRICT;
+
+
 
 DROP TABLE IF EXISTS jumpstore.users;
 

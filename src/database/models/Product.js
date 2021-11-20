@@ -51,7 +51,8 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = function (models) {
         Product.hasMany(models.ImagesProduct, {
             as: "images",
-            foreignKey: "productsID"
+            foreignKey: "productsID",
+            onDelete: 'cascade'
         })
         Product.belongsTo(models.Brand, {
             as: "brands",
@@ -62,7 +63,8 @@ module.exports = (sequelize, dataTypes) => {
             through: "sizesproducts",
             foreignKey: "productID",
             otherKey: "sizeID",
-            timestamps: false
+            timestamps: false,
+            onDelete: 'cascade'
         })
 
 
