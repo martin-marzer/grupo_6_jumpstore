@@ -19,6 +19,7 @@
                 <div>
                     <input class="formulario-input" type="text" name="name" class="cambiar-producto"
                     value="<%= locals.oldData ? oldData.name : articulo.name %>" placeholder="Nuevo nombre">
+                    <p class="error-name"></p>
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
                             <%= errors.name.msg %>
@@ -106,6 +107,7 @@
                     <label for="description" class="form-label">Descripción:</label>
                     <textarea name="descripcion" id="description" class="descripcion"
                     ><%= locals.oldData ? oldData.descripcion : articulo.description %></textarea>
+                    <p class="error-desc"></p>
                     <% if (locals.errors && errors.descripcion) { %>
                         <div class="text-danger">
                             <%= errors.descripcion.msg %>
@@ -126,6 +128,7 @@
     </main>
     <%- include("./partials/scripts") %>
     <script src="/js/edit-CreateProduct.js"></script>
+    <script src="/js/edit-validation.js"></script>
 </body>
 
 </html>

@@ -24,6 +24,7 @@
             <div class="input-container">
                 <input class="formulario-input" type="text" name="name" class="crear-producto"
                     placeholder="Nombre del producto" value="<%= locals.oldData ? oldData.name : null %>">
+                    <p class="error-name"></p>
                 <% if (locals.errors && errors.name) { %>
                 <div class="text-danger">
                     <%= errors.name.msg %>
@@ -112,6 +113,7 @@
                     <button class="file-upload__button" type="button">Imagenes del producto</button>
                     <span class="file-upload__label"></span>
                 </div>
+                <p class="error-myFile"></p>
                 <% if (locals.imgERROR) { %>
                 <div class="text-danger">
                     <%= imgERROR%>
@@ -123,6 +125,7 @@
                 <label for="description" class="form-label">Descripción:</label>
                 <textarea name="descripcion" id="description" class="form-input"
                     placeholder="Aquí coloca una descripcion del producto"><%= locals.oldData ? oldData.descripcion : null %></textarea>
+                    <p class="error-desc"></p>
                 <% if (locals.errors && errors.descripcion) { %>
                 <div class="text-danger">
                     <%= errors.descripcion.msg %>
@@ -137,6 +140,7 @@
     </main>
     <%- include("./partials/scripts") %>
     <script src="/js/edit-CreateProduct.js"></script>
+    <script src="/js/create-validation.js"></script>
 </body>
 
 </html>
