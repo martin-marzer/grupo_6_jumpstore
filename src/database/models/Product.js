@@ -26,11 +26,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-        stockID: {
+        quantity: {
             type: dataTypes.BIGINT(10),
             allowNull: false
         },
-        discountID: {
+        discount: {
             type: dataTypes.BIGINT(10),
             allowNull: false
         },
@@ -51,26 +51,20 @@ module.exports = (sequelize, dataTypes) => {
     Product.associate = function (models) {
         Product.hasMany(models.ImagesProduct, {
             as: "images",
-            foreignKey: "productsID"
-        })
-        Product.belongsTo(models.Stock, {
-            as: "stocks",
-            foreignKey: "stockID"
+            foreignKey: "productsID",
+            onDelete: 'cascade'
         })
         Product.belongsTo(models.Brand, {
             as: "brands",
             foreignKey: "brandID"
-        })
-        Product.belongsTo(models.Discount, {
-            as: "discounts",
-            foreignKey: "discountID"
         })
         Product.belongsToMany(models.Size, {
             as: "sizes",
             through: "sizesproducts",
             foreignKey: "productID",
             otherKey: "sizeID",
-            timestamps: false
+            timestamps: false,
+            onDelete: 'cascade'
         })
 
 

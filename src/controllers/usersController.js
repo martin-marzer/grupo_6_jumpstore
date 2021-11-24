@@ -13,8 +13,15 @@ const controlador = {
         res.render("register");
     },
     processRegister: (req,res) => {
+        const resultValidation = validationResult(req);
         let encryptedPassword = bcrypt.hashSync(req.body.password, 10)
-        User.create({
+        if (resultValidation.errors.length > 0) {
+            res.render("register", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else {
+            User.create({
                 username: req.body.username,
                 email: req.body.email,
                 password: encryptedPassword,
@@ -23,15 +30,17 @@ const controlador = {
             .then(user => {
                 req.session.userLogged = user;
 
-                return res.redirect("/");
+                res.redirect("/profile");
             })
             .catch(error => res.send(error))
+        }
     },
     
     login: (req,res) => {
         res.render("login");
     },
     loginProcess: (req,res) => {
+        const resultValidation = validationResult(req);
         User.findOne ({
             where: {
                 email: req.body.email
@@ -50,38 +59,15 @@ const controlador = {
                  return res.redirect("/profile")
              }
             }
-           
-           
+                     
             return res.render("login", {
-                errors: {
-                    email: {
-                        msg:"Encontramos datos erroneos"
-                    }
-                }
+                errors: resultValidation.mapped(),
+                errorsGeneral: {
+                    msg:"Hubo un problema con su inicio de sesión"
+                },
+                oldData: req.body
             })
         })
-    //    let userToLogin = User.findByField("email", req.body.email);
-    //    if(userToLogin) {
-    //        let verifiquePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-    //     if (verifiquePassword){
-    //         delete userToLogin.password
-    //         req.session.userLogged = userToLogin;
-    //         if(req.body.recordame != undefined){
-    //             res.cookie('recordame',userToLogin.email,{maxAge: 1000 * 60 * 60 * 24})
-    //           }
-    //           // console.log("prueba", req.body.recordame)
-    //         return res.redirect("/profile")
-    //     }
-    //    }
-      
-      
-    //    return res.render("login", {
-    //        errors: {
-    //            email: {
-    //                msg:"Encontramos datos erroneos"
-    //            }
-    //        }
-    //    })
     },
     logout: (req,res) =>{
         req.session.destroy();

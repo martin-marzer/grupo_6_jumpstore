@@ -3,53 +3,77 @@ const router = express.Router();
 const usersController = require("../controllers/usersController");
 const authMiddleware = require("../middlewares/authMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const fs = require("fs")
-const path = require("path")
-const usersFilePath = path.resolve(__dirname, '../database/users.json');
+
+
+let db = require("../database/models");
+const User = db.User;
 
 const { body } = require("express-validator")
-const validations = [
+
+const validationsRegister = [
     body("username")
-    .notEmpty().withMessage("Nombre Invalido").bail()
-    .isLength({min:3, max:10}).withMessage("Longitud: 3 a 10 Caracteres"),
+    .notEmpty().withMessage("Escribe un Nombre").bail()
+    .isLength({min:5, max:30}).withMessage("Longitud: 5 a 30 Caracteres").bail()
+    .custom( async value => {
+        let userCheck = await User.findOne({
+            where: {
+                username: value
+            }
+        })
+        if (userCheck !== null) {
+            let randomNumber = Math.random() * 100;
+            throw new Error(`Ya está en uso, le sugerimos: ${userCheck.username}${Math.floor(randomNumber) }`);
+            // return Promise.reject(userCheck.username);
+        } 
+        return true
+    }),
 
     body("email")
     .notEmpty().withMessage("Escribe el email").bail()
-    .isEmail().withMessage("Formato Invalido"),
-    // .custom(function(value) {
-    //     let usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    //     let users;
-    //     if (usersJSON == "") {
-    //         users = []
-    //     } else {
-    //         users = usersJSON
-    //     }
-    //     for (let i = 0; i < users.length; i++) {
-    //         const user = users[i];
-    //         if (user.email == value) {
-    //             return false
-    //         }
-    //     }
-    //     return true
-    // }).withMessage("Datos Incorrectos"),
+    .isLength({min:1, max:50}).withMessage("Longitud: 5 a 50 Caracteres").bail()
+    .isEmail().withMessage("Formato Invalido").bail()
+    .custom( async value => {
+        let emailCheck = await User.findOne({
+            where: {
+                email: value
+            }
+        })
+        if (emailCheck !== null) {
+            return Promise.reject();
+        } 
+        return true
+    }).withMessage("Email invalido"),
 
     body("password")
     .notEmpty().withMessage("Escribe Una Contraseña").bail()
-    .isLength({min:4, max:15}).withMessage("Longitud: 4 a 15 Caracteres"),
-
+    .isLength({min:4, max:20}).withMessage("Longitud minima: 4 Caracteres").bail()
+    .matches(/^[a-zA-Z0-9\,\.\-\_\^\*\¡\¿\?\=\)\(\/\&\%\$\#\"\!]{4,20}$/, "i"),
+    
     body("terminos")
     .notEmpty()
 ];
 
+const validationsLogin = [
+    body("username")
+    .notEmpty().withMessage("Escribe un Nombre"),
+
+    body("email")
+    .notEmpty().withMessage("Escribe el email").bail()
+    .isEmail().withMessage("Formato Invalido"),
+
+    body("password")
+    .notEmpty().withMessage("Escribe Una Contraseña")
+]
+
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post("/register", validations, usersController.processRegister);
+router.post("/register", guestMiddleware, validationsRegister, usersController.processRegister);
 
 router.get("/login", guestMiddleware, usersController.login);
 
-router.post("/login", usersController.loginProcess);
+router.post("/login", guestMiddleware, validationsLogin, usersController.loginProcess);
 
-router.get('/logout', usersController.logout);
+router.get('/logout', authMiddleware, usersController.logout);
 
 router.get("/profile", authMiddleware, usersController.profile);
 

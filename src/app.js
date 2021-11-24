@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3030;
 // se definen las middleware
 const softAuthMiddleware = require("./middlewares/softAuthMiddleware");
 const recordingMiddleware = require("./middlewares/recordingMiddleware")
-
+const adminMiddleware = require("./middlewares/adminMiddleware");
 
 
 
@@ -40,12 +40,20 @@ const rutaProducts = require("./routes/products");
 const rutaUsers = require("./routes/users");
 const rutaAdmin = require("./routes/admin");
 
+//apis
+const rutaProductsAPI = require("./routes/api/products");
+const rutaUsersAPI = require("./routes/api/users");
+
 
 // se usan las rutas
 app.use(rutaMain);
 app.use(rutaProducts);
 app.use(rutaUsers);
-app.use(rutaAdmin);
+app.use("/administrator", adminMiddleware, rutaAdmin);
+
+//apis
+app.use(rutaProductsAPI);
+app.use(rutaUsersAPI);
 
 
 
@@ -62,13 +70,21 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  if (res.locals.usuario && res.locals.usuario.rol == 1) {
+    res.render('error');
+  } else {
+    url = req.originalUrl
+    res.render('error404', {
+      url: url
+    });
+  }
+
 });
 
 
 // arranca el servidor
 app.listen(PORT, () => {
-    console.log("funca bien pa, 3030 server personal");
+    console.log(`funca bien pa, ${PORT} server personal`);
 })
 
 

@@ -4,7 +4,7 @@
 
         <div class="container">
 
-            <div class="row">
+            <div class="row-jumpstore">
 
                 <div id="jumpstore-header-flex">
 
@@ -40,10 +40,10 @@
 
                                     <% if (locals.usuario) { %>
                                         <a href="/profile">Mi perfil</a>
-                                        <a href="/logout">Salir</a>
+                                        <a href="/logout" style="color: rgb(228, 44, 44);">Cerrar Sesión</a>
                                     <% } else  {%>
                                         <a href="/register">Registrarse</a>
-                                        <a href="/login">Iniciar sesion</a>
+                                        <a href="/login">Iniciar sesión</a>
                                     <% } %>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
 
     <nav id="jumpstore-navbar">
     <div class="container">
-        <div class="row">
+        <div class="row-jumpstore">
             <ul>
                 <li><a href="/">Inicio</li></a>
                 <li><a href="/sneakers/OrderByReleaseDateASC">Productos</li></a>

@@ -10,132 +10,185 @@ const SizesProduct = db.SizesProduct;
 const User = db.User;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { validationResult } = require("express-validator")
 
 const controlador = {
-    administrator: (req,res) => {
+    administrator: (req, res) => {
         let promProducts = Product.findAll()
         let promUsers = User.findAll()
         Promise
-        .all(([promProducts, promUsers]))
-        .then(([products, users]) => {
-            res.render("administrator", {
-                articulos: products,
-                usuarios: users,
-                user: req.session.userLogged
-            });
-        })
+            .all(([promProducts, promUsers]))
+            .then(([products, users]) => {
+                res.render("administrator", {
+                    articulos: products,
+                    usuarios: users,
+                    user: req.session.userLogged
+                });
+            })
     },
-    administratorTools: (req,res) => {
+    allProducts: (req, res) => {
         Product.findAll({
-                include: ["images"]
+            include: ["images"]
         })
-        .then(articulos => {
-            res.render("administratorToolsProducts", {
-                articulos: articulos,
-                toThousand: toThousand
-        })});
+            .then(articulos => {
+                res.render("administratorProducts", {
+                    articulos: articulos,
+                    toThousand: toThousand
+                })
+            });
     },
-    productCreate: (req,res) => {
+    productCreate: (req, res) => {
         res.render('productCreate');
     },
-    store: (req,res) => {
-        let images = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
+    store: (req, res) => {
+        const resultValidation = validationResult(req);
 
-        Product.create({
-            name: req.body.name,
-            price: req.body.precio,
-            description: req.body.descripcion,
-            brandID: req.body.marca,
-            discountID: 1,
-            updatedAt: req.body.fechaEntrada,
-            stockID: 1
-        })
-        .then (() => {
-            Product.count({
-                col: 'Product.id'
-            })
-            .then(count => {
-                images.forEach(image => {
-        
-                    ImagesProduct.create({
-                        url: image,
-                        productsID: count
-                    })
-                
-                })
-
-                SizesProduct.create({
-                    sizeID: req.body.talle,
-                    productID: count
-                })
-
-            })
-            .then(()=> {
-                res.redirect('/administratorToolsProducts')
-            })      
-        })    
-        .catch(error => res.send(error))
-    },
-    productEdit: (req,res) => {
-        Product.findByPk(req.params.id, {
-            include: ['images', "stocks", "brands","discounts", "sizes"]
-        })
-        .then(product => {
-            res.render("productEdit", {
-                articulo: product,
-                toThousand: toThousand
+        if (resultValidation.errors.length > 0) {
+            res.render("productCreate", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
             });
-        })
-        .catch(error => res.send(error))
-    },
-    update: (req,res) => {
-        let productId = req.params.id;
-        Product
-        .update(
-            {
+        } else {
+            let images = [req.files[0].filename, req.files[1].filename, req.files[2].filename]
+
+            Product.create({
                 name: req.body.name,
                 price: req.body.precio,
                 description: req.body.descripcion,
                 brandID: req.body.marca,
-                discountID: 1,
+                discount: req.body.descuento,
                 createdAt: req.body.fechaEntrada,
-                stockID: 1
-            },
-            {
-                where: {id: productId}
+                updatedAt: null,
+                quantity: req.body.stock
             })
-        .then(()=> {
-            res.redirect('/administratorToolsProducts')})            
-        .catch(error => res.send(error))
-    }, 
-    delete: (req,res) => {
+            .then((user) => {
+                images.forEach(image => {
 
-        ImagesProduct.findAll ({
+                    ImagesProduct.create({
+                        url: image,
+                        productsID: user.id
+                    })
+
+                })
+                console.log(user.id);
+                SizesProduct.create({
+                    sizeID: req.body.talle,
+                    productID: user.id
+                })
+                .then(() => {
+                    res.redirect('/administrator/products')
+                })
+                        
+
+                })
+                .catch(error => res.send(error))
+        }
+
+    },
+    productEdit: (req, res) => {
+        Product.findByPk(req.params.id, {
+            include: ["brands", "sizes"]
+        })
+            .then(product => {
+                res.render("productEdit", {
+                    articulo: product,
+                    toThousand: toThousand
+                });
+            })
+            .catch(error => res.send(error))
+    },
+    update: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            Product.findByPk(req.params.id, {
+                include: ["brands", "sizes"]
+            })
+                .then(product => {
+                    res.render("productEdit", {
+                        articulo: product,
+                        toThousand: toThousand,
+                        errors: resultValidation.mapped(),
+                        oldData: req.body
+                    });
+                })
+                .catch(error => res.send(error))
+        } else {
+            let productId = req.params.id;
+            Product
+            .update(
+                {
+                    name: req.body.name,
+                    price: req.body.precio,
+                    description: req.body.descripcion,
+                    brandID: req.body.marca,
+                    discount: req.body.descuento,
+                    updatedAt: req.body.fechaEntrada,
+                    quantity: req.body.stock
+                },
+                {
+                    where: { id: productId }
+                })
+            .then(() => {
+                res.redirect('/administrator/products')
+            })
+            .catch(error => res.send(error))
+        }
+    },
+    delete: (req, res) => {
+        ImagesProduct.findAll({
             where: {
                 productsID: req.params.id
             }
         })
-        .then((images)=> {
+        .then((images) => {
             let arrIMG = [images[0].url, images[1].url, images[2].url]
             arrIMG.forEach(image => {
                 fs.unlinkSync(ImagesFolderPath + image)
             })
         })
         .then(() => {
-            ImagesProduct.destroy( {
-                where: {productsID: req.params.id}, force: true})
+            Product.destroy({
+                where: {
+                    id: req.params.id
+                }, force: true
+            })
             .then(() => {
-                Product.destroy( {
-                    where: {id: req.params.id}, force: true})
+                res.redirect('/administrator/products')
             })
         })
-
-        .then(()=>{
-            res.redirect('/administratorToolsProducts')})
-        .catch(error => res.send(error)) 
+        .catch(error => res.send(error))
     },
-    administratorUsers: (req,res) => {
-        res.send("aca iria para ver los perfiles, podria editarse para cambiar su rol")
+    allUsers: (req, res) => {
+        User.findAll()
+            .then(usuarios => {
+                res.render("administratorUsers", {
+                    usuarios: usuarios
+                })
+            });
+    },
+    userEdit: (req, res) => {
+        User.findByPk(req.params.id)
+            .then(user => {
+                res.render("userEdit", {
+                    user: user,
+                });
+            })
+            .catch(error => res.send(error))
+    },
+    userUpdate: (req, res) => {
+        User
+            .update(
+                {
+                    rol: req.body.rol
+                },
+                {
+                    where: { id: req.params.id }
+                })
+            .then(() => {
+                res.redirect('/administrator/users')
+            })
+            .catch(error => res.send(error))
     }
 };
 
