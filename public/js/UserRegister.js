@@ -3,14 +3,12 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 	username: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
 const campos = {
 	username: false,
-	nombre: false,
 	password: false,
 	email: false,
 }
@@ -19,9 +17,6 @@ const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "username":
 			validarCampo(expresiones.username, e.target, 'username');
-		break;
-		case "nombre":
-			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
@@ -60,7 +55,7 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(campos.username && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
+	if(campos.username && campos.password && campos.correo ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
