@@ -83,7 +83,9 @@
                         <%= errors.precio.msg %>
                     </div>
                     <% } %>
+                    <p class="error-precio"></p>
                 </div>
+
                 <div class="price-discount-stock">
                     <label for="precio"> Descuento</label>
                     <input class="formulario-input input-price-discount-stock" min="0" max="100" name="descuento"
@@ -93,7 +95,9 @@
                         <%= errors.descuento.msg %>
                     </div>
                     <% } %>
+                    <p class="error-descuento"></p>
                 </div>
+
                 <div class="price-discount-stock">
                     <label for="precio"> Stock</label>
                     <input class="formulario-input input-price-discount-stock" min="1" max="100" name="stock"
@@ -103,6 +107,7 @@
                         <%= errors.stock.msg %>
                     </div>
                     <% } %>
+                    <p class="error-stock"></p>
                 </div>
 
             </div>

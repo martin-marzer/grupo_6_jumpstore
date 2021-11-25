@@ -49,6 +49,7 @@ window.addEventListener("load", () => {
 
 		const validarCampo = (expresion, input, campo) => {
 			let text = document.querySelector(`#grupo__${campo} .formulario__input-error`)
+			text.style.color = "#FF4F4F"
 			if (input.value == "") {
 				document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
 				document.querySelector(`#grupo__${campo} i.formulario__validacion-estado`).classList.add('fa-times-circle');
@@ -68,7 +69,7 @@ window.addEventListener("load", () => {
 				document.querySelector(`#grupo__${campo} i.formulario__validacion-estado`).classList.add('fa-times-circle');
 				document.querySelector(`#grupo__${campo} i.formulario__validacion-estado`).classList.remove('fa-check-circle');
 				if (input.name == "email") {
-					text.innerHTML = "El Correo debe ser valido"
+					text.innerHTML = "El correo debe ser valido"
 				}
 				if (input.name == "username") {
 					text.innerHTML = "El usuario tiene que ser de 5 a 50 dígitos y solo puede contener numeros, letras y guion bajo."
