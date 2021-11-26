@@ -4,9 +4,13 @@ h2 {
 
 .breadcrumbs {
     padding: 20px 0;
+    display: flex;
 }
 .breadcrumbs a{
     color: rgb(0, 0, 0);
+}
+.breadcrumbs p{
+    margin: 0 10px;
 }
 .boxes-info {
     display: flex;

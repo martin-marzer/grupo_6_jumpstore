@@ -25,7 +25,7 @@
                 <div class="card-header clearfix">
                     <h2 class="pull-left profile-header">Perfil</h2>
                     
-                        <a href="#" class="pull-right">Editar</a>
+                        <a href="/profile/edit-profile" class="pull-right">Editar</a>
                 </div>
                 <div class="card-body">
                     <dl>
@@ -34,7 +34,7 @@
                     </dl>
                     <dl>
                         <dt>Fecha de Creacion:</dt>
-                        <% let inputDate = user.createdAt.toString().split('T')[0];  %>
+                        <% let inputDate = user.createdAt.toISOString().split('T')[0];  %>
                         <dd><%= inputDate  %></dd>
                     </dl>
                     
@@ -51,7 +51,7 @@
                         <div class="card">
                 <div class="card-header clearfix">
                     <h2 class="pull-left">Contraseña</h2>
-                    <a href="#" class="pull-right" aria-label="Cambiar Contraseña">Editar</a>
+                    <a href="/profile/password" class="pull-right" aria-label="Cambiar Contraseña">Editar</a>
                 </div>
                 <div class="card-body">
                     <dl>
@@ -74,7 +74,7 @@
                     
                 </div>
                 
-                    <a href="#" class="add-new-card-btn">+Nueva Tarjeta</a>
+                    <a href="profile/payment" class="add-new-card-btn">+Nueva Tarjeta</a>
                 
                 
             </div>
@@ -85,7 +85,7 @@
                     
                 </div>
                 
-                    <a href="#" class="add-new-address-profile-btn">+ Nueva Dirección</a>
+                    <a href="profile/address" class="add-new-address-profile-btn">+ Nueva Dirección</a>
     
             </div>
             

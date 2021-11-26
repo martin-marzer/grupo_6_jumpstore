@@ -75,9 +75,17 @@ const controlador = {
         res.redirect('/')
       },
 
-    profile: function (req, res) {
+    profile: (req, res) => {
         res.render("profile", {
             user: req.session.userLogged
+        });
+    },
+    editProfile: (req, res) => {
+        let url = req.originalUrl.split("/");
+        // console.log(url);
+        res.render("editProfile", {
+            user: req.session.userLogged,
+            url: url
         });
     }
 };

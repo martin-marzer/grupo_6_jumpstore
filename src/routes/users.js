@@ -78,5 +78,17 @@ router.get('/logout', authMiddleware, usersController.logout);
 router.get("/profile", authMiddleware, usersController.profile);
 
 
+router.get("/profile/edit-profile", authMiddleware, usersController.editProfile);
+
+
+router.get("/profile/password", authMiddleware, usersController.editProfile);
+
+
+router.get("/profile/payment", authMiddleware, usersController.editProfile);
+
+
+router.get("/profile/address", authMiddleware, usersController.editProfile);
+
+
 
 module.exports = router;

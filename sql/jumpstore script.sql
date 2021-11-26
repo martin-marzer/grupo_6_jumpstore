@@ -173,6 +173,47 @@ values (default, "martin", "martinvazquez1104@gmail.com", "$2a$10$pLgJLTzebjs0Pn
 ;
 
 
+DROP TABLE IF EXISTS jumpstore.payment;
+
+CREATE TABLE jumpstore.payment (
+	ID INT(10) NOT NULL AUTO_INCREMENT,
+	userID INT(10) NOT null,
+	name varchar(20) NOT NULL,
+	expiry varchar(50) NOT NULL,
+	number int(10) NOT NULL,
+	dni int(10) not null,
+	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt timestamp NULL DEFAULT NULL,
+	CONSTRAINT payment_pk PRIMARY KEY (ID),
+	CONSTRAINT payment_FK FOREIGN KEY (userID) REFERENCES jumpstore.users(ID)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;
+
+
+DROP TABLE IF EXISTS jumpstore.address;
+
+CREATE TABLE jumpstore.address (
+	ID INT(10) NOT NULL AUTO_INCREMENT,
+	userID INT(10) NOT null,
+	street varchar(100) NOT NULL,
+	city varchar(100) NOT NULL,
+	province varchar(100) NOT NULL,
+	postal_code int(10) NOT NULL,
+	number int(10) null DEFAULT NULL,
+	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
+	updatedAt timestamp NULL DEFAULT NULL,
+	CONSTRAINT address_pk PRIMARY KEY (ID),
+	CONSTRAINT address_FK FOREIGN KEY (userID) REFERENCES jumpstore.users(ID)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;
+
+
+
+
 DROP TABLE IF EXISTS jumpstore.userProducts;
 
 CREATE TABLE jumpstore.userProducts (
