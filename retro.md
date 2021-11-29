@@ -53,3 +53,25 @@
 * Hacer menos: Nada
 
 * Dejar de hacer: Hacer las cosas en el limite de tiempo
+ 
+## SPRINT 6
+* Comenzar a hacer: intentar comunicarnos más
+
+* Hacer más: -
+
+* Continuar haciendo: cumpliendo la entrega
+
+* Hacer menos: Nada
+
+* Dejar de hacer: querer hacer muchas cosas en poco tiempo
+
+## SPRINT 7
+* Comenzar a hacer: Más reuniones de equipo
+
+* Hacer más: -
+
+* Continuar haciendo: debatir ideas
+
+* Hacer menos: Nada
+
+* Dejar de hacer: No avisar cuando se hace un commit
