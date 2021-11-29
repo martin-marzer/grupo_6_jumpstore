@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Profile</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -8,10 +9,11 @@
 
 
 </head>
+
 <body>
 
     <%- include("./partials/header") %>
-    
+
     <%- include("./partials/menuMobile") %>
     <main>
         <div class="container">
@@ -20,80 +22,128 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-6">
-                    
+
                     <div class="card profile-margin-top-mobile">
-                <div class="card-header clearfix">
-                    <h2 class="pull-left profile-header">Perfil</h2>
-                    
-                        <a href="/profile/edit-profile" class="pull-right">Editar</a>
-                </div>
-                <div class="card-body">
-                    <dl>
-                        <dt>Nombre De Usuario</dt>
-                        <dd><%= user.username  %> </dd>
-                    </dl>
-                    <dl>
-                        <dt>Fecha de Creacion:</dt>
-                        <% let inputDate = user.createdAt.toISOString().split('T')[0];  %>
-                        <dd><%= inputDate  %></dd>
-                    </dl>
-                    
-                    <dl>
-                        <dt>Email</dt>
-                        <dd><%= user.email  %></dd>
-                    </dl>
-            
-                </div>
-            </div>
-            
-                    
-                        
-                        <div class="card">
-                <div class="card-header clearfix">
-                    <h2 class="pull-left">Contraseña</h2>
-                    <a href="/profile/password" class="pull-right" aria-label="Cambiar Contraseña">Editar</a>
-                </div>
-                <div class="card-body">
-                    <dl>
-                        <dt class="dashboard-info">Contraseña</dt>
-                        <dd>********</dd>
-                    </dl>
-                </div>
-            </div>
-            
-                    
-            
+                        <div class="card-header clearfix">
+                            <h2 class="pull-left profile-header">Perfil</h2>
+
+                            <a href="/profile/edit-profile" class="pull-right">Editar</a>
+                        </div>
+                        <div class="card-body">
+                            <dl>
+                                <dt>Nombre De Usuario</dt>
+                                <dd><%= user.username  %> </dd>
+                            </dl>
+                            <dl>
+                                <dt>Email</dt>
+                                <dd><%= user.email  %></dd>
+                            </dl>
+                            <% if (user.name) { %>
+                            <dl>
+                                <dt>Nombre</dt>
+                                <dd><%= user.name  %></dd>
+                            </dl>
+                            <% } %>
+                            <% if (user.lastname) { %>
+                            <dl>
+                                <dt>Apellido</dt>
+                                <dd><%= user.lastname  %></dd>
+                            </dl>
+                            <% } %>
+                            <% if (user.phone) { %>
+                            <dl>
+                                <dt>Telefono</dt>
+                                <dd><%= user.phone  %></dd>
+                            </dl>
+                            <% } %>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="card">
+                        <div class="card-header clearfix">
+                            <h2 class="pull-left">Contraseña</h2>
+                            <a href="/profile/password" class="pull-right" aria-label="Cambiar Contraseña">Editar</a>
+                        </div>
+                        <div class="card-body">
+                            <dl>
+                                <dt class="dashboard-info">Contraseña</dt>
+                                <dd>********</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+
+
                 </div>
                 <div class="col-sm-6">
+                <% if (user.address) { %>
+                   
+                        <div class="card">
+                            <div class="card-header clearfix">
+                                <h2 class="pull-left">Direccion</h2>
+                                <a href="/profile/address" class="pull-right" aria-label="Cambiar Metodo de Pago">Editar</a>
+                            </div>
+                            <div class="card-body">
+                                <dl>
+                                    <dt>Partido</dt>
+                                    <dd><%= user.address.city  %></dd>
+                                </dl>
+                                <dl>
+                                    <dt>Provincia</dt>
+                                    <dd><%= user.address.province  %></dd>
+                                </dl>
+                                <dl>
+                                    <dt>Codigo Postal</dt>
+                                    <dd><%= user.address.postal_code  %></dd>
+                                </dl>
+                            </div>
+                        </div>
+
                     
-                    
-                    
-                    <div class="card payment-card">
-                <div class="card-header clearfix">
-                    <h2 class="pull-left">Métodos de Pago</h2>
-                    
-                </div>
-                
-                    <a href="profile/payment" class="add-new-card-btn">+Nueva Tarjeta</a>
-                
-                
-            </div>
-                    
+                <% } else { %>
+
                     <div class="card">
-                <div class="card-header clearfix">
-                    <h2 class="pull-left">Direcciones</h2>
-                    
-                </div>
-                
-                    <a href="profile/address" class="add-new-address-profile-btn">+ Nueva Dirección</a>
+                        <div class="card-header clearfix">
+                            <h2 class="pull-left">Direcciones</h2>
+
+                        </div>
+
+                        <a href="profile/address" class="add-new-address-profile-btn">+ Nueva Dirección</a>
+
+                    </div>
     
-            </div>
-            
-            
-                    
-                    
-                    
-                    
+                <% } %>
+
+                <% if (user.payment) { %>
+                    <div class="card payment-card">
+                        <div class="card-header clearfix">
+                            <h2 class="pull-left">Métodos de Pago</h2>
+                            <a href="/profile/payment" class="pull-right" aria-label="Cambiar Metodo de Pago">Editar</a>
+                        </div>
+                        <div class="card-body">
+                            <dl>
+                                <dt>Dueño de Tarjeta</dt>
+                                <dd><%= user.payment.name  %> </dd>
+                            </dl>
+                            <dl>
+                                <dt>Fecha Expiracion</dt>
+                                <dd><%= user.payment.expiry  %></dd>
+                            </dl>
+                           
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="card payment-card">
+                        <div class="card-header clearfix">
+                            <h2 class="pull-left">Métodos de Pago</h2>
+                        </div>
+
+                        <a href="profile/payment" class="add-new-card-btn">+Nueva Tarjeta</a>
+                    </div>
+                <% } %>
                 </div>
             </div>
         </div>
@@ -105,8 +155,5 @@
 
 
 </body>
+
 </html>
-
-
-
-

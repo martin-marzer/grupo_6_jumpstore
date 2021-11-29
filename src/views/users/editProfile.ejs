@@ -29,102 +29,69 @@
                 <div class="col-sm-8 col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Datos Personales</h2>
+                            <h2>Editar</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/on/demandware.store/Sites-Dexter-Site/default/Account-SaveProfile"
-                                class="edit-profile-form" method="POST" name="dwfrm_profile" id="dwfrm_profile">
+                            <form action="/profile/edit-profile?_method=PUT" class="edit-profile-form" method="POST"
+                                name="profile" id="profile">
 
-                                <div class="form-group required">
+                               
+                                <div class="form-group">
+                                    <label class="form-control-label" for="username">
+                                        Nombre De Usuario
+                                    </label>
+                                    <input type="text" class="form-control" id="username" name="username" required=""
+                                        value="<%= user.username %>" min="2" maxlength="50">
+                                </div> 
+
+                                <div class="form-group">
                                     <label class="form-control-label" for="firstName">
                                         Nombre
                                     </label>
-                                    <input type="text" class="form-control" id="firstName"
-                                        name="dwfrm_profile_customer_firstname" required="" aria-required="true"
-                                        value="Martin" maxlength="40">
-                                    <div class="invalid-feedback"></div>
+                                    <input type="text" class="form-control" id="firstName" name="firstname" required=""
+                                        value="<%= user.name ? user.name : null %>" min="2" maxlength="50">
                                 </div>
 
-                                <div class="form-group required">
+                                <div class="form-group">
                                     <label class="form-control-label" for="lastName">
                                         Apellido
                                     </label>
-                                    <input type="text" class="form-control" id="lastName"
-                                        name="dwfrm_profile_customer_lastname" required="" aria-required="true"
-                                        value="Vazquez" maxlength="50">
-                                    <div class="invalid-feedback"></div>
+                                    <input type="text" class="form-control" id="lastName" name="lastname" required=""
+                                        value="<%= user.lastname ? user.lastname : null %>" min="2" maxlength="50">
                                 </div>
 
 
-                                <div class="form-group required">
-                                    <label class="form-control-label" for="gender">
-                                        Género
-                                    </label>
-                                    <select class="form-control" id="gender" data-missing-error="El campo es requerido."
-                                        name="dwfrm_profile_customer_gender" required="" aria-required="true"
-                                        autocomplete="gender">
 
-                                        <option id="" value="" selected="" disabled="">Seleccionar</option>
-
-                                        <option id="1" value="1" selected="">Hombre</option>
-
-                                        <option id="2" value="2">Mujer</option>
-
-                                        <option id="3" value="3">Prefiero no decir</option>
-
-                                    </select>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-
-                                <div class="form-group required">
+                                <div class="form-group">
                                     <label class="form-control-label" for="phone">
                                         Teléfono (cod. área + número)
                                     </label>
-                                    <input type="text" class="form-control" id="phone"
-                                        name="dwfrm_profile_customer_phone" required="" aria-required="true"
-                                        value="2241549885" maxlength="2147483647"
+                                    <input type="text" class="form-control" id="phone" name="phone" required=""
+                                        value="<%= user.phone ? user.phone : null %>" maxlength="15"
                                         pattern="^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$">
-                                    <div class="invalid-feedback"></div>
                                 </div>
 
                                 <div class="form-group required">
                                     <label class="form-control-label" for="email">
                                         Email
                                     </label>
-                                    <input type="email" class="form-control" id="email"
-                                        name="dwfrm_profile_customer_email" required="" aria-required="true"
-                                        value="martinkxd@hotmail.com" maxlength="50"
+                                    <input type="email" class="form-control" id="email" name="email" required=""
+                                        value="<%= user.email %>" maxlength="50"
                                         pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
-                                    <div class="invalid-feedback"></div>
-                                </div>
-
-                                <div class="form-group required">
-                                    <label class="form-control-label" for="confirmEmail">
-                                        Confirmar Email
-                                    </label>
-                                    <input type="email" class="form-control" id="confirmEmail"
-                                        name="dwfrm_profile_customer_emailconfirm" required="" aria-required="true"
-                                        value="" maxlength="50" pattern="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$">
-                                    <div class="invalid-feedback"></div>
                                 </div>
 
                                 <div class="form-group required">
                                     <label class="form-control-label" for="password">
-                                        Contraseña (mínimo 8 caracteres)
+                                        Contraseña
                                     </label>
                                     <input type="password" class="form-control" id="password"
-                                        name="dwfrm_profile_login_password" required="" aria-required="true" value=""
-                                        maxlength="255" minlength="8">
-                                    <div class="invalid-feedback"></div>
+                                        name="profile_login_password" required="" value="" maxlength="20"
+                                        minlength="4">
                                 </div>
 
-
-
-                                <input type="hidden" name="csrf_token"
-                                    value="4YBaqCOtbkEu3KWk9uu0Obrpe8uLSyCIaAENywqny6IT38T7khynqsmBfNCSIocWs6LipN3HMBgOyn_lLx_QzU7QNOGQbhcdjjcVVsPYHGbI2g_uOb4_GdjhWthSCMaBbtNhufg69tA8dbPh6k9Goymw2MvX2Zt-7bit9VPdYb0dZBkvSvE=">
                                 <div class="row">
                                     <div class="col">
-                                        <a href="/cuenta"
+                                        <a href="/profile"
                                             class="btn btn-block btn-outline-primary edit-profile-cancel">Cancelar</a>
                                     </div>
 
@@ -152,56 +119,40 @@
                 <div class="col-sm-8 col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Cambiar Contraseña</h2>
+                            <h2>Cambiar</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/on/demandware.store/Sites-Dexter-Site/default/Account-SavePassword"
-                                class="change-password-form" method="POST" name="dwfrm_profile" id="dwfrm_profile">
+                            <form action="/profile/password?_method=PUT" class="change-password-form" method="POST"
+                                name="profile" id="profile">
 
-                                <div class="form-group
-            required
-        ">
+                                <div class="form-group required">
                                     <label class="form-control-label" for="currentPassword">
                                         Contraseña Actual
                                     </label>
                                     <input type="password" class="form-control" id="currentPassword"
-                                        name="dwfrm_profile_login_currentpassword" required="" aria-required="true"
-                                        value="" maxlength="255" minlength="8">
-                                    <div class="invalid-feedback"></div>
+                                        name="currentpassword" required="" value="" maxlength="20" minlength="4">
                                 </div>
 
-                                <div class="form-group
-            
-        required">
+                                <div class="form-group required">
                                     <label class="form-control-label" for="newPassword">
                                         Nueva Contraseña
                                     </label>
-                                    <input type="password" class="form-control" id="newPassword"
-                                        name="dwfrm_profile_login_newpasswords_newpassword" required=""
-                                        aria-required="true" value="" maxlength="255" minlength="8">
-                                    <div class="invalid-feedback"></div>
+                                    <input type="password" class="form-control" id="newPassword" name="newpassword"
+                                        required="" value="" maxlength="20" minlength="4">
                                 </div>
 
-                                <div class="form-group
-            required">
+                                <div class="form-group required">
                                     <label class="form-control-label" for="newPasswordConfirm">
                                         Confirmar Nueva Contraseña
                                     </label>
                                     <input type="password" class="form-control" id="newPasswordConfirm"
-                                        name="dwfrm_profile_login_newpasswords_newpasswordconfirm" required=""
-                                        aria-required="true" value="" maxlength="255" minlength="8">
-                                    <div class="invalid-feedback"></div>
+                                        name="newpasswordconfirm" required="" value="" maxlength="20" minlength="4">
                                 </div>
 
-                                <input type="hidden" name="csrf_token"
-                                    value="h3ZCIoD0dLQDnip6DUETTo44vVa7O6mnK3fGgRvClkLwZPaPVhnV4dhUuYGDEZr8LuZNolG7PyUqMPZOIE1oMx6OZRg-HRIS6RmvHDRSSl0QH1DyEnXyzAK_pRIaVxCaBO50Hw8s5VWy1LxqVwppw9I0VKImmoPLUUAud5WtxcaTVGjzhYM=">
-                                <input type="hidden" class="form-control" id="privacyPolicy"
-                                    name="dwfrm_profile_customer_privacyPolicy" required="" aria-required="true"
-                                    value="true">
 
                                 <div class="row controls-container">
                                     <div class="col">
-                                        <a href="/cuenta" class="btn btn-block ">Cancelar</a>
+                                        <a href="/profile" class="btn btn-block ">Cancelar</a>
                                     </div>
 
                                     <div class="col">
@@ -224,121 +175,92 @@
             
             case 'payment' : %>
             <h1>Metodo de Pago</h1>
-            <div class="row justify-content-center">
-                <div class="col-sm-8 col-md-8">
-                    <div class="card">
-                        <div class="card-header">
+            <% if (user.payment) { %>
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-md-8">
+                        <div class="card">
+                            <div class="card-header">
 
-                            <h2>Nuevo Método de Pago</h2>
+                                <h2>Editar</h2>
 
-                        </div>
-                        <div class="card-body">
-                            <form
-                                action="/on/demandware.store/Sites-Dexter-Site/default/PaymentInstruments-SavePayment?UUID="
-                                class="payment-form" method="POST" name="payment-form" id="&quot;dwfrm_decidir&quot;">
+                            </div>
+                            <div class="card-body">
+                                <form action="/profile/payment?_method=PUT" class="payment-form" method="POST"
+                                    name="payment-form">
 
-                                <!-- Credit Card Type -->
-                                <input type="hidden" class="form-control" id="cardType" value=""
-                                    name="dwfrm_decidir_cardType" required="" aria-required="true" maxlength="16"
-                                    autocomplete="cc-type">
-
-                                <div class="form-group custom-control custom-radio">
-                                    <input id="paymentOption-Credit" name="paymentOption-Credit" type="radio"
-                                        class="custom-control-input" checked="" required="" aria-required="true"
-                                        value="" maxlength="2147483647">
-                                    <label for="paymentOption-Credit" class="custom-control-label">
-                                        <span>Credit</span>
-                                    </label>
-                                    <div class="invalid-feedback"></div>
-                                </div>
-
-
-                                <!-- Card Number -->
-                                <div class="form-group
-        required">
-                                    <label class="form-control-label" for="cardNumber">
-                                        Número de la Tarjeta
-                                    </label>
-                                    <div class="card-number-wrapper">
-                                        <input type="text" class="form-control" id="cardNumber"
-                                            name="dwfrm_decidir_cardNumber" required="" aria-required="true" value=""
-                                            maxlength="24" autocomplete="cc-number">
-                                        <div class="invalid-feedback">
-
+                                    <!-- Card Number -->
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="cardNumber">
+                                            Número de la Tarjeta
+                                        </label>
+                                        <div class="card-number-wrapper">
+                                            <input type="text" class="form-control" id="cardNumber" name="cardNumber"
+                                                required=""  value="<%= user.payment.card %>" maxlength="24">
                                         </div>
                                     </div>
-                                </div>
+                            
 
 
-                                <!-- Name on Card -->
-                                <div class="form-group
-        required">
-                                    <label class="form-control-label" for="cardOwner">
-                                        Nombre del Titular (tal como aparece en la tarjeta)
-                                    </label>
-                                    <input type="text" class="form-control" id="cardOwner"
-                                        name="dwfrm_decidir_cardOwner" required="" aria-required="true" value=""
-                                        maxlength="30" autocomplete="cc-name">
-                                    <div class="invalid-feedback">
+                                    <!-- Name on Card -->
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="cardOwner">
+                                            Nombre del Titular (tal como aparece en la tarjeta)
+                                        </label>
+                                        <input type="text" class="form-control" id="cardOwner" name="cardOwner" required=""
+                                        value="<%= user.payment.name %>" maxlength="30" autocomplete="cc-name">
+
 
                                     </div>
-                                </div>
+                        
 
 
-                                <!-- Month -->
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="form-group
-                required">
-                                            <label class="form-control-label" for="month">
-                                                Mes de Expiración
-                                            </label>
-                                            <select class="form-control custom-select" id="month"
-                                                name="dwfrm_decidir_expirationMonth" required="" aria-required="true"
-                                                autocomplete="cc-exp-month">
+                                    <!-- Month -->
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group required">
+                                                <label class="form-control-label" for="month">
+                                                    Mes de Expiración
+                                                </label>
+                                                <select class="form-control custom-select" id="month" name="expirationMonth" required="">
 
-                                                <option id="" value="">Seleccionar</option>
+                                                    <option id="" value="">Seleccionar</option>
 
-                                                <option id="01" value="1">01</option>
+                                                    <option id="01" value="1">01</option>
 
-                                                <option id="02" value="2">02</option>
+                                                    <option id="02" value="2">02</option>
 
-                                                <option id="03" value="3">03</option>
+                                                    <option id="03" value="3">03</option>
 
-                                                <option id="04" value="4">04</option>
+                                                    <option id="04" value="4">04</option>
 
-                                                <option id="05" value="5">05</option>
+                                                    <option id="05" value="5">05</option>
 
-                                                <option id="06" value="6">06</option>
+                                                    <option id="06" value="6">06</option>
 
-                                                <option id="07" value="7">07</option>
+                                                    <option id="07" value="7">07</option>
 
-                                                <option id="08" value="8">08</option>
+                                                    <option id="08" value="8">08</option>
 
-                                                <option id="09" value="9">09</option>
+                                                    <option id="09" value="9">09</option>
 
-                                                <option id="10" value="10">10</option>
+                                                    <option id="10" value="10">10</option>
 
-                                                <option id="11" value="11">11</option>
+                                                    <option id="11" value="11">11</option>
 
-                                                <option id="12" value="12">12</option>
+                                                    <option id="12" value="12">12</option>
 
-                                            </select>
-                                            <div class="invalid-feedback">
+                                                </select>
+
 
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-6">
-                                        <div class="form-group
-                required">
+                                        <div class="col-6">
+                                        <div class="form-group required">
                                             <label class="form-control-label" for="year">
                                                 Año de Expiración
                                             </label>
-                                            <select class="form-control custom-select" id="year"
-                                                name="dwfrm_decidir_expirationYear" required="" aria-required="true"
-                                                autocomplete="cc-exp-year">
+                                            <select class="form-control custom-select" id="year" name="expirationYear" required="">
                                                 <option value="">
                                                     Seleccionar</option>
 
@@ -363,311 +285,551 @@
                                                 <option id="2030" value="2030">2030</option>
 
                                             </select>
-                                            <div class="invalid-feedback"></div>
+
                                         </div>
                                     </div>
-                                </div>
+                                    </div>
+
+    
 
 
-                                <!-- Id of Card -->
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="form-group
-                required">
-                                            <label class="form-control-label" for="id">
-                                                DNI del Titular
-                                            </label>
-                                            <input type="text" class="form-control" id="id" name="dwfrm_decidir_id"
-                                                required="" aria-required="true" value="" maxlength="2147483647"
-                                                aria-describedby="id">
-                                            <div class="invalid-feedback">
+                                    <!-- Id of Card -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group required">
+                                                <label class="form-control-label" for="id">
+                                                    DNI del Titular
+                                                </label>
+                                                <input type="text" class="form-control" id="id" name="identification" required=""  value="<%= user.payment.dni %>"
+                                                    maxlength="9">
 
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <div class="make-default-payment">
-                                    <div class="form-group custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="makeDefaultPayment"
-                                            name="makeDefaultPayment">
-                                        <label class="custom-control-label" for="makeDefaultPayment">
-                                            Marcar como Método de Pago Predeterminado
-                                        </label>
+                                    <!-- Cancel and Save Buttons -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="/profile" class="btn btn-block btn-outline-primary">
+                                                Cancelar</a>
+                                        </div>
+                                        <div class="col">
+                                            <button type="submit" name="save" class="btn btn-save btn-block btn-primary">
+                                                Guardar</button>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <input type="hidden" name="csrf_token"
-                                    value="74_es___LUlFkhRb8XEIL-fxHJ8qFq1WE9eQ9nIQSeJU06zHMOwdldgDJKrBolIzR4YrzHv09GHQSoDANZnoGEoSEW6aCsW9_nmfMsvYMQYDQE16egvI3KZku-i8qzzA3eEIFYUxVbaUQeVXH2LzS9bfFwnF7HSBHigvibfB5t5AxGFZ2lM=">
+                                </form>
 
-                                <!-- Cancel and Save Buttons -->
                                 <div class="row">
-                                    <div class="col">
-                                        <a href="/cuenta/metodos-pago" class="btn btn-block btn-outline-primary">
-                                            Cancelar</a>
-                                    </div>
-                                    <div class="col">
-                                        <button type="submit" name="save" class="btn btn-save btn-block btn-primary">
-                                            Guardar</button>
+                                    <div class="col text-center">
+                                        <a href="/profile" class="profile-back-to-account-link">
+                                            &lt; Volver a Mi Cuenta</a>
                                     </div>
                                 </div>
 
-                            </form>
-
-                            <div class="row">
-                                <div class="col text-center">
-                                    <a href="/profile" class="profile-back-to-account-link">
-                                        &lt; Volver a Mi Cuenta</a>
-                                </div>
                             </div>
+                                
                         </div>
                     </div>
                 </div>
-            </div>
+            <% } else { %>
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+
+                                <h2>Nuevo Método de Pago</h2>
+
+                            </div>
+                            <div class="card-body">
+                                <form action="/profile/payment" class="payment-form" method="POST"
+                                    name="payment-form">
+
+                                    <!-- Card Number -->
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="cardNumber">
+                                            Número de la Tarjeta
+                                        </label>
+                                        <div class="card-number-wrapper">
+                                            <input type="text" class="form-control" id="cardNumber" name="cardNumber"
+                                                required="" value="" maxlength="24">
+                                        </div>
+                                    </div>
+                            
+
+
+                                    <!-- Name on Card -->
+                                    <div class="form-group required">
+                                        <label class="form-control-label" for="cardOwner">
+                                            Nombre del Titular (tal como aparece en la tarjeta)
+                                        </label>
+                                        <input type="text" class="form-control" id="cardOwner" name="cardOwner" required=""
+                                            aria-required="true" value="" maxlength="30" autocomplete="cc-name">
+
+
+                                    </div>
+                        
+
+
+                                    <!-- Month -->
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-group required">
+                                                <label class="form-control-label" for="month">
+                                                    Mes de Expiración
+                                                </label>
+                                                <select class="form-control custom-select" id="month" name="expirationMonth" required=""
+                                                    autocomplete="cc-exp-month">
+
+                                                    <option id="" value="">Seleccionar</option>
+
+                                                    <option id="01" value="1">01</option>
+
+                                                    <option id="02" value="2">02</option>
+
+                                                    <option id="03" value="3">03</option>
+
+                                                    <option id="04" value="4">04</option>
+
+                                                    <option id="05" value="5">05</option>
+
+                                                    <option id="06" value="6">06</option>
+
+                                                    <option id="07" value="7">07</option>
+
+                                                    <option id="08" value="8">08</option>
+
+                                                    <option id="09" value="9">09</option>
+
+                                                    <option id="10" value="10">10</option>
+
+                                                    <option id="11" value="11">11</option>
+
+                                                    <option id="12" value="12">12</option>
+
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                        <div class="form-group required">
+                                            <label class="form-control-label" for="year">
+                                                Año de Expiración
+                                            </label>
+                                            <select class="form-control custom-select" id="year" name="expirationYear" required="">
+                                                <option value="">
+                                                    Seleccionar</option>
+
+                                                <option id="2021" value="2021">2021</option>
+
+                                                <option id="2022" value="2022">2022</option>
+
+                                                <option id="2023" value="2023">2023</option>
+
+                                                <option id="2024" value="2024">2024</option>
+
+                                                <option id="2025" value="2025">2025</option>
+
+                                                <option id="2026" value="2026">2026</option>
+
+                                                <option id="2027" value="2027">2027</option>
+
+                                                <option id="2028" value="2028">2028</option>
+
+                                                <option id="2029" value="2029">2029</option>
+
+                                                <option id="2030" value="2030">2030</option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    </div>
+
+
+                                    <!-- Id of Card -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group required">
+                                                <label class="form-control-label" for="id">
+                                                    DNI del Titular
+                                                </label>
+                                                <input type="text" class="form-control" id="id" name="identification" required="" value=""
+                                                    maxlength="10">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Cancel and Save Buttons -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="/profile" class="btn btn-block btn-outline-primary">
+                                                Cancelar</a>
+                                        </div>
+                                        <div class="col">
+                                            <button type="submit" name="save" class="btn btn-save btn-block btn-primary">
+                                                Guardar</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a href="/profile" class="profile-back-to-account-link">
+                                            &lt; Volver a Mi Cuenta</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+
             <% break;
             
             case 'address' : %>
             <h1>Dirección</h1>
-            <div class="row justify-content-center">
-                <div class="col-sm-8 col-md-6">
-                    <div class="card">
-                        <div class="card-header edit-add-address">
+            <% if (user.address) { %>
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-md-6">
+                        <div class="card">
+                            <div class="card-header edit-add-address">
 
-                            <h2>+ Nueva Dirección</h2>
+                                <h2>Editar</h2>
 
-                        </div>
-                        <div class="card-body">
-                            <form action="/on/demandware.store/Sites-Dexter-Site/default/Address-SaveAddress?addressId="
-                                class="address-form edit-address-form" method="POST" name="dwfrm_address"
-                                id="dwfrm_address">
-  
+                            </div>
+                            <div class="card-body">
+                                <form action="/profile/address?_method=PUT" class="address-form edit-address-form"
+                                    method="POST" name="address" id="address">
 
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group
-                required
-                dwfrm_address_address1">
-                                            <label class="form-control-label" for="editAddressOnenull">
-                                                Calle
-                                            </label>
-                                            <input type="text" class="form-control editAddressOne"
-                                                id="editAddressOnenull" aria-describedby="nullAddressLine1" value=""
-                                                name="dwfrm_address_address1" required="" aria-required="true"
-                                                maxlength="50" autocomplete="edit address-line1">
-                                            <div class="invalid-feedback" id="nullAddressLine1">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group required address_address1">
+                                                <label class="form-control-label" for="editAddressOnenull">
+                                                    Calle
+                                                </label>
+                                                <input type="text" class="form-control editAddressOne"
+                                                    id="editAddressOnenull" aria-describedby="nullAddressLine1" value="<%= user.address.street %>"
+                                                    name="address_street" required="" maxlength="50">
+
 
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group required address_postalCode">
+                                                <label class="form-control-label" for="shippingZipCodenull">
+                                                    Código Postal
+                                                </label>
+                                                <input type="text" class="form-control shippingZipCode" id="shippingZipCodenull"
+                                                    value="<%= user.address.postal_code %>" name="address_postalCode" required=""
+                                                    maxlength="10" minlength="4" pattern="^[0-9]*$">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group required address_city">
+                                                <label class="form-control-label" for="shippingAddressCitynull">
+                                                    Partido
+                                                </label>
+                                                <input type="text" class="form-control shippingAddressCity" id="shippingAddressCitynull"
+                                                value="<%= user.address.city %>" name="address_city" required="" maxlength="40" minlength="2">
+                                            </div>
+                                        </div>
+                                    </div>
 
 
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group
-                
-                dwfrm_address_observation">
-                                            <label class="form-control-label" for="shippingObservationnull">
-                                                Aclaración Adicional
-                                            </label>
-                                            <input type="text" class="form-control shippingAddressOne"
-                                                id="shippingObservationnull" aria-describedby="nullObservation" value=""
-                                                name="dwfrm_address_observation" maxlength="255"
-                                                autocomplete="shipping observation">
-                                            <div class="invalid-feedback" id="nullObservation">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group required address_states_stateCode">
+                                                <label class="form-control-label" for="shippingStatenull">
+                                                    Provincia
+                                                </label>
+                                                <select class="form-control shippingState custom-select" id="shippingStatenull"
+                                                    name="address_state" required="">
+
+                                                    <option id="" value="">Seleccionar
+                                                    </option>
+
+                                                    <option id="A" value="A">Salta
+                                                    </option>
+
+                                                    <option id="B" value="B">Provincia de Buenos Aires
+                                                    </option>
+
+                                                    <option id="C" value="C">Ciudad Autónoma de Buenos Aires
+                                                    </option>
+
+                                                    <option id="D" value="D">San Luis
+                                                    </option>
+
+                                                    <option id="E" value="E">Entre Ríos
+                                                    </option>
+
+                                                    <option id="F" value="F">La Rioja
+                                                    </option>
+
+                                                    <option id="G" value="G">Santiago del Estero
+                                                    </option>
+
+                                                    <option id="H" value="H">Chaco
+                                                    </option>
+
+                                                    <option id="J" value="J">San Juan
+                                                    </option>
+
+                                                    <option id="K" value="K">Catamarca
+                                                    </option>
+
+                                                    <option id="L" value="L">La Pampa
+                                                    </option>
+
+                                                    <option id="M" value="M">Mendoza
+                                                    </option>
+
+                                                    <option id="N" value="N">Misiones
+                                                    </option>
+
+                                                    <option id="P" value="P">Formosa
+                                                    </option>
+
+                                                    <option id="Q" value="Q">Neuquén
+                                                    </option>
+
+                                                    <option id="R" value="R">Río Negro
+                                                    </option>
+
+                                                    <option id="S" value="S">Santa Fe
+                                                    </option>
+
+                                                    <option id="T" value="T">Tucumán
+                                                    </option>
+
+                                                    <option id="U" value="U">Chubut
+                                                    </option>
+
+                                                    <option id="W" value="W">Corrientes
+                                                    </option>
+
+                                                    <option id="X" value="X">Córdoba
+                                                    </option>
+
+                                                    <option id="Y" value="Y">Jujuy
+                                                    </option>
+
+                                                    <option id="Z" value="Z">Santa Cruz
+                                                    </option>
+
+                                                </select>
 
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="form-group
-                required
-                dwfrm_address_postalCode">
-                                            <label class="form-control-label" for="shippingZipCodenull">
-                                                Código Postal
-                                            </label>
-                                            <input type="text" class="form-control shippingZipCode"
-                                                id="shippingZipCodenull" aria-describedby="nullZipCode" value=""
-                                                name="dwfrm_address_postalCode" required="" aria-required="true"
-                                                maxlength="10" minlength="4" pattern="^[0-9]*$"
-                                                autocomplete="shipping postal-code">
-                                            <div class="invalid-feedback" id="nullZipCode">
-
-                                            </div>
+                                    <!-- Cancel and Save Buttons -->
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a href="/profile" class="btn btn-block btn-outline-primary edit-address-cancel">Cancelar</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="submit" name="save"
+                                                class="btn btn-save btn-block btn-primary edit-address-save">Guardar</button>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6 col-xs-12">
-                                        <div class="form-group
-                required
-                dwfrm_address_city">
-                                            <label class="form-control-label" for="shippingAddressCitynull">
-                                                Partido
-                                            </label>
-                                            <input type="text" class="form-control shippingAddressCity"
-                                                id="shippingAddressCitynull" aria-describedby="nullCity" value=""
-                                                name="dwfrm_address_city" required="" aria-required="true"
-                                                maxlength="40" minlength="2" autocomplete="shipping address-level2">
-                                            <div class="invalid-feedback" id="nullCity">
 
-                                            </div>
+                                </form>
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a href="/profile" class="profile-back-to-account-link">
+                                                &lt; Volver a Mi Cuenta</a>
                                         </div>
                                     </div>
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group
-                required
-                dwfrm_address_states_stateCode">
-                                            <label class="form-control-label" for="shippingStatenull">
-                                                Provincia
-                                            </label>
-                                            <select class="form-control shippingState custom-select"
-                                                id="shippingStatenull" name="dwfrm_address_states_stateCode" required=""
-                                                aria-required="true" autocomplete="shipping address-level1"
-                                                aria-describedby="nullState">
-
-                                                <option id="" value="">Seleccionar
-                                                </option>
-
-                                                <option id="A" value="A">Salta
-                                                </option>
-
-                                                <option id="B" value="B">Provincia de Buenos Aires
-                                                </option>
-
-                                                <option id="C" value="C">Ciudad Autónoma de Buenos Aires
-                                                </option>
-
-                                                <option id="D" value="D">San Luis
-                                                </option>
-
-                                                <option id="E" value="E">Entre Ríos
-                                                </option>
-
-                                                <option id="F" value="F">La Rioja
-                                                </option>
-
-                                                <option id="G" value="G">Santiago del Estero
-                                                </option>
-
-                                                <option id="H" value="H">Chaco
-                                                </option>
-
-                                                <option id="J" value="J">San Juan
-                                                </option>
-
-                                                <option id="K" value="K">Catamarca
-                                                </option>
-
-                                                <option id="L" value="L">La Pampa
-                                                </option>
-
-                                                <option id="M" value="M">Mendoza
-                                                </option>
-
-                                                <option id="N" value="N">Misiones
-                                                </option>
-
-                                                <option id="P" value="P">Formosa
-                                                </option>
-
-                                                <option id="Q" value="Q">Neuquén
-                                                </option>
-
-                                                <option id="R" value="R">Río Negro
-                                                </option>
-
-                                                <option id="S" value="S">Santa Fe
-                                                </option>
-
-                                                <option id="T" value="T">Tucumán
-                                                </option>
-
-                                                <option id="U" value="U">Chubut
-                                                </option>
-
-                                                <option id="W" value="W">Corrientes
-                                                </option>
-
-                                                <option id="X" value="X">Córdoba
-                                                </option>
-
-                                                <option id="Y" value="Y">Jujuy
-                                                </option>
-
-                                                <option id="Z" value="Z">Santa Cruz
-                                                </option>
-
-                                            </select>
-                                            <div class="invalid-feedback" id="nullState">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="form-group
-                
-                dwfrm_address_phone">
-                                            <label class="form-control-label" for="shippingPhoneNumbernull">
-                                                Número de Teléfono (opcional)
-                                            </label>
-                                            <input type="tel" class="form-control shippingPhoneNumber"
-                                                id="shippingPhoneNumbernull" aria-describedby="nullTelephoneNumber"
-                                                value="" name="dwfrm_address_phone" maxlength="20" minlength="10"
-                                                autocomplete="shipping tel">
-                                            <div class="invalid-feedback" id="nullTelephoneNumber">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <input type="hidden" name="csrf_token"
-                                    value="mErb6ww3uoR2CQQeDuA5ITmY6nrObKEP37sldtSERybWLyvTEGshtp1Ni7wWN9MWao3UYXPZI-z6c4P0krui6ZxPoOSkpi7NF7rDdIIVGXwtyUrme46X20A23d7wC-CjCrDDE7mYtBJhpiAmLkA1Hzq-FujU-8sEYIANqtIiEPTWVdmWP7g=">
-
-                                <!-- Cancel and Save Buttons -->
-                                <div class="row">
-                                    <div class="col-6">
-                                        <a href="/cuenta/direcciones"
-                                            class="btn btn-block btn-outline-primary edit-address-cancel">Cancelar</a>
-                                    </div>
-                                    <div class="col-6">
-                                        <button type="submit" name="save"
-                                            class="btn btn-save btn-block btn-primary edit-address-save">Guardar</button>
-                                    </div>
-                                </div>
-
-                            </form>
-                            <div class="row">
-                                <div class="col text-center">
-                                    <a href="/profile" class="profile-back-to-account-link">
-                                        &lt; Volver a Mi Cuenta</a>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <% break;
+            <% } else { %>    
+                <div class="row justify-content-center">
+                    <div class="col-sm-8 col-md-6">
+                        <div class="card">
+                            <div class="card-header edit-add-address">
+
+                                <h2>+ Nueva Dirección</h2>
+
+                            </div>
+                            <div class="card-body">
+                                <form action="/profile/address" class="address-form edit-address-form"
+                                    method="POST" name="address" id="address">
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group required address_address1">
+                                                <label class="form-control-label" for="editAddressOnenull">
+                                                    Calle
+                                                </label>
+                                                <input type="text" class="form-control editAddressOne"
+                                                    id="editAddressOnenull" aria-describedby="nullAddressLine1" value=""
+                                                    name="address_street" required="" maxlength="50"
+                                                    autocomplete="edit address-line1">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group required address_postalCode">
+                                                <label class="form-control-label" for="shippingZipCodenull">
+                                                    Código Postal
+                                                </label>
+                                                <input type="text" class="form-control shippingZipCode" id="shippingZipCodenull"
+                                                    aria-describedby="nullZipCode" value="" name="address_postalCode" required=""
+                                                     maxlength="10" minlength="2" pattern="^[0-9]*$">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group required address_city">
+                                                <label class="form-control-label" for="shippingAddressCitynull">
+                                                    Partido
+                                                </label>
+                                                <input type="text" class="form-control shippingAddressCity" id="shippingAddressCitynull"
+                                                value="" name="address_city" required="" maxlength="40" minlength="2">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group required address_states_stateCode">
+                                                <label class="form-control-label" for="shippingStatenull">
+                                                    Provincia
+                                                </label>
+                                                <select class="form-control shippingState custom-select" id="shippingStatenull"
+                                                    name="address_state" required="">
+
+                                                    <option id="" value="">Seleccionar
+                                                    </option>
+
+                                                    <option id="A" value="A">Salta
+                                                    </option>
+
+                                                    <option id="B" value="B">Provincia de Buenos Aires
+                                                    </option>
+
+                                                    <option id="C" value="C">Ciudad Autónoma de Buenos Aires
+                                                    </option>
+
+                                                    <option id="D" value="D">San Luis
+                                                    </option>
+
+                                                    <option id="E" value="E">Entre Ríos
+                                                    </option>
+
+                                                    <option id="F" value="F">La Rioja
+                                                    </option>
+
+                                                    <option id="G" value="G">Santiago del Estero
+                                                    </option>
+
+                                                    <option id="H" value="H">Chaco
+                                                    </option>
+
+                                                    <option id="J" value="J">San Juan
+                                                    </option>
+
+                                                    <option id="K" value="K">Catamarca
+                                                    </option>
+
+                                                    <option id="L" value="L">La Pampa
+                                                    </option>
+
+                                                    <option id="M" value="M">Mendoza
+                                                    </option>
+
+                                                    <option id="N" value="N">Misiones
+                                                    </option>
+
+                                                    <option id="P" value="P">Formosa
+                                                    </option>
+
+                                                    <option id="Q" value="Q">Neuquén
+                                                    </option>
+
+                                                    <option id="R" value="R">Río Negro
+                                                    </option>
+
+                                                    <option id="S" value="S">Santa Fe
+                                                    </option>
+
+                                                    <option id="T" value="T">Tucumán
+                                                    </option>
+
+                                                    <option id="U" value="U">Chubut
+                                                    </option>
+
+                                                    <option id="W" value="W">Corrientes
+                                                    </option>
+
+                                                    <option id="X" value="X">Córdoba
+                                                    </option>
+
+                                                    <option id="Y" value="Y">Jujuy
+                                                    </option>
+
+                                                    <option id="Z" value="Z">Santa Cruz
+                                                    </option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cancel and Save Buttons -->
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <a href="/profile" class="btn btn-block btn-outline-primary edit-address-cancel">Cancelar</a>
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="submit" name="save"
+                                                class="btn btn-save btn-block btn-primary edit-address-save">Guardar</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a href="/profile" class="profile-back-to-account-link">
+                                                &lt; Volver a Mi Cuenta</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+ 
+        <% break;
             } %>
         </div>
     </main>
 
-
-
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
 
-
 </body>
-
 </html>

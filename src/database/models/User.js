@@ -20,6 +20,18 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
+        name: {
+            type: dataTypes.STRING(50),
+            allowNull: true
+        },
+        lastname: {
+            type: dataTypes.STRING(50),
+            allowNull: true
+        },
+        phone: {
+            type: dataTypes.BIGINT(15),
+            allowNull: true,
+        },
         rol: {
             type: dataTypes.BOOLEAN,
             allowNull: false
@@ -40,6 +52,22 @@ module.exports = (sequelize, dataTypes) => {
         deletedAt: false
     }
     const User = sequelize.define(alias, cols, config);
+
+
+    User.associate = function (models) {
+        User.hasOne(models.Payment, {
+            as: "payment",
+            foreignKey: "userID",
+            onDelete: 'cascade'
+        })
+        User.hasOne(models.Address, {
+            as: "address",
+            foreignKey: "userID",
+            onDelete: 'cascade'
+        })
+    }
+
+
 
     return User
 };

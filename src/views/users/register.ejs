@@ -28,7 +28,7 @@
                                 <label for="username" class="formulario__label">Nombre de usuario:</label>
                                 <div class="formulario__grupo-input">
                                     <input type="text" name="username" id="username" class="formulario__input"
-                                        title="Solo letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$">
+                                        title="Solo letras, numeros y _, -" pattern="^[a-zA-Z0-9\_\-]{5,30}$">
                                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                 </div>
                                 <p class="formulario__input-error"></p>

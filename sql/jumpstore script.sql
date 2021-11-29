@@ -156,6 +156,9 @@ CREATE TABLE jumpstore.users (
 	username varchar(20) NOT NULL,
 	email varchar(50) NOT NULL,
 	password text NOT NULL,
+	name varchar(50) NULL DEFAULT NULL,
+	lastname varchar(50) NULL DEFAULT NULL,
+	phone varchar(15) NULL DEFAULT NULL,
 	rol boolean not null,
 	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
 	updatedAt timestamp NULL DEFAULT NULL,
@@ -167,20 +170,20 @@ DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 
 insert into jumpstore.users
-values (default, "martin", "martinvazquez1104@gmail.com", "$2a$10$pLgJLTzebjs0PnbeyAh1WeuImVh6mLMhqiOc5iAUwKjDp3FCJqTXC", true, default, default),
-(default, "ale xd", "alegon2772@gmail.com", "$2a$10$USkH5FPwHmGITcJR8.7./O13qKPSBkZfPTdTYVBiHGhJVQnuygd5i", true, default, default),
-(default, "Alesan", "alegonzalez1@hotmail.es", "$2a$10$dNnl8/WRtbAecYjVB6y3rOlI1cL.x/xiiS8RMwaO85sVu.JArmc3S", true, default, default)
+values (default, "martin", "martinvazquez1104@gmail.com", "$2a$10$pLgJLTzebjs0PnbeyAh1WeuImVh6mLMhqiOc5iAUwKjDp3FCJqTXC", "Martin", "Vazquez", "2241549885", true, default, default),
+(default, "ale xd", "alegon2772@gmail.com", "$2a$10$USkH5FPwHmGITcJR8.7./O13qKPSBkZfPTdTYVBiHGhJVQnuygd5i", default, default, default, true, default, default),
+(default, "Alesan", "alegonzalez1@hotmail.es", "$2a$10$dNnl8/WRtbAecYjVB6y3rOlI1cL.x/xiiS8RMwaO85sVu.JArmc3S", default, default, default, true, default, default)
 ;
 
 
-DROP TABLE IF EXISTS jumpstore.payment;
+DROP TABLE IF EXISTS jumpstore.payments;
 
-CREATE TABLE jumpstore.payment (
+CREATE TABLE jumpstore.payments (
 	ID INT(10) NOT NULL AUTO_INCREMENT,
 	userID INT(10) NOT null,
-	name varchar(20) NOT NULL,
-	expiry varchar(50) NOT NULL,
-	number int(10) NOT NULL,
+	name varchar(50) NOT NULL,
+	expiry varchar(7) NOT NULL,
+	card varchar(16) not null,
 	dni int(10) not null,
 	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
 	updatedAt timestamp NULL DEFAULT NULL,
@@ -191,17 +194,20 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 
+insert into jumpstore.payments
+values (default, 1, "Martin Vazquez", "09/2023", "11231231010", 45177637, default, default )
+;
 
-DROP TABLE IF EXISTS jumpstore.address;
 
-CREATE TABLE jumpstore.address (
+DROP TABLE IF EXISTS jumpstore.addresses;
+
+CREATE TABLE jumpstore.addresses (
 	ID INT(10) NOT NULL AUTO_INCREMENT,
 	userID INT(10) NOT null,
 	street varchar(100) NOT NULL,
 	city varchar(100) NOT NULL,
 	province varchar(100) NOT NULL,
 	postal_code int(10) NOT NULL,
-	number int(10) null DEFAULT NULL,
 	createdAt timestamp not NULL DEFAULT CURRENT_TIMESTAMP,
 	updatedAt timestamp NULL DEFAULT NULL,
 	CONSTRAINT address_pk PRIMARY KEY (ID),
@@ -212,6 +218,9 @@ DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 
 
+insert into jumpstore.addresses
+values (default, 1, "calle 123", "Chascomus", "Buenos Aires", 7130, default, default )
+;
 
 
 DROP TABLE IF EXISTS jumpstore.userProducts;
