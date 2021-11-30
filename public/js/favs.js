@@ -176,6 +176,8 @@ window.addEventListener("load", () => {
 
     });
 
+  } else {
+    app.innerHTML = `<p> No tienes absolutamente nada en favoritos, ¡ve a la <a href="/sneakers/OrderByReleaseDateASC"> tienda! </a> </p>`;
   }
 
 
