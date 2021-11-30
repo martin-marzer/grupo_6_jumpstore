@@ -42,7 +42,7 @@ window.addEventListener("load", () => {
     const app = document.querySelector(".products-container");
 
     let str = localStorage.getItem(`id${getUserID}`);
-    console.log(str);
+    // console.log(str);
 
     const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -130,7 +130,6 @@ window.addEventListener("load", () => {
 
                     app.appendChild(div)
                     let star = div.children[1].children[0]
-                    console.log(star);
 
 
 
@@ -177,7 +176,7 @@ window.addEventListener("load", () => {
 
     } else {
         app.innerHTML =
-            `<p> No tienes absolutamente nada en favoritos, ¡ve a la <a href="/sneakers/OrderByReleaseDateASC"> tienda! </a> </p>`;
+            `<p> No tienes absolutamente nada en favoritos, ¡ve a la <a href="/sneakers/OrderByReleaseDateASC" style="text-decoration:underline;"> tienda</a>!</p>`;
     }
 
 

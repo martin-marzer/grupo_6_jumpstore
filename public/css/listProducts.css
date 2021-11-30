@@ -670,6 +670,9 @@ body {
         margin-right: 11px;
         height: 330px;
     }
+    .product-container .container-heart {
+        bottom: 85%;
+    }
     .img-container{
         height: 210px;
     }

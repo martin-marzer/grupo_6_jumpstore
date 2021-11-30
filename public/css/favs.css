@@ -31,7 +31,6 @@ body {
 }
 
 .product-container .container-heart {
-    z-index: 9999;
     position: absolute;
     bottom: 82%;
     right: 10px;
@@ -198,10 +197,11 @@ body {
 }
 @media (min-width:768px) {
     .products-container {
+        justify-content: center;
         margin-top: 30px;
     }
     .product-container{
-        max-width: 23%;
+        max-width: 21%;
         margin-right: 7px;
         margin-left: 7px;
         margin-bottom: 5%;
@@ -250,14 +250,13 @@ body {
 @media (max-width:991px) and (min-width:768px)  {
     .select-results-flex {
         border-bottom: 1px solid #cacaca;
-        padding: 30px 0px;
-        justify-content: space-between;
+        justify-content: center;
     }
 }
 
 @media (min-width:992px) {
     #jumpstore-page {
-        margin: 50px 0;
+        margin: 30px 0;
     }
     .results-container {
         display: flex;
@@ -314,14 +313,18 @@ body {
 
 @media (min-width:1200px) {
     .product-container {
+        max-width: 20%;
         margin-right: 11px;
         height: 330px;
     }
+    .product-container .container-heart {
+        bottom: 85%;
+     }
     .img-container{
         height: 210px;
     }
     .sneaker-name {
-        font-size: 17px;
+        font-size: 20px;
         height: 60px;
     }
     .price {
