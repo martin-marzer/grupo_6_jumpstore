@@ -457,12 +457,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .form-search input:-webkit-autofill:focus, 
     .form-search  input:-webkit-autofill:active
     {
-    -webkit-box-shadow: 0 0 0 30px #121212 inset !important;
-    box-shadow: 0 0 0 30px #121212 inset !important;
-    }
-    .form-search input:-webkit-autofill
-    {
-    -webkit-text-fill-color: rgb(255, 255, 255) !important;
+    -webkit-box-shadow: 0 0 0 100px #ffffff inset !important;
+    box-shadow: 0 0 0 100px #ffffff inset !important;
     }
 
     /* header */

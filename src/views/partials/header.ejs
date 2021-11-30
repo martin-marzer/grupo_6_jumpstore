@@ -39,7 +39,7 @@
                                 <div class="dropdown-content">
 
                                     <% if (locals.usuario) { %>
-                                        <a href="/profile">Mi perfil</a>
+                                        <a href="/profile" id="user" data-test=<%= usuario.id %>>Mi perfil</a>
                                         <a href="/logout" style="color: rgb(228, 44, 44);">Cerrar Sesión</a>
                                     <% } else  {%>
                                         <a href="/register">Registrarse</a>
