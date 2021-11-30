@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+
   //esto es para el selected cuando se selecciona te lleva a ese link, 
 // lo sacas (eso esta en el ejs seleccionado según su link) y te lleva al products (default) 
 document.getElementById('sort-order').onchange = function() {

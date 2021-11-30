@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const productsController = require("../controllers/productsController");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 
 //primero tiro la data para mostrar (carga el orden de los productos)
 router.get("/sneakers/:OrderBy", productsController.productsList);
+router.get("/favorites", authMiddleware, productsController.productsList);
 
 //aca llamo primero el metodo para que los link del detalle estes disponibles ( si lo pongo al final no funciona xd, por el proceso de rutas)
 router.get("/sneakers/detail/:id", productsController.productDetail);

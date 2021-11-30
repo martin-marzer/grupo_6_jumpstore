@@ -141,7 +141,7 @@
                                         selected
                                     <% } %>
 
-                                >Relevantes</option>
+                                >Más antiguas</option>
                                     <option value="OrderByReleaseDateDESC"
                                     <% if (order == "OrderByReleaseDateDESC" ) { %>
                                         selected
@@ -285,7 +285,6 @@
                         </div>
                         
                         <div class="products-container">
-                            <%#= articulos.indexOf(articulo) + 1 %>
                             
                             <% articulos.forEach(articulo => { %>
                                 <div class="product-container">
@@ -319,8 +318,13 @@
                                                     </div>                                             
                                                 </div>
                                             </div>
+
                                         </div>
                                     </a>
+                                        <div class="container-heart">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                    
                                 </div>  
                             <% }); %>
 
@@ -346,6 +350,12 @@
     </main>
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
+
+    <% if (locals.usuario) { %>
+        <script src="/js/listProductsFav.js"></script>
+    <% } else{ %>
+        <script src="/js/listProductsFavError.js"></script>
+    <% } %>
     <script src="/js/listProducts.js"></script>
 
 </body>

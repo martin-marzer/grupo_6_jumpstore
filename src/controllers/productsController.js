@@ -24,6 +24,9 @@ const controlador = {
                 let viewToRender;
                 if (url.includes("sneakers")) {
                     viewToRender = "listProducts"
+                } 
+                else if (url.includes("favorites")){
+                    viewToRender = "favs"
                 } else {
                     viewToRender = "ofertas"
                     allProducts = allProducts.filter(product => {

@@ -1,0 +1,336 @@
+/* el body chaval */
+body {
+    background-color: #f6f6f6;
+}
+
+#jumpstore-page a {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+.select-results-flex {
+    display: flex;
+    top: 1vw;
+}
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-container{
+    position: relative;
+    outline: 1px solid #7e7e7e;
+}
+.product-container .link-detail {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.product {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.product-container .container-heart {
+    z-index: 9999;
+    position: absolute;
+    bottom: 82%;
+    right: 10px;
+    background-color:rgb(255 255 255 / 50%);
+    border-radius: 50%;
+    width: 8vw;
+    text-align: center;
+    height: 8vw;
+}
+
+.product-container .container-heart i {
+    line-height: 8vw;
+    font-size: 5vw;
+}
+.product-container .container-heart i.fas {
+    color: #fe3636;
+}
+.sale {
+    background-color: rgb(65, 105, 225);
+    border-radius: 100%;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    height: 10vw;
+    width: 10vw;
+    text-align: center;
+    padding: 1.5vw 0vw;
+    font-size: 3vw;
+    font-weight: bold;
+    left: 3vw;
+    top: 3vw;
+    z-index: 1;
+}
+.info-product {
+    height: 100%;
+}
+.img-container {
+    height: 75%;
+}
+.img-product {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+.sneaker-name {
+    text-transform: capitalize;
+}
+.price {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.price p {
+    width: 50%;
+}
+.price p.oldPrice  {
+    font-size: 3vw;
+    text-decoration: line-through;
+}
+
+
+
+@media (max-width:599px) {
+    .products-container {
+        justify-content: space-between;
+    } 
+    .product-container {  
+        max-width: 48%;
+        margin-bottom: 10%;
+        background-color: #ffff;
+        width: 48%;
+    }
+    .sneaker-name {
+        font-size: 3.5vw;
+        height: 12vw;
+    }
+    .price {
+        font-size: 4vw;
+    }
+    .img-container {
+        height: 40vw;
+    }
+
+}
+@media (min-width:600px) {
+    .product-container {  
+        margin-right: 5px;
+        margin-left: 8px;
+        max-width: 31%;
+        margin-bottom: 6%;
+        background-color: #ffff;
+        width: 31%;
+    }
+    .product-container .container-heart {
+        width: 6vw;
+        height: 6vw;
+    }
+    .product-container .container-heart i {
+        line-height: 6vw;
+        font-size: 4vw;
+    }
+    .sale {
+        height: 7vw;
+        width: 7vw;
+        font-size: 1.8vw;
+        left: 2vw;
+        top: 2vw;
+    }
+    .sneaker-name {
+        font-size: 2.3vw;
+        height: 50px;
+    }
+    .price {
+        font-size: 3vw;
+    }
+    .price p.oldPrice  {
+        font-size: 2vw;
+    }
+    .select-results-flex {
+        top: 4vw;
+    }
+}
+@media (max-width:767px) {
+    body {
+        font-size: 3vw
+    }
+
+    .select-results-flex {
+        flex-direction: column;
+        position: -webkit-sticky;
+        position: sticky;
+        z-index: 99;
+        background-color: #f3f3f3;;
+        padding-bottom: 2vw;
+    }
+    .results-container {
+        order: -1;
+        text-align: center;
+        border-bottom: .5px solid #cacaca;
+        border-top: .5px solid #cacaca;
+        margin: 20px 0;
+    }
+
+    .product-container {
+        -webkit-box-shadow: 0px 0px 20px -5px #000000;
+        box-shadow: 0px 0px 15px -5px #000000;
+    }
+    .text {
+        margin-top: -12%;
+        padding: 0 4vw;
+    }
+    
+
+}
+@media (max-width:767px) and (min-width:600px) {
+    .img-container {
+        height: 30vw;
+    }
+    .price p {
+        width: 60%;
+    }
+    .price p.oldPrice {
+        width: 40%;
+    }
+}
+@media (min-width:768px) {
+    .products-container {
+        margin-top: 30px;
+    }
+    .product-container{
+        max-width: 23%;
+        margin-right: 7px;
+        margin-left: 7px;
+        margin-bottom: 5%;
+        height: 250px;
+        width: 100%;
+    }
+    .product-container .container-heart {
+        width: 4vw;
+        height: 4vw;
+    }
+    .product-container .container-heart i {
+        line-height: 4vw;
+        font-size: 2vw;
+    }
+    .sale {
+        height: 40px;
+        width: 40px;
+        padding: 9px 10px;
+        font-size: 11px;
+        left: 15px;
+        top: 15px;
+    }    
+    .product-container:hover {
+        -webkit-box-shadow: 0px 0px 20px -5px #000000;
+        box-shadow: 0px 0px 20px -5px #000000;
+    }
+    .img-container{
+        height: 150px;
+    }
+    .text {
+        margin-top: -12%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .sneaker-name {
+        font-size: 13px;
+    }
+    .price {
+        font-size: 17px;
+    }
+    .price p.oldPrice  {
+        font-size: 13px;
+    }
+
+}
+@media (max-width:991px) and (min-width:768px)  {
+    .select-results-flex {
+        border-bottom: 1px solid #cacaca;
+        padding: 30px 0px;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width:992px) {
+    #jumpstore-page {
+        margin: 50px 0;
+    }
+    .results-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        border-bottom: 1px solid #cacaca;
+        padding-bottom: 15px;
+    }
+    .results-container p {
+        margin: 0;
+    }
+    .products-filter {
+        display: flex;
+    }
+    .products-container {
+        width: 100%;
+    }
+    .product-container {
+        margin-right: 7px;
+        margin-left: 7px;
+        height: 270px;
+    }
+    .product-container .container-heart {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
+    .product-container .container-heart i {
+        line-height: 35px;
+        font-size: 20px;
+    }
+    .sale {
+        height: 50px;
+        width: 50px;
+        padding: 8px 10px;
+        font-size: 14px;
+        left: 15px;
+        top: 15px;
+    }
+    .img-container{
+        height: 180px;
+    }  
+    .product:hover .img-container img {
+        opacity: 0.5;
+    }
+    .img-container img {
+        transition: opacity 0.25s ease-out;
+    }
+    .text {
+        margin: -16% 10px 0 10px;
+    }
+}
+
+@media (min-width:1200px) {
+    .product-container {
+        margin-right: 11px;
+        height: 330px;
+    }
+    .img-container{
+        height: 210px;
+    }
+    .sneaker-name {
+        font-size: 17px;
+        height: 60px;
+    }
+    .price {
+        font-size: 22px;
+    }
+    .price p.oldPrice  {
+        font-size: 16px;
+    }
+    .filter-scroll {
+        overflow-y: scroll;
+    }
+}
