@@ -65,6 +65,9 @@ $('.btn-menu').click(function(){
     else if (urlArraySelected.length >= 2 && urlArraySelected.includes("ofertas")) {
       links[2].classList.add("selected")
     }
+    else if (urlArraySelected.length >= 2 && urlArraySelected.includes("favorites")) {
+      links[3].classList.add("selected")
+    }
   }
   linksFunc()
 }

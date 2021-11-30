@@ -1,4 +1,87 @@
 window.addEventListener("load", () => {
+
+  let currentUrl = window.location.href
+  let currentID = currentUrl.split("/")[5]
+  console.log(currentID);
+
+  let agregarFav = (id) => {
+
+    let datos = localStorage.getItem(`id${currentID}`);
+    if (datos !== null) {
+        let arr = datos.split(',');
+        arr.push(id);
+        localStorage.setItem(`id${currentID}`, arr);
+
+    } else {
+        localStorage.setItem(`id${currentID}`, id);
+    }
+
+}
+
+
+let quitarFav = (id) => {
+
+    let datos = localStorage.getItem(`id${currentID}`);
+    if (datos !== null) {
+        let arr = datos.split(',');
+
+        arr = arr.filter(i => {
+            return i != id
+        })
+        localStorage.setItem(`id${currentID}`, arr);
+
+        if (arr.length == 0) {
+            localStorage.removeItem(`id${currentID}`);
+        }
+
+    } else {
+        localStorage.removeItem(`id${currentID}`);
+    }
+
+}
+
+const star = document.querySelector("i.far.fa-heart");
+// console.log(star);
+
+let starSelect = (id) => {
+    let datos = localStorage.getItem(`id${currentID}`);
+    if (datos != null) {
+        let arr = datos.split(',');
+        if (arr.includes(id.toString())) {
+            star.classList.add("fas")
+            star.classList.remove("far")
+            star.style.color = "#f32929"
+        }
+    }
+}
+
+starSelect(currentID)
+
+star.addEventListener("click", (e) => {
+
+    e.preventDefault()
+    if (star.classList.value.indexOf("far") != -1) {
+        star.classList.add("fas")
+        star.classList.remove("far")
+        star.style.color = "#f32929"
+        star.onclick = agregarFav(currentID)
+
+
+        console.log(localStorage.getItem(`id${currentID}`));
+
+    } else {
+        star.classList.remove("fas")
+        star.classList.add("far")
+        star.style.color = "#050000"
+        star.onclick = quitarFav(currentID)
+
+        console.log(localStorage.getItem(`id${currentID}`));
+    }
+
+})
+
+
+
   let modalDescription = () => {
 // Get the modal
 let modal = document.getElementsByClassName("data");
@@ -56,10 +139,10 @@ for (let i = 0; i < modal.length; i++) {
   let form = document.querySelector("#form-desktop");
 
 
-  form.addEventListener("submit", (e) => {
+  // form.addEventListener("submit", (e) => {
     
-      e.preventDefault()
-  })
+  //     e.preventDefault()
+  // })
 
   //  [ "load", "change", "submit"].forEach((e) => {
   //   form.addEventListener(e, () => {

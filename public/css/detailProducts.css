@@ -135,9 +135,6 @@ body {
 .field.login button:hover  {
     background-color: #3f3f41;
 }
-.field.fav button:hover  {
-    color: #f32929;
-}
 .product-details {
     position: relative;
 }
