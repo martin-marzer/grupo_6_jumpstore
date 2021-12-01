@@ -1,71 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Carrito</title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/carrito.css">
 </head>
+
 <body>
     <%- include("./partials/header") %>
     <%- include("./partials/menuMobile") %>
     <main>
-            <div class="container">
-                <div class="products-resume">
+        <div class="container">
+            <div class="products-resume">
 
-                    <div class="col-products">
-                        <div class="title-help">
-                            <div class="title">
-                                <p>Mi Carrito</p>
-                                <p></p>
-                            </div>
-                            <div class="help">
-                                <a href="/sneakers/OrderByReleaseDateASC">Seguir Comprando</a>
-                                <p>¿Necesitás ayuda? <strong>0800-Don-Rouch</strong></p>
-                            </div>
+                <div class="col-products">
+                    <div class="title-help">
+                        <div class="title">
+                            <p>Mi Carrito</p>
+                            <p></p>
                         </div>
-                        <div class="products-container">
-                            
+                        <div class="help">
+                            <a href="/sneakers/OrderByReleaseDateASC">Seguir Comprando</a>
+                            <p>¿Necesitás ayuda? <strong>0800-Don-Rouch</strong></p>
                         </div>
                     </div>
-                    <div class="col-resume">
-                        <!-- cart resume -->
-                        
-                    <div class="resume">
-                    
-                    <h3>Resumen</h3>
-                    
-                    <table class="table cart-resume">
-                        <tbody>
-                            <tr>
-                                <td><strong>Subtotal:</strong></td>
-                                <td class="text-right"><span class="currency">$0.00</span></td>
-                            </tr>
-                                            <tr>
-                                <td>
-                                    <strong>Costo de envío:</strong>
-                                                    <br>
-                                    <span class="text-muted"><small>Se calculará durante el proceso de pago.</small></span>
-                                                </td>
-                                <td class="text-right">
-                                                    <span class="currency"><span class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span class="amount"><span class="integer">0</span><span class="comma">,</span><span class="decimal">00</span></span></span>							</td>
-                            </tr>
-                            <tr>
-                                <td class="lead">Total:</td>
-                                <td class="lead text-right"><span class="currency"><span class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span class="amount"><span class="integer">0</span><span class="comma">,</span><span class="decimal">00</span></span></span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="pago">
-                        <a href="#0" id="ConfirmOrder" class="btn btn-primary btn-lg btn-block" disabled="disabled">Comprar</a>
-                    </div>
-                    
-                    </div>
-    
-                        <!-- /cart resume -->
+                    <div class="products-container">
+
                     </div>
                 </div>
+                <div class="col-resume">
+                    <!-- cart resume -->
 
+                    <div class="resume">
+
+                        <h3>Resumen</h3>
+
+                        <table class="table cart-resume">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Subtotal:</strong></td>
+                                    <td class="text-right sub"><span class="currency">$0.00</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Costo de envío:</strong>
+                                        <br>
+                                        <span class="text-muted"><small>Se calculará durante el proceso de
+                                                pago.</small></span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="currency"><span
+                                                class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span
+                                                class="amount"><span class="integer">0</span><span
+                                                    class="comma">,</span><span class="decimal">00</span></span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="lead">Total:</td>
+                                    <td class="lead text-right total"><span class="currency">$0.00</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pago">
+                            <a href="#0" id="ConfirmOrder" class="btn btn-primary btn-lg btn-block"
+                                disabled="disabled">Comprar</a>
+                        </div>
+
+                    </div>
+
+                    <!-- /cart resume -->
+                </div>
             </div>
+
+        </div>
     </main>
 
     <%- include("./partials/footer") %>
@@ -73,4 +82,5 @@
     <script src="/js/carrito.js"></script>
 
 </body>
+
 </html>

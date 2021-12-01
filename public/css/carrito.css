@@ -210,8 +210,14 @@ td {
     .shopping-product {
         justify-content: space-between;
     }
-    .talle-edit, .precio-cantidad {
-        width: 50%;
+    .talle-edit {
+        width: 40%;
+    }
+    .precio-cantidad {
+        width: 60%;
+    }
+    .cantidad-precio-item {
+        width: 55%;
     }
     .products-resume {
         display: flex;
@@ -242,10 +248,21 @@ td {
     }
 }
 @media (min-width: 992px) {
-    .talle-edit, .precio-cantidad {
-        width: 40%;
+    .precio-cantidad {
+        width: 50%;
+    }
+    .cantidad-precio-item {
+        width: 50%;
     }
     .trash-icon {
         cursor: pointer;
+    }
+}
+@media (min-width: 1200px) {
+    .precio-cantidad {
+        width: 40%;
+    }
+    .cantidad-precio-item {
+        width: 50%;
     }
 }
