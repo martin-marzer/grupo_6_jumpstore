@@ -19,7 +19,6 @@ btn.on('click', function(e) {
 
 let urlArraySelected = window.location.pathname.split("/");
 let links = document.querySelectorAll(".row-jumpstore ul li a")
-let linksMobile = document.querySelectorAll(".overlay-content .links li a")
 
 
 // acordion del footer y descrip detail product
@@ -71,6 +70,17 @@ $('.btn-menu').click(function(){
   }
   linksFunc()
 }
+
+  let datos = localStorage.getItem(`idCart`);
+
+  let cartButton = document.querySelector("#jumpstore-cart")
+  let cartItems = document.querySelector("#jumpstore-cart div p")
+  if (datos != null) {
+    let arr = datos.split(',');
+    cartItems.textContent = arr.length
+  } else {
+    cartItems.textContent = "0"
+  }
 
 
 })

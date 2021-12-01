@@ -60,54 +60,56 @@
                             
                         </div>
                         <div id="description-product">
-                            <form id="form-desktop" action="/carrito" method="GET">
-                                <div class="product-title">
-                                    <h1><%= articuloID.name %></h1>
-                                </div>
-                                <div class="product-price">
-                                    <% if (articuloID.discount != 0) { %>
-                                        <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discount / 100)) %></p>
-                                        <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
-                                    <% } else {%>
-                                        <p>$<%= toThousand(articuloID.price) %></p>
-    
-                                    <% } %>
-                                </div>
-                                <div class="product-cuotas">
-                                    <p>Ver cuotas</p>
-                                </div>
-                                <div class="product-talle">
-                                    <section class="form-talle">
-                                        <select name="talle" id="talle">
-                                            <option value="" disabled selected>Selecciona un talle</option>
-                                            <option value="35-40">35-40</option>>
-                                            <option value="40-45">40-45</option>                 
-                                        </select>
-                                    </section>
-                                </div>
-                        
-                                <div class="product-carrito">
-                                    <div class="field login">
-                                            <button type="submit">
-                                             <p>Agregar al Carrito</p>
-                                            </button>
-                                    </div>
-                                    <div class="field fav">
-                                        <button type="button">
-                                            <i class="far fa-heart"></i>
-                                        </button>
-                                    </div>    
-                                </div>
-                        
-                                <div class="product-details">
-                                    <h3>Descripción</h3>
-                                    <button class="jumpstore-arrow" type="button"><i class="fas fa-angle-down"></i></button>
-                                    <div class="panel">
-                                        <p><%= articuloID.description %></p>
-                                    </div>
-                                </div>
-                            </form>
 
+                            <div class="product-title">
+                                <h1><%= articuloID.name %></h1>
+                            </div>
+                            <div class="product-price">
+                                <% if (articuloID.discount != 0) { %>
+                                    <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discount / 100)) %></p>
+                                    <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
+                                <% } else {%>
+                                    <p>$<%= toThousand(articuloID.price) %></p>
+
+                                <% } %>
+                            </div>
+                            <div class="product-text-talle">
+                                <p>Elegi un talle para poder comprar</p>
+                            </div>
+
+                            <div class="product-talle">
+                                <section class="form-talle">
+                                    <select name="talle" id="talle">
+                                        <option value="" disabled selected>Selecciona un talle</option>
+
+                                        <%# console.log(articuloID.sizes) %> 
+                                        <% articuloID.sizes.forEach(size => { %>
+                                            <option value= "<%= size.name %>" > <%= size.name %> </option>
+                                        <% }) %>
+                                    </select>
+                                </section>
+                            </div>
+                    
+                            <div class="product-carrito">
+                                <div class="field login">
+                                        <button type="button" disabled>
+                                            <p>Agregar al Carrito</p>
+                                        </button>
+                                </div>
+                                <div class="field fav">
+                                    <button type="button">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>    
+                            </div>
+                    
+                            <div class="product-details">
+                                <h3>Descripción</h3>
+                                <button class="jumpstore-arrow" type="button"><i class="fas fa-angle-down"></i></button>
+                                <div class="panel">
+                                    <p><%= articuloID.description %></p>
+                                </div>
+                            </div>
                             
                         </div>
                     </div>
@@ -328,7 +330,18 @@
     </main>
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
-      
+      <% if (locals.usuario) { %>
+        <script src="/js/detailProductsFav.js"></script>
+      <% } else { %>
+        <script>
+              const star = document.querySelector("i.far.fa-heart");
+              star.addEventListener("click", (e) => {
+                e.preventDefault()
+                alert("Debes loguearte")
+                window.location.href = "/login"
+              })
+        </script>
+    <% } %>
     <script src="/js/detailProducts.js"></script>
     <script src="/js/detailProductsSlider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>

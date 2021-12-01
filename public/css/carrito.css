@@ -72,7 +72,10 @@ p.precio-zapas {
 .shopping-product, .talle-edit a {
     color: #212529;
 }
-
+.shopping-product, .talle-edit {
+    display: flex;
+    align-items: center;
+}
 .precio-cantidad {
     justify-content: space-between;
 }
@@ -241,5 +244,8 @@ td {
 @media (min-width: 992px) {
     .talle-edit, .precio-cantidad {
         width: 40%;
+    }
+    .trash-icon {
+        cursor: pointer;
     }
 }

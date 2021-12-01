@@ -135,6 +135,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #jumpstore-user:hover .dropdown-content {
     display: block;
 }
+#jumpstore-cart {
+    position: relative;
+} 
+#jumpstore-cart button div {
+    border-radius: 50%;
+    background-color: rgb(196, 196, 196);
+    position: absolute;
+    top: 0;
+    right: 0.5vw;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
+    font-weight: 900;
+}
+
+#jumpstore-cart button div p {
+    margin: 0;
+    line-height: 3.4vw;
+    font-size: 2.6vw;
+}
 .dropdown-content a {
     color: rgb(0, 0, 0);
     padding: 10px 12px;
@@ -541,6 +561,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
 }
 @media (min-width:600px) {
+    #jumpstore-cart button div {
+        top: 0;
+        right: 0;
+        width: 4vw;
+        height: 4vw;
+    }
+    #jumpstore-cart button div p {
+        line-height: 4vw;
+        font-size: 2.8vw;
+    }
+
+
+
     a, button, input[type="submit"], input[type="button"], .btn, a:before, a:after {
     cursor: pointer;
     -webkit-transition: 0.3s all;
@@ -607,6 +640,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
     }
     
+    #jumpstore-cart button div {
+        top: 0;
+        right: 0;
+        width: 2vw;
+        height: 2vw;
+    }
+    #jumpstore-cart button div p {
+        line-height: 1.8vw;
+        font-size: 1.5vw;
+    }
+
     #jumpstore-cart button, #jumpstore-user button, #jumpstore-admin button{
         font-size: 30px;
     }
@@ -680,6 +724,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search{
         margin: 0 3% 0 21%;
     }
+    #jumpstore-cart button div {
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 20px;
+    }
+    #jumpstore-cart button div p {
+        line-height: 18px;
+        font-size: 15px;
+    }
+
         /* nav */
     #jumpstore-navbar a{
         padding: 10px 45px;
@@ -699,6 +754,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #jumpstore-search{
         margin: 0 5% 0 41%;
     }
+    #jumpstore-cart button div{
+        top: -8px;
+        right: -6px;
+        width: 28px;
+        height: 28px;
+    } 
+    #jumpstore-cart button div p {
+        line-height: 26px;
+        font-size: 18px;
+    }
+
          /* nav */
     #jumpstore-navbar a{
         padding: 20px 65px;

@@ -16,7 +16,7 @@
                         <div class="title-help">
                             <div class="title">
                                 <p>Mi Carrito</p>
-                                <p>1 Producto</p>
+                                <p></p>
                             </div>
                             <div class="help">
                                 <a href="/sneakers/OrderByReleaseDateASC">Seguir Comprando</a>
@@ -24,48 +24,6 @@
                             </div>
                         </div>
                         <div class="products-container">
-                            <div class="product">
-                                <div class="img-product">
-                                    <img src="../images/zapatillas/jorda-jbalbin.jpeg">
-                                </div>
-                                <div class="info-product">
-                                    <div class="up-info">
-                                        <div class="text-product">
-                                            <div class="name">
-                                                <p>Jordan 1 Retro High J Balvin</p>
-                                            </div>
-                                            <div class="trash-icon">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="down-info">
-                                        <div class="img-product-mobile">
-                                            <img src="../images/zapatillas/jorda-jbalbin.jpeg">
-                                        </div>
-                                        <div class="shopping-product">
-                                            <div class="talle-edit">
-                                                <p class="talle">Talle 40</p>
-                                                <a href="/">Editar Producto</a>
-                                            </div>
-                                            <div class="precio-cantidad">
-                                                <div class="cantidad-selector">
-                                                    <p>Cantidad</p>
-                                                    <select name="select" class="selector-cantidad">
-                                                        <% for( let i = 1; i <= 10; i++ ) { %>
-                                                            <option value="value-<%= i %>"><%= i %> </option>
-                                                        <% } %> 
-                                                    </select>
-                                                </div>
-                                                <div class="cantidad-precio-item">
-                                                    <p class="total-precio">Total</p>
-                                                    <p class="precio-zapas">$20000</p> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             
                         </div>
                     </div>
@@ -80,7 +38,7 @@
                         <tbody>
                             <tr>
                                 <td><strong>Subtotal:</strong></td>
-                                <td class="text-right"><span class="currency"><span class="currency-symbol-ars currency-symbol currency-symbol-left">$</span><span class="amount"><span class="integer">0</span><span class="comma">,</span><span class="decimal">00</span></span></span></td>
+                                <td class="text-right"><span class="currency">$0.00</span></td>
                             </tr>
                                             <tr>
                                 <td>
@@ -112,6 +70,7 @@
 
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
+    <script src="/js/carrito.js"></script>
 
 </body>
 </html>
