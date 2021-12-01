@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 function ContentMain() {
   const [infodataBase, setInfoDataBase] = useState({ products: [] })
   const [infoDataBaseUser, setInfoDataBaseUser] = useState({ users: [] });
-
   useEffect(() => {
     fetch('http://localhost:3030/api/products')
       .then(response => {
@@ -34,7 +33,7 @@ function ContentMain() {
       </article>
       <article className="article_content_2">
         <a href="/administrator/users"></a>
-        <section className="section_number_3">{infodataBase.count} categorias</section>
+        <section className="section_number_3">4 categorias</section>
         <i className='bx bx-chat'></i>
         <section className="section_link"><p>Ver más</p></section>
       </article>
@@ -46,7 +45,7 @@ function ContentMain() {
       </article>
       <article className="article_content_2">
         <a href="/administrator/products"></a>
-        <section className="section_number_3">Ultimo producto creado: {infodataBase.data}</section>
+        <section className="section_number_3">Ultimo producto creado: {infodataBase.products.name}</section>
         <section className="section_link"><p>Ver más</p></section>
       </article>
       <article className="article_content_3">

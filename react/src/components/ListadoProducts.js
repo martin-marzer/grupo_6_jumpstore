@@ -43,7 +43,7 @@ function ListadoProducts(props){
                     <td>{products.name}</td>
                     <td>  <img src={products.img} />
                     </td>
-                    <td>{products.id}</td>
+                    <td>{products.price}</td>
               </tr>
             </tbody>
                )
