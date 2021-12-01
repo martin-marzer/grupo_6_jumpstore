@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/css/administrator.css"
 import "../assets/css/administratorToolsProducts.css"
 import "../assets/js/administrator.js"
+import "../assets/css/listProducts.css"
 import Main from "./Main.js"
 import Sliderbar from './Sliderbar';
 
