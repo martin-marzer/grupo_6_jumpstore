@@ -26,25 +26,25 @@ function ContentMain() {
   return (
     <div className="home">
       <article className="article_content_1">
-        <a href="/administrator/users"></a>
+        <a href="/http://localhost:3030/administrator/users"></a>
         <section className="section_number_1">{infoDataBaseUser.count} usuarios</section>
         <i className='bx bx-user'></i>
         <section className="section_link"><p>Ver más</p></section>
       </article>
       <article className="article_content_2">
-        <a href="/administrator/users"></a>
+        <a href="/http://localhost:3030/administrator/users"></a>
         <section className="section_number_3">4 categorias</section>
         <i className='bx bx-chat'></i>
         <section className="section_link"><p>Ver más</p></section>
       </article>
       <article className="article_content_3">
-        <a href="/administrator/products"></a>
+        <a href="http://localhost:3030/administrator/products"></a>
         <section className="section_number_3">{infodataBase.count} productos</section>
         <i className='bx bx-closet'></i>
         <section className="section_link"><p>Ver más</p></section>
       </article>
       <article className="article_content_2">
-        <a href="/administrator/products"></a>
+        <a href="http://localhost:3030/administrator/products"></a>
         <section className="section_number_3">Ultimo producto creado: {infodataBase.products.name}</section>
         <section className="section_link"><p>Ver más</p></section>
       </article>

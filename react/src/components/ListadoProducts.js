@@ -41,7 +41,7 @@ function ListadoProducts(props){
             <tbody>
                 <tr dhref="/sneakers/detail/">
                     <td>{products.name}</td>
-                    <td>  <img src={products.img} />
+                    <td>  <img src= {`../assets/images/zapatillas/${products.img}`}/>
                     </td>
                     <td>{products.price}</td>
               </tr>
