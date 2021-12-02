@@ -35,7 +35,7 @@ window.addEventListener("load", () => {
     fechaValue.valueAsDate = today
   }
 
-  let buttonToDelete = document.getElementById("delete-button")
+  let buttonToDelete = document.getElementById("reset-button")
   buttonToDelete.addEventListener("click", () => {
     let inputs = document.querySelectorAll("form input")
     let textA = document.querySelector("form textarea")

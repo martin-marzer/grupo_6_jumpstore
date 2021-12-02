@@ -18,9 +18,29 @@ window.addEventListener("load", () => {
         descuento: false,
         stock: false,
     }
-
+    const validarFormularioLoad = (input) => {
+         switch (input.name) {
+             case "name":
+                 validarCampo(input, 'name');
+                 break;
+             case "precio":
+                 validarCampo(input, 'precio');
+                 break;
+             case "descuento":
+                 validarCampo(input, 'descuento');
+                 break;
+             case "stock":
+                 validarCampo(input, 'stock');
+                 break;
+             case "descripcion":
+                 validarCampo(input, 'desc');
+                 break;
+         }
+ 
+     }
 
     const validarFormulario = (e) => {
+       console.log(e);
         switch (e.target.name) {
             case "name":
                 validarCampo(e.target, 'name');
@@ -40,7 +60,6 @@ window.addEventListener("load", () => {
         }
 
     }
-
 
 
     const validarCampo = (input, campo) => {
@@ -68,14 +87,22 @@ window.addEventListener("load", () => {
     }
 
     inputs.forEach((input) => {
-        input.addEventListener('keyup', validarFormulario);
+        validarFormularioLoad(input);
+    });
+    validarFormularioLoad(textarea)
+
+    inputs.forEach((input) => {
+        input.addEventListener('load', validarFormulario);
         input.addEventListener('blur', validarFormulario);
     });
+
+
 
     textarea.addEventListener('keyup', validarFormulario);
     textarea.addEventListener('blur', validarFormulario);
 
     form.addEventListener('submit', (e) => {
+        console.log(campos);
         if (!(campos.name && campos.desc && campos.precio && campos.descuento && campos.stock)) {
             e.preventDefault();
         }
