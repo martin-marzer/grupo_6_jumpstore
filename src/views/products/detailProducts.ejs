@@ -83,7 +83,7 @@
                             <div class="product-talle">
                                 <section class="form-talle">
                                     <select name="talle" id="talle">
-                                        <option value="" disabled selected>Selecciona un talle</option>
+                                        <option value="">Selecciona un talle</option>
 
                                         <%# console.log(articuloID.sizes) %>
                                         <% articuloID.sizes.forEach(size => { %>
@@ -354,39 +354,9 @@
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
     <% if (locals.usuario) { %>
-    <script src="/js/detailProductsFav.js"></script>
+        <script src="/js/detailProductsFav.js"></script>
     <% } else { %>
-    <script>
-        const app = document.querySelector("main")
-        const star = document.querySelector("i.far.fa-heart");
-
-
-        const modalCont = document.createElement("div")
-        modalCont.classList.add("data-fav")
-
-
-        const showHideModal = (modal, close, modalChau) => {
-            if (modal.style.display = "block") {
-                close.addEventListener("click", () => {
-                    modal.style.display = "none";
-                })
-                document.addEventListener('mouseup', function (e) {
-                    if (!modalChau.contains(e.target)) {
-                        modal.style.display = 'none';
-                    }
-                });
-
-            }
-        }
-        star.addEventListener("click", (e) => {
-            e.preventDefault()
-            let modalFav = document.querySelector(".data-fav");
-            let closeFav = document.querySelector(".data-fav .container-close .close");
-            let modalChauFav = document.querySelector(".data-fav .myModal .modal-content");
-
-            showHideModal(modalFav, closeFav, modalChauFav)
-        })
-    </script>
+         <script src="/js/detailProductsFavError.js"></script>
     <% } %>
     <script src="/js/detailProducts.js"></script>
     <script src="/js/detailProductsSlider.js"></script>

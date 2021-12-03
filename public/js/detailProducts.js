@@ -128,24 +128,48 @@ window.addEventListener("load", () => {
   }
 
 
-  let agregarProduct = (id) => {
+  let getUserID = document.querySelector(".dropdown-content #user");
 
-    let datos = localStorage.getItem(`idCart`);
-    if (datos !== null) {
-      let arr = datos.split(',');
-      arr.push(id);
-      localStorage.setItem(`idCart`, arr);
-
-    } else {
-      localStorage.setItem(`idCart`, id);
+  let agregarCart;
+  let datos;
+  let arr;
+  if (getUserID) {
+    let userID = getUserID.dataset.test;
+    agregarCart = (id) => {
+      datos = localStorage.getItem(`idCart-${userID}`);
+      if (datos !== null) {
+        arr = datos.split(',');
+        arr.push(id);
+        localStorage.setItem(`idCart-${userID}`, arr);
+  
+      } else {
+        localStorage.setItem(`idCart-${userID}`, id);
+      }
     }
 
+  } else {
+    agregarCart = (id) => {
+      datos = localStorage.getItem(`idCart`);
+      if (datos !== null) {
+        arr = datos.split(',');
+        arr.push(id);
+        localStorage.setItem(`idCart`, arr);
+  
+      } else {
+        localStorage.setItem(`idCart`, id);
+      }
+    }
   }
+
+
 
   const selectedEmpty = () => {
     if (selectTalle.value != "") {
       talleText.style.display = "none"
       buttonSubmit.style.backgroundColor = "rgb(0, 0, 0)"
+    } else {
+      talleText.style.display = "block"
+      buttonSubmit.style.backgroundColor = "rgb(0, 0, 0, 0.2)"
     }
   }
 
@@ -157,11 +181,20 @@ window.addEventListener("load", () => {
   })
 
   buttonSubmit.addEventListener("click", (e) => {
-    let datos = localStorage.getItem(`idCart`);
+    let datos;
+
+    if (getUserID) {
+      let userID = getUserID.dataset.test;
+      datos = localStorage.getItem(`idCart-${userID}`)
+    } else {
+      datos = localStorage.getItem(`idCart`)
+    }
+
+
     if (selectTalle.value != "") {
 
       if (datos == null) {
-        buttonSubmit.onclick = agregarProduct(currentID)
+        buttonSubmit.onclick = agregarCart(currentID)
         window.location = window.location
 
       } else {
@@ -169,7 +202,7 @@ window.addEventListener("load", () => {
         if (datos.search(",") != -1) {
           arr = datos.split(',');
           if (!arr.includes(currentID)) {
-            buttonSubmit.onclick = agregarProduct(currentID)
+            buttonSubmit.onclick = agregarCart(currentID)
             window.location = window.location
           } else {
             errorMessageCart("El producto ya esta en la lista (arr)", modalCart, closeCart, modalChauCart)
@@ -177,7 +210,7 @@ window.addEventListener("load", () => {
 
         } else {
           if (datos != currentID) {
-            buttonSubmit.onclick = agregarProduct(currentID)
+            buttonSubmit.onclick = agregarCart(currentID)
             window.location = window.location
           } else {
             errorMessageCart("El producto ya esta en la lista", modalCart, closeCart, modalChauCart)

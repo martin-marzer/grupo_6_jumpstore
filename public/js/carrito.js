@@ -1,35 +1,63 @@
 window.addEventListener("load", () => {
     // let getUserID = document.querySelector(".dropdown-content #user").dataset.test;
-    let quitarFav = (id) => {
+    const app = document.querySelector(".products-container");
 
-        let datos = localStorage.getItem(`idCart`);
-        if (datos !== null) {
-            let arr = datos.split(',');
 
-            arr = arr.filter(i => {
-                return i != id
-            })
-            localStorage.setItem(`idCart`, arr);
+    let getUserID = document.querySelector(".dropdown-content #user");
 
-            if (arr.length == 0) {
-                localStorage.removeItem(`idCart`);
+    let quitarCart;
+    let datos;
+    let arr;
+    if (getUserID) {
+        let userID = getUserID.dataset.test;
+        datos = localStorage.getItem(`idCart-${userID}`);
+        quitarCart = (id) => {
+           
+            if (datos !== null) {
+                arr = datos.split(',');
+
+                arr = arr.filter(i => {
+                    return i != id
+                })
+                localStorage.setItem(`idCart-${userID}`, arr);
+
+                if (arr.length == 0) {
+                    localStorage.removeItem(`idCart-${userID}`);
+                }
+                window.location = window.location
+
+            } else {
+                localStorage.removeItem(`idCart-${userID}`);
             }
-            window.location = window.location
-
-        } else {
-            localStorage.removeItem(`idCart`);
         }
 
+    } else {
+        datos = localStorage.getItem(`idCart`);
+        quitarCart = (id) => {
+            if (datos !== null) {
+                arr = datos.split(',');
+
+                arr = arr.filter(i => {
+                    return i != id
+                })
+                localStorage.setItem(`idCart`, arr);
+
+                if (arr.length == 0) {
+                    localStorage.removeItem(`idCart`);
+                }
+                window.location = window.location
+
+            } else {
+                localStorage.removeItem(`idCart`);
+            }
+
+        }
     }
 
+    console.log(datos);
 
-    const app = document.querySelector(".products-container");
-    let str = localStorage.getItem(`idCart`);
-    // console.log(str);
-
-
-    if (str != null) {
-        let arr = str.split(',');
+    if (datos != null) {
+        let arr = datos.split(',');
         let productsCart = [...new Set(arr)]
 
         fetch(`api/products`)
@@ -163,7 +191,7 @@ window.addEventListener("load", () => {
                     trash.addEventListener("click", (e) => {
 
                         e.preventDefault()
-                        trash.onclick = quitarFav(product.id)
+                        trash.onclick = quitarCart(product.id)
 
                         console.log(localStorage.getItem("idCart"));
                     })
@@ -205,6 +233,7 @@ window.addEventListener("load", () => {
                     totalPrice.textContent = `$${multiply}`
                 }
 
+
                 const removeCantidad = (e) => {
                     // console.log(e);
                     let cantidad = e.path[2].children[1];
@@ -220,7 +249,6 @@ window.addEventListener("load", () => {
                         resumePrice()
                     }
                 }
-
 
                 const addCantidad = (e) => {
                     // console.log(e);
@@ -238,6 +266,7 @@ window.addEventListener("load", () => {
                     }
 
                 }
+
                 let productsShopping = [...document.querySelectorAll(".product")]
                 productsShopping.forEach(product => {
                     // let linkID = product.children[0].children[0].href.split("/")[5]
@@ -247,6 +276,43 @@ window.addEventListener("load", () => {
 
                     remove.addEventListener("click", removeCantidad)
                     add.addEventListener("click", addCantidad);
+
+                    let timer = 0,
+                        timerInterval;
+
+                    add.addEventListener("mousedown", (e) => {
+                        timerInterval = setInterval(() => {
+                            timer += 1;
+                            if (timer == 1) {
+                                addCantidad(e)
+                                timer = 0
+                            }
+
+                        }, 200);
+                    });
+
+                    add.addEventListener("mouseup", () => {
+                        clearInterval(timerInterval);
+                        timer = 0;
+                    });
+
+
+                    remove.addEventListener("mousedown", (e) => {
+                        timerInterval = setInterval(() => {
+                            timer += 1;
+                            if (timer == 1) {
+                                removeCantidad(e)
+                                timer = 0
+                            }
+
+                        }, 200);
+                    });
+
+                    remove.addEventListener("mouseup", () => {
+                        clearInterval(timerInterval);
+                        timer = 0;
+                    });
+
                 })
 
                 resumePrice()
