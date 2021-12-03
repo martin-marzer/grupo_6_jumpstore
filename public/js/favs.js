@@ -129,38 +129,38 @@ window.addEventListener("load", () => {
 
 
                     app.appendChild(div)
-                    let star = div.children[1].children[0]
+                    let fav = div.children[1].children[0]
 
 
 
-                    let starSelect = (id) => {
+                    let favSelect = (id) => {
                         let datos = localStorage.getItem(`id${getUserID}`);
                         if (datos != null) {
                             let arr = datos.split(',');
                             if (arr.includes(id.toString())) {
-                                star.classList.add("fas")
-                                star.classList.remove("far")
+                                fav.classList.add("fas")
+                                fav.classList.remove("far")
                             }
                         }
                     }
 
-                    starSelect(product.id)
+                    favSelect(product.id)
 
-                    star.addEventListener("click", (e) => {
+                    fav.addEventListener("click", (e) => {
 
                         e.preventDefault()
-                        if (star.classList.value.indexOf("far") != -1) {
-                            star.classList.add("fas")
-                            star.classList.remove("far")
-                            star.onclick = agregarFav(product.id)
+                        if (fav.classList.value.indexOf("far") != -1) {
+                            fav.classList.add("fas")
+                            fav.classList.remove("far")
+                            fav.onclick = agregarFav(product.id)
 
 
                             console.log(localStorage.getItem("id"));
 
                         } else {
-                            star.classList.remove("fas")
-                            star.classList.add("far")
-                            star.onclick = quitarFav(product.id)
+                            fav.classList.remove("fas")
+                            fav.classList.add("far")
+                            fav.onclick = quitarFav(product.id)
 
                             console.log(localStorage.getItem("id"));
                         }

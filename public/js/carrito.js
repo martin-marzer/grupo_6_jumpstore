@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
             window.location = window.location
 
         } else {
-            localStorage.removeItem(`id${getUserID}`);
+            localStorage.removeItem(`idCart`);
         }
 
     }
@@ -55,11 +55,11 @@ window.addEventListener("load", () => {
                 let filteredProducts = validProducts.filter(product => product != undefined)
 
                 filteredProducts.forEach(product => {
-                        let div = document.createElement("div")
-                        div.classList.add("product")
+                    let div = document.createElement("div")
+                    div.classList.add("product")
 
-                        if (product.discount == 0) {
-                            div.innerHTML = `
+                    if (product.discount == 0) {
+                        div.innerHTML = `
                         <div class="img-product">
                             <a href="/sneakers/detail/${product.id}">
                                 <img src="/images/zapatillas/${product.images[0].url}">
@@ -89,41 +89,23 @@ window.addEventListener("load", () => {
                                     <div class="precio-cantidad">
                                         <div class="cantidad-selector">
                                             <p>Cantidad</p>
-                                            <select name="select" class="selector-cantidad">
-                                                          
-                                              <option value="1">1 </option>
-                                          
-                                              <option value="2">2 </option>
-                                          
-                                              <option value="3">3 </option>
-                                          
-                                              <option value="4">4 </option>
-                                          
-                                              <option value="5">5 </option>
-                                          
-                                              <option value="6">6 </option>
-                                          
-                                              <option value="7">7 </option>
-                                          
-                                              <option value="8">8 </option>
-                                          
-                                              <option value="9">9 </option>
-                                          
-                                              <option value="10">10 </option>
-                                         
-                                          </select>
+                                            <div id="quantity">
+                                                <button id="less"><i class="fas fa-minus"></i></button>
+                                                <p>1</p>
+                                                <button id="add"><i class="fas fa-plus"></i></button>
+                                            </div>
                                         </div>
                                         <div class="cantidad-precio-item">
                                             <p class="total-precio">Total</p>
-                                            <p class="precio-zapas">$${product.price},00</p> 
+                                            <p class="precio-zapas">$${product.price}</p> 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>     
                       `;
-                        } else {
-                            div.innerHTML = `
+                    } else {
+                        div.innerHTML = `
                             <div class="img-product">
                             <a href="/sneakers/detail/${product.id}">
                                 <img src="/images/zapatillas/${product.images[0].url}">
@@ -153,92 +135,123 @@ window.addEventListener("load", () => {
                                     <div class="precio-cantidad">
                                         <div class="cantidad-selector">
                                             <p>Cantidad</p>
-                                            <select name="select" class="selector-cantidad">
-                                                          
-                                              <option value="1">1 </option>
-                                          
-                                              <option value="2">2 </option>
-                                          
-                                              <option value="3">3 </option>
-                                          
-                                              <option value="4">4 </option>
-                                          
-                                              <option value="5">5 </option>
-                                          
-                                              <option value="6">6 </option>
-                                          
-                                              <option value="7">7 </option>
-                                          
-                                              <option value="8">8 </option>
-                                          
-                                              <option value="9">9 </option>
-                                          
-                                              <option value="10">10 </option>
-                                         
-                                          </select>
+                                            <div id="quantity">
+                                                <button id="less"><i class="fas fa-minus"></i></button>
+                                                <p>1</p>
+                                                <button id="add"><i class="fas fa-plus"></i></button>
+                                            </div>
                                         </div>
                                         <div class="cantidad-precio-item">
                                             <p class="total-precio">Total</p>
-                                            <p class="precio-zapas">$${product.price - (product.price * product.discount / 100) },00</p> 
+                                            <p class="precio-zapas">$${product.price - (product.price * product.discount / 100)}</p> 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>     
                       `;
-                        }
-    
+                    }
 
-    
-                        app.appendChild(div)
-                        // console.log(div);
-                        let trash = div.children[1].children[0].children[0].children[1]
-                        // console.log(trash);
-    
-    
-                        trash.addEventListener("click", (e) => {
-    
-                            e.preventDefault()
-                            trash.onclick = quitarFav(product.id)
-    
-                            console.log(localStorage.getItem("idCart"));
-                        })
-                    
+
+
+                    app.appendChild(div)
+                    // console.log(div);
+                    let trash = div.children[1].children[0].children[0].children[1]
+                    // console.log(trash);
+
+
+                    trash.addEventListener("click", (e) => {
+
+                        e.preventDefault()
+                        trash.onclick = quitarFav(product.id)
+
+                        console.log(localStorage.getItem("idCart"));
+                    })
+
                 })
                 return products.products
             })
-            .then(() => {
-                    const addCantidad = (id) => {
-                        
-                    }
-                    let productsShopping = [... document.querySelectorAll(".product")]
-                    productsShopping.forEach(product => {
-                        let linkID = product.children[0].children[0].href.split("/")[5]
-                        
-                        let select = product.children[1].children[1].children[1].children[1].children[0].children[1]
-                        select.addEventListener("change", addCantidad(linkID))
-                        console.log(linkID);
+            .then((products) => {
+
+                const resumePrice = () => {
+                    let resumeSubTotal = document.querySelector(".text-right.sub .currency");
+                    let resumeTotal = document.querySelector(".text-right.total .currency");
+                    let allPrices = document.querySelectorAll(".precio-zapas")
+                    allPrices = [...allPrices].map(precio => {
+                        return parseInt(precio.textContent.split("$")[1])
+
                     })
+                    const reducer = (previousValue, currentValue) => previousValue + currentValue;
+                    let priceFinal = allPrices.reduce(reducer)
+                    resumeSubTotal.textContent = `$${priceFinal}`
+                    resumeTotal.textContent = `$${priceFinal}`
+                }
 
-                let resumeSubTotal = document.querySelector(".text-right.sub .currency");
-                let resumeTotal = document.querySelector(".text-right.total .currency");
-                let allPrices = document.querySelectorAll(".precio-zapas")
-                allPrices = [...allPrices].map(precio => {
-                    return  parseInt(precio.textContent.split("$")[1]) 
+                const productPrice = (e, cuantityNumber) => {
+                    let productID = e.path[8].children[0].children[0].href.split("/")[5];
+                    
+                    let product = products.find(product => product.id == productID );
+                    
 
+                    let totalPrice = e.path[4].children[1].children[1];
+                    let multiply;
+                    if (product.discount == 0) {
+                        multiply = parseInt(cuantityNumber.textContent)  * product.price
+                    } else {
+                        multiply = parseInt(cuantityNumber.textContent) * (product.price - (product.price * product.discount / 100))
+                    }
+                    // console.log(multiply);
+
+                    totalPrice.textContent = `$${multiply}`
+                }
+
+                const removeCantidad = (e) => {
+                    // console.log(e);
+                    let cantidad = e.path[2].children[1];
+                    
+                    let intCantidad = parseInt(cantidad.textContent);
+
+                    if (intCantidad > 1) {
+                        intCantidad--;
+
+                        cantidad.textContent = intCantidad.toString()
+                        
+                        productPrice(e, cantidad)
+                        resumePrice()
+                    }
+                }
+
+
+                const addCantidad = (e) => {
+                    // console.log(e);
+                    let cantidad = e.path[2].children[1];
+                    
+                    let intCantidad = parseInt(cantidad.textContent);
+
+                    if (intCantidad > 0 && intCantidad < 10) {
+                        intCantidad++;
+
+                        cantidad.textContent = intCantidad.toString()
+                        
+                        productPrice(e, cantidad)
+                        resumePrice()
+                    }
+
+                }
+                let productsShopping = [...document.querySelectorAll(".product")]
+                productsShopping.forEach(product => {
+                    // let linkID = product.children[0].children[0].href.split("/")[5]
+                    let add = product.children[1].children[1].children[1].children[1].children[0].children[1].children[2].children[0]
+                    let remove = product.children[1].children[1].children[1].children[1].children[0].children[1].children[0].children[0]
+                    // console.log(add);
+
+                    remove.addEventListener("click", removeCantidad)
+                    add.addEventListener("click", addCantidad);
                 })
-                const reducer = (previousValue, currentValue) => previousValue + currentValue;
-                let priceFinal = allPrices.reduce(reducer)
-                resumeSubTotal.textContent = `$${priceFinal}`
-                resumeTotal.textContent = `$${priceFinal}`
+
+                resumePrice()
             })
             .catch(error => console.error(error))
-
-
-
-
-
-
 
 
     } else {

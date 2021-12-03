@@ -40,38 +40,38 @@ window.addEventListener("load", () => {
     let allProducts = document.querySelectorAll(".product-container")
     let productsArr = [...allProducts]
     productsArr.forEach(product => {
-        const star = product.children[1].children[0];
+        const fav = product.children[1].children[0];
         const linkID = product.children[0].href.split("/")[5]
-        // console.log(star);
+        // console.log(fav);
 
-        let starSelect = (id) => {
+        let favSelect = (id) => {
             let datos = localStorage.getItem(`id${getUserID}`);
             if (datos != null) {
                 let arr = datos.split(',');
                 if (arr.includes(id.toString())) {
-                    star.classList.add("fas")
-                    star.classList.remove("far")
+                    fav.classList.add("fas")
+                    fav.classList.remove("far")
                 }
             }
         }
 
-        starSelect(linkID)
+        favSelect(linkID)
 
-        star.addEventListener("click", (e) => {
+        fav.addEventListener("click", (e) => {
 
             e.preventDefault()
-            if (star.classList.value.indexOf("far") != -1) {
-                star.classList.add("fas")
-                star.classList.remove("far")
-                star.onclick = agregarFav(linkID)
+            if (fav.classList.value.indexOf("far") != -1) {
+                fav.classList.add("fas")
+                fav.classList.remove("far")
+                fav.onclick = agregarFav(linkID)
 
 
                 console.log(localStorage.getItem(`id${getUserID}`));
 
             } else {
-                star.classList.remove("fas")
-                star.classList.add("far")
-                star.onclick = quitarFav(linkID)
+                fav.classList.remove("fas")
+                fav.classList.add("far")
+                fav.onclick = quitarFav(linkID)
 
                 console.log(localStorage.getItem(`id${getUserID}`));
             }

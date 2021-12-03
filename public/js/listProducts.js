@@ -50,7 +50,7 @@ if (widthListProducts <= 992 ) {
 
 
 // esto es la logica de lo q sucede con los filtros
-if (widthListProducts <= 768 ) {
+if (widthListProducts <= 991 ) {
 
   // ESTO ES PARA EL CELULARASDAS
 //aCELUARRRRRRRRR function
@@ -137,7 +137,7 @@ checkboxesPhone.forEach((box) => {
 
 });
 
-} else if (widthListProducts >= 769) {
+} else if (widthListProducts >= 992) {
 
 
 

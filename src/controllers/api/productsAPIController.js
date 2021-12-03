@@ -12,6 +12,7 @@ const controller = {
                         url: '/api/products'
                     },
                     count: products.length,
+                    categories: 4,
                     countByCategory: {
                         adidas: {
                             count: products.filter(product => product.brandID == 1).length,

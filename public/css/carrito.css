@@ -34,7 +34,7 @@
 .product {
     display: flex;
     outline: 1px solid rgb(216 216 216);
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     width: 100%;
     justify-content: space-between;
     background-color: #d5d6d522;
@@ -59,9 +59,6 @@
 .name p, .precio-zapas, .talle-edit a, .help a{
     font-weight: 600;
 }
-p.precio-zapas {
-    font-size: 5vw !important;
-}
 .trash-icon {
     width: 10%;
     font-size: 20px;
@@ -69,6 +66,25 @@ p.precio-zapas {
     justify-content: flex-end;
 }
 
+#quantity {
+    display: flex;
+}
+#quantity p {
+    width: 4vw;
+    text-align: center;
+}
+#less, #add {
+    border: none;
+    width: 5vw;
+    height: 4vw;
+    position: relative;
+}
+#less i, #add i {
+    position: absolute;
+    font-size: 3vw;
+    top: 10%;
+    right: 20%;
+}
 .shopping-product, .talle-edit a {
     color: #212529;
 }
@@ -87,7 +103,7 @@ p.precio-zapas {
     width: 40%;
 }
 .info-product .up-info p, .info-product .up-info i {
-    font-size: 5vw;
+    font-size: 4vw;
 }
 .info-product .down-info p, .info-product .down-info a {
     font-size: 3.5vw;
@@ -132,20 +148,20 @@ td {
 
 
 
-@media (min-width: 480px) {
-    .info-product .up-info p, .info-product .up-info i  {
-        font-size: 22px;
-    }
-    .info-product .down-info p, .info-product .down-info a {
-        font-size: 18px;
-    }
-    p.precio-zapas {
-        font-size: 4.5vw !important;
-    }
-}
 @media (min-width: 650px) {
-    p.precio-zapas {
-        font-size: 3.5vw !important;
+    .info-product .down-info p, .info-product .down-info a {
+        font-size: 4.5vw;
+    }
+    #quantity p {
+        width: 6vw;
+    }
+    #less, #add {
+        width: 6vw;
+        height: 5vw;
+    }
+    #less i, #add i {
+        top: 22%;
+        right: 28%;
     }
 }
 
@@ -196,6 +212,23 @@ td {
     .info-product p {
         margin: 0;
     }
+    .info-product .up-info p, .info-product .up-info i  {
+        font-size: 18px;
+    }
+    .info-product .down-info p, .info-product .down-info a {
+        font-size: 14px;
+    }
+    #quantity p {
+        width: 18px;
+        align-self: center;
+    }
+    #less, #add {
+        width: 20px;
+        height: 20px;
+    }
+    #less i, #add i {
+        font-size: 12px;
+    }
     .img-product {
         width: 20%;
         align-self: center;
@@ -243,9 +276,6 @@ td {
     .help a {
         font-size: 18px;
     }
-    p.precio-zapas {
-        font-size: 20px !important;
-    }
 }
 @media (min-width: 992px) {
     .precio-cantidad {
@@ -253,6 +283,25 @@ td {
     }
     .cantidad-precio-item {
         width: 50%;
+    }
+    .info-product .up-info p, .info-product .up-info i  {
+        font-size: 22px;
+    }
+    .info-product .down-info p, .info-product .down-info a {
+        font-size: 18px;
+    }
+    #less, #add {
+        width: 26px;
+        height: 20px;
+    }
+    #less i, #add i {
+        width: 15px;
+        height: 20px;
+        top: 22%;
+        right: 22%;
+    }
+    #quantity p {
+        width: 20px;
     }
     .trash-icon {
         cursor: pointer;
