@@ -55,12 +55,77 @@ window.addEventListener("load", () => {
 
 
 
+  const app = document.querySelector("main")
+
+  const modalCont = document.createElement("div")
+  modalCont.classList.add("data-cart")
+
+  modalCont.innerHTML = `
+  <div class="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+          <div class="container-modal">
+
+              <div class="container-close">
+                  <button class="close">&times;</button>
+              </div>
+
+              <div class="container-title">
+                  <p>Acción Invalida</p>
+              </div>
+
+              <br>
+
+              <div class="error-msg">
+                  <p> Error</p>
+                  <p> Lo sentimos</p>
+              </div>
+          </div>
+
+
+      </div>
+
+  `
+  app.appendChild(modalCont)
+
 
   let currentUrl = window.location.href
   let currentID = currentUrl.split("/")[5]
   let selectTalle = document.querySelector("#talle")
   let buttonSubmit = document.querySelector(".field.login button")
   let talleText = document.querySelector(".product-text-talle p")
+
+
+
+  let modalCart = document.querySelector(".data-cart");
+  let closeCart = document.querySelector(".data-cart .container-close .close");
+  let modalChauCart = document.querySelector(".data-cart .myModal .modal-content");
+  let errorMessage = document.querySelector(".data-cart .myModal .modal-content .error-msg p");
+
+
+
+  const showHideModal = (modal, close, modalChau) => {
+    console.log(closeCart);
+    if (modal.style.display = "block") {
+      close.addEventListener("click", () => {
+        modal.style.display = "none";
+      })
+      document.addEventListener('mouseup', function (e) {
+        if (!modalChau.contains(e.target)) {
+          modal.style.display = 'none';
+        }
+      });
+
+    }
+  }
+  const errorMessageCart = (message) => {
+
+    errorMessage.innerHTML = message
+
+    showHideModal(modalCart, closeCart, modalChauCart)
+
+  }
 
 
   let agregarProduct = (id) => {
@@ -81,7 +146,6 @@ window.addEventListener("load", () => {
     if (selectTalle.value != "") {
       talleText.style.display = "none"
       buttonSubmit.style.backgroundColor = "rgb(0, 0, 0)"
-      buttonSubmit.disabled = false
     }
   }
 
@@ -95,9 +159,8 @@ window.addEventListener("load", () => {
   buttonSubmit.addEventListener("click", (e) => {
     let datos = localStorage.getItem(`idCart`);
     if (selectTalle.value != "") {
-      alert("talle selecionado")
+
       if (datos == null) {
-        alert("local id nuevo creado")
         buttonSubmit.onclick = agregarProduct(currentID)
         window.location = window.location
 
@@ -109,23 +172,23 @@ window.addEventListener("load", () => {
             buttonSubmit.onclick = agregarProduct(currentID)
             window.location = window.location
           } else {
-            alert("array contiene ya el producto")
+            errorMessageCart("El producto ya esta en la lista (arr)", modalCart, closeCart, modalChauCart)
           }
-          
+
         } else {
-            if (datos != currentID) {
-              buttonSubmit.onclick = agregarProduct(currentID)
-              window.location = window.location
-            } else {
-              alert("el producto ya esta")
-            }
+          if (datos != currentID) {
+            buttonSubmit.onclick = agregarProduct(currentID)
+            window.location = window.location
+          } else {
+            errorMessageCart("El producto ya esta en la lista", modalCart, closeCart, modalChauCart)
           }
+        }
 
       }
     } else {
-      alert("talle no seleccionado")
+      errorMessageCart("No has seleccionado talle", modalCart, closeCart, modalChauCart)
     }
-  }, { once: true })
+  })
 
 
 })

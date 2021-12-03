@@ -189,14 +189,14 @@ window.addEventListener("load", () => {
 
                 const productPrice = (e, cuantityNumber) => {
                     let productID = e.path[8].children[0].children[0].href.split("/")[5];
-                    
-                    let product = products.find(product => product.id == productID );
-                    
+
+                    let product = products.find(product => product.id == productID);
+
 
                     let totalPrice = e.path[4].children[1].children[1];
                     let multiply;
                     if (product.discount == 0) {
-                        multiply = parseInt(cuantityNumber.textContent)  * product.price
+                        multiply = parseInt(cuantityNumber.textContent) * product.price
                     } else {
                         multiply = parseInt(cuantityNumber.textContent) * (product.price - (product.price * product.discount / 100))
                     }
@@ -208,14 +208,14 @@ window.addEventListener("load", () => {
                 const removeCantidad = (e) => {
                     // console.log(e);
                     let cantidad = e.path[2].children[1];
-                    
+
                     let intCantidad = parseInt(cantidad.textContent);
 
                     if (intCantidad > 1) {
                         intCantidad--;
 
                         cantidad.textContent = intCantidad.toString()
-                        
+
                         productPrice(e, cantidad)
                         resumePrice()
                     }
@@ -225,14 +225,14 @@ window.addEventListener("load", () => {
                 const addCantidad = (e) => {
                     // console.log(e);
                     let cantidad = e.path[2].children[1];
-                    
+
                     let intCantidad = parseInt(cantidad.textContent);
 
                     if (intCantidad > 0 && intCantidad < 10) {
                         intCantidad++;
 
                         cantidad.textContent = intCantidad.toString()
-                        
+
                         productPrice(e, cantidad)
                         resumePrice()
                     }

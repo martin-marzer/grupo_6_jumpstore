@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Zapatilla <%= articuloID.name %> </title>
     <%- include("./partials/head") %>
     <link rel="stylesheet" href="/css/detailProducts.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
 </head>
+
 <body>
     <%- include("./partials/header") %>
     <%- include("./partials/menuMobile") %>
     <main>
 
-        <div id="jumpstore-page" >
+        <div id="jumpstore-page">
 
             <div id="box-breadcrumbs">
                 <div class="container">
@@ -42,7 +44,7 @@
                                     </button>
                                 </div>
                                 <div class="splide__track ">
-                                    
+
                                     <ul class="splide__list ">
                                         <li class="splide__slide">
                                             <img src="/images/zapatillas/<%= articuloID.images[0].url %> ">
@@ -56,8 +58,8 @@
                                     </ul>
                                 </div>
                             </div>
-                    
-                            
+
+
                         </div>
                         <div id="description-product">
 
@@ -66,10 +68,11 @@
                             </div>
                             <div class="product-price">
                                 <% if (articuloID.discount != 0) { %>
-                                    <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discount / 100)) %></p>
-                                    <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
+                                <p>$<%= toThousand(articuloID.price - (articuloID.price * articuloID.discount / 100)) %>
+                                </p>
+                                <p class="oldPrice">$<%= toThousand(articuloID.price)%></p>
                                 <% } else {%>
-                                    <p>$<%= toThousand(articuloID.price) %></p>
+                                <p>$<%= toThousand(articuloID.price) %></p>
 
                                 <% } %>
                             </div>
@@ -82,27 +85,27 @@
                                     <select name="talle" id="talle">
                                         <option value="" disabled selected>Selecciona un talle</option>
 
-                                        <%# console.log(articuloID.sizes) %> 
+                                        <%# console.log(articuloID.sizes) %>
                                         <% articuloID.sizes.forEach(size => { %>
-                                            <option value= "<%= size.name %>" > <%= size.name %> </option>
+                                        <option value="<%= size.name %>"> <%= size.name %> </option>
                                         <% }) %>
                                     </select>
                                 </section>
                             </div>
-                    
+
                             <div class="product-carrito">
                                 <div class="field login">
-                                        <button type="button" disabled>
-                                            <p>Agregar al Carrito</p>
-                                        </button>
+                                    <button type="button">
+                                        <p>Agregar al Carrito</p>
+                                    </button>
                                 </div>
                                 <div class="field fav">
                                     <button type="button">
                                         <i class="far fa-heart"></i>
                                     </button>
-                                </div>    
+                                </div>
                             </div>
-                    
+
                             <div class="product-details">
                                 <h3>Descripción</h3>
                                 <button class="jumpstore-arrow" type="button"><i class="fas fa-angle-down"></i></button>
@@ -110,7 +113,7 @@
                                     <p><%= articuloID.description %></p>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="icons-data">
@@ -130,24 +133,26 @@
                                             <div class="container-close">
                                                 <button class="close">&times;</button>
                                             </div>
-    
+
                                             <div class="container-title">
                                                 <p>Cuotas sin interés</p>
                                             </div>
-    
+
                                             <br>
-    
+
                                             <div class="container-icon">
                                                 <i class="far fa-credit-card"></i>
                                             </div>
-    
+
                                             <br>
-                                            
+
                                             <div>
-                                                <p>Comprá en 3 y 6 cuotas sin interés con tarjetas VISA - MASTER - AMEX Y NARANJA.
+                                                <p>Comprá en 3 y 6 cuotas sin interés con tarjetas VISA - MASTER - AMEX
+                                                    Y NARANJA.
                                                 </p>
                                                 <p>
-                                                    Aprovechá 12 cuotas sin interés en seleccionados (No incluye linea Heritage)
+                                                    Aprovechá 12 cuotas sin interés en seleccionados (No incluye linea
+                                                    Heritage)
                                                 </p>
 
                                                 <p>
@@ -155,7 +160,8 @@
                                                 </p>
 
                                                 <p>
-                                                    Comprar en nuestra Tienda Oficial es 100% seguro, todas las compras son procesadas mediante la plataforma de pago Mercado Pago.
+                                                    Comprar en nuestra Tienda Oficial es 100% seguro, todas las compras
+                                                    son procesadas mediante la plataforma de pago Mercado Pago.
                                                 </p>
                                             </div>
                                         </div>
@@ -184,24 +190,36 @@
                                             <div class="container-close">
                                                 <button class="close">&times;</button>
                                             </div>
-    
+
                                             <div class="container-title">
                                                 <p>Cambios y devoluciones</p>
                                             </div>
-    
+
                                             <br>
-    
+
                                             <div class="container-icon">
                                                 <i class="fas fa-box-open"></i>
                                             </div>
-    
+
                                             <br>
-                                            
+
                                             <div>
-                                                <p>¿El talle no fue el indicado? No te preocupes, podes realizar el cambio y el primero no tiene costo.
+                                                <p>¿El talle no fue el indicado? No te preocupes, podes realizar el
+                                                    cambio y el primero no tiene costo.
                                                 </p>
                                                 <p>
-                                                    Para empezar con el proceso, te pedimos que completes el formulario en www.jumpstore.com/contacts con la información necesaria para realizar el cambio y a la brevedad nos vamos a comunicar con vos. Una vez completado el formulario, dentro de los próximos días hábiles pasará el correo por tu domicilio a retirar el pedido. Si tu domicilio es en AMBA el plazo de retiro será máximo de 7 días hábiles y para el resto del país un plazo máximo de 10 días hábiles. Recordá que la prenda debe estar en la mismas condiciones que fue enviada, en lo posible dentro de su packaging original para protegerla. Cuando el producto llegue a nuestro Centro de Distribución realizaremos la gestión solicitada. ¡No te preocupes! Te mantendremos al tanto sobre la gestión vía mail.
+                                                    Para empezar con el proceso, te pedimos que completes el formulario
+                                                    en www.jumpstore.com/contacts con la información necesaria para
+                                                    realizar el cambio y a la brevedad nos vamos a comunicar con vos.
+                                                    Una vez completado el formulario, dentro de los próximos días
+                                                    hábiles pasará el correo por tu domicilio a retirar el pedido. Si tu
+                                                    domicilio es en AMBA el plazo de retiro será máximo de 7 días
+                                                    hábiles y para el resto del país un plazo máximo de 10 días hábiles.
+                                                    Recordá que la prenda debe estar en la mismas condiciones que fue
+                                                    enviada, en lo posible dentro de su packaging original para
+                                                    protegerla. Cuando el producto llegue a nuestro Centro de
+                                                    Distribución realizaremos la gestión solicitada. ¡No te preocupes!
+                                                    Te mantendremos al tanto sobre la gestión vía mail.
                                                 </p>
                                             </div>
                                         </div>
@@ -229,37 +247,41 @@
                                             <div class="container-close">
                                                 <button class="close">&times;</button>
                                             </div>
-    
+
                                             <div class="container-title">
                                                 <p>Envios gratis ($10000)</p>
                                             </div>
-    
+
                                             <br>
-    
+
                                             <div class="container-icon">
                                                 <i class="fas fa-truck"></i>
                                             </div>
-    
+
                                             <br>
-                                            
+
                                             <div>
                                                 <p>Plazos de entrega:
                                                 </p>
-        
+
                                                 <p>
-                                                    •  AMBA:
+                                                    • AMBA:
                                                 </p>
-        
+
                                                 <p>
-                                                    Contamos con Envío en 24 hs seleccionando Moto prioritario, exclusivo CABA. Si seleccionas Moto Mensajería: 1 a 4 días hábiles. Andreani domicilio o sucursal: 2 a 5 días hábiles. En caso de seleccionar Retiro en locales el plazo de entrega es de 3 a 5 días hábiles.
+                                                    Contamos con Envío en 24 hs seleccionando Moto prioritario,
+                                                    exclusivo CABA. Si seleccionas Moto Mensajería: 1 a 4 días hábiles.
+                                                    Andreani domicilio o sucursal: 2 a 5 días hábiles. En caso de
+                                                    seleccionar Retiro en locales el plazo de entrega es de 3 a 5 días
+                                                    hábiles.
                                                 </p>
-        
+
                                                 <p>
                                                     • INTERIOR de 2 a 7 días hábiles.
                                                 </p>
-        
+
                                                 <p>
-                                                    • PATAGONIA Y NOA  de 3 a 12 días hábiles.
+                                                    • PATAGONIA Y NOA de 3 a 12 días hábiles.
                                                 </p>
                                             </div>
                                         </div>
@@ -271,56 +293,57 @@
 
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="product-attributes">
                         <ul class="row-product">
-                    
+
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Género:</span>
-                                    
-                                        Unisex
-                                    
+
+                                    Unisex
+
                                 </p>
                             </li>
-                        
+
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Importante:</span>
-                                    
-                                        El peso del calzado puede variar según el número solicitado. Los talles corresponden a numeración de Argentina
-                                    
+
+                                    El peso del calzado puede variar según el número solicitado. Los talles corresponden
+                                    a numeración de Argentina
+
                                 </p>
                             </li>
-                        
+
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Garantía:</span>
-                                    
-                                        Contra defecto de fabricación
-                                    
+
+                                    Contra defecto de fabricación
+
                                 </p>
                             </li>
-                        
+
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Origen:</span>
-                                    
-                                        Importado
-                                    
+
+                                    Importado
+
                                 </p>
                             </li>
-                        
+
                             <li class="attribute-values">
                                 <p>
                                     <span class="label">Marca:</span>
                                     <%= articuloID.brands.name.toUpperCase() %>
-                                    
+
                                 </p>
                             </li>
-                        
-                    </ul>
+
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -330,21 +353,45 @@
     </main>
     <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
-      <% if (locals.usuario) { %>
-        <script src="/js/detailProductsFav.js"></script>
-      <% } else { %>
-        <script>
-              const star = document.querySelector("i.far.fa-heart");
-              star.addEventListener("click", (e) => {
-                e.preventDefault()
-                alert("Debes loguearte")
-                window.location.href = "/login"
-              })
-        </script>
+    <% if (locals.usuario) { %>
+    <script src="/js/detailProductsFav.js"></script>
+    <% } else { %>
+    <script>
+        const app = document.querySelector("main")
+        const star = document.querySelector("i.far.fa-heart");
+
+
+        const modalCont = document.createElement("div")
+        modalCont.classList.add("data-fav")
+
+
+        const showHideModal = (modal, close, modalChau) => {
+            if (modal.style.display = "block") {
+                close.addEventListener("click", () => {
+                    modal.style.display = "none";
+                })
+                document.addEventListener('mouseup', function (e) {
+                    if (!modalChau.contains(e.target)) {
+                        modal.style.display = 'none';
+                    }
+                });
+
+            }
+        }
+        star.addEventListener("click", (e) => {
+            e.preventDefault()
+            let modalFav = document.querySelector(".data-fav");
+            let closeFav = document.querySelector(".data-fav .container-close .close");
+            let modalChauFav = document.querySelector(".data-fav .myModal .modal-content");
+
+            showHideModal(modalFav, closeFav, modalChauFav)
+        })
+    </script>
     <% } %>
     <script src="/js/detailProducts.js"></script>
     <script src="/js/detailProductsSlider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 
 </body>
+
 </html>
