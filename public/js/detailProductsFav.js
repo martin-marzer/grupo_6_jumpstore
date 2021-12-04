@@ -56,7 +56,7 @@ window.addEventListener("load", () => {
       }
   }
   
-  starSelect(getUserID)
+  starSelect(currentID)
   
   star.addEventListener("click", (e) => {
   
