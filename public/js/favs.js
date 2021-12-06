@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-  let getUserID = document.querySelector(".dropdown-content #user").dataset.test;
+    let getUserID = document.querySelector(".dropdown-content #user").dataset.test;
 
     let agregarFav = (id) => {
 
@@ -39,6 +39,7 @@ window.addEventListener("load", () => {
 
     }
 
+
     const app = document.querySelector(".products-container");
 
     let str = localStorage.getItem(`id${getUserID}`);
@@ -50,88 +51,96 @@ window.addEventListener("load", () => {
         let arr = str.split(',');
         let favoritas = [...new Set(arr)]
 
-        favoritas.forEach((id) => {
-            fetch(`api/products/${id}`)
-                .then(function (response) {
-                    return response.json();
+        fetch(`api/products`)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(products => {
+                let allProducts = products.products;
+
+                let count = document.querySelector(".results-container p")
+                count.innerHTML =
+                    `<strong>${favoritas.length}</strong> Productos Favoritos`
+
+
+                let validProducts = allProducts.map(product => {
+                    if (favoritas.includes(product.id.toString())) {
+                        return product
+                    }
                 })
-                .then(products => {
-                    let product = products.data;
 
-                    let count = document.querySelector(".results-container p")
-                    count.innerHTML =
-                        `<strong>${favoritas.length}</strong> Productos Favoritos`
+                let filteredProducts = validProducts.filter(product => product != undefined)
 
+                filteredProducts.forEach(product => {
+                    console.log(filteredProducts);
                     let div = document.createElement("div")
                     div.classList.add("product-container")
 
 
                     if (product.discount == 0) {
                         div.innerHTML = `
-  <a href="/sneakers/detail/${product.id}" class="link-detail">
-      <div class="product">
-          
-          <div class="info-product">
-              <div class="img-container">
-                  <img src="${product.images[0].url}" alt="producto" class="img-product">
+<a href="/sneakers/detail/${product.id}" class="link-detail">
+  <div class="product">
+      
+      <div class="info-product">
+          <div class="img-container">
+              <img src="/images/zapatillas/${product.images[0].url}" alt="producto" class="img-product">
+          </div>
+          <div class="text">
+              <div class="sneaker-name">
+                  <p>${product.name}</p>
               </div>
-              <div class="text">
-                  <div class="sneaker-name">
-                      <p>${product.name}</p>
-                  </div>
-                  <div class="price">
+              <div class="price">
 
-                      <p> $ ${toThousand(product.price)}</p>
+                  <p> $ ${toThousand(product.price)}</p>
 
-                  </div>                                             
-              </div>
+              </div>                                             
           </div>
       </div>
-  </a>
-  <div class="container-heart">
-      <i class="far fa-heart"></i>
-  </div>            
-  `;
+  </div>
+</a>
+<div class="container-heart">
+  <i class="far fa-heart"></i>
+</div>            
+`;
                     } else {
                         div.innerHTML = `
-  <a href="/sneakers/detail/${product.id}" class="link-detail">
-      <div class="product">
-          
-          <div class="sale">
-            <div class="discount">
-                ${product.discount}% OFF
-            </div>
+<a href="/sneakers/detail/${product.id}" class="link-detail">
+  <div class="product">
+      
+      <div class="sale">
+        <div class="discount">
+            ${product.discount}% OFF
         </div>
+    </div>
 
-          <div class="info-product">
-              <div class="img-container">
-                  <img src="${product.images[0].url}" alt="producto" class="img-product">
+      <div class="info-product">
+          <div class="img-container">
+              <img src="/images/zapatillas/${product.images[0].url}" alt="producto" class="img-product">
+          </div>
+          <div class="text">
+              <div class="sneaker-name">
+                  <p>${product.name}</p>
               </div>
-              <div class="text">
-                  <div class="sneaker-name">
-                      <p>${product.name}</p>
-                  </div>
-                  <div class="price">
+              <div class="price">
 
-                    <p>$${toThousand(product.price - (product.price * product.discount / 100))} </p>
-                    <p class="oldPrice">$${toThousand(product.price)}</p>
+                <p>$${toThousand(product.price - (product.price * product.discount / 100))} </p>
+                <p class="oldPrice">$${toThousand(product.price)}</p>
 
-                  </div>                                             
-              </div>
+              </div>                                             
           </div>
       </div>
-  </a>
-  <div class="container-heart">
-      <i class="far fa-heart"></i>
-  </div>            
-  `;
+  </div>
+</a>
+<div class="container-heart">
+  <i class="far fa-heart"></i>
+</div>            
+`;
                     }
 
 
                     app.appendChild(div)
                     let fav = div.children[1].children[0]
-
-
 
                     let favSelect = (id) => {
                         let datos = localStorage.getItem(`id${getUserID}`);
@@ -143,6 +152,7 @@ window.addEventListener("load", () => {
                             }
                         }
                     }
+
 
                     favSelect(product.id)
 
@@ -166,13 +176,30 @@ window.addEventListener("load", () => {
                         }
 
                     })
-
                 })
-                .catch(function (error) {
-                    console.error(error);
-                });
 
-        });
+            })
+
+        // favoritas.forEach((id) => {
+        //     fetch(`api/products/${id}`)
+        //         .then(function (response) {
+        //             return response.json();
+        //         })
+        //         .then(products => {
+        //             let product = products.data;
+
+        //             let count = document.querySelector(".results-container p")
+        //             count.innerHTML =
+        //                 `<strong>${favoritas.length}</strong> Productos Favoritos`
+
+
+
+        //         })
+        //         .catch(function (error) {
+        //             console.error(error);
+        //         });
+
+        // });
 
     } else {
         app.innerHTML =

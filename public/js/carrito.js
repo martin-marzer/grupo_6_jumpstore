@@ -280,38 +280,48 @@ window.addEventListener("load", () => {
                     let timer = 0,
                         timerInterval;
 
-                    add.addEventListener("mousedown", (e) => {
-                        timerInterval = setInterval(() => {
-                            timer += 1;
-                            if (timer == 1) {
-                                addCantidad(e)
-                                timer = 0
-                            }
+                        // remove 
+                    ['mousedown','touchstart'].forEach( evt => 
+                        remove.addEventListener(evt, (e) => {
+                            timerInterval = setInterval(() => {
+                                timer += 1;
+                                if (timer == 1) {
+                                    removeCantidad(e)
+                                    timer = 0
+                                }
+    
+                            }, 200);
+                        }, false)
+                    );
 
-                        }, 200);
-                    });
+                    ['mouseup','touchend'].forEach( evt => 
+                        remove.addEventListener(evt, () => {
+                            clearInterval(timerInterval);
+                            timer = 0;
+                        }, false)
+                    );
 
-                    add.addEventListener("mouseup", () => {
-                        clearInterval(timerInterval);
-                        timer = 0;
-                    });
+                    
+                        // add 
+                    ['mousedown','touchstart'].forEach( evt => 
+                        add.addEventListener(evt, (e) => {
+                            timerInterval = setInterval(() => {
+                                timer += 1;
+                                if (timer == 1) {
+                                    addCantidad(e)
+                                    timer = 0
+                                }
+    
+                            }, 200);
+                        }, false)
+                    );
 
-
-                    remove.addEventListener("mousedown", (e) => {
-                        timerInterval = setInterval(() => {
-                            timer += 1;
-                            if (timer == 1) {
-                                removeCantidad(e)
-                                timer = 0
-                            }
-
-                        }, 200);
-                    });
-
-                    remove.addEventListener("mouseup", () => {
-                        clearInterval(timerInterval);
-                        timer = 0;
-                    });
+                    ['mouseup','touchend'].forEach( evt => 
+                        add.addEventListener(evt, () => {
+                            clearInterval(timerInterval);
+                            timer = 0;
+                        }, false)
+                    );
 
                 })
 
