@@ -10,7 +10,7 @@ function NavList(){
                 <span className="tooltip">Buscar</span>
             </li>
               <li>
-                <a href="/administrator/users">
+                <a href="http://localhost:3030/administrator/users">
                   <i className='bx bx-user'></i>
                   <span className="links_name">Usuarios</span>
                 </a>
